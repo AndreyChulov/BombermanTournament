@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Engine.SharedInterfaces\Engine.SharedInterfaces.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Include="GraphicEngine\ImageResources\tree.jpg" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Vortice.Direct2D1" Version="2.4.2" />
+    </ItemGroup>
+
+</Project>

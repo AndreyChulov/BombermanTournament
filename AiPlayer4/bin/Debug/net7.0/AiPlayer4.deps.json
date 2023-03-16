@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "AiPlayer4/1.0.0": {
+        "dependencies": {
+          "BombermanGame.Shared": "1.0.0"
+        },
+        "runtime": {
+          "AiPlayer4.dll": {}
+        }
+      },
+      "BombermanGame.Shared/1.0.0": {
+        "runtime": {
+          "BombermanGame.Shared.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "AiPlayer4/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BombermanGame.Shared/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

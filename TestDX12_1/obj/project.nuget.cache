@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "dgSpecHash": "JIhQOnJFfg0ommcd5jgfJ4kcJg0jruG/K1RNAM6KqFIx+3NHpxJeEghDdx4XQdxIV9exTo724zOOqIyh0P12Fg==",
+  "success": true,
+  "projectFilePath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\TestDX12_1\\TestDX12_1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Andrey\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.1\\microsoft.bcl.hashcode.1.1.1.nupkg.sha512",
+    "C:\\Users\\Andrey\\.nuget\\packages\\polysharp\\1.10.0\\polysharp.1.10.0.nupkg.sha512",
+    "C:\\Users\\Andrey\\.nuget\\packages\\sharpgen.runtime\\2.0.0-beta.13\\sharpgen.runtime.2.0.0-beta.13.nupkg.sha512",
+    "C:\\Users\\Andrey\\.nuget\\packages\\sharpgen.runtime.com\\2.0.0-beta.13\\sharpgen.runtime.com.2.0.0-beta.13.nupkg.sha512",
+    "C:\\Users\\Andrey\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512",
+    "C:\\Users\\Andrey\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\Andrey\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\Andrey\\.nuget\\packages\\vortice.direct2d1\\2.4.2\\vortice.direct2d1.2.4.2.nupkg.sha512",
+    "C:\\Users\\Andrey\\.nuget\\packages\\vortice.directx\\2.4.2\\vortice.directx.2.4.2.nupkg.sha512",
+    "C:\\Users\\Andrey\\.nuget\\packages\\vortice.dxgi\\2.4.2\\vortice.dxgi.2.4.2.nupkg.sha512",
+    "C:\\Users\\Andrey\\.nuget\\packages\\vortice.mathematics\\1.4.25\\vortice.mathematics.1.4.25.nupkg.sha512"
+  ],
+  "logs": []
+}

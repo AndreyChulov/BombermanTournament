@@ -1,0 +1,12 @@
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\BombermanGame.SharedInterfaces\bin\Debug\net7.0\BombermanGame.SharedInterfaces.deps.json
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\BombermanGame.SharedInterfaces\bin\Debug\net7.0\BombermanGame.SharedInterfaces.dll
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\BombermanGame.SharedInterfaces\bin\Debug\net7.0\BombermanGame.SharedInterfaces.pdb
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\BombermanGame.SharedInterfaces\obj\Debug\net7.0\BombermanGame.SharedInterfaces.csproj.AssemblyReference.cache
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\BombermanGame.SharedInterfaces\obj\Debug\net7.0\BombermanGame.SharedInterfaces.GeneratedMSBuildEditorConfig.editorconfig
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\BombermanGame.SharedInterfaces\obj\Debug\net7.0\BombermanGame.SharedInterfaces.AssemblyInfoInputs.cache
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\BombermanGame.SharedInterfaces\obj\Debug\net7.0\BombermanGame.SharedInterfaces.AssemblyInfo.cs
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\BombermanGame.SharedInterfaces\obj\Debug\net7.0\BombermanGame.SharedInterfaces.csproj.CoreCompileInputs.cache
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\BombermanGame.SharedInterfaces\obj\Debug\net7.0\BombermanGame.SharedInterfaces.dll
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\BombermanGame.SharedInterfaces\obj\Debug\net7.0\refint\BombermanGame.SharedInterfaces.dll
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\BombermanGame.SharedInterfaces\obj\Debug\net7.0\BombermanGame.SharedInterfaces.pdb
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\BombermanGame.SharedInterfaces\obj\Debug\net7.0\ref\BombermanGame.SharedInterfaces.dll

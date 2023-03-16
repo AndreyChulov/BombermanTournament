@@ -1,0 +1,15 @@
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\AiPlayer3\bin\Debug\net7.0\AiPlayer3.deps.json
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\AiPlayer3\bin\Debug\net7.0\AiPlayer3.dll
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\AiPlayer3\bin\Debug\net7.0\AiPlayer3.pdb
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\AiPlayer3\bin\Debug\net7.0\BombermanGame.Shared.dll
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\AiPlayer3\bin\Debug\net7.0\BombermanGame.Shared.pdb
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\AiPlayer3\obj\Debug\net7.0\AiPlayer3.csproj.AssemblyReference.cache
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\AiPlayer3\obj\Debug\net7.0\AiPlayer3.GeneratedMSBuildEditorConfig.editorconfig
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\AiPlayer3\obj\Debug\net7.0\AiPlayer3.AssemblyInfoInputs.cache
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\AiPlayer3\obj\Debug\net7.0\AiPlayer3.AssemblyInfo.cs
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\AiPlayer3\obj\Debug\net7.0\AiPlayer3.csproj.CoreCompileInputs.cache
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\AiPlayer3\obj\Debug\net7.0\AiPlayer3.csproj.CopyComplete
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\AiPlayer3\obj\Debug\net7.0\AiPlayer3.dll
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\AiPlayer3\obj\Debug\net7.0\refint\AiPlayer3.dll
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\AiPlayer3\obj\Debug\net7.0\AiPlayer3.pdb
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\AiPlayer3\obj\Debug\net7.0\ref\AiPlayer3.dll

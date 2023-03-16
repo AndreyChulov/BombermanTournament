@@ -1,0 +1,12 @@
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\Engine\GraphicEngine\bin\Debug\net7.0\GraphicEngine.deps.json
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\Engine\GraphicEngine\bin\Debug\net7.0\GraphicEngine.dll
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\Engine\GraphicEngine\bin\Debug\net7.0\GraphicEngine.pdb
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\Engine\GraphicEngine\obj\Debug\net7.0\GraphicEngine.csproj.AssemblyReference.cache
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\Engine\GraphicEngine\obj\Debug\net7.0\GraphicEngine.GeneratedMSBuildEditorConfig.editorconfig
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\Engine\GraphicEngine\obj\Debug\net7.0\GraphicEngine.AssemblyInfoInputs.cache
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\Engine\GraphicEngine\obj\Debug\net7.0\GraphicEngine.AssemblyInfo.cs
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\Engine\GraphicEngine\obj\Debug\net7.0\GraphicEngine.csproj.CoreCompileInputs.cache
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\Engine\GraphicEngine\obj\Debug\net7.0\GraphicEngine.dll
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\Engine\GraphicEngine\obj\Debug\net7.0\refint\GraphicEngine.dll
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\Engine\GraphicEngine\obj\Debug\net7.0\GraphicEngine.pdb
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\Engine\GraphicEngine\obj\Debug\net7.0\ref\GraphicEngine.dll

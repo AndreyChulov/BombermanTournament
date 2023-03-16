@@ -1,0 +1,89 @@
+{
+  "version": 3,
+  "targets": {
+    "net7.0": {
+      "BombermanGame.Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/BombermanGame.Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BombermanGame.Shared.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "BombermanGame.Shared/1.0.0": {
+      "type": "project",
+      "path": "../BombermanGame.Shared/BombermanGame.Shared.csproj",
+      "msbuildProject": "../BombermanGame.Shared/BombermanGame.Shared.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net7.0": [
+      "BombermanGame.Shared >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Andrey\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\AiPlayer4\\AiPlayer4.csproj",
+      "projectName": "AiPlayer4",
+      "projectPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\AiPlayer4\\AiPlayer4.csproj",
+      "packagesPath": "C:\\Users\\Andrey\\.nuget\\packages\\",
+      "outputPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\AiPlayer4\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\Andrey\\AppData\\Roaming\\NuGet\\NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net7.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "projectReferences": {
+            "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\BombermanGame.Shared\\BombermanGame.Shared.csproj": {
+              "projectPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\BombermanGame.Shared\\BombermanGame.Shared.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net7.0": {
+        "targetAlias": "net7.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

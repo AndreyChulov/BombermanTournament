@@ -1,0 +1,12 @@
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\Engine\Engine.SharedInterfaces1\bin\Debug\net7.0\Engine.SharedInterfaces1.deps.json
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\Engine\Engine.SharedInterfaces1\bin\Debug\net7.0\Engine.SharedInterfaces1.dll
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\Engine\Engine.SharedInterfaces1\bin\Debug\net7.0\Engine.SharedInterfaces1.pdb
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\Engine\Engine.SharedInterfaces1\obj\Debug\net7.0\Engine.SharedInterfaces1.csproj.AssemblyReference.cache
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\Engine\Engine.SharedInterfaces1\obj\Debug\net7.0\Engine.SharedInterfaces1.GeneratedMSBuildEditorConfig.editorconfig
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\Engine\Engine.SharedInterfaces1\obj\Debug\net7.0\Engine.SharedInterfaces1.AssemblyInfoInputs.cache
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\Engine\Engine.SharedInterfaces1\obj\Debug\net7.0\Engine.SharedInterfaces1.AssemblyInfo.cs
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\Engine\Engine.SharedInterfaces1\obj\Debug\net7.0\Engine.SharedInterfaces1.csproj.CoreCompileInputs.cache
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\Engine\Engine.SharedInterfaces1\obj\Debug\net7.0\Engine.SharedInterfaces1.dll
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\Engine\Engine.SharedInterfaces1\obj\Debug\net7.0\refint\Engine.SharedInterfaces1.dll
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\Engine\Engine.SharedInterfaces1\obj\Debug\net7.0\Engine.SharedInterfaces1.pdb
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\Engine\Engine.SharedInterfaces1\obj\Debug\net7.0\ref\Engine.SharedInterfaces1.dll

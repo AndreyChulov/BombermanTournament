@@ -1,0 +1,12 @@
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\Engine\Engine.Engine\bin\Debug\net7.0\Engine.Engine.deps.json
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\Engine\Engine.Engine\bin\Debug\net7.0\Engine.Engine.dll
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\Engine\Engine.Engine\bin\Debug\net7.0\Engine.Engine.pdb
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\Engine\Engine.Engine\obj\Debug\net7.0\Engine.Engine.csproj.AssemblyReference.cache
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\Engine\Engine.Engine\obj\Debug\net7.0\Engine.Engine.GeneratedMSBuildEditorConfig.editorconfig
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\Engine\Engine.Engine\obj\Debug\net7.0\Engine.Engine.AssemblyInfoInputs.cache
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\Engine\Engine.Engine\obj\Debug\net7.0\Engine.Engine.AssemblyInfo.cs
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\Engine\Engine.Engine\obj\Debug\net7.0\Engine.Engine.csproj.CoreCompileInputs.cache
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\Engine\Engine.Engine\obj\Debug\net7.0\Engine.Engine.dll
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\Engine\Engine.Engine\obj\Debug\net7.0\refint\Engine.Engine.dll
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\Engine\Engine.Engine\obj\Debug\net7.0\Engine.Engine.pdb
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\Engine\Engine.Engine\obj\Debug\net7.0\ref\Engine.Engine.dll
