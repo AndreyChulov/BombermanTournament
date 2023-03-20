@@ -8,7 +8,7 @@ using BombermanGame.Shared;
 using BombermanGame.Shared.Interfaces;
 using Engine;
 using Engine.SharedInterfaces;
-using Field = BombermanGame.DrawDataModel.Draw.Field;
+using Field = BombermanGame.DrawDataModel.Draw.Field.Field;
 
 namespace BombermanGame
 {
