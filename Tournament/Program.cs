@@ -1,7 +1,3 @@
-using System;
-using System.Windows.Forms;
-using BombermanGame;
-
 namespace Tournament
 {
     static class Program

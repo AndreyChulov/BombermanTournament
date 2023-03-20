@@ -1,13 +1,10 @@
-using System;
 using System.Drawing;
-using System.Threading;
 using Engine.SharedInterfaces.GraphicEngine;
 using Engine.SharedInterfaces.GraphicEngine.Draw;
 using Engine.SharedInterfaces.GraphicEngine.RamResources;
 using Vortice.Direct2D1;
 using Vortice.DirectWrite;
 using Vortice.Mathematics;
-using Vortice.WIC;
 using FactoryType = Vortice.Direct2D1.FactoryType;
 using PixelFormat = Vortice.DCommon.PixelFormat;
 

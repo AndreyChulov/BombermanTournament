@@ -1,4 +1,3 @@
-using System;
 using Vortice.Direct2D1;
 
 namespace Engine.Shared.GraphicEngine.RamResources.Single

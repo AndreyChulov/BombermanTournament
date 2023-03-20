@@ -1,13 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Windows.Forms;
-using System.Xml.Schema;
 using BombermanGame;
-using BombermanGame.Game;
-using BombermanGame.Shared;
 using BombermanGame.Shared.Interfaces;
 
 namespace Tournament

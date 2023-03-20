@@ -1,4 +1,3 @@
-using System;
 using Engine.SharedInterfaces.GraphicEngine.RamResources;
 
 namespace Engine.Shared.GraphicEngine.RamResources.Single

@@ -1,5 +1,3 @@
-using System;
-using System.Drawing;
 using System.Reflection;
 using Engine.SharedInterfaces;
 using Image = Engine.Shared.GraphicEngine.Draw.Image;

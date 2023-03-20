@@ -1,9 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using BombermanGame.Game.DataModel;
 using BombermanGame.Game.Extensions;
-using BombermanGame.Shared;
 using BombermanGame.Shared.Enums;
 using BombermanGame.Shared.Interfaces;
 

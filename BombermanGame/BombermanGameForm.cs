@@ -1,10 +1,7 @@
-using System;
-using System.Windows.Forms;
 using BombermanGame.DrawDataModel.Draw;
 using BombermanGame.DrawDataModel.Draw.Score;
 using BombermanGame.Game;
 using BombermanGame.Game.DataModel;
-using BombermanGame.Shared;
 using BombermanGame.Shared.Interfaces;
 using Engine;
 using Engine.SharedInterfaces;

@@ -1,4 +1,3 @@
-using System;
 using System.Drawing;
 using Vortice.Direct2D1;
 using Vortice.DirectWrite;

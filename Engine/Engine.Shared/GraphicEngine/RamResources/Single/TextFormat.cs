@@ -1,4 +1,3 @@
-using System;
 using Vortice.DirectWrite;
 
 namespace Engine.Shared.GraphicEngine.RamResources.Single

@@ -1,6 +1,4 @@
-using System;
 using System.Drawing;
-using System.Threading;
 using Engine.SharedInterfaces;
 using Vortice.Direct2D1;
 

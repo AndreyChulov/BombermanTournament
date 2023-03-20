@@ -1,8 +1,3 @@
-using System;
-using System.Windows.Forms;
-using Vortice.DCommon;
-using Vortice.Direct2D1;
-
 namespace TestDX12_3
 {
    static class Program

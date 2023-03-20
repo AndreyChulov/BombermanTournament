@@ -1,8 +1,5 @@
-using System.Drawing;
-using System.IO;
 using System.Reflection;
 using Vortice.Direct2D1;
-using Vortice.Mathematics;
 using Vortice.WIC;
 
 namespace Engine.Shared.GraphicEngine

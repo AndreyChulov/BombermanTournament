@@ -1,4 +1,3 @@
-using System.Drawing;
 using Engine.SharedInterfaces;
 
 namespace BombermanGame.DrawDataModel.Draw

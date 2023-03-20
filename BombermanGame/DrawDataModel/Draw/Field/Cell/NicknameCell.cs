@@ -1,12 +1,8 @@
-using System.Reflection;
-using Engine.Shared.GraphicEngine;
 using Engine.Shared.GraphicEngine.RamResources.Single;
 using Vortice.Direct2D1;
 using Vortice.DirectWrite;
 using Vortice.Mathematics;
-using Bitmap = Engine.Shared.GraphicEngine.RamResources.Single.Bitmap;
 using Brush = Engine.Shared.GraphicEngine.RamResources.Single.Brush;
-using FontStyle = System.Drawing.FontStyle;
 
 namespace BombermanGame.DrawDataModel.Draw.Field.Cell;
 

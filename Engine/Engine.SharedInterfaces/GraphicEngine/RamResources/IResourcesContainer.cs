@@ -1,5 +1,3 @@
-using System;
-
 namespace Engine.SharedInterfaces.GraphicEngine.RamResources
 {
     public interface IResourcesContainer :IDisposable

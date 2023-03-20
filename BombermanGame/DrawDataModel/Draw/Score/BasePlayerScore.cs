@@ -1,4 +1,3 @@
-using System.Drawing;
 using BombermanGame.Shared.Interfaces;
 using Engine.Shared.GraphicEngine.Draw;
 using Engine.Shared.GraphicEngine.RamResources.Multi;

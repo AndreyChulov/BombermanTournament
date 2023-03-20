@@ -1,4 +1,3 @@
-using System;
 using Engine.SharedInterfaces.GraphicEngine.RamResources;
 using Vortice.Direct2D1;
 using Vortice.DirectWrite;

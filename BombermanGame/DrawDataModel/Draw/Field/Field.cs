@@ -1,19 +1,12 @@
-using System.Reflection;
 using BombermanGame.DrawDataModel.Draw.Field.Cell;
 using BombermanGame.DrawDataModel.RamResources.Multi;
 using BombermanGame.Game.DataModel;
 using BombermanGame.Shared.Enums;
-using Engine.Shared.GraphicEngine;
 using Engine.Shared.GraphicEngine.Draw;
-using Engine.Shared.GraphicEngine.RamResources.Single;
 using Engine.SharedInterfaces;
 using Engine.SharedInterfaces.GraphicEngine.RamResources;
 using Vortice.Direct2D1;
 using Vortice.DirectWrite;
-using Vortice.Mathematics;
-using Bitmap = Engine.Shared.GraphicEngine.RamResources.Single.Bitmap;
-using Brush = Engine.Shared.GraphicEngine.RamResources.Single.Brush;
-using FontStyle = Vortice.DirectWrite.FontStyle;
 
 namespace BombermanGame.DrawDataModel.Draw.Field
 {
