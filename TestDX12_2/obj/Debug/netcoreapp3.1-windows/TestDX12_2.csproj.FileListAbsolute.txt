@@ -1,5 +1,0 @@
-Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\TestDX12_2\obj\Debug\netcoreapp3.1-windows\TestDX12_2.csproj.AssemblyReference.cache
-Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\TestDX12_2\obj\Debug\netcoreapp3.1-windows\TestDX12_2.GeneratedMSBuildEditorConfig.editorconfig
-Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\TestDX12_2\obj\Debug\netcoreapp3.1-windows\TestDX12_2.AssemblyInfoInputs.cache
-Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\TestDX12_2\obj\Debug\netcoreapp3.1-windows\TestDX12_2.AssemblyInfo.cs
-Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\TestDX12_2\obj\Debug\netcoreapp3.1-windows\TestDX12_2.csproj.CoreCompileInputs.cache

@@ -49,7 +49,7 @@ namespace Tournament
             this.btnStartTournament.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnStartTournament.Location = new System.Drawing.Point(0, 290);
             this.btnStartTournament.Name = "btnStartTournament";
-            this.btnStartTournament.Size = new System.Drawing.Size(800, 51);
+            this.btnStartTournament.Size = new System.Drawing.Size(1200, 51);
             this.btnStartTournament.TabIndex = 1;
             this.btnStartTournament.Text = "Start tournament";
             this.btnStartTournament.UseVisualStyleBackColor = true;
@@ -61,7 +61,7 @@ namespace Tournament
             this.lstbxAvailableAi.ItemHeight = 16;
             this.lstbxAvailableAi.Location = new System.Drawing.Point(12, 12);
             this.lstbxAvailableAi.Name = "lstbxAvailableAi";
-            this.lstbxAvailableAi.Size = new System.Drawing.Size(220, 276);
+            this.lstbxAvailableAi.Size = new System.Drawing.Size(420, 276);
             this.lstbxAvailableAi.TabIndex = 2;
             this.lstbxAvailableAi.SelectedIndexChanged += new System.EventHandler(this.lstbxAvailableAi_SelectedIndexChanged);
             // 
@@ -71,7 +71,7 @@ namespace Tournament
             this.panel1.Controls.Add(this.lblStrategyDescription);
             this.panel1.Controls.Add(this.txtNickname);
             this.panel1.Controls.Add(this.lblNickname);
-            this.panel1.Location = new System.Drawing.Point(238, 12);
+            this.panel1.Location = new System.Drawing.Point(438, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(202, 276);
             this.panel1.TabIndex = 3;
@@ -118,7 +118,7 @@ namespace Tournament
             // 
             this.panel2.Controls.Add(this.btnUnloadFromGame);
             this.panel2.Controls.Add(this.btnLoadToGame);
-            this.panel2.Location = new System.Drawing.Point(446, 12);
+            this.panel2.Location = new System.Drawing.Point(646, 12);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(51, 276);
             this.panel2.TabIndex = 4;
@@ -149,16 +149,16 @@ namespace Tournament
             // 
             this.lstbxLoadedAi.FormattingEnabled = true;
             this.lstbxLoadedAi.ItemHeight = 16;
-            this.lstbxLoadedAi.Location = new System.Drawing.Point(503, 12);
+            this.lstbxLoadedAi.Location = new System.Drawing.Point(703, 12);
             this.lstbxLoadedAi.Name = "lstbxLoadedAi";
-            this.lstbxLoadedAi.Size = new System.Drawing.Size(285, 276);
+            this.lstbxLoadedAi.Size = new System.Drawing.Size(485, 276);
             this.lstbxLoadedAi.TabIndex = 0;
             // 
             // TournamentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 341);
+            this.ClientSize = new System.Drawing.Size(1200, 341);
             this.Controls.Add(this.lstbxLoadedAi);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
