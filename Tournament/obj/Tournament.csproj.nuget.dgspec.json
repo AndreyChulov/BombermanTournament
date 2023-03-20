@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\Tournament\\Tournament.csproj": {}
+    "Z:\\Мой диск\\GitHub\\BombermanTournament\\Tournament\\Tournament.csproj": {}
   },
   "projects": {
-    "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\AiExamples\\AiExamples.csproj": {
+    "Z:\\Мой диск\\GitHub\\BombermanTournament\\AiExamples\\AiExamples.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\AiExamples\\AiExamples.csproj",
+        "projectUniqueName": "Z:\\Мой диск\\GitHub\\BombermanTournament\\AiExamples\\AiExamples.csproj",
         "projectName": "AiExamples",
-        "projectPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\AiExamples\\AiExamples.csproj",
+        "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\AiExamples\\AiExamples.csproj",
         "packagesPath": "C:\\Users\\Andrey\\.nuget\\packages\\",
-        "outputPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\AiExamples\\obj\\",
+        "outputPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\AiExamples\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Andrey\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -26,8 +26,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\BombermanGame.Shared\\BombermanGame.Shared.csproj": {
-                "projectPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\BombermanGame.Shared\\BombermanGame.Shared.csproj"
+              "Z:\\Мой диск\\GitHub\\BombermanTournament\\BombermanGame.Shared\\BombermanGame.Shared.csproj": {
+                "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\BombermanGame.Shared\\BombermanGame.Shared.csproj"
               }
             }
           }
@@ -61,14 +61,14 @@
         }
       }
     },
-    "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\AiPlayer1\\AiPlayer1.csproj": {
+    "Z:\\Мой диск\\GitHub\\BombermanTournament\\AiPlayer1\\AiPlayer1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\AiPlayer1\\AiPlayer1.csproj",
+        "projectUniqueName": "Z:\\Мой диск\\GitHub\\BombermanTournament\\AiPlayer1\\AiPlayer1.csproj",
         "projectName": "AiPlayer1",
-        "projectPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\AiPlayer1\\AiPlayer1.csproj",
+        "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\AiPlayer1\\AiPlayer1.csproj",
         "packagesPath": "C:\\Users\\Andrey\\.nuget\\packages\\",
-        "outputPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\AiPlayer1\\obj\\",
+        "outputPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\AiPlayer1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Andrey\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -83,8 +83,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\BombermanGame.Shared\\BombermanGame.Shared.csproj": {
-                "projectPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\BombermanGame.Shared\\BombermanGame.Shared.csproj"
+              "Z:\\Мой диск\\GitHub\\BombermanTournament\\BombermanGame.Shared\\BombermanGame.Shared.csproj": {
+                "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\BombermanGame.Shared\\BombermanGame.Shared.csproj"
               }
             }
           }
@@ -118,14 +118,14 @@
         }
       }
     },
-    "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\AiPlayer2\\AiPlayer2.csproj": {
+    "Z:\\Мой диск\\GitHub\\BombermanTournament\\AiPlayer2\\AiPlayer2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\AiPlayer2\\AiPlayer2.csproj",
+        "projectUniqueName": "Z:\\Мой диск\\GitHub\\BombermanTournament\\AiPlayer2\\AiPlayer2.csproj",
         "projectName": "AiPlayer2",
-        "projectPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\AiPlayer2\\AiPlayer2.csproj",
+        "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\AiPlayer2\\AiPlayer2.csproj",
         "packagesPath": "C:\\Users\\Andrey\\.nuget\\packages\\",
-        "outputPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\AiPlayer2\\obj\\",
+        "outputPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\AiPlayer2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Andrey\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -140,8 +140,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\BombermanGame.Shared\\BombermanGame.Shared.csproj": {
-                "projectPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\BombermanGame.Shared\\BombermanGame.Shared.csproj"
+              "Z:\\Мой диск\\GitHub\\BombermanTournament\\BombermanGame.Shared\\BombermanGame.Shared.csproj": {
+                "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\BombermanGame.Shared\\BombermanGame.Shared.csproj"
               }
             }
           }
@@ -175,14 +175,14 @@
         }
       }
     },
-    "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\AiPlayer3\\AiPlayer3.csproj": {
+    "Z:\\Мой диск\\GitHub\\BombermanTournament\\AiPlayer3\\AiPlayer3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\AiPlayer3\\AiPlayer3.csproj",
+        "projectUniqueName": "Z:\\Мой диск\\GitHub\\BombermanTournament\\AiPlayer3\\AiPlayer3.csproj",
         "projectName": "AiPlayer3",
-        "projectPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\AiPlayer3\\AiPlayer3.csproj",
+        "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\AiPlayer3\\AiPlayer3.csproj",
         "packagesPath": "C:\\Users\\Andrey\\.nuget\\packages\\",
-        "outputPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\AiPlayer3\\obj\\",
+        "outputPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\AiPlayer3\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Andrey\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -197,8 +197,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\BombermanGame.Shared\\BombermanGame.Shared.csproj": {
-                "projectPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\BombermanGame.Shared\\BombermanGame.Shared.csproj"
+              "Z:\\Мой диск\\GitHub\\BombermanTournament\\BombermanGame.Shared\\BombermanGame.Shared.csproj": {
+                "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\BombermanGame.Shared\\BombermanGame.Shared.csproj"
               }
             }
           }
@@ -232,14 +232,14 @@
         }
       }
     },
-    "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\AiPlayer4\\AiPlayer4.csproj": {
+    "Z:\\Мой диск\\GitHub\\BombermanTournament\\AiPlayer4\\AiPlayer4.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\AiPlayer4\\AiPlayer4.csproj",
+        "projectUniqueName": "Z:\\Мой диск\\GitHub\\BombermanTournament\\AiPlayer4\\AiPlayer4.csproj",
         "projectName": "AiPlayer4",
-        "projectPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\AiPlayer4\\AiPlayer4.csproj",
+        "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\AiPlayer4\\AiPlayer4.csproj",
         "packagesPath": "C:\\Users\\Andrey\\.nuget\\packages\\",
-        "outputPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\AiPlayer4\\obj\\",
+        "outputPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\AiPlayer4\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Andrey\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -254,8 +254,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\BombermanGame.Shared\\BombermanGame.Shared.csproj": {
-                "projectPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\BombermanGame.Shared\\BombermanGame.Shared.csproj"
+              "Z:\\Мой диск\\GitHub\\BombermanTournament\\BombermanGame.Shared\\BombermanGame.Shared.csproj": {
+                "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\BombermanGame.Shared\\BombermanGame.Shared.csproj"
               }
             }
           }
@@ -289,14 +289,14 @@
         }
       }
     },
-    "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\BombermanGame.Shared\\BombermanGame.Shared.csproj": {
+    "Z:\\Мой диск\\GitHub\\BombermanTournament\\BombermanGame.Shared\\BombermanGame.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\BombermanGame.Shared\\BombermanGame.Shared.csproj",
+        "projectUniqueName": "Z:\\Мой диск\\GitHub\\BombermanTournament\\BombermanGame.Shared\\BombermanGame.Shared.csproj",
         "projectName": "BombermanGame.Shared",
-        "projectPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\BombermanGame.Shared\\BombermanGame.Shared.csproj",
+        "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\BombermanGame.Shared\\BombermanGame.Shared.csproj",
         "packagesPath": "C:\\Users\\Andrey\\.nuget\\packages\\",
-        "outputPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\BombermanGame.Shared\\obj\\",
+        "outputPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\BombermanGame.Shared\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Andrey\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -342,14 +342,14 @@
         }
       }
     },
-    "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\BombermanGame\\BombermanGame.csproj": {
+    "Z:\\Мой диск\\GitHub\\BombermanTournament\\BombermanGame\\BombermanGame.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\BombermanGame\\BombermanGame.csproj",
+        "projectUniqueName": "Z:\\Мой диск\\GitHub\\BombermanTournament\\BombermanGame\\BombermanGame.csproj",
         "projectName": "BombermanGame",
-        "projectPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\BombermanGame\\BombermanGame.csproj",
+        "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\BombermanGame\\BombermanGame.csproj",
         "packagesPath": "C:\\Users\\Andrey\\.nuget\\packages\\",
-        "outputPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\BombermanGame\\obj\\",
+        "outputPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\BombermanGame\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Andrey\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -364,17 +364,17 @@
           "net7.0-windows7.0": {
             "targetAlias": "net7.0-windows",
             "projectReferences": {
-              "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\BombermanGame.Shared\\BombermanGame.Shared.csproj": {
-                "projectPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\BombermanGame.Shared\\BombermanGame.Shared.csproj"
+              "Z:\\Мой диск\\GitHub\\BombermanTournament\\BombermanGame.Shared\\BombermanGame.Shared.csproj": {
+                "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\BombermanGame.Shared\\BombermanGame.Shared.csproj"
               },
-              "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\Engine\\Engine.SharedInterfaces\\Engine.SharedInterfaces.csproj": {
-                "projectPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\Engine\\Engine.SharedInterfaces\\Engine.SharedInterfaces.csproj"
+              "Z:\\Мой диск\\GitHub\\BombermanTournament\\Engine\\Engine.SharedInterfaces\\Engine.SharedInterfaces.csproj": {
+                "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Engine\\Engine.SharedInterfaces\\Engine.SharedInterfaces.csproj"
               },
-              "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\Engine\\Engine.Shared\\Engine.Shared.csproj": {
-                "projectPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\Engine\\Engine.Shared\\Engine.Shared.csproj"
+              "Z:\\Мой диск\\GitHub\\BombermanTournament\\Engine\\Engine.Shared\\Engine.Shared.csproj": {
+                "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Engine\\Engine.Shared\\Engine.Shared.csproj"
               },
-              "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\Engine\\Engine\\Engine.csproj": {
-                "projectPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\Engine\\Engine\\Engine.csproj"
+              "Z:\\Мой диск\\GitHub\\BombermanTournament\\Engine\\Engine\\Engine.csproj": {
+                "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Engine\\Engine\\Engine.csproj"
               }
             }
           }
@@ -411,14 +411,14 @@
         }
       }
     },
-    "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\Engine\\Engine.Graphic\\Engine.Graphic.csproj": {
+    "Z:\\Мой диск\\GitHub\\BombermanTournament\\Engine\\Engine.Graphic\\Engine.Graphic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\Engine\\Engine.Graphic\\Engine.Graphic.csproj",
+        "projectUniqueName": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Engine\\Engine.Graphic\\Engine.Graphic.csproj",
         "projectName": "Engine.Graphic",
-        "projectPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\Engine\\Engine.Graphic\\Engine.Graphic.csproj",
+        "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Engine\\Engine.Graphic\\Engine.Graphic.csproj",
         "packagesPath": "C:\\Users\\Andrey\\.nuget\\packages\\",
-        "outputPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\Engine\\Engine.Graphic\\obj\\",
+        "outputPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Engine\\Engine.Graphic\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Andrey\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -433,8 +433,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\Engine\\Engine.SharedInterfaces\\Engine.SharedInterfaces.csproj": {
-                "projectPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\Engine\\Engine.SharedInterfaces\\Engine.SharedInterfaces.csproj"
+              "Z:\\Мой диск\\GitHub\\BombermanTournament\\Engine\\Engine.SharedInterfaces\\Engine.SharedInterfaces.csproj": {
+                "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Engine\\Engine.SharedInterfaces\\Engine.SharedInterfaces.csproj"
               }
             }
           }
@@ -474,14 +474,14 @@
         }
       }
     },
-    "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\Engine\\Engine.SharedInterfaces\\Engine.SharedInterfaces.csproj": {
+    "Z:\\Мой диск\\GitHub\\BombermanTournament\\Engine\\Engine.SharedInterfaces\\Engine.SharedInterfaces.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\Engine\\Engine.SharedInterfaces\\Engine.SharedInterfaces.csproj",
+        "projectUniqueName": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Engine\\Engine.SharedInterfaces\\Engine.SharedInterfaces.csproj",
         "projectName": "Engine.SharedInterfaces",
-        "projectPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\Engine\\Engine.SharedInterfaces\\Engine.SharedInterfaces.csproj",
+        "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Engine\\Engine.SharedInterfaces\\Engine.SharedInterfaces.csproj",
         "packagesPath": "C:\\Users\\Andrey\\.nuget\\packages\\",
-        "outputPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\Engine\\Engine.SharedInterfaces\\obj\\",
+        "outputPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Engine\\Engine.SharedInterfaces\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Andrey\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -533,14 +533,14 @@
         }
       }
     },
-    "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\Engine\\Engine.Shared\\Engine.Shared.csproj": {
+    "Z:\\Мой диск\\GitHub\\BombermanTournament\\Engine\\Engine.Shared\\Engine.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\Engine\\Engine.Shared\\Engine.Shared.csproj",
+        "projectUniqueName": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Engine\\Engine.Shared\\Engine.Shared.csproj",
         "projectName": "Engine.Shared",
-        "projectPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\Engine\\Engine.Shared\\Engine.Shared.csproj",
+        "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Engine\\Engine.Shared\\Engine.Shared.csproj",
         "packagesPath": "C:\\Users\\Andrey\\.nuget\\packages\\",
-        "outputPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\Engine\\Engine.Shared\\obj\\",
+        "outputPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Engine\\Engine.Shared\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Andrey\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -555,8 +555,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\Engine\\Engine.SharedInterfaces\\Engine.SharedInterfaces.csproj": {
-                "projectPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\Engine\\Engine.SharedInterfaces\\Engine.SharedInterfaces.csproj"
+              "Z:\\Мой диск\\GitHub\\BombermanTournament\\Engine\\Engine.SharedInterfaces\\Engine.SharedInterfaces.csproj": {
+                "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Engine\\Engine.SharedInterfaces\\Engine.SharedInterfaces.csproj"
               }
             }
           }
@@ -596,14 +596,14 @@
         }
       }
     },
-    "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\Engine\\Engine\\Engine.csproj": {
+    "Z:\\Мой диск\\GitHub\\BombermanTournament\\Engine\\Engine\\Engine.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\Engine\\Engine\\Engine.csproj",
+        "projectUniqueName": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Engine\\Engine\\Engine.csproj",
         "projectName": "Engine",
-        "projectPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\Engine\\Engine\\Engine.csproj",
+        "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Engine\\Engine\\Engine.csproj",
         "packagesPath": "C:\\Users\\Andrey\\.nuget\\packages\\",
-        "outputPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\Engine\\Engine\\obj\\",
+        "outputPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Engine\\Engine\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Andrey\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -618,8 +618,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\Engine\\Engine.Graphic\\Engine.Graphic.csproj": {
-                "projectPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\Engine\\Engine.Graphic\\Engine.Graphic.csproj"
+              "Z:\\Мой диск\\GitHub\\BombermanTournament\\Engine\\Engine.Graphic\\Engine.Graphic.csproj": {
+                "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Engine\\Engine.Graphic\\Engine.Graphic.csproj"
               }
             }
           }
@@ -653,14 +653,14 @@
         }
       }
     },
-    "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\TestAi\\TestAi.csproj": {
+    "Z:\\Мой диск\\GitHub\\BombermanTournament\\TestAi\\TestAi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\TestAi\\TestAi.csproj",
+        "projectUniqueName": "Z:\\Мой диск\\GitHub\\BombermanTournament\\TestAi\\TestAi.csproj",
         "projectName": "TestAi",
-        "projectPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\TestAi\\TestAi.csproj",
+        "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\TestAi\\TestAi.csproj",
         "packagesPath": "C:\\Users\\Andrey\\.nuget\\packages\\",
-        "outputPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\TestAi\\obj\\",
+        "outputPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\TestAi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Andrey\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -675,8 +675,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\BombermanGame.Shared\\BombermanGame.Shared.csproj": {
-                "projectPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\BombermanGame.Shared\\BombermanGame.Shared.csproj"
+              "Z:\\Мой диск\\GitHub\\BombermanTournament\\BombermanGame.Shared\\BombermanGame.Shared.csproj": {
+                "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\BombermanGame.Shared\\BombermanGame.Shared.csproj"
               }
             }
           }
@@ -710,14 +710,14 @@
         }
       }
     },
-    "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\Tournament\\Tournament.csproj": {
+    "Z:\\Мой диск\\GitHub\\BombermanTournament\\Tournament\\Tournament.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\Tournament\\Tournament.csproj",
+        "projectUniqueName": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Tournament\\Tournament.csproj",
         "projectName": "Tournament",
-        "projectPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\Tournament\\Tournament.csproj",
+        "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Tournament\\Tournament.csproj",
         "packagesPath": "C:\\Users\\Andrey\\.nuget\\packages\\",
-        "outputPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\Tournament\\obj\\",
+        "outputPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Tournament\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Andrey\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -732,26 +732,26 @@
           "net7.0-windows7.0": {
             "targetAlias": "net7.0-windows",
             "projectReferences": {
-              "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\AiExamples\\AiExamples.csproj": {
-                "projectPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\AiExamples\\AiExamples.csproj"
+              "Z:\\Мой диск\\GitHub\\BombermanTournament\\AiExamples\\AiExamples.csproj": {
+                "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\AiExamples\\AiExamples.csproj"
               },
-              "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\AiPlayer1\\AiPlayer1.csproj": {
-                "projectPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\AiPlayer1\\AiPlayer1.csproj"
+              "Z:\\Мой диск\\GitHub\\BombermanTournament\\AiPlayer1\\AiPlayer1.csproj": {
+                "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\AiPlayer1\\AiPlayer1.csproj"
               },
-              "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\AiPlayer2\\AiPlayer2.csproj": {
-                "projectPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\AiPlayer2\\AiPlayer2.csproj"
+              "Z:\\Мой диск\\GitHub\\BombermanTournament\\AiPlayer2\\AiPlayer2.csproj": {
+                "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\AiPlayer2\\AiPlayer2.csproj"
               },
-              "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\AiPlayer3\\AiPlayer3.csproj": {
-                "projectPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\AiPlayer3\\AiPlayer3.csproj"
+              "Z:\\Мой диск\\GitHub\\BombermanTournament\\AiPlayer3\\AiPlayer3.csproj": {
+                "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\AiPlayer3\\AiPlayer3.csproj"
               },
-              "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\AiPlayer4\\AiPlayer4.csproj": {
-                "projectPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\AiPlayer4\\AiPlayer4.csproj"
+              "Z:\\Мой диск\\GitHub\\BombermanTournament\\AiPlayer4\\AiPlayer4.csproj": {
+                "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\AiPlayer4\\AiPlayer4.csproj"
               },
-              "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\BombermanGame\\BombermanGame.csproj": {
-                "projectPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\BombermanGame\\BombermanGame.csproj"
+              "Z:\\Мой диск\\GitHub\\BombermanTournament\\BombermanGame\\BombermanGame.csproj": {
+                "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\BombermanGame\\BombermanGame.csproj"
               },
-              "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\TestAi\\TestAi.csproj": {
-                "projectPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\TestAi\\TestAi.csproj"
+              "Z:\\Мой диск\\GitHub\\BombermanTournament\\TestAi\\TestAi.csproj": {
+                "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\TestAi\\TestAi.csproj"
               }
             }
           }

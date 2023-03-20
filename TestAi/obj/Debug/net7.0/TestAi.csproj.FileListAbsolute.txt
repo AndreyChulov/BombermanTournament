@@ -13,3 +13,18 @@ Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\TestAi\o
 Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\TestAi\obj\Debug\net7.0\refint\TestAi.dll
 Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\TestAi\obj\Debug\net7.0\TestAi.pdb
 Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\TestAi\obj\Debug\net7.0\ref\TestAi.dll
+Z:\Мой диск\GitHub\BombermanTournament\TestAi\bin\Debug\net7.0\TestAi.deps.json
+Z:\Мой диск\GitHub\BombermanTournament\TestAi\bin\Debug\net7.0\TestAi.dll
+Z:\Мой диск\GitHub\BombermanTournament\TestAi\bin\Debug\net7.0\TestAi.pdb
+Z:\Мой диск\GitHub\BombermanTournament\TestAi\bin\Debug\net7.0\BombermanGame.Shared.dll
+Z:\Мой диск\GitHub\BombermanTournament\TestAi\bin\Debug\net7.0\BombermanGame.Shared.pdb
+Z:\Мой диск\GitHub\BombermanTournament\TestAi\obj\Debug\net7.0\TestAi.csproj.AssemblyReference.cache
+Z:\Мой диск\GitHub\BombermanTournament\TestAi\obj\Debug\net7.0\TestAi.GeneratedMSBuildEditorConfig.editorconfig
+Z:\Мой диск\GitHub\BombermanTournament\TestAi\obj\Debug\net7.0\TestAi.AssemblyInfoInputs.cache
+Z:\Мой диск\GitHub\BombermanTournament\TestAi\obj\Debug\net7.0\TestAi.AssemblyInfo.cs
+Z:\Мой диск\GitHub\BombermanTournament\TestAi\obj\Debug\net7.0\TestAi.csproj.CoreCompileInputs.cache
+Z:\Мой диск\GitHub\BombermanTournament\TestAi\obj\Debug\net7.0\TestAi.csproj.CopyComplete
+Z:\Мой диск\GitHub\BombermanTournament\TestAi\obj\Debug\net7.0\TestAi.dll
+Z:\Мой диск\GitHub\BombermanTournament\TestAi\obj\Debug\net7.0\refint\TestAi.dll
+Z:\Мой диск\GitHub\BombermanTournament\TestAi\obj\Debug\net7.0\TestAi.pdb
+Z:\Мой диск\GitHub\BombermanTournament\TestAi\obj\Debug\net7.0\ref\TestAi.dll

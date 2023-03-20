@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JIhQOnJFfg0ommcd5jgfJ4kcJg0jruG/K1RNAM6KqFIx+3NHpxJeEghDdx4XQdxIV9exTo724zOOqIyh0P12Fg==",
+  "dgSpecHash": "+BeS0GzOsdk4i65NC/tY/BGEVnDSE0mqMsEYU+B0xi4MEjijy5IU1h0hPoyATCPAV/feryxgtn+mkQ51foSjEQ==",
   "success": true,
-  "projectFilePath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\TestDX12_1\\TestDX12_1.csproj",
+  "projectFilePath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\TestDX12_1\\TestDX12_1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Andrey\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.1\\microsoft.bcl.hashcode.1.1.1.nupkg.sha512",
     "C:\\Users\\Andrey\\.nuget\\packages\\polysharp\\1.10.0\\polysharp.1.10.0.nupkg.sha512",

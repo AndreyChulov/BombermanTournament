@@ -13,3 +13,18 @@ Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\Engine\E
 Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\Engine\Engine.Shared\obj\Debug\net7.0\refint\Engine.Shared.dll
 Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\Engine\Engine.Shared\obj\Debug\net7.0\Engine.Shared.pdb
 Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\Engine\Engine.Shared\obj\Debug\net7.0\ref\Engine.Shared.dll
+Z:\Мой диск\GitHub\BombermanTournament\Engine\Engine.Shared\bin\Debug\net7.0\Engine.Shared.deps.json
+Z:\Мой диск\GitHub\BombermanTournament\Engine\Engine.Shared\bin\Debug\net7.0\Engine.Shared.dll
+Z:\Мой диск\GitHub\BombermanTournament\Engine\Engine.Shared\bin\Debug\net7.0\Engine.Shared.pdb
+Z:\Мой диск\GitHub\BombermanTournament\Engine\Engine.Shared\bin\Debug\net7.0\Engine.SharedInterfaces.dll
+Z:\Мой диск\GitHub\BombermanTournament\Engine\Engine.Shared\bin\Debug\net7.0\Engine.SharedInterfaces.pdb
+Z:\Мой диск\GitHub\BombermanTournament\Engine\Engine.Shared\obj\Debug\net7.0\Engine.Shared.csproj.AssemblyReference.cache
+Z:\Мой диск\GitHub\BombermanTournament\Engine\Engine.Shared\obj\Debug\net7.0\Engine.Shared.GeneratedMSBuildEditorConfig.editorconfig
+Z:\Мой диск\GitHub\BombermanTournament\Engine\Engine.Shared\obj\Debug\net7.0\Engine.Shared.AssemblyInfoInputs.cache
+Z:\Мой диск\GitHub\BombermanTournament\Engine\Engine.Shared\obj\Debug\net7.0\Engine.Shared.AssemblyInfo.cs
+Z:\Мой диск\GitHub\BombermanTournament\Engine\Engine.Shared\obj\Debug\net7.0\Engine.Shared.csproj.CoreCompileInputs.cache
+Z:\Мой диск\GitHub\BombermanTournament\Engine\Engine.Shared\obj\Debug\net7.0\Engine.Shared.csproj.CopyComplete
+Z:\Мой диск\GitHub\BombermanTournament\Engine\Engine.Shared\obj\Debug\net7.0\Engine.Shared.dll
+Z:\Мой диск\GitHub\BombermanTournament\Engine\Engine.Shared\obj\Debug\net7.0\refint\Engine.Shared.dll
+Z:\Мой диск\GitHub\BombermanTournament\Engine\Engine.Shared\obj\Debug\net7.0\Engine.Shared.pdb
+Z:\Мой диск\GitHub\BombermanTournament\Engine\Engine.Shared\obj\Debug\net7.0\ref\Engine.Shared.dll

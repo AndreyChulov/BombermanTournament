@@ -30,3 +30,35 @@ Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\TestDX12
 Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\TestDX12_3\obj\Debug\net7.0-windows\TestDX12_3.pdb
 Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\TestDX12_3\obj\Debug\net7.0-windows\TestDX12_3.genruntimeconfig.cache
 Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\TestDX12_3\obj\Debug\net7.0-windows\ref\TestDX12_3.dll
+Z:\Мой диск\GitHub\BombermanTournament\TestDX12_3\bin\Debug\net7.0-windows\TestDX12_3.exe
+Z:\Мой диск\GitHub\BombermanTournament\TestDX12_3\bin\Debug\net7.0-windows\TestDX12_3.deps.json
+Z:\Мой диск\GitHub\BombermanTournament\TestDX12_3\bin\Debug\net7.0-windows\TestDX12_3.runtimeconfig.json
+Z:\Мой диск\GitHub\BombermanTournament\TestDX12_3\bin\Debug\net7.0-windows\TestDX12_3.dll
+Z:\Мой диск\GitHub\BombermanTournament\TestDX12_3\bin\Debug\net7.0-windows\TestDX12_3.pdb
+Z:\Мой диск\GitHub\BombermanTournament\TestDX12_3\bin\Debug\net7.0-windows\SharpGen.Runtime.dll
+Z:\Мой диск\GitHub\BombermanTournament\TestDX12_3\bin\Debug\net7.0-windows\SharpGen.Runtime.COM.dll
+Z:\Мой диск\GitHub\BombermanTournament\TestDX12_3\bin\Debug\net7.0-windows\Vortice.Direct2D1.dll
+Z:\Мой диск\GitHub\BombermanTournament\TestDX12_3\bin\Debug\net7.0-windows\Vortice.DirectX.dll
+Z:\Мой диск\GitHub\BombermanTournament\TestDX12_3\bin\Debug\net7.0-windows\Vortice.DXGI.dll
+Z:\Мой диск\GitHub\BombermanTournament\TestDX12_3\bin\Debug\net7.0-windows\Vortice.Mathematics.dll
+Z:\Мой диск\GitHub\BombermanTournament\TestDX12_3\bin\Debug\net7.0-windows\Engine.dll
+Z:\Мой диск\GitHub\BombermanTournament\TestDX12_3\bin\Debug\net7.0-windows\Engine.Graphic.dll
+Z:\Мой диск\GitHub\BombermanTournament\TestDX12_3\bin\Debug\net7.0-windows\Engine.Shared.dll
+Z:\Мой диск\GitHub\BombermanTournament\TestDX12_3\bin\Debug\net7.0-windows\Engine.SharedInterfaces.dll
+Z:\Мой диск\GitHub\BombermanTournament\TestDX12_3\bin\Debug\net7.0-windows\Engine.Graphic.pdb
+Z:\Мой диск\GitHub\BombermanTournament\TestDX12_3\bin\Debug\net7.0-windows\Engine.SharedInterfaces.pdb
+Z:\Мой диск\GitHub\BombermanTournament\TestDX12_3\bin\Debug\net7.0-windows\Engine.Shared.pdb
+Z:\Мой диск\GitHub\BombermanTournament\TestDX12_3\bin\Debug\net7.0-windows\Engine.pdb
+Z:\Мой диск\GitHub\BombermanTournament\TestDX12_3\obj\Debug\net7.0-windows\TestDX12_3.csproj.AssemblyReference.cache
+Z:\Мой диск\GitHub\BombermanTournament\TestDX12_3\obj\Debug\net7.0-windows\TestDX12_3.Form1.resources
+Z:\Мой диск\GitHub\BombermanTournament\TestDX12_3\obj\Debug\net7.0-windows\TestDX12_3.csproj.GenerateResource.cache
+Z:\Мой диск\GitHub\BombermanTournament\TestDX12_3\obj\Debug\net7.0-windows\TestDX12_3.GeneratedMSBuildEditorConfig.editorconfig
+Z:\Мой диск\GitHub\BombermanTournament\TestDX12_3\obj\Debug\net7.0-windows\TestDX12_3.AssemblyInfoInputs.cache
+Z:\Мой диск\GitHub\BombermanTournament\TestDX12_3\obj\Debug\net7.0-windows\TestDX12_3.AssemblyInfo.cs
+Z:\Мой диск\GitHub\BombermanTournament\TestDX12_3\obj\Debug\net7.0-windows\TestDX12_3.csproj.CoreCompileInputs.cache
+Z:\Мой диск\GitHub\BombermanTournament\TestDX12_3\obj\Debug\net7.0-windows\TestDX12_3.csproj.CopyComplete
+Z:\Мой диск\GitHub\BombermanTournament\TestDX12_3\obj\Debug\net7.0-windows\TestDX12_3.dll
+Z:\Мой диск\GitHub\BombermanTournament\TestDX12_3\obj\Debug\net7.0-windows\refint\TestDX12_3.dll
+Z:\Мой диск\GitHub\BombermanTournament\TestDX12_3\obj\Debug\net7.0-windows\TestDX12_3.pdb
+Z:\Мой диск\GitHub\BombermanTournament\TestDX12_3\obj\Debug\net7.0-windows\TestDX12_3.genruntimeconfig.cache
+Z:\Мой диск\GitHub\BombermanTournament\TestDX12_3\obj\Debug\net7.0-windows\ref\TestDX12_3.dll

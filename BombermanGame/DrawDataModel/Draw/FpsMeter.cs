@@ -19,12 +19,12 @@ namespace BombermanGame.DrawDataModel.Draw
                     (int)(0.02f * canvasHeight),
                     (int)(0.07f * canvasWidth),
                     (int)(0.05f * canvasHeight)
-                ), canvasSize 
+                ), canvasHeight * 0.03f 
             );
         }
 
-        private FpsMeter(Rectangle drawRectangle, Size canvasSize) 
-            : base(drawRectangle, canvasSize)
+        private FpsMeter(Rectangle drawRectangle, float fontSize) 
+            : base(drawRectangle, fontSize)
         {
         }
     }

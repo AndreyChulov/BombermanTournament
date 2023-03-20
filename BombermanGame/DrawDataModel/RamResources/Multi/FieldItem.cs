@@ -9,7 +9,7 @@ namespace BombermanGame.DrawDataModel.RamResources.Multi
 {
     public class FieldItem :BaseRamMultiResource
     {
-        public static int ResourceGroupId = 1001;
+        public static int ResourceGroupId = 2000;
 
         public override string ResourceName { get; }
         public Bitmap FieldBackgroundBitmap { get; }
@@ -26,6 +26,7 @@ namespace BombermanGame.DrawDataModel.RamResources.Multi
         public Bitmap Player4 { get; }
         public TextFormat NicknameTextFormat { get; }
         public Brush NicknameForegroundBrush { get; }
+        public Brush NicknameShadowBrush { get; }
         
         public override List<IDisposable> AssociatedResources { get; }
         
@@ -46,7 +47,8 @@ namespace BombermanGame.DrawDataModel.RamResources.Multi
             Bitmap player3, 
             Bitmap player4, 
             TextFormat nicknameTextFormat, 
-            Brush nicknameForegroundBrush)
+            Brush nicknameForegroundBrush, 
+            Brush nicknameShadowBrush)
         {
             ResourceName = resourceName;
             FieldBackgroundBitmap = fieldBackgroundBitmap;
@@ -63,6 +65,7 @@ namespace BombermanGame.DrawDataModel.RamResources.Multi
             Player4 = player4;
             NicknameTextFormat = nicknameTextFormat;
             NicknameForegroundBrush = nicknameForegroundBrush;
+            NicknameShadowBrush = nicknameShadowBrush;
 
             AssociatedResources = new List<IDisposable>
             {
@@ -79,7 +82,8 @@ namespace BombermanGame.DrawDataModel.RamResources.Multi
                 player3,
                 player4,
                 nicknameTextFormat,
-                nicknameForegroundBrush
+                nicknameForegroundBrush,
+                nicknameShadowBrush
             };
         }
     }

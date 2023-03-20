@@ -330,11 +330,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\Engine\\Engine\\Engine.csproj",
+      "projectUniqueName": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Engine\\Engine\\Engine.csproj",
       "projectName": "Engine",
-      "projectPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\Engine\\Engine\\Engine.csproj",
+      "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Engine\\Engine\\Engine.csproj",
       "packagesPath": "C:\\Users\\Andrey\\.nuget\\packages\\",
-      "outputPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\Engine\\Engine\\obj\\",
+      "outputPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Engine\\Engine\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Andrey\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -349,8 +349,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\Engine\\Engine.Graphic\\Engine.Graphic.csproj": {
-              "projectPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\Engine\\Engine.Graphic\\Engine.Graphic.csproj"
+            "Z:\\Мой диск\\GitHub\\BombermanTournament\\Engine\\Engine.Graphic\\Engine.Graphic.csproj": {
+              "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Engine\\Engine.Graphic\\Engine.Graphic.csproj"
             }
           }
         }

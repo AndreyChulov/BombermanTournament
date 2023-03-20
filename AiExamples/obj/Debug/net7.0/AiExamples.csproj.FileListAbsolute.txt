@@ -13,3 +13,18 @@ Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\AiExampl
 Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\AiExamples\obj\Debug\net7.0\refint\AiExamples.dll
 Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\AiExamples\obj\Debug\net7.0\AiExamples.pdb
 Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\AiExamples\obj\Debug\net7.0\ref\AiExamples.dll
+Z:\Мой диск\GitHub\BombermanTournament\AiExamples\bin\Debug\net7.0\AiExamples.deps.json
+Z:\Мой диск\GitHub\BombermanTournament\AiExamples\bin\Debug\net7.0\AiExamples.dll
+Z:\Мой диск\GitHub\BombermanTournament\AiExamples\bin\Debug\net7.0\AiExamples.pdb
+Z:\Мой диск\GitHub\BombermanTournament\AiExamples\bin\Debug\net7.0\BombermanGame.Shared.dll
+Z:\Мой диск\GitHub\BombermanTournament\AiExamples\bin\Debug\net7.0\BombermanGame.Shared.pdb
+Z:\Мой диск\GitHub\BombermanTournament\AiExamples\obj\Debug\net7.0\AiExamples.csproj.AssemblyReference.cache
+Z:\Мой диск\GitHub\BombermanTournament\AiExamples\obj\Debug\net7.0\AiExamples.GeneratedMSBuildEditorConfig.editorconfig
+Z:\Мой диск\GitHub\BombermanTournament\AiExamples\obj\Debug\net7.0\AiExamples.AssemblyInfoInputs.cache
+Z:\Мой диск\GitHub\BombermanTournament\AiExamples\obj\Debug\net7.0\AiExamples.AssemblyInfo.cs
+Z:\Мой диск\GitHub\BombermanTournament\AiExamples\obj\Debug\net7.0\AiExamples.csproj.CoreCompileInputs.cache
+Z:\Мой диск\GitHub\BombermanTournament\AiExamples\obj\Debug\net7.0\AiExamples.csproj.CopyComplete
+Z:\Мой диск\GitHub\BombermanTournament\AiExamples\obj\Debug\net7.0\AiExamples.dll
+Z:\Мой диск\GitHub\BombermanTournament\AiExamples\obj\Debug\net7.0\refint\AiExamples.dll
+Z:\Мой диск\GitHub\BombermanTournament\AiExamples\obj\Debug\net7.0\AiExamples.pdb
+Z:\Мой диск\GitHub\BombermanTournament\AiExamples\obj\Debug\net7.0\ref\AiExamples.dll

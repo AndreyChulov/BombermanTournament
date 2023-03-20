@@ -11,13 +11,11 @@ namespace Engine.Shared.GraphicEngine.Draw
 {
     public class Text : BaseDraw
     {
-        private readonly Rectangle _drawRectangle;
-        private readonly Size _canvasSize;
-
-        private IDWriteTextFormat? _textFormat;
-        private ID2D1Brush? _textForegroundBrush;
-        
-        public string TextToDraw { get; set; }
+        protected Rectangle DrawRectangle { get; }
+        protected float FontSize { get; }
+        protected IDWriteTextFormat? TextFormat { get; private set; }
+        protected ID2D1Brush? TextForegroundBrush { get; private set; }
+        protected string TextToDraw { get; set; }
 
         protected override string LinkedResourceName => "systemText";
         protected override int LinkedResourceGroupId => SystemText.ResourceGroupId;
@@ -34,14 +32,15 @@ namespace Engine.Shared.GraphicEngine.Draw
                         (int)(drawRectangle.Y * canvasHeight),
                         (int)(drawRectangle.Width * canvasWidth),
                         (int)(drawRectangle.Height * canvasHeight)
-                    ), canvasSize 
+                    ),
+                    canvasHeight * 0.03f
             );
         }
 
-        protected Text(string textToDraw, Rectangle drawRectangle, Size canvasSize)
+        protected Text(string textToDraw, Rectangle drawRectangle, float fontSize)
         {
-            _drawRectangle = drawRectangle;
-            _canvasSize = canvasSize;//variable is not needed, this code should be refactored
+            DrawRectangle = drawRectangle;
+            FontSize = fontSize;
             TextToDraw = textToDraw;
         }
         
@@ -49,8 +48,8 @@ namespace Engine.Shared.GraphicEngine.Draw
         {
             SystemText systemText = (SystemText) resource;
             
-            _textFormat = (IDWriteTextFormat)(systemText.TextFormat.Resource);
-            _textForegroundBrush = (ID2D1Brush) (systemText.Brush.Resource);
+            TextFormat = (IDWriteTextFormat)(systemText.TextFormat.Resource);
+            TextForegroundBrush = (ID2D1Brush) (systemText.TextBrush.Resource);
         }
 
         protected override IRamResource CreateIRamResource(
@@ -59,20 +58,20 @@ namespace Engine.Shared.GraphicEngine.Draw
         {
             IDWriteTextFormat idWriteTextFormat = directWriteFactory.CreateTextFormat(
                 "Times new roman", FontWeight.Normal, FontStyle.Italic, 
-                FontStretch.Normal, _canvasSize.Height * 0.03f);
+                FontStretch.Normal, FontSize);
             ID2D1Brush id2D1Brush= renderTarget.CreateSolidColorBrush(new Color4(Color3.Coral, 1f));
 
             TextFormat textFormat = new("systemTextFormat", idWriteTextFormat);
-            Brush backgroundBrush = new("systemTextBrush", id2D1Brush);
+            Brush textBrush = new("systemTextBrush", id2D1Brush);
 
-            return new SystemText(LinkedResourceName, textFormat, backgroundBrush);
+            return new SystemText(LinkedResourceName, textFormat, textBrush);
         }
 
         public override void Draw(ID2D1HwndRenderTarget renderTarget)
         {
-            if ((_textFormat != null) && (_textForegroundBrush != null))
+            if ((TextFormat != null) && (TextForegroundBrush != null))
             {
-                renderTarget.DrawText(TextToDraw, _textFormat, _drawRectangle, _textForegroundBrush);
+                renderTarget.DrawText(TextToDraw, TextFormat, DrawRectangle, TextForegroundBrush);
             }
         }
     }

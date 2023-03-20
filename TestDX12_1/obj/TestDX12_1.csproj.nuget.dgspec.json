@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\TestDX12_1\\TestDX12_1.csproj": {}
+    "Z:\\Мой диск\\GitHub\\BombermanTournament\\TestDX12_1\\TestDX12_1.csproj": {}
   },
   "projects": {
-    "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\TestDX12_1\\TestDX12_1.csproj": {
+    "Z:\\Мой диск\\GitHub\\BombermanTournament\\TestDX12_1\\TestDX12_1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\TestDX12_1\\TestDX12_1.csproj",
+        "projectUniqueName": "Z:\\Мой диск\\GitHub\\BombermanTournament\\TestDX12_1\\TestDX12_1.csproj",
         "projectName": "TestDX12_1",
-        "projectPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\TestDX12_1\\TestDX12_1.csproj",
+        "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\TestDX12_1\\TestDX12_1.csproj",
         "packagesPath": "C:\\Users\\Andrey\\.nuget\\packages\\",
-        "outputPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\TestDX12_1\\obj\\",
+        "outputPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\TestDX12_1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Andrey\\AppData\\Roaming\\NuGet\\NuGet.Config"

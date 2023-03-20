@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sqYtDHr+J4eVo3wEHd63Zt5aXQbO4c8tdSIZawqdwxawaDxWXcpdq2oHbBsFc4prQUiT5ZRnJPAfFFT5j1zCXQ==",
+  "dgSpecHash": "qMABpcUdCk/9Mi/CYPYhPfGngy+GKn5lb8UD/ANw+Kg0L1ej2v+oaRS0kSmonGJwl/9axyXJx/sK1TYs8URhDA==",
   "success": true,
-  "projectFilePath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\Engine\\Engine.SharedInterfaces\\Engine.SharedInterfaces.csproj",
+  "projectFilePath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Engine\\Engine.SharedInterfaces\\Engine.SharedInterfaces.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Andrey\\.nuget\\packages\\polysharp\\1.10.0\\polysharp.1.10.0.nupkg.sha512",
     "C:\\Users\\Andrey\\.nuget\\packages\\sharpgen.runtime\\2.0.0-beta.13\\sharpgen.runtime.2.0.0-beta.13.nupkg.sha512",

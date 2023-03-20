@@ -38,6 +38,7 @@ namespace BombermanGame.DrawDataModel.Draw
         private ID2D1Bitmap? _player4Bitmap;
         private IDWriteTextFormat? _nicknameTextFormat;
         private ID2D1Brush? _nicknameForegroundBrush;
+        private ID2D1Brush? _nicknameShadowBrush;
 
         private readonly FieldItemEnum[][] _fieldItems;
         private readonly RectangleF _targetRectangle;
@@ -97,6 +98,7 @@ namespace BombermanGame.DrawDataModel.Draw
             _player4Bitmap = (ID2D1Bitmap) (fieldItem.Player4.Resource);
             _nicknameForegroundBrush = (ID2D1Brush) (fieldItem.NicknameForegroundBrush.Resource);
             _nicknameTextFormat = (IDWriteTextFormat) (fieldItem.NicknameTextFormat.Resource);
+            _nicknameShadowBrush = (ID2D1Brush) (fieldItem.NicknameShadowBrush.Resource);
         }
 
         private RectangleF[][] CreateFieldItemsTargetRects()
@@ -129,6 +131,7 @@ namespace BombermanGame.DrawDataModel.Draw
             return fieldItemsTargetRects;
         }
 
+        //refactoring needed
         protected override IRamResource CreateIRamResource(
             ID2D1HwndRenderTarget renderTarget, IDWriteFactory directWriteFactory)
         {
@@ -227,12 +230,18 @@ namespace BombermanGame.DrawDataModel.Draw
                     $"{LinkedResourceName}.NicknameBrush",
                     renderTarget.CreateSolidColorBrush(new Color4(Color3.Red, 1f)
                     )
+                ),
+                new Brush(
+                    $"{LinkedResourceName}.NicknameBrush",
+                    renderTarget.CreateSolidColorBrush(new Color4(Color3.Black, 1f)
+                    )
                 )
             );
 
             return fieldItem;
         }
 
+        //refactoring needed
         public override void Draw(ID2D1HwndRenderTarget renderTarget)
         {
             renderTarget.DrawBitmap(
@@ -328,6 +337,14 @@ namespace BombermanGame.DrawDataModel.Draw
                                 _playerInfoCollection.GetPlayerInfo(0).Nickname,
                                 _nicknameTextFormat,
                                 new RectangleF(
+                                    targetRect.X + 5, targetRect.Y - _nicknameFontSize + 5, 
+                                    targetRect.Width, _nicknameFontSize + 10),
+                                _nicknameShadowBrush
+                            );
+                            renderTarget.DrawText(
+                                _playerInfoCollection.GetPlayerInfo(0).Nickname,
+                                _nicknameTextFormat,
+                                new RectangleF(
                                     targetRect.X, targetRect.Y - _nicknameFontSize, 
                                     targetRect.Width, _nicknameFontSize + 10),
                                 _nicknameForegroundBrush
@@ -340,6 +357,14 @@ namespace BombermanGame.DrawDataModel.Draw
                                 1f,
                                 BitmapInterpolationMode.Linear,
                                 null
+                            );
+                            renderTarget.DrawText(
+                                _playerInfoCollection.GetPlayerInfo(1).Nickname,
+                                _nicknameTextFormat,
+                                new RectangleF(
+                                    targetRect.X + 5, targetRect.Y - _nicknameFontSize + 5, 
+                                    targetRect.Width, _nicknameFontSize + 10),
+                                _nicknameShadowBrush
                             );
                             renderTarget.DrawText(
                                 _playerInfoCollection.GetPlayerInfo(1).Nickname,
@@ -362,6 +387,14 @@ namespace BombermanGame.DrawDataModel.Draw
                                 _playerInfoCollection.GetPlayerInfo(2).Nickname,
                                 _nicknameTextFormat,
                                 new RectangleF(
+                                    targetRect.X + 5, targetRect.Y - _nicknameFontSize + 5, 
+                                    targetRect.Width, _nicknameFontSize + 10),
+                                _nicknameShadowBrush
+                            );
+                            renderTarget.DrawText(
+                                _playerInfoCollection.GetPlayerInfo(2).Nickname,
+                                _nicknameTextFormat,
+                                new RectangleF(
                                     targetRect.X, targetRect.Y - _nicknameFontSize, 
                                     targetRect.Width, _nicknameFontSize + 10),
                                 _nicknameForegroundBrush
@@ -374,6 +407,14 @@ namespace BombermanGame.DrawDataModel.Draw
                                 1f,
                                 BitmapInterpolationMode.Linear,
                                 null
+                            );
+                            renderTarget.DrawText(
+                                _playerInfoCollection.GetPlayerInfo(3).Nickname,
+                                _nicknameTextFormat,
+                                new RectangleF(
+                                    targetRect.X + 5, targetRect.Y - _nicknameFontSize + 5, 
+                                    targetRect.Width, _nicknameFontSize + 10),
+                                _nicknameShadowBrush
                             );
                             renderTarget.DrawText(
                                 _playerInfoCollection.GetPlayerInfo(3).Nickname,
@@ -403,6 +444,14 @@ namespace BombermanGame.DrawDataModel.Draw
                                 _playerInfoCollection.GetPlayerInfo(0).Nickname,
                                 _nicknameTextFormat,
                                 new RectangleF(
+                                    targetRect.X + 5, targetRect.Y - _nicknameFontSize + 5, 
+                                    targetRect.Width, _nicknameFontSize + 10),
+                                _nicknameShadowBrush
+                            );
+                            renderTarget.DrawText(
+                                _playerInfoCollection.GetPlayerInfo(0).Nickname,
+                                _nicknameTextFormat,
+                                new RectangleF(
                                     targetRect.X, targetRect.Y - _nicknameFontSize, 
                                     targetRect.Width, _nicknameFontSize + 10),
                                 _nicknameForegroundBrush
@@ -422,6 +471,14 @@ namespace BombermanGame.DrawDataModel.Draw
                                 1f,
                                 BitmapInterpolationMode.Linear,
                                 null
+                            );
+                            renderTarget.DrawText(
+                                _playerInfoCollection.GetPlayerInfo(1).Nickname,
+                                _nicknameTextFormat,
+                                new RectangleF(
+                                    targetRect.X + 5, targetRect.Y - _nicknameFontSize + 5, 
+                                    targetRect.Width, _nicknameFontSize + 10),
+                                _nicknameShadowBrush
                             );
                             renderTarget.DrawText(
                                 _playerInfoCollection.GetPlayerInfo(1).Nickname,
@@ -451,6 +508,14 @@ namespace BombermanGame.DrawDataModel.Draw
                                 _playerInfoCollection.GetPlayerInfo(2).Nickname,
                                 _nicknameTextFormat,
                                 new RectangleF(
+                                    targetRect.X + 5, targetRect.Y - _nicknameFontSize + 5, 
+                                    targetRect.Width, _nicknameFontSize + 10),
+                                _nicknameShadowBrush
+                            );
+                            renderTarget.DrawText(
+                                _playerInfoCollection.GetPlayerInfo(2).Nickname,
+                                _nicknameTextFormat,
+                                new RectangleF(
                                     targetRect.X, targetRect.Y - _nicknameFontSize, 
                                     targetRect.Width, _nicknameFontSize + 10),
                                 _nicknameForegroundBrush
@@ -470,6 +535,14 @@ namespace BombermanGame.DrawDataModel.Draw
                                 1f,
                                 BitmapInterpolationMode.Linear,
                                 null
+                            );
+                            renderTarget.DrawText(
+                                _playerInfoCollection.GetPlayerInfo(3).Nickname,
+                                _nicknameTextFormat,
+                                new RectangleF(
+                                    targetRect.X + 5, targetRect.Y - _nicknameFontSize + 5, 
+                                    targetRect.Width, _nicknameFontSize + 10),
+                                _nicknameShadowBrush
                             );
                             renderTarget.DrawText(
                                 _playerInfoCollection.GetPlayerInfo(3).Nickname,

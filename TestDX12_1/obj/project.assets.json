@@ -8,7 +8,9 @@
           "ref/netcoreapp2.1/Microsoft.Bcl.HashCode.dll": {}
         },
         "runtime": {
-          "lib/netcoreapp2.1/Microsoft.Bcl.HashCode.dll": {}
+          "lib/netcoreapp2.1/Microsoft.Bcl.HashCode.dll": {
+            "related": ".xml"
+          }
         }
       },
       "PolySharp/1.10.0": {
@@ -77,10 +79,14 @@
       "System.Runtime.CompilerServices.Unsafe/6.0.0": {
         "type": "package",
         "compile": {
-          "lib/netcoreapp3.1/System.Runtime.CompilerServices.Unsafe.dll": {}
+          "lib/netcoreapp3.1/System.Runtime.CompilerServices.Unsafe.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netcoreapp3.1/System.Runtime.CompilerServices.Unsafe.dll": {}
+          "lib/netcoreapp3.1/System.Runtime.CompilerServices.Unsafe.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
@@ -95,10 +101,14 @@
           "Vortice.Mathematics": "1.4.25"
         },
         "compile": {
-          "lib/netstandard2.0/Vortice.Direct2D1.dll": {}
+          "lib/netstandard2.0/Vortice.Direct2D1.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/Vortice.Direct2D1.dll": {}
+          "lib/netstandard2.0/Vortice.Direct2D1.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "build": {
           "build/Vortice.Direct2D1.props": {}
@@ -115,10 +125,14 @@
           "Vortice.Mathematics": "1.4.25"
         },
         "compile": {
-          "lib/netstandard2.0/Vortice.DirectX.dll": {}
+          "lib/netstandard2.0/Vortice.DirectX.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/Vortice.DirectX.dll": {}
+          "lib/netstandard2.0/Vortice.DirectX.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "build": {
           "build/_._": {}
@@ -136,10 +150,14 @@
           "Vortice.Mathematics": "1.4.25"
         },
         "compile": {
-          "lib/netstandard2.0/Vortice.DXGI.dll": {}
+          "lib/netstandard2.0/Vortice.DXGI.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/Vortice.DXGI.dll": {}
+          "lib/netstandard2.0/Vortice.DXGI.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "build": {
           "build/_._": {}
@@ -157,10 +175,14 @@
           "System.Runtime.CompilerServices.Unsafe": "6.0.0"
         },
         "compile": {
-          "lib/netstandard2.0/Vortice.Mathematics.dll": {}
+          "lib/netstandard2.0/Vortice.Mathematics.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/Vortice.Mathematics.dll": {}
+          "lib/netstandard2.0/Vortice.Mathematics.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       }
     }
@@ -447,11 +469,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\TestDX12_1\\TestDX12_1.csproj",
+      "projectUniqueName": "Z:\\Мой диск\\GitHub\\BombermanTournament\\TestDX12_1\\TestDX12_1.csproj",
       "projectName": "TestDX12_1",
-      "projectPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\TestDX12_1\\TestDX12_1.csproj",
+      "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\TestDX12_1\\TestDX12_1.csproj",
       "packagesPath": "C:\\Users\\Andrey\\.nuget\\packages\\",
-      "outputPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\TestDX12_1\\obj\\",
+      "outputPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\TestDX12_1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Andrey\\AppData\\Roaming\\NuGet\\NuGet.Config"

@@ -54,10 +54,14 @@
           "Vortice.Mathematics": "1.4.25"
         },
         "compile": {
-          "lib/net6.0/Vortice.Direct2D1.dll": {}
+          "lib/net6.0/Vortice.Direct2D1.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/Vortice.Direct2D1.dll": {}
+          "lib/net6.0/Vortice.Direct2D1.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "build": {
           "build/Vortice.Direct2D1.props": {}
@@ -74,10 +78,14 @@
           "Vortice.Mathematics": "1.4.25"
         },
         "compile": {
-          "lib/net7.0/Vortice.DirectX.dll": {}
+          "lib/net7.0/Vortice.DirectX.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/net7.0/Vortice.DirectX.dll": {}
+          "lib/net7.0/Vortice.DirectX.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "build": {
           "build/_._": {}
@@ -95,10 +103,14 @@
           "Vortice.Mathematics": "1.4.25"
         },
         "compile": {
-          "lib/net6.0/Vortice.DXGI.dll": {}
+          "lib/net6.0/Vortice.DXGI.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/Vortice.DXGI.dll": {}
+          "lib/net6.0/Vortice.DXGI.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "build": {
           "build/_._": {}
@@ -110,10 +122,14 @@
       "Vortice.Mathematics/1.4.25": {
         "type": "package",
         "compile": {
-          "lib/net7.0/Vortice.Mathematics.dll": {}
+          "lib/net7.0/Vortice.Mathematics.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/net7.0/Vortice.Mathematics.dll": {}
+          "lib/net7.0/Vortice.Mathematics.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       }
     }
@@ -277,11 +293,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\Engine\\Engine.SharedInterfaces\\Engine.SharedInterfaces.csproj",
+      "projectUniqueName": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Engine\\Engine.SharedInterfaces\\Engine.SharedInterfaces.csproj",
       "projectName": "Engine.SharedInterfaces",
-      "projectPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\Engine\\Engine.SharedInterfaces\\Engine.SharedInterfaces.csproj",
+      "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Engine\\Engine.SharedInterfaces\\Engine.SharedInterfaces.csproj",
       "packagesPath": "C:\\Users\\Andrey\\.nuget\\packages\\",
-      "outputPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\Engine\\Engine.SharedInterfaces\\obj\\",
+      "outputPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Engine\\Engine.SharedInterfaces\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Andrey\\AppData\\Roaming\\NuGet\\NuGet.Config"

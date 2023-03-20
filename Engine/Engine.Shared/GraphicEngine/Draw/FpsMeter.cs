@@ -6,7 +6,7 @@ using Vortice.Direct2D1;
 
 namespace Engine.Shared.GraphicEngine.Draw
 {
-    public class FpsMeter : Text, IDisposable
+    public class FpsMeter : TextWithShadow, IDisposable
     {
         private static string ConstructString(int? fps) => fps.HasValue ? $"FPS:{fps.Value}" : "FPS:undefined";
 
@@ -25,12 +25,13 @@ namespace Engine.Shared.GraphicEngine.Draw
                     (int)(drawRectangle.Y * canvasHeight),
                     (int)(drawRectangle.Width * canvasWidth),
                     (int)(drawRectangle.Height * canvasHeight)
-                ), canvasSize 
+                ), 
+                canvasHeight * 0.03f 
             );
         }
 
-        protected FpsMeter(Rectangle drawRectangle, Size canvasSize) 
-            : base(ConstructString(null), drawRectangle, canvasSize)
+        protected FpsMeter(Rectangle drawRectangle, float fontSize) 
+            : base(ConstructString(null), drawRectangle, fontSize)
         {
             _timer = new Timer(Timer_Callback, null, TimeSpan.Zero, TimeSpan.FromSeconds(1));
         }

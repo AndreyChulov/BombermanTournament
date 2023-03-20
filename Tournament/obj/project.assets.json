@@ -520,11 +520,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\Tournament\\Tournament.csproj",
+      "projectUniqueName": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Tournament\\Tournament.csproj",
       "projectName": "Tournament",
-      "projectPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\Tournament\\Tournament.csproj",
+      "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Tournament\\Tournament.csproj",
       "packagesPath": "C:\\Users\\Andrey\\.nuget\\packages\\",
-      "outputPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\Tournament\\obj\\",
+      "outputPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Tournament\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Andrey\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -539,26 +539,26 @@
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
           "projectReferences": {
-            "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\AiExamples\\AiExamples.csproj": {
-              "projectPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\AiExamples\\AiExamples.csproj"
+            "Z:\\Мой диск\\GitHub\\BombermanTournament\\AiExamples\\AiExamples.csproj": {
+              "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\AiExamples\\AiExamples.csproj"
             },
-            "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\AiPlayer1\\AiPlayer1.csproj": {
-              "projectPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\AiPlayer1\\AiPlayer1.csproj"
+            "Z:\\Мой диск\\GitHub\\BombermanTournament\\AiPlayer1\\AiPlayer1.csproj": {
+              "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\AiPlayer1\\AiPlayer1.csproj"
             },
-            "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\AiPlayer2\\AiPlayer2.csproj": {
-              "projectPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\AiPlayer2\\AiPlayer2.csproj"
+            "Z:\\Мой диск\\GitHub\\BombermanTournament\\AiPlayer2\\AiPlayer2.csproj": {
+              "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\AiPlayer2\\AiPlayer2.csproj"
             },
-            "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\AiPlayer3\\AiPlayer3.csproj": {
-              "projectPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\AiPlayer3\\AiPlayer3.csproj"
+            "Z:\\Мой диск\\GitHub\\BombermanTournament\\AiPlayer3\\AiPlayer3.csproj": {
+              "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\AiPlayer3\\AiPlayer3.csproj"
             },
-            "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\AiPlayer4\\AiPlayer4.csproj": {
-              "projectPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\AiPlayer4\\AiPlayer4.csproj"
+            "Z:\\Мой диск\\GitHub\\BombermanTournament\\AiPlayer4\\AiPlayer4.csproj": {
+              "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\AiPlayer4\\AiPlayer4.csproj"
             },
-            "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\BombermanGame\\BombermanGame.csproj": {
-              "projectPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\BombermanGame\\BombermanGame.csproj"
+            "Z:\\Мой диск\\GitHub\\BombermanTournament\\BombermanGame\\BombermanGame.csproj": {
+              "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\BombermanGame\\BombermanGame.csproj"
             },
-            "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\TestAi\\TestAi.csproj": {
-              "projectPath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\TestAi\\TestAi.csproj"
+            "Z:\\Мой диск\\GitHub\\BombermanTournament\\TestAi\\TestAi.csproj": {
+              "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\TestAi\\TestAi.csproj"
             }
           }
         }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "iIqaC4O0e40B93Xi13rzYM/odxU06tPj1fygIRSLVTKTPtCePlCSaDq+thdL7p2DSQYR3VJCDehkcGIBpSnBjg==",
+  "dgSpecHash": "Beh3gzBZozQ2qGLCvos/OQ+zzhEOAFrroo0xRQ+0JRAH3y31yhiOyDJyatOLoLaNFA42Lm/NFYvyavUjD54thA==",
   "success": true,
-  "projectFilePath": "Z:\\Мой диск\\Академия ТОП\\OutClass\\BombermanTournament\\Engine\\Engine.Shared\\Engine.Shared.csproj",
+  "projectFilePath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Engine\\Engine.Shared\\Engine.Shared.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Andrey\\.nuget\\packages\\polysharp\\1.10.0\\polysharp.1.10.0.nupkg.sha512",
     "C:\\Users\\Andrey\\.nuget\\packages\\sharpgen.runtime\\2.0.0-beta.13\\sharpgen.runtime.2.0.0-beta.13.nupkg.sha512",
