@@ -1,0 +1,44 @@
+<Window x:Class="TournamentServer.TournamentServerForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:TournamentServer"
+        xmlns:controls="clr-namespace:TournamentServer.Controls"
+        mc:Ignorable="d"
+        Title="TournamentServerForm" 
+        Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90*"></RowDefinition>
+            <RowDefinition Height="10*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Row="0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Row="0" Column="0">
+                    <controls:ClientInfo Title="Player 1 info"></controls:ClientInfo>
+                </Grid>
+                <Grid Row="0" Column="1">
+                    <controls:ClientInfo Title="Player 2 info"></controls:ClientInfo>
+                </Grid>
+                <Grid Row="1" Column="0">
+                    <controls:ClientInfo Title="Player 3 info"></controls:ClientInfo>
+                </Grid>
+                <Grid Row="1" Column="1">
+                    <controls:ClientInfo Title="Player 4 info"></controls:ClientInfo>
+                </Grid>
+            </Grid>
+        </Grid>
+        <Grid Row="1">
+            <Button Name="BtnStartTournament" Click="BtnStartTournament_OnClick">Start tournament</Button>
+        </Grid>
+    </Grid>
+</Window>
