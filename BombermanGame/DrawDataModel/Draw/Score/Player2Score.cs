@@ -8,7 +8,7 @@ namespace BombermanGame.DrawDataModel.Draw.Score
     {
         protected override string LinkedResourceName => "BombermanGame.Score.Player2Score";
         protected override int LinkedResourceGroupId => SystemTextWithShadow.ResourceGroupId;
-        protected override int PlayerNo => 2;
+        protected override int PlayerNubmer => 2;
 
         public static Player2Score Create(IEngine engine, IPlayerInfo playerInfo)
         {

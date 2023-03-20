@@ -17,7 +17,7 @@ namespace Engine.Shared.GraphicEngine.Draw
         protected override string LinkedResourceName => "systemTextWithShadow";
         protected override int LinkedResourceGroupId => SystemTextWithShadow.ResourceGroupId;
 
-        public static TextWithShadow CreateInPercents(IEngine engine, string textToDraw, RectangleF drawRectangle)
+        public new static TextWithShadow CreateInPercents(IEngine engine, string textToDraw, RectangleF drawRectangle)
         {
             var canvasSize = engine.GetCanvasSize();
             var canvasWidth = canvasSize.Width;

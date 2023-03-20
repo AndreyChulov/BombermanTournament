@@ -14,13 +14,13 @@ namespace BombermanGame.DrawDataModel.Draw.Score
         protected override string LinkedResourceName => "BombermanGame.Score.BasePlayerScore";
         protected override int LinkedResourceGroupId => SystemTextWithShadow.ResourceGroupId;
 
-        protected float FontSize { get; }
+        protected new float FontSize { get; }
         protected IPlayerInfo PlayerInfo { get; }
-        protected abstract int PlayerNo { get; }
+        protected abstract int PlayerNubmer { get; }
 
         private string ConstructTextToDraw()
         {
-            return $"AI {PlayerNo} >> Nickname: {PlayerInfo.Nickname} >> Score: {PlayerInfo.Score}";
+            return $"AI {PlayerNubmer} >> Nickname: {PlayerInfo.Nickname} >> Score: {PlayerInfo.Score}";
         }
         
         protected BasePlayerScore(IPlayerInfo playerInfo, Rectangle drawRectangle, Size canvasSize) 

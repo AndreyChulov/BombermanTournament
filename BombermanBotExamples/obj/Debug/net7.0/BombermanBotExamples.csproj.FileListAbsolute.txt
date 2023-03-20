@@ -1,0 +1,15 @@
+Z:\Мой диск\GitHub\BombermanTournament\BombermanBotExamples\bin\Debug\net7.0\BombermanBotExamples.deps.json
+Z:\Мой диск\GitHub\BombermanTournament\BombermanBotExamples\bin\Debug\net7.0\BombermanBotExamples.dll
+Z:\Мой диск\GitHub\BombermanTournament\BombermanBotExamples\bin\Debug\net7.0\BombermanBotExamples.pdb
+Z:\Мой диск\GitHub\BombermanTournament\BombermanBotExamples\bin\Debug\net7.0\BombermanGame.Shared.dll
+Z:\Мой диск\GitHub\BombermanTournament\BombermanBotExamples\bin\Debug\net7.0\BombermanGame.Shared.pdb
+Z:\Мой диск\GitHub\BombermanTournament\BombermanBotExamples\obj\Debug\net7.0\BombermanBotExamples.csproj.AssemblyReference.cache
+Z:\Мой диск\GitHub\BombermanTournament\BombermanBotExamples\obj\Debug\net7.0\BombermanBotExamples.GeneratedMSBuildEditorConfig.editorconfig
+Z:\Мой диск\GitHub\BombermanTournament\BombermanBotExamples\obj\Debug\net7.0\BombermanBotExamples.AssemblyInfoInputs.cache
+Z:\Мой диск\GitHub\BombermanTournament\BombermanBotExamples\obj\Debug\net7.0\BombermanBotExamples.AssemblyInfo.cs
+Z:\Мой диск\GitHub\BombermanTournament\BombermanBotExamples\obj\Debug\net7.0\BombermanBotExamples.csproj.CoreCompileInputs.cache
+Z:\Мой диск\GitHub\BombermanTournament\BombermanBotExamples\obj\Debug\net7.0\BombermanBotExamples.csproj.CopyComplete
+Z:\Мой диск\GitHub\BombermanTournament\BombermanBotExamples\obj\Debug\net7.0\BombermanBotExamples.dll
+Z:\Мой диск\GitHub\BombermanTournament\BombermanBotExamples\obj\Debug\net7.0\refint\BombermanBotExamples.dll
+Z:\Мой диск\GitHub\BombermanTournament\BombermanBotExamples\obj\Debug\net7.0\BombermanBotExamples.pdb
+Z:\Мой диск\GitHub\BombermanTournament\BombermanBotExamples\obj\Debug\net7.0\ref\BombermanBotExamples.dll

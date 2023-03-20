@@ -132,69 +132,30 @@
           }
         }
       },
-      "AiExamples/1.0.0": {
+      "BombermanBotExamples/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "BombermanGame.Shared": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/AiExamples.dll": {}
+          "bin/placeholder/BombermanBotExamples.dll": {}
         },
         "runtime": {
-          "bin/placeholder/AiExamples.dll": {}
+          "bin/placeholder/BombermanBotExamples.dll": {}
         }
       },
-      "AiPlayer1/1.0.0": {
+      "BombermanBots/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "BombermanGame.Shared": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/AiPlayer1.dll": {}
+          "bin/placeholder/BombermanBots.dll": {}
         },
         "runtime": {
-          "bin/placeholder/AiPlayer1.dll": {}
-        }
-      },
-      "AiPlayer2/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "BombermanGame.Shared": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/AiPlayer2.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/AiPlayer2.dll": {}
-        }
-      },
-      "AiPlayer3/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "BombermanGame.Shared": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/AiPlayer3.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/AiPlayer3.dll": {}
-        }
-      },
-      "AiPlayer4/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "BombermanGame.Shared": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/AiPlayer4.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/AiPlayer4.dll": {}
+          "bin/placeholder/BombermanBots.dll": {}
         }
       },
       "BombermanGame/1.0.0": {
@@ -278,19 +239,6 @@
         },
         "runtime": {
           "bin/placeholder/Engine.SharedInterfaces.dll": {}
-        }
-      },
-      "TestAi/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "BombermanGame.Shared": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/TestAi.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/TestAi.dll": {}
         }
       }
     }
@@ -442,30 +390,15 @@
         "vortice.mathematics.nuspec"
       ]
     },
-    "AiExamples/1.0.0": {
+    "BombermanBotExamples/1.0.0": {
       "type": "project",
-      "path": "../AiExamples/AiExamples.csproj",
-      "msbuildProject": "../AiExamples/AiExamples.csproj"
+      "path": "../BombermanBotExamples/BombermanBotExamples.csproj",
+      "msbuildProject": "../BombermanBotExamples/BombermanBotExamples.csproj"
     },
-    "AiPlayer1/1.0.0": {
+    "BombermanBots/1.0.0": {
       "type": "project",
-      "path": "../AiPlayer1/AiPlayer1.csproj",
-      "msbuildProject": "../AiPlayer1/AiPlayer1.csproj"
-    },
-    "AiPlayer2/1.0.0": {
-      "type": "project",
-      "path": "../AiPlayer2/AiPlayer2.csproj",
-      "msbuildProject": "../AiPlayer2/AiPlayer2.csproj"
-    },
-    "AiPlayer3/1.0.0": {
-      "type": "project",
-      "path": "../AiPlayer3/AiPlayer3.csproj",
-      "msbuildProject": "../AiPlayer3/AiPlayer3.csproj"
-    },
-    "AiPlayer4/1.0.0": {
-      "type": "project",
-      "path": "../AiPlayer4/AiPlayer4.csproj",
-      "msbuildProject": "../AiPlayer4/AiPlayer4.csproj"
+      "path": "../BombermanBots/BombermanBots.csproj",
+      "msbuildProject": "../BombermanBots/BombermanBots.csproj"
     },
     "BombermanGame/1.0.0": {
       "type": "project",
@@ -496,22 +429,13 @@
       "type": "project",
       "path": "../Engine/Engine.SharedInterfaces/Engine.SharedInterfaces.csproj",
       "msbuildProject": "../Engine/Engine.SharedInterfaces/Engine.SharedInterfaces.csproj"
-    },
-    "TestAi/1.0.0": {
-      "type": "project",
-      "path": "../TestAi/TestAi.csproj",
-      "msbuildProject": "../TestAi/TestAi.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0-windows7.0": [
-      "AiExamples >= 1.0.0",
-      "AiPlayer1 >= 1.0.0",
-      "AiPlayer2 >= 1.0.0",
-      "AiPlayer3 >= 1.0.0",
-      "AiPlayer4 >= 1.0.0",
-      "BombermanGame >= 1.0.0",
-      "TestAi >= 1.0.0"
+      "BombermanBotExamples >= 1.0.0",
+      "BombermanBots >= 1.0.0",
+      "BombermanGame >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -539,26 +463,14 @@
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
           "projectReferences": {
-            "Z:\\Мой диск\\GitHub\\BombermanTournament\\AiExamples\\AiExamples.csproj": {
-              "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\AiExamples\\AiExamples.csproj"
+            "Z:\\Мой диск\\GitHub\\BombermanTournament\\BombermanBotExamples\\BombermanBotExamples.csproj": {
+              "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\BombermanBotExamples\\BombermanBotExamples.csproj"
             },
-            "Z:\\Мой диск\\GitHub\\BombermanTournament\\AiPlayer1\\AiPlayer1.csproj": {
-              "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\AiPlayer1\\AiPlayer1.csproj"
-            },
-            "Z:\\Мой диск\\GitHub\\BombermanTournament\\AiPlayer2\\AiPlayer2.csproj": {
-              "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\AiPlayer2\\AiPlayer2.csproj"
-            },
-            "Z:\\Мой диск\\GitHub\\BombermanTournament\\AiPlayer3\\AiPlayer3.csproj": {
-              "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\AiPlayer3\\AiPlayer3.csproj"
-            },
-            "Z:\\Мой диск\\GitHub\\BombermanTournament\\AiPlayer4\\AiPlayer4.csproj": {
-              "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\AiPlayer4\\AiPlayer4.csproj"
+            "Z:\\Мой диск\\GitHub\\BombermanTournament\\BombermanBots\\BombermanBots.csproj": {
+              "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\BombermanBots\\BombermanBots.csproj"
             },
             "Z:\\Мой диск\\GitHub\\BombermanTournament\\BombermanGame\\BombermanGame.csproj": {
               "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\BombermanGame\\BombermanGame.csproj"
-            },
-            "Z:\\Мой диск\\GitHub\\BombermanTournament\\TestAi\\TestAi.csproj": {
-              "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\TestAi\\TestAi.csproj"
             }
           }
         }

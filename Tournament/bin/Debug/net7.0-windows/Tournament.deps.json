@@ -8,13 +8,9 @@
     ".NETCoreApp,Version=v7.0": {
       "Tournament/1.0.0": {
         "dependencies": {
-          "AiExamples": "1.0.0",
-          "AiPlayer1": "1.0.0",
-          "AiPlayer2": "1.0.0",
-          "AiPlayer3": "1.0.0",
-          "AiPlayer4": "1.0.0",
-          "BombermanGame": "1.0.0",
-          "TestAi": "1.0.0"
+          "BombermanBotExamples": "1.0.0",
+          "BombermanBots": "1.0.0",
+          "BombermanGame": "1.0.0"
         },
         "runtime": {
           "Tournament.dll": {}
@@ -93,44 +89,20 @@
           }
         }
       },
-      "AiExamples/1.0.0": {
+      "BombermanBotExamples/1.0.0": {
         "dependencies": {
           "BombermanGame.Shared": "1.0.0"
         },
         "runtime": {
-          "AiExamples.dll": {}
+          "BombermanBotExamples.dll": {}
         }
       },
-      "AiPlayer1/1.0.0": {
+      "BombermanBots/1.0.0": {
         "dependencies": {
           "BombermanGame.Shared": "1.0.0"
         },
         "runtime": {
-          "AiPlayer1.dll": {}
-        }
-      },
-      "AiPlayer2/1.0.0": {
-        "dependencies": {
-          "BombermanGame.Shared": "1.0.0"
-        },
-        "runtime": {
-          "AiPlayer2.dll": {}
-        }
-      },
-      "AiPlayer3/1.0.0": {
-        "dependencies": {
-          "BombermanGame.Shared": "1.0.0"
-        },
-        "runtime": {
-          "AiPlayer3.dll": {}
-        }
-      },
-      "AiPlayer4/1.0.0": {
-        "dependencies": {
-          "BombermanGame.Shared": "1.0.0"
-        },
-        "runtime": {
-          "AiPlayer4.dll": {}
+          "BombermanBots.dll": {}
         }
       },
       "BombermanGame/1.0.0": {
@@ -181,14 +153,6 @@
         },
         "runtime": {
           "Engine.SharedInterfaces.dll": {}
-        }
-      },
-      "TestAi/1.0.0": {
-        "dependencies": {
-          "BombermanGame.Shared": "1.0.0"
-        },
-        "runtime": {
-          "TestAi.dll": {}
         }
       }
     }
@@ -248,27 +212,12 @@
       "path": "vortice.mathematics/1.4.25",
       "hashPath": "vortice.mathematics.1.4.25.nupkg.sha512"
     },
-    "AiExamples/1.0.0": {
+    "BombermanBotExamples/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "AiPlayer1/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "AiPlayer2/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "AiPlayer3/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "AiPlayer4/1.0.0": {
+    "BombermanBots/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -299,11 +248,6 @@
       "sha512": ""
     },
     "Engine.SharedInterfaces/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "TestAi/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

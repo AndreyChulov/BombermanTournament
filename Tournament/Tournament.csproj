@@ -9,13 +9,9 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\AiExamples\AiExamples.csproj" />
-      <ProjectReference Include="..\AiPlayer1\AiPlayer1.csproj" />
-      <ProjectReference Include="..\AiPlayer2\AiPlayer2.csproj" />
-      <ProjectReference Include="..\AiPlayer3\AiPlayer3.csproj" />
-      <ProjectReference Include="..\AiPlayer4\AiPlayer4.csproj" />
+      <ProjectReference Include="..\BombermanBotExamples\BombermanBotExamples.csproj" />
+      <ProjectReference Include="..\BombermanBots\BombermanBots.csproj" />
       <ProjectReference Include="..\BombermanGame\BombermanGame.csproj" />
-      <ProjectReference Include="..\TestAi\TestAi.csproj" />
     </ItemGroup>
 
     <ItemGroup>
