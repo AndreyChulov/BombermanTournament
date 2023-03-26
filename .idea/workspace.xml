@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4f09742c-cfdf-48bf-8926-0846eee3fefb" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/BombermanBotExamples/obj/Debug/net7.0/BombermanBotExamples.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BombermanBotExamples/obj/Debug/net7.0/BombermanBotExamples.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BombermanBots/bin/Debug/net7.0/BombermanBots.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BombermanBots/bin/Debug/net7.0/BombermanBots.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BombermanBots/bin/Debug/net7.0/BombermanBots.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BombermanBots/bin/Debug/net7.0/BombermanBots.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BombermanBots/obj/Debug/net7.0/BombermanBots.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BombermanBots/obj/Debug/net7.0/BombermanBots.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BombermanBots/obj/Debug/net7.0/BombermanBots.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BombermanBots/obj/Debug/net7.0/BombermanBots.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BombermanBots/obj/Debug/net7.0/BombermanBots.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BombermanBots/obj/Debug/net7.0/BombermanBots.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BombermanBots/obj/Debug/net7.0/BombermanBots.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BombermanBots/obj/Debug/net7.0/BombermanBots.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BombermanBots/obj/Debug/net7.0/ref/BombermanBots.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BombermanBots/obj/Debug/net7.0/ref/BombermanBots.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BombermanBots/obj/Debug/net7.0/refint/BombermanBots.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BombermanBots/obj/Debug/net7.0/refint/BombermanBots.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BombermanGame/obj/Debug/net7.0-windows/BombermanGame.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BombermanGame/obj/Debug/net7.0-windows/BombermanGame.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Engine.Graphic/obj/Debug/net7.0/Engine.Graphic.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Engine.Graphic/obj/Debug/net7.0/Engine.Graphic.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Engine.Shared/obj/Debug/net7.0/Engine.Shared.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Engine.Shared/obj/Debug/net7.0/Engine.Shared.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Engine/obj/Debug/net7.0/Engine.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Engine/obj/Debug/net7.0/Engine.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tournament/bin/Debug/net7.0-windows/BombermanBots.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Tournament/bin/Debug/net7.0-windows/BombermanBots.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tournament/bin/Debug/net7.0-windows/BombermanBots.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Tournament/bin/Debug/net7.0-windows/BombermanBots.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tournament/bin/Debug/net7.0-windows/Tournament.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Tournament/bin/Debug/net7.0-windows/Tournament.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tournament/bin/Debug/net7.0-windows/Tournament.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Tournament/bin/Debug/net7.0-windows/Tournament.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tournament/obj/Debug/net7.0-windows/Tournament.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Tournament/obj/Debug/net7.0-windows/Tournament.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tournament/obj/Debug/net7.0-windows/Tournament.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Tournament/obj/Debug/net7.0-windows/Tournament.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tournament/obj/Debug/net7.0-windows/Tournament.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Tournament/obj/Debug/net7.0-windows/Tournament.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TournamentServer/bin/Debug/net7.0-windows/TournamentServer.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TournamentServer/bin/Debug/net7.0-windows/TournamentServer.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TournamentServer/bin/Debug/net7.0-windows/TournamentServer.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/TournamentServer/bin/Debug/net7.0-windows/TournamentServer.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TournamentServer/obj/Debug/net7.0-windows/Controls/ClientInfo.baml" beforeDir="false" afterPath="$PROJECT_DIR$/TournamentServer/obj/Debug/net7.0-windows/Controls/ClientInfo.baml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TournamentServer/obj/Debug/net7.0-windows/Controls/ClientInfo.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TournamentServer/obj/Debug/net7.0-windows/Controls/ClientInfo.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TournamentServer/obj/Debug/net7.0-windows/TournamentServer.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TournamentServer/obj/Debug/net7.0-windows/TournamentServer.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TournamentServer/obj/Debug/net7.0-windows/TournamentServer.g.resources" beforeDir="false" afterPath="$PROJECT_DIR$/TournamentServer/obj/Debug/net7.0-windows/TournamentServer.g.resources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TournamentServer/obj/Debug/net7.0-windows/TournamentServer.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/TournamentServer/obj/Debug/net7.0-windows/TournamentServer.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TournamentServer/obj/Debug/net7.0-windows/TournamentServerForm.baml" beforeDir="false" afterPath="$PROJECT_DIR$/TournamentServer/obj/Debug/net7.0-windows/TournamentServerForm.baml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TournamentServer/obj/Debug/net7.0-windows/TournamentServerForm.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TournamentServer/obj/Debug/net7.0-windows/TournamentServerForm.g.cs" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2NTRe2dQhAhtlOG7AQ0c1nW4WFK" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Andrey/Downloads/XO финал",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4f09742c-cfdf-48bf-8926-0846eee3fefb" name="Changes" comment="" />
+      <created>1679686176893</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1679686176893</updated>
+      <workItem from="1679686178104" duration="255000" />
+      <workItem from="1679703488593" duration="51000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

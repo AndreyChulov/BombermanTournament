@@ -88,7 +88,7 @@ namespace BombermanGame.Game
                     }
 
                     SetDestructibleField(randomizer, field, rowCounter, columnCounter, 
-                        10);
+                        30);
                 }
             }
             

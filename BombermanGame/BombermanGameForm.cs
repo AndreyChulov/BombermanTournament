@@ -45,6 +45,15 @@ namespace BombermanGame
             _engine.LoadResources();
             _engine.Start();
             _game.Start();
+
+            var gameTimerTask = Task.Delay(TimeSpan.FromMinutes(3));
+            gameTimerTask
+                .ContinueWith(_ => _game.Stop())
+                .ContinueWith(
+                    _ => MessageBox.Show(
+                        "Game stopped!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning
+                    )
+                );
         }
 
         private void BombermanGameForm_FormClosing(object sender, FormClosingEventArgs e)
