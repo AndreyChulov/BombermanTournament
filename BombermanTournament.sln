@@ -24,6 +24,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TournamentServer", "Tournam
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SafeGame", "SafeGame\SafeGame.csproj", "{CC9F3FA0-9812-45B1-A1EC-6738B986D405}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaceGame", "RaceGame\RaceGame.csproj", "{3ED1C675-D13C-4AD4-B09B-CD7EF872F146}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -74,6 +76,10 @@ Global
 		{CC9F3FA0-9812-45B1-A1EC-6738B986D405}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC9F3FA0-9812-45B1-A1EC-6738B986D405}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC9F3FA0-9812-45B1-A1EC-6738B986D405}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3ED1C675-D13C-4AD4-B09B-CD7EF872F146}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3ED1C675-D13C-4AD4-B09B-CD7EF872F146}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3ED1C675-D13C-4AD4-B09B-CD7EF872F146}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3ED1C675-D13C-4AD4-B09B-CD7EF872F146}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{2EDE3DA2-4516-4A97-B05D-9A3D843A9C99} = {9D1AFF83-5BE5-413D-9A3F-F1EA9F575B8B}
