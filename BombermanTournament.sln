@@ -22,6 +22,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BombermanBots", "BombermanB
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TournamentServer", "TournamentServer\TournamentServer.csproj", "{E00827C8-246B-4DEB-93EC-1409875DB2D4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SafeGame", "SafeGame\SafeGame.csproj", "{CC9F3FA0-9812-45B1-A1EC-6738B986D405}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -68,6 +70,10 @@ Global
 		{E00827C8-246B-4DEB-93EC-1409875DB2D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E00827C8-246B-4DEB-93EC-1409875DB2D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E00827C8-246B-4DEB-93EC-1409875DB2D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC9F3FA0-9812-45B1-A1EC-6738B986D405}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC9F3FA0-9812-45B1-A1EC-6738B986D405}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC9F3FA0-9812-45B1-A1EC-6738B986D405}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC9F3FA0-9812-45B1-A1EC-6738B986D405}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{2EDE3DA2-4516-4A97-B05D-9A3D843A9C99} = {9D1AFF83-5BE5-413D-9A3F-F1EA9F575B8B}
