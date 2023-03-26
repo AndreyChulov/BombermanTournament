@@ -7,7 +7,14 @@
         xmlns:controls="clr-namespace:TournamentServer.Controls"
         mc:Ignorable="d"
         Title="TournamentServerForm" 
-        Height="450" Width="800">
+        Height="450" Width="800"
+        Name="ClientInfoControl"
+        d:DataContext="{x:Static local:TournamentServerFormDesignContextFactory.TournamentServerFormContext}"
+        DataContext="{x:Static local:TournamentServerFormContextFactory.TournamentServerFormContext}">
+    <Window.Resources>
+        
+        <local:TournamentServerFormContext x:Key="FormContext" d:DesignSource=""></local:TournamentServerFormContext>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="90*"></RowDefinition>
@@ -24,16 +31,32 @@
                     <ColumnDefinition Width="1*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Grid Row="0" Column="0">
-                    <controls:ClientInfo Title="Player 1 info"></controls:ClientInfo>
+                    <controls:ClientInfo Title="Player 1 info" 
+                                         Server="{Binding TournamentServer}"
+                                         ClientIndex="0">
+                        
+                    </controls:ClientInfo>
                 </Grid>
                 <Grid Row="0" Column="1">
-                    <controls:ClientInfo Title="Player 2 info"></controls:ClientInfo>
+                    <controls:ClientInfo Title="Player 2 info"
+                                         Server="{Binding TournamentServer}"
+                                         ClientIndex="1">
+                        
+                    </controls:ClientInfo>
                 </Grid>
                 <Grid Row="1" Column="0">
-                    <controls:ClientInfo Title="Player 3 info"></controls:ClientInfo>
+                    <controls:ClientInfo Title="Player 3 info"
+                                         Server="{Binding TournamentServer}"
+                                         ClientIndex="2">
+                        
+                    </controls:ClientInfo>
                 </Grid>
                 <Grid Row="1" Column="1">
-                    <controls:ClientInfo Title="Player 4 info"></controls:ClientInfo>
+                    <controls:ClientInfo Title="Player 4 info"
+                                         Server="{Binding TournamentServer}"
+                                         ClientIndex="3">
+                        
+                    </controls:ClientInfo>
                 </Grid>
             </Grid>
         </Grid>
