@@ -1,4 +1,3 @@
-using System.Drawing;
 using Engine.SharedInterfaces.GraphicEngine;
 using Engine.SharedInterfaces.GraphicEngine.Draw;
 using Engine.SharedInterfaces.GraphicEngine.RamResources;
@@ -7,6 +6,7 @@ using Vortice.DirectWrite;
 using Vortice.Mathematics;
 using FactoryType = Vortice.Direct2D1.FactoryType;
 using PixelFormat = Vortice.DCommon.PixelFormat;
+using Timer = System.Threading.Timer;
 
 namespace Engine.Graphic
 {

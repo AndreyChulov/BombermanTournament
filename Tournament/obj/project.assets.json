@@ -198,7 +198,10 @@
         },
         "runtime": {
           "bin/placeholder/Engine.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
       },
       "Engine.Graphic/1.0.0": {
         "type": "project",
@@ -212,7 +215,10 @@
         },
         "runtime": {
           "bin/placeholder/Engine.Graphic.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
       },
       "Engine.Shared/1.0.0": {
         "type": "project",
@@ -503,7 +509,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }
