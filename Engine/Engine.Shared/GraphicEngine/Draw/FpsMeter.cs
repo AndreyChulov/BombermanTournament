@@ -11,7 +11,7 @@ namespace Engine.Shared.GraphicEngine.Draw
         private int _currentFps = 0;
         private Timer _timer;
         
-        public static Text CreateInPercents(IEngine engine, RectangleF drawRectangle)
+        public static FpsMeter CreateInPercents(IEngine engine, RectangleF drawRectangle)
         {
             var canvasSize = engine.GetCanvasSize();
             var canvasWidth = canvasSize.Width;

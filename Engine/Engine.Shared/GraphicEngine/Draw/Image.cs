@@ -15,7 +15,7 @@ namespace Engine.Shared.GraphicEngine.Draw
         protected override int LinkedResourceGroupId => Brush.ResourceGroupId;
         
         protected virtual string EmbeddedImageResourceName => "Engine.Shared.GraphicEngine.ImageResources.tree.jpg";
-        protected Assembly EmbeddedImageAssembly { get; set; } = Assembly.GetExecutingAssembly(); 
+        protected virtual Assembly EmbeddedImageAssembly { get; set; } = Assembly.GetExecutingAssembly(); 
 
         private ID2D1Bitmap? _bitmap;
         private readonly RectangleF _drawRectangle;
