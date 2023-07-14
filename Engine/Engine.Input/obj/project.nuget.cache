@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "ha8a/XK9HKKivozQJapKLshNyPpt4nEsqVcgXUiqml4wfgLJfHSuUVeNH+S2AFwgBZ/zudka+bK4NAY/t7mJdg==",
+  "success": true,
+  "projectFilePath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Engine\\Engine.Input\\Engine.Input.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Andrey\\.nuget\\packages\\polysharp\\1.10.0\\polysharp.1.10.0.nupkg.sha512",
+    "C:\\Users\\Andrey\\.nuget\\packages\\sharpgen.runtime\\2.0.0-beta.13\\sharpgen.runtime.2.0.0-beta.13.nupkg.sha512",
+    "C:\\Users\\Andrey\\.nuget\\packages\\sharpgen.runtime.com\\2.0.0-beta.13\\sharpgen.runtime.com.2.0.0-beta.13.nupkg.sha512",
+    "C:\\Users\\Andrey\\.nuget\\packages\\vortice.direct2d1\\2.4.2\\vortice.direct2d1.2.4.2.nupkg.sha512",
+    "C:\\Users\\Andrey\\.nuget\\packages\\vortice.directx\\2.4.2\\vortice.directx.2.4.2.nupkg.sha512",
+    "C:\\Users\\Andrey\\.nuget\\packages\\vortice.dxgi\\2.4.2\\vortice.dxgi.2.4.2.nupkg.sha512",
+    "C:\\Users\\Andrey\\.nuget\\packages\\vortice.mathematics\\1.4.25\\vortice.mathematics.1.4.25.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -3,21 +3,30 @@ using Engine.SharedInterfaces;
 using Engine.SharedInterfaces.GraphicEngine;
 using Engine.SharedInterfaces.GraphicEngine.Draw;
 using Engine.SharedInterfaces.GraphicEngine.RamResources;
+using Engine.SharedInterfaces.InputEngine;
 
 namespace Engine
 {
     public class Engine: IEngine
     {
         private readonly IGraphicEngine _graphicEngine;
+        private readonly IInputEngine? _inputEngine;
         private readonly IResourcesContainer _resourcesContainer;
         private readonly IDrawContainer _drawContainer;
+        private readonly IInputContainer? _inputContainer;
 
         public Engine(IGraphicEngine graphicEngine, 
             IResourcesContainer resourcesContainer, IDrawContainer drawContainer)
+        :this(graphicEngine, null, resourcesContainer, drawContainer, null) {}
+
+        public Engine(IGraphicEngine graphicEngine, IInputEngine? inputEngine,
+            IResourcesContainer resourcesContainer, IDrawContainer drawContainer, IInputContainer? inputContainer)
         {
             _graphicEngine = graphicEngine;
+            _inputEngine = inputEngine;
             _resourcesContainer = resourcesContainer;
             _drawContainer = drawContainer;
+            _inputContainer = inputContainer;
         }
 
         public Size GetCanvasSize()
@@ -42,22 +51,27 @@ namespace Engine
         public void LoadDrawObject(IDraw drawObject)
         {
             _drawContainer.AddDrawObject(drawObject);
+            _inputContainer?.AddInputObject(drawObject as IInputEngineObject);
         }
 
         public void Start()
         {
             _graphicEngine.Start();
+            _inputEngine?.Start();
         }
 
         public void Stop()
         {
             _graphicEngine.Stop();
+            _inputEngine?.Stop();
         }
 
         public void Dispose()
         {
             _graphicEngine.Dispose();
+            _inputEngine?.Dispose();
             _resourcesContainer.Dispose();
+            _inputContainer?.Dispose();
         }
     }
 }

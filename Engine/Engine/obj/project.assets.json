@@ -149,6 +149,37 @@
           "Microsoft.WindowsDesktop.App.WindowsForms"
         ]
       },
+      "Engine.Input/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Engine.Shared": "1.0.0",
+          "Engine.SharedInterfaces": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Engine.Input.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Engine.Input.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
+      },
+      "Engine.Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Engine.SharedInterfaces": "1.0.0",
+          "Vortice.Direct2D1": "2.4.2"
+        },
+        "compile": {
+          "bin/placeholder/Engine.Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Engine.Shared.dll": {}
+        }
+      },
       "Engine.SharedInterfaces/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -316,6 +347,16 @@
       "path": "../Engine.Graphic/Engine.Graphic.csproj",
       "msbuildProject": "../Engine.Graphic/Engine.Graphic.csproj"
     },
+    "Engine.Input/1.0.0": {
+      "type": "project",
+      "path": "../Engine.Input/Engine.Input.csproj",
+      "msbuildProject": "../Engine.Input/Engine.Input.csproj"
+    },
+    "Engine.Shared/1.0.0": {
+      "type": "project",
+      "path": "../Engine.Shared/Engine.Shared.csproj",
+      "msbuildProject": "../Engine.Shared/Engine.Shared.csproj"
+    },
     "Engine.SharedInterfaces/1.0.0": {
       "type": "project",
       "path": "../Engine.SharedInterfaces/Engine.SharedInterfaces.csproj",
@@ -324,7 +365,8 @@
   },
   "projectFileDependencyGroups": {
     "net7.0-windows7.0": [
-      "Engine.Graphic >= 1.0.0"
+      "Engine.Graphic >= 1.0.0",
+      "Engine.Input >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -354,6 +396,9 @@
           "projectReferences": {
             "Z:\\Мой диск\\GitHub\\BombermanTournament\\Engine\\Engine.Graphic\\Engine.Graphic.csproj": {
               "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Engine\\Engine.Graphic\\Engine.Graphic.csproj"
+            },
+            "Z:\\Мой диск\\GitHub\\BombermanTournament\\Engine\\Engine.Input\\Engine.Input.csproj": {
+              "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Engine\\Engine.Input\\Engine.Input.csproj"
             }
           }
         }

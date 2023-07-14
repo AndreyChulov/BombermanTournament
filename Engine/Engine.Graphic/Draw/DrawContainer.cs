@@ -38,6 +38,7 @@ namespace Engine.Graphic.Draw
                 .OfType<IDisposable>()
                 .ToList()
                 .ForEach(x=>x.Dispose());
+            _loadedDrawObjects.Clear();
         }
     }
 }

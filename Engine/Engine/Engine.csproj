@@ -9,6 +9,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Engine.Graphic\Engine.Graphic.csproj" />
+      <ProjectReference Include="..\Engine.Input\Engine.Input.csproj" />
     </ItemGroup>
 
 </Project>

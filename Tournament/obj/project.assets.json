@@ -191,7 +191,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
-          "Engine.Graphic": "1.0.0"
+          "Engine.Graphic": "1.0.0",
+          "Engine.Input": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Engine.dll": {}
@@ -215,6 +216,23 @@
         },
         "runtime": {
           "bin/placeholder/Engine.Graphic.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
+      },
+      "Engine.Input/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Engine.Shared": "1.0.0",
+          "Engine.SharedInterfaces": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Engine.Input.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Engine.Input.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.WindowsDesktop.App.WindowsForms"
@@ -425,6 +443,11 @@
       "type": "project",
       "path": "../Engine/Engine.Graphic/Engine.Graphic.csproj",
       "msbuildProject": "../Engine/Engine.Graphic/Engine.Graphic.csproj"
+    },
+    "Engine.Input/1.0.0": {
+      "type": "project",
+      "path": "../Engine/Engine.Input/Engine.Input.csproj",
+      "msbuildProject": "../Engine/Engine.Input/Engine.Input.csproj"
     },
     "Engine.Shared/1.0.0": {
       "type": "project",

@@ -8,7 +8,8 @@
     ".NETCoreApp,Version=v7.0": {
       "Engine/1.0.0": {
         "dependencies": {
-          "Engine.Graphic": "1.0.0"
+          "Engine.Graphic": "1.0.0",
+          "Engine.Input": "1.0.0"
         },
         "runtime": {
           "Engine.dll": {}
@@ -96,6 +97,24 @@
           "Engine.Graphic.dll": {}
         }
       },
+      "Engine.Input/1.0.0": {
+        "dependencies": {
+          "Engine.Shared": "1.0.0",
+          "Engine.SharedInterfaces": "1.0.0"
+        },
+        "runtime": {
+          "Engine.Input.dll": {}
+        }
+      },
+      "Engine.Shared/1.0.0": {
+        "dependencies": {
+          "Engine.SharedInterfaces": "1.0.0",
+          "Vortice.Direct2D1": "2.4.2"
+        },
+        "runtime": {
+          "Engine.Shared.dll": {}
+        }
+      },
       "Engine.SharedInterfaces/1.0.0": {
         "dependencies": {
           "Vortice.Direct2D1": "2.4.2"
@@ -162,6 +181,16 @@
       "hashPath": "vortice.mathematics.1.4.25.nupkg.sha512"
     },
     "Engine.Graphic/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Engine.Input/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Engine.Shared/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

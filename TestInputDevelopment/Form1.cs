@@ -13,7 +13,7 @@ public partial class Form1 : Form
 
     private void OnHandleCreated(object? sender, EventArgs e)
     {
-        _engine = Engine.EngineFactory.CreateEngine(this, 2);
+        _engine = Engine.EngineFactory.CreateEngine(this, 2, true);
     }
 
     private void OnClosing(object? sender, CancelEventArgs e)
