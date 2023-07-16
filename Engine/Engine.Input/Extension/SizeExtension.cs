@@ -7,8 +7,8 @@ internal static class SizeExtension
         return new Size((int)(value.Width * multiplicator), (int)(value.Height * multiplicator));
     }
     
-    public static float Divide(this Size value, Size divider)
+    public static PointF Divide(this Size value, Size divider)
     {
-        return (value.Width / (float)divider.Width + value.Height / (float)divider.Height) / 2.0f;
+        return new PointF(value.Width / (float)divider.Width, value.Height / (float)divider.Height);
     }
 }

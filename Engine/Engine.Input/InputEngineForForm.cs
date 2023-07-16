@@ -13,12 +13,12 @@ public class InputEngineForForm : IInputEngine
     private bool _isStarted = false;
     private Point _mousePosition = Point.Empty;
     
-    private float _dxCanvasSizeFactor;
+    private PointF _dxCanvasSizeFactor;
 
     public InputEngineForForm(Form form, float dxCanvasSizeFactor, IInputContainer inputContainer)
     {
         _form = form;
-        _dxCanvasSizeFactor = dxCanvasSizeFactor;
+        _dxCanvasSizeFactor = PointF.Empty.FromFloat(dxCanvasSizeFactor);
         _inputContainer = inputContainer;
         _canvasSize = form.Size.Multiplication(dxCanvasSizeFactor);
     }
