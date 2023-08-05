@@ -24,11 +24,54 @@ public class InputContainer : IInputContainer
 
     public void SendMouseClick(Point mousePosition, EventArgs mouseClickEventArgs)
     {
-        var filteredObjects = _inputEngineObjects
-            .Where(x=>x.IsMouseOnObject(mousePosition))
-            .OfType<IInputEngineClickableObject>();
+        var inputEngineMouseInteractableObjectsOnMouse = 
+            GetInputEngineMouseInteractableObjectsOnMouse(mousePosition);
 
-        Parallel.ForEach(filteredObjects, (x) => x.OnClick(mousePosition, mouseClickEventArgs));
+        Parallel.ForEach(inputEngineMouseInteractableObjectsOnMouse, 
+            (x) => x.OnClick(mousePosition, mouseClickEventArgs));
+    }
+
+    private IEnumerable<IInputEngineMouseInteractableObject> GetInputEngineMouseInteractableObjectsOnMouse(Point mousePosition)
+    {
+        return _inputEngineObjects
+            .Where(x=>x.IsMouseOnObject(mousePosition))
+            .OfType<IInputEngineMouseInteractableObject>();
+    }
+
+    public void SendMouseDown(Point mousePosition, MouseEventArgs mouseEventArgs)
+    {
+        var inputEngineMouseInteractableObjectsOnMouse = 
+            GetInputEngineMouseInteractableObjectsOnMouse(mousePosition);
+
+        Parallel.ForEach(inputEngineMouseInteractableObjectsOnMouse, 
+            (x) => x.OnMouseDown(mousePosition, mouseEventArgs));
+    }
+
+    public void SendMouseUp(Point mousePosition, MouseEventArgs mouseEventArgs)
+    {
+        var inputEngineMouseInteractableObjectsOnMouse = 
+            GetInputEngineMouseInteractableObjectsOnMouse(mousePosition);
+
+        Parallel.ForEach(inputEngineMouseInteractableObjectsOnMouse, 
+            (x) => x.OnMouseUp(mousePosition, mouseEventArgs));
+    }
+
+    public void SendMouseDoubleClick(Point mousePosition, EventArgs eventArgs)
+    {
+        var inputEngineMouseInteractableObjectsOnMouse = 
+            GetInputEngineMouseInteractableObjectsOnMouse(mousePosition);
+
+        Parallel.ForEach(inputEngineMouseInteractableObjectsOnMouse, 
+            (x) => x.OnMouseDoubleClick(mousePosition, eventArgs));
+    }
+
+    public void SendMouseWheel(Point mousePosition, MouseEventArgs mouseEventArgs)
+    {
+        var inputEngineMouseInteractableObjectsOnMouse = 
+            GetInputEngineMouseInteractableObjectsOnMouse(mousePosition);
+
+        Parallel.ForEach(inputEngineMouseInteractableObjectsOnMouse, 
+            (x) => x.OnMouseMouseWheel(mousePosition, mouseEventArgs));
     }
 
     public void Dispose()

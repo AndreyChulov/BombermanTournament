@@ -1,11 +1,12 @@
 using System.Drawing;
 using System.Reflection;
-using Engine.Shared.GraphicEngine.RamResources.Single;
 using Engine.SharedInterfaces;
 using Engine.SharedInterfaces.GraphicEngine.RamResources;
 using Vortice.Direct2D1;
 using Vortice.DirectWrite;
+using Bitmap = Engine.Shared.GraphicEngine.RamResources.Single.Bitmap;
 using BitmapInterpolationMode = Vortice.Direct2D1.BitmapInterpolationMode;
+using Brush = Engine.Shared.GraphicEngine.RamResources.Single.Brush;
 
 namespace Engine.Shared.GraphicEngine.Draw
 {

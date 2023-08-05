@@ -6,6 +6,8 @@ using Engine.SharedInterfaces.GraphicEngine.RamResources;
 using Vortice.Direct2D1;
 using Vortice.DirectWrite;
 using Vortice.Mathematics;
+using Brush = Engine.Shared.GraphicEngine.RamResources.Single.Brush;
+using FontStyle = Vortice.DirectWrite.FontStyle;
 
 namespace Engine.Shared.GraphicEngine.Draw
 {

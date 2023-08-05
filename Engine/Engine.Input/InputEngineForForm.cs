@@ -46,28 +46,27 @@ public class InputEngineForForm : IInputEngine
 
     private void OnResizeEnd(object? sender, EventArgs e)
     {
-        //TODO: Fix while resizing. Should be two size factors. For X and for Y. Just in case of non proportional resizing.
         _dxCanvasSizeFactor = _canvasSize.Divide(_form.Size);
     }
 
     private void OnMouseDoubleClick(object? sender, EventArgs e)
     {
-        //throw new NotImplementedException();
+        _inputContainer.SendMouseDoubleClick(_mousePosition, e);
     }
 
     private void OnMouseWheel(object? sender, MouseEventArgs e)
     {
-        //throw new NotImplementedException();
+        _inputContainer.SendMouseWheel(_mousePosition, e);
     }
 
     private void OnMouseUp(object? sender, MouseEventArgs e)
     {
-        //throw new NotImplementedException();
+        _inputContainer.SendMouseUp(_mousePosition, e);
     }
 
     private void OnMouseDown(object? sender, MouseEventArgs e)
     {
-        //throw new NotImplementedException();
+        _inputContainer.SendMouseDown(_mousePosition, e);
     }
 
     private void OnMouseMove(object? sender, MouseEventArgs e)
@@ -78,7 +77,6 @@ public class InputEngineForForm : IInputEngine
     private void OnMouseClick(object? sender, EventArgs e)
     {
         _inputContainer.SendMouseClick(_mousePosition, e);
-        //throw new NotImplementedException();
     }
 
     public void Stop()

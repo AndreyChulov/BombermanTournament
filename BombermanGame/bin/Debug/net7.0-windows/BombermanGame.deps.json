@@ -97,7 +97,8 @@
       },
       "Engine/1.0.0": {
         "dependencies": {
-          "Engine.Graphic": "1.0.0"
+          "Engine.Graphic": "1.0.0",
+          "Engine.Input": "1.0.0"
         },
         "runtime": {
           "Engine.dll": {}
@@ -105,11 +106,19 @@
       },
       "Engine.Graphic/1.0.0": {
         "dependencies": {
-          "Engine.SharedInterfaces": "1.0.0",
-          "Vortice.Direct2D1": "2.4.2"
+          "Engine.SharedInterfaces": "1.0.0"
         },
         "runtime": {
           "Engine.Graphic.dll": {}
+        }
+      },
+      "Engine.Input/1.0.0": {
+        "dependencies": {
+          "Engine.Shared": "1.0.0",
+          "Engine.SharedInterfaces": "1.0.0"
+        },
+        "runtime": {
+          "Engine.Input.dll": {}
         }
       },
       "Engine.Shared/1.0.0": {
@@ -197,6 +206,11 @@
       "sha512": ""
     },
     "Engine.Graphic/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Engine.Input/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -153,8 +153,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
-          "Engine.SharedInterfaces": "1.0.0",
-          "Vortice.Direct2D1": "2.4.2"
+          "Engine.SharedInterfaces": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Engine.Graphic.dll": {}
@@ -208,7 +207,10 @@
         },
         "runtime": {
           "bin/placeholder/Engine.SharedInterfaces.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
       }
     }
   },

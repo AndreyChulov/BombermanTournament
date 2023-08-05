@@ -1,10 +1,10 @@
 using System.Drawing;
-using Engine.Shared.GraphicEngine.RamResources.Single;
 using Engine.SharedInterfaces;
 using Engine.SharedInterfaces.GraphicEngine.RamResources;
 using Vortice.Direct2D1;
 using Vortice.DirectWrite;
 using Vortice.Mathematics;
+using Brush = Engine.Shared.GraphicEngine.RamResources.Single.Brush;
 
 namespace Engine.Shared.GraphicEngine.Draw
 {

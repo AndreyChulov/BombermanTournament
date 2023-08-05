@@ -64,10 +64,10 @@
           }
         },
         "build": {
-          "build/Vortice.Direct2D1.props": {}
+          "build/_._": {}
         },
         "buildMultiTargeting": {
-          "buildMultiTargeting/Vortice.Direct2D1.props": {}
+          "buildMultiTargeting/_._": {}
         }
       },
       "Vortice.DirectX/2.4.2": {
@@ -143,7 +143,10 @@
         },
         "runtime": {
           "bin/placeholder/Engine.SharedInterfaces.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
       }
     }
   },
@@ -302,8 +305,7 @@
   },
   "projectFileDependencyGroups": {
     "net7.0-windows7.0": [
-      "Engine.SharedInterfaces >= 1.0.0",
-      "Vortice.Direct2D1 >= 2.4.2"
+      "Engine.SharedInterfaces >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -346,12 +348,6 @@
     "frameworks": {
       "net7.0-windows7.0": {
         "targetAlias": "net7.0-windows",
-        "dependencies": {
-          "Vortice.Direct2D1": {
-            "target": "Package",
-            "version": "[2.4.2, )"
-          }
-        },
         "imports": [
           "net461",
           "net462",

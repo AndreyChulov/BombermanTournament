@@ -157,7 +157,10 @@
         },
         "runtime": {
           "bin/placeholder/Engine.SharedInterfaces.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
       }
     }
   },

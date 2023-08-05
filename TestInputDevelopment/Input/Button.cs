@@ -5,7 +5,7 @@ using Image = Engine.Shared.GraphicEngine.Draw.Image;
 
 namespace TestInputDevelopment.Input;
 
-public class Button : Image, IInputEngineClickableObject
+public class Button : Image, IInputEngineMouseInteractableObject
 {
     protected override string LinkedResourceName => "Input.Button";
     protected override string EmbeddedImageResourceName => "TestInputDevelopment.Images.button.jpg";
@@ -27,8 +27,8 @@ public class Button : Image, IInputEngineClickableObject
             )
         );
     }
-    
-    protected Button(Rectangle drawRectangle) : base(drawRectangle)
+
+    private Button(Rectangle drawRectangle) : base(drawRectangle)
     {
         ControlRectangle = drawRectangle;
     }
@@ -38,4 +38,23 @@ public class Button : Image, IInputEngineClickableObject
         MessageBox.Show("Clicked!!!", "Yooo!!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
     }
 
+    public void OnMouseDown(Point mousePosition, MouseEventArgs mouseClickEventArgs)
+    {
+        
+    }
+
+    public void OnMouseUp(Point mousePosition, MouseEventArgs mouseClickEventArgs)
+    {
+        
+    }
+
+    public void OnMouseDoubleClick(Point mousePosition, EventArgs mouseClickEventArgs)
+    {
+        
+    }
+
+    public void OnMouseMouseWheel(Point mousePosition, MouseEventArgs mouseClickEventArgs)
+    {
+        
+    }
 }

@@ -100,8 +100,7 @@
       },
       "Engine.Graphic/1.0.0": {
         "dependencies": {
-          "Engine.SharedInterfaces": "1.0.0",
-          "Vortice.Direct2D1": "2.4.2"
+          "Engine.SharedInterfaces": "1.0.0"
         },
         "runtime": {
           "Engine.Graphic.dll": {}

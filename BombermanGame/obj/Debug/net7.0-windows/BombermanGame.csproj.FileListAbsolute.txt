@@ -48,3 +48,5 @@ Z:\Мой диск\GitHub\BombermanTournament\BombermanGame\obj\Debug\net7.0-win
 Z:\Мой диск\GitHub\BombermanTournament\BombermanGame\obj\Debug\net7.0-windows\refint\BombermanGame.dll
 Z:\Мой диск\GitHub\BombermanTournament\BombermanGame\obj\Debug\net7.0-windows\BombermanGame.pdb
 Z:\Мой диск\GitHub\BombermanTournament\BombermanGame\obj\Debug\net7.0-windows\ref\BombermanGame.dll
+Z:\Мой диск\GitHub\BombermanTournament\BombermanGame\bin\Debug\net7.0-windows\Engine.Input.dll
+Z:\Мой диск\GitHub\BombermanTournament\BombermanGame\bin\Debug\net7.0-windows\Engine.Input.pdb
