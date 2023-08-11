@@ -2,27 +2,27 @@ using Engine.Shared.GraphicEngine.RamResources.Single;
 
 namespace Engine.Shared.GraphicEngine.RamResources.Multi
 {
-    public class SystemTextWithShadow : SystemText
+    public class SystemTextWithShadowResource : SystemTextResource
     {
         public new static readonly int ResourceGroupId = 1001;
-        public Brush ShadowBrush { get; }
+        public BrushResource ShadowBrushResource { get; }
         public override string ResourceName { get; }
         public override List<IDisposable> AssociatedResources { get; }
 
         public override int GetResourceGroupId() => ResourceGroupId;
 
-        public SystemTextWithShadow(
-            string resourceName, TextFormat textFormat, Brush shadowBrush, Brush textBrush)
-            :base(resourceName, textFormat, textBrush)
+        public SystemTextWithShadowResource(
+            string resourceName, TextFormatResource textFormatResource, BrushResource shadowBrushResource, BrushResource textBrushResource)
+            :base(resourceName, textFormatResource, textBrushResource)
         {
             ResourceName = resourceName;
-            ShadowBrush = shadowBrush;
+            ShadowBrushResource = shadowBrushResource;
             
             AssociatedResources = new List<IDisposable>
             {
-                textFormat, 
-                shadowBrush,
-                textBrush
+                textFormatResource, 
+                shadowBrushResource,
+                textBrushResource
             };
         }
     }

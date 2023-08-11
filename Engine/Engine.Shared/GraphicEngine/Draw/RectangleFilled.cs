@@ -1,17 +1,17 @@
 using System.Drawing;
+using Engine.Shared.GraphicEngine.RamResources.Single;
 using Engine.SharedInterfaces;
 using Engine.SharedInterfaces.GraphicEngine.RamResources;
 using Vortice.Direct2D1;
 using Vortice.DirectWrite;
 using Vortice.Mathematics;
-using Brush = Engine.Shared.GraphicEngine.RamResources.Single.Brush;
 
 namespace Engine.Shared.GraphicEngine.Draw
 {
     public class RectangleFilled : BaseDraw
     {
         protected override string LinkedResourceName => "RoundedRectBrush";
-        protected override int LinkedResourceGroupId => Brush.ResourceGroupId;
+        protected override int LinkedResourceGroupId => BrushResource.ResourceGroupId;
 
         private readonly RectangleF _targetRectangle;
 
@@ -41,14 +41,14 @@ namespace Engine.Shared.GraphicEngine.Draw
 
         protected override void SetRamResource(IRamResource resource)
         {
-            _brush = (ID2D1SolidColorBrush) (((Brush) resource).Resource);
+            _brush = (ID2D1SolidColorBrush) (((BrushResource) resource).Resource);
         }
 
         protected override IRamResource CreateIRamResource(ID2D1HwndRenderTarget renderTarget, IDWriteFactory directWriteFactory)
         {
             var solidColorBrush = renderTarget.CreateSolidColorBrush(new Color4(Color3.Green, 1f));
             
-            return new Brush(LinkedResourceName, solidColorBrush);
+            return new BrushResource(LinkedResourceName, solidColorBrush);
         }
 
         public override void Draw(ID2D1HwndRenderTarget renderTarget)

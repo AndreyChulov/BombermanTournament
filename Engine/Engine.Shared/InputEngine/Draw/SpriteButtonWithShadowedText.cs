@@ -15,7 +15,7 @@ namespace Engine.Shared.InputEngine.Draw;
 public class SpriteButtonWithShadowedText : GraphicEngine.Draw.TextWithShadow, IInputEngineMouseInteractableObject
 {
     protected override string LinkedResourceName => "Input.SpriteButtonWithShadowedText";
-    protected override int LinkedResourceGroupId => SpriteButtonWithTextResource.ResourceGroupId;
+    protected override int LinkedResourceGroupId => SpriteButtonWithTextResourceResource.ResourceGroupId;
 
     protected virtual string EmbeddedImageResourceName => "Engine.Shared.InputEngine.ImageResources.buttonBackground.png";
     
@@ -50,21 +50,21 @@ public class SpriteButtonWithShadowedText : GraphicEngine.Draw.TextWithShadow, I
     protected override void SetRamResource(IRamResource resource)
     {
         base.SetRamResource(resource);
-        SpriteButtonWithShadowedTextResource spriteButtonWithTextResource = (SpriteButtonWithShadowedTextResource) resource;
+        SpriteButtonWithShadowResourceWithShadowedTextWithShadowResourceResource spriteButtonWithShadowResourceWithTextWithShadowResourceResource = (SpriteButtonWithShadowResourceWithShadowedTextWithShadowResourceResource) resource;
             
-        _backgroundBitmap = spriteButtonWithTextResource.BackgroundBitmap;
+        _backgroundBitmap = spriteButtonWithShadowResourceWithTextWithShadowResourceResource.BackgroundBitmap;
     }
     
     protected override IRamResource CreateIRamResource(
         ID2D1HwndRenderTarget renderTarget, IDWriteFactory directWriteFactory)
     {
-        SystemTextWithShadow textResource = (SystemTextWithShadow)base.CreateIRamResource(renderTarget, directWriteFactory);
+        SystemTextWithShadowResource textWithShadowResourceResource = (SystemTextWithShadowResource)base.CreateIRamResource(renderTarget, directWriteFactory);
         
-        return new SpriteButtonWithShadowedTextResource(
+        return new SpriteButtonWithShadowResourceWithShadowedTextWithShadowResourceResource(
             LinkedResourceName,
-            textResource.TextFormat,
-            textResource.TextBrush,
-            textResource.ShadowBrush,
+            textWithShadowResourceResource.TextFormatResource,
+            textWithShadowResourceResource.TextBrushResource,
+            textWithShadowResourceResource.ShadowBrushResource,
             renderTarget.LoadBitmapWithAlphaChannelFromEmbeddedResource(EmbeddedImageAssembly, EmbeddedImageResourceName)
         );
     }

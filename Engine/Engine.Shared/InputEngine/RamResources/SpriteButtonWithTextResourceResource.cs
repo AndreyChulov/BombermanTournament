@@ -5,7 +5,7 @@ using Vortice.Direct2D1;
 
 namespace Engine.Shared.InputEngine.RamResources;
 
-public class SpriteButtonWithTextResource : SystemText
+public class SpriteButtonWithTextResourceResource : SystemTextResource
 {
     public static readonly int ResourceGroupId = 2001;
     
@@ -14,15 +14,15 @@ public class SpriteButtonWithTextResource : SystemText
     public ID2D1Bitmap BackgroundBitmap { get; }
     
     
-    public SpriteButtonWithTextResource(string resourceName, TextFormat textFormat, Brush textBrush, ID2D1Bitmap backgroundBitmap) 
-        : base(resourceName, textFormat, textBrush)
+    public SpriteButtonWithTextResourceResource(string resourceName, TextFormatResource textFormatResource, BrushResource textBrushResource, ID2D1Bitmap backgroundBitmap) 
+        : base(resourceName, textFormatResource, textBrushResource)
     {
         BackgroundBitmap = backgroundBitmap;
         
         AssociatedResources = new List<IDisposable>
         {
-            textFormat, 
-            textBrush,
+            textFormatResource, 
+            textBrushResource,
             backgroundBitmap
         };
     }

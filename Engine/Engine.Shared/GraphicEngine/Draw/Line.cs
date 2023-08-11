@@ -11,7 +11,7 @@ namespace Engine.Shared.GraphicEngine.Draw
     public class Line : BaseDraw
     {
         protected override string LinkedResourceName => "LineBrush";
-        protected override int LinkedResourceGroupId => Brush.ResourceGroupId;
+        protected override int LinkedResourceGroupId => BrushResource.ResourceGroupId;
 
         private readonly Vector2 _point0;
         private readonly Vector2 _point1;
@@ -38,14 +38,14 @@ namespace Engine.Shared.GraphicEngine.Draw
 
         protected override void SetRamResource(IRamResource resource)
         {
-            _brush = (ID2D1SolidColorBrush) (((Brush) resource).Resource);
+            _brush = (ID2D1SolidColorBrush) (((BrushResource) resource).Resource);
         }
 
         protected override IRamResource CreateIRamResource(ID2D1HwndRenderTarget renderTarget, IDWriteFactory _)
         {
             var solidColorBrush = renderTarget.CreateSolidColorBrush(new Color4(Color3.Fuchsia, 1f));
             
-            return new Brush(LinkedResourceName, solidColorBrush);
+            return new BrushResource(LinkedResourceName, solidColorBrush);
         }
 
         public override void Draw(ID2D1HwndRenderTarget renderTarget)

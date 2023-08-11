@@ -1,19 +1,18 @@
 using System.Drawing;
 using System.Reflection;
+using Engine.Shared.GraphicEngine.RamResources.Single;
 using Engine.SharedInterfaces;
 using Engine.SharedInterfaces.GraphicEngine.RamResources;
 using Vortice.Direct2D1;
 using Vortice.DirectWrite;
-using Bitmap = Engine.Shared.GraphicEngine.RamResources.Single.Bitmap;
 using BitmapInterpolationMode = Vortice.Direct2D1.BitmapInterpolationMode;
-using Brush = Engine.Shared.GraphicEngine.RamResources.Single.Brush;
 
 namespace Engine.Shared.GraphicEngine.Draw
 {
     public class Sprite :BaseDraw
     {
         protected override string LinkedResourceName => "Sprite";
-        protected override int LinkedResourceGroupId => Brush.ResourceGroupId;
+        protected override int LinkedResourceGroupId => BrushResource.ResourceGroupId;
         
         protected virtual string EmbeddedImageResourceName => "Engine.Shared.GraphicEngine.ImageResources.tree.jpg";
         protected virtual Assembly EmbeddedImageAssembly { get; set; } = Assembly.GetExecutingAssembly(); 
@@ -23,7 +22,7 @@ namespace Engine.Shared.GraphicEngine.Draw
        
         protected override void SetRamResource(IRamResource resource)
         {
-            _bitmap = (ID2D1Bitmap) (((Bitmap) resource).Resource);
+            _bitmap = (ID2D1Bitmap) (((BitmapResource) resource).Resource);
         }
 
         public static Sprite CreateInPercents(IEngine engine, RectangleF drawRectangle)
@@ -49,7 +48,7 @@ namespace Engine.Shared.GraphicEngine.Draw
         protected override IRamResource CreateIRamResource(
             ID2D1HwndRenderTarget renderTarget, IDWriteFactory directWriteFactory)
         {
-            return new Bitmap(
+            return new BitmapResource(
                 LinkedResourceName, 
                 renderTarget.LoadBitmapWithAlphaChannelFromEmbeddedResource(EmbeddedImageAssembly, EmbeddedImageResourceName)
                 );

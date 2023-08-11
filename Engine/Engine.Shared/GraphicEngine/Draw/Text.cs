@@ -7,7 +7,6 @@ using Engine.SharedInterfaces.GraphicEngine.RamResources;
 using Vortice.Direct2D1;
 using Vortice.DirectWrite;
 using Vortice.Mathematics;
-using Brush = Engine.Shared.GraphicEngine.RamResources.Single.Brush;
 using FontStyle = Vortice.DirectWrite.FontStyle;
 
 namespace Engine.Shared.GraphicEngine.Draw
@@ -24,7 +23,7 @@ namespace Engine.Shared.GraphicEngine.Draw
         private IDWriteFactory? _directWriteFactory;
 
         protected override string LinkedResourceName => "systemText";
-        protected override int LinkedResourceGroupId => SystemText.ResourceGroupId;
+        protected override int LinkedResourceGroupId => SystemTextResource.ResourceGroupId;
 
         protected IDWriteTextLayout? TextLayout { get; set; }
 
@@ -81,10 +80,10 @@ namespace Engine.Shared.GraphicEngine.Draw
 
         protected override void SetRamResource(IRamResource resource)
         {
-            SystemText systemText = (SystemText) resource;
+            SystemTextResource systemTextResource = (SystemTextResource) resource;
             
-            TextFormat = (IDWriteTextFormat)(systemText.TextFormat.Resource);
-            TextForegroundBrush = (ID2D1Brush) (systemText.TextBrush.Resource);
+            TextFormat = (IDWriteTextFormat)(systemTextResource.TextFormatResource.Resource);
+            TextForegroundBrush = (ID2D1Brush) (systemTextResource.TextBrushResource.Resource);
         }
 
         protected override IRamResource CreateIRamResource(
@@ -101,10 +100,10 @@ namespace Engine.Shared.GraphicEngine.Draw
             
             ID2D1Brush id2D1Brush= renderTarget.CreateSolidColorBrush(new Color4(Color3.Coral, 1f));
 
-            TextFormat textFormat = new("systemTextFormat", idWriteTextFormat);
-            Brush textBrush = new("systemTextBrush", id2D1Brush);
+            TextFormatResource textFormatResource = new("systemTextFormat", idWriteTextFormat);
+            BrushResource textBrushResource = new("systemTextBrush", id2D1Brush);
 
-            return new SystemText(LinkedResourceName, textFormat, textBrush);
+            return new SystemTextResource(LinkedResourceName, textFormatResource, textBrushResource);
         }
 
         public override void Draw(ID2D1HwndRenderTarget renderTarget)

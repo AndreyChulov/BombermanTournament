@@ -12,7 +12,7 @@ namespace BombermanGame.DrawDataModel.Draw.Score
     public abstract class BasePlayerScore : TextWithShadow
     {
         protected override string LinkedResourceName => "BombermanGame.Score.BasePlayerScore";
-        protected override int LinkedResourceGroupId => SystemTextWithShadow.ResourceGroupId;
+        protected override int LinkedResourceGroupId => SystemTextWithShadowResource.ResourceGroupId;
 
         protected new float FontSize { get; }
         protected IPlayerInfo PlayerInfo { get; }
@@ -41,13 +41,13 @@ namespace BombermanGame.DrawDataModel.Draw.Score
             ID2D1Brush id2D1TextBrush= renderTarget.CreateSolidColorBrush(new Color4(Color3.Lime, 1f));
             ID2D1Brush id2D1ShadowBrush= renderTarget.CreateSolidColorBrush(new Color4(Color3.Black, 1f));
 
-            TextFormat textFormat = new(
+            TextFormatResource textFormatResource = new(
                 "BombermanGame.Draw.Score.BasePlayerScoreTextFormat", idWriteTextFormat);
-            Engine.Shared.GraphicEngine.RamResources.Single.Brush textBrush = new(
+            Engine.Shared.GraphicEngine.RamResources.Single.BrushResource textBrushResource = new(
                 "BombermanGame.Draw.Score.BasePlayerScoreTextBrush", id2D1TextBrush);
-            Engine.Shared.GraphicEngine.RamResources.Single.Brush shadowBrush = new(
+            Engine.Shared.GraphicEngine.RamResources.Single.BrushResource shadowBrushResource = new(
                 "BombermanGame.Draw.Score.BasePlayerScoreTextShadowBrush", id2D1ShadowBrush);
-            return new SystemTextWithShadow(LinkedResourceName, textFormat, shadowBrush, textBrush);
+            return new SystemTextWithShadowResource(LinkedResourceName, textFormatResource, shadowBrushResource, textBrushResource);
         }
 
         public override void Draw(ID2D1HwndRenderTarget renderTarget)

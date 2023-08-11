@@ -2,7 +2,7 @@ using Vortice.Direct2D1;
 
 namespace Engine.Shared.GraphicEngine.RamResources.Single
 {
-    public class Brush : BaseRamSingleResource
+    public class BrushResource : BaseRamSingleResource
     {
         public static int ResourceGroupId = 1;
         
@@ -11,7 +11,7 @@ namespace Engine.Shared.GraphicEngine.RamResources.Single
         
         public override int GetResourceGroupId() => ResourceGroupId;
         
-        public Brush(string resourceName, ID2D1Brush brush)
+        public BrushResource(string resourceName, ID2D1Brush brush)
         {
             ResourceName = resourceName;
             Resource = brush;

@@ -1,12 +1,12 @@
 using System.Drawing;
 using System.Numerics;
 using Engine.Shared.GraphicEngine.RamResources.Multi;
+using Engine.Shared.GraphicEngine.RamResources.Single;
 using Engine.SharedInterfaces;
 using Engine.SharedInterfaces.GraphicEngine.RamResources;
 using Vortice.Direct2D1;
 using Vortice.DirectWrite;
 using Vortice.Mathematics;
-using Brush = Engine.Shared.GraphicEngine.RamResources.Single.Brush;
 
 namespace Engine.Shared.GraphicEngine.Draw
 {
@@ -16,7 +16,7 @@ namespace Engine.Shared.GraphicEngine.Draw
         
         protected ID2D1Brush? ShadowBrush { get; private set; }
         protected override string LinkedResourceName => "systemTextWithShadow";
-        protected override int LinkedResourceGroupId => SystemTextWithShadow.ResourceGroupId;
+        protected override int LinkedResourceGroupId => SystemTextWithShadowResource.ResourceGroupId;
 
         public new static TextWithShadow CreateInPercents(IEngine engine, string textToDraw, RectangleF drawRectangle)
         {
@@ -47,21 +47,21 @@ namespace Engine.Shared.GraphicEngine.Draw
         protected override void SetRamResource(IRamResource resource)
         {
             base.SetRamResource(resource);
-            var systemText = (SystemTextWithShadow) resource;
+            var systemText = (SystemTextWithShadowResource) resource;
             
-            ShadowBrush = (ID2D1Brush) (systemText.ShadowBrush.Resource);
+            ShadowBrush = (ID2D1Brush) (systemText.ShadowBrushResource.Resource);
         }
         
         protected override IRamResource CreateIRamResource(
             ID2D1HwndRenderTarget renderTarget,
             IDWriteFactory directWriteFactory)
         {
-            SystemText baseResource = (SystemText)base.CreateIRamResource(renderTarget, directWriteFactory);
+            SystemTextResource baseResource = (SystemTextResource)base.CreateIRamResource(renderTarget, directWriteFactory);
             ID2D1Brush id2D1ShadowBrush = renderTarget.CreateSolidColorBrush(new Color4(Color3.Black, 1f));
 
-            Brush shadowBrush = new("systemTextShadowBrush", id2D1ShadowBrush);
+            BrushResource shadowBrushResource = new("systemTextShadowBrush", id2D1ShadowBrush);
 
-            return new SystemTextWithShadow(LinkedResourceName, baseResource.TextFormat, shadowBrush, baseResource.TextBrush);
+            return new SystemTextWithShadowResource(LinkedResourceName, baseResource.TextFormatResource, shadowBrushResource, baseResource.TextBrushResource);
         }
         public override void Draw(ID2D1HwndRenderTarget renderTarget)
         {

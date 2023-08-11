@@ -1,7 +1,5 @@
 using Engine.Shared.GraphicEngine.RamResources.Multi;
 using Engine.Shared.GraphicEngine.RamResources.Single;
-using Bitmap = Engine.Shared.GraphicEngine.RamResources.Single.Bitmap;
-using Brush = Engine.Shared.GraphicEngine.RamResources.Single.Brush;
 
 namespace BombermanGame.DrawDataModel.RamResources.Multi
 {
@@ -10,21 +8,21 @@ namespace BombermanGame.DrawDataModel.RamResources.Multi
         public static int ResourceGroupId = 2000;
 
         public override string ResourceName { get; }
-        public Bitmap FieldBackgroundBitmap { get; }
-        public Bitmap IndestructibleFieldBitmap { get; }
-        public Bitmap DestructibleFieldBitmap { get; }
-        public Bitmap Player1StartPoint { get; }
-        public Bitmap Player2StartPoint { get; }
-        public Bitmap Player3StartPoint { get; }
-        public Bitmap Player4StartPoint { get; }
-        public Bitmap Bomb { get; }
-        public Bitmap Player1 { get; }
-        public Bitmap Player2 { get; }
-        public Bitmap Player3 { get; }
-        public Bitmap Player4 { get; }
-        public TextFormat NicknameTextFormat { get; }
-        public Brush NicknameForegroundBrush { get; }
-        public Brush NicknameShadowBrush { get; }
+        public BitmapResource FieldBackgroundBitmapResource { get; }
+        public BitmapResource IndestructibleFieldBitmapResource { get; }
+        public BitmapResource DestructibleFieldBitmapResource { get; }
+        public BitmapResource Player1StartPoint { get; }
+        public BitmapResource Player2StartPoint { get; }
+        public BitmapResource Player3StartPoint { get; }
+        public BitmapResource Player4StartPoint { get; }
+        public BitmapResource Bomb { get; }
+        public BitmapResource Player1 { get; }
+        public BitmapResource Player2 { get; }
+        public BitmapResource Player3 { get; }
+        public BitmapResource Player4 { get; }
+        public TextFormatResource NicknameTextFormatResource { get; }
+        public BrushResource NicknameForegroundBrushResource { get; }
+        public BrushResource NicknameShadowBrushResource { get; }
         
         public override List<IDisposable> AssociatedResources { get; }
         
@@ -32,26 +30,26 @@ namespace BombermanGame.DrawDataModel.RamResources.Multi
 
         public FieldItem(
             string resourceName, 
-            Bitmap fieldBackgroundBitmap,
-            Bitmap indestructibleFieldBitmap, 
-            Bitmap destructibleFieldBitmap, 
-            Bitmap player1StartPoint, 
-            Bitmap player2StartPoint, 
-            Bitmap player3StartPoint, 
-            Bitmap player4StartPoint, 
-            Bitmap bomb, 
-            Bitmap player1, 
-            Bitmap player2, 
-            Bitmap player3, 
-            Bitmap player4, 
-            TextFormat nicknameTextFormat, 
-            Brush nicknameForegroundBrush, 
-            Brush nicknameShadowBrush)
+            BitmapResource fieldBackgroundBitmapResource,
+            BitmapResource indestructibleFieldBitmapResource, 
+            BitmapResource destructibleFieldBitmapResource, 
+            BitmapResource player1StartPoint, 
+            BitmapResource player2StartPoint, 
+            BitmapResource player3StartPoint, 
+            BitmapResource player4StartPoint, 
+            BitmapResource bomb, 
+            BitmapResource player1, 
+            BitmapResource player2, 
+            BitmapResource player3, 
+            BitmapResource player4, 
+            TextFormatResource nicknameTextFormatResource, 
+            BrushResource nicknameForegroundBrushResource, 
+            BrushResource nicknameShadowBrushResource)
         {
             ResourceName = resourceName;
-            FieldBackgroundBitmap = fieldBackgroundBitmap;
-            IndestructibleFieldBitmap = indestructibleFieldBitmap;
-            DestructibleFieldBitmap = destructibleFieldBitmap;
+            FieldBackgroundBitmapResource = fieldBackgroundBitmapResource;
+            IndestructibleFieldBitmapResource = indestructibleFieldBitmapResource;
+            DestructibleFieldBitmapResource = destructibleFieldBitmapResource;
             Player1StartPoint = player1StartPoint;
             Player2StartPoint = player2StartPoint;
             Player3StartPoint = player3StartPoint;
@@ -61,15 +59,15 @@ namespace BombermanGame.DrawDataModel.RamResources.Multi
             Player2 = player2;
             Player3 = player3;
             Player4 = player4;
-            NicknameTextFormat = nicknameTextFormat;
-            NicknameForegroundBrush = nicknameForegroundBrush;
-            NicknameShadowBrush = nicknameShadowBrush;
+            NicknameTextFormatResource = nicknameTextFormatResource;
+            NicknameForegroundBrushResource = nicknameForegroundBrushResource;
+            NicknameShadowBrushResource = nicknameShadowBrushResource;
 
             AssociatedResources = new List<IDisposable>
             {
-                fieldBackgroundBitmap,
-                indestructibleFieldBitmap,
-                destructibleFieldBitmap,
+                fieldBackgroundBitmapResource,
+                indestructibleFieldBitmapResource,
+                destructibleFieldBitmapResource,
                 player1StartPoint,
                 player2StartPoint,
                 player3StartPoint,
@@ -79,9 +77,9 @@ namespace BombermanGame.DrawDataModel.RamResources.Multi
                 player2,
                 player3,
                 player4,
-                nicknameTextFormat,
-                nicknameForegroundBrush,
-                nicknameShadowBrush
+                nicknameTextFormatResource,
+                nicknameForegroundBrushResource,
+                nicknameShadowBrushResource
             };
         }
     }

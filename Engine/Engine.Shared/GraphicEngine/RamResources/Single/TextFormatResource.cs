@@ -2,7 +2,7 @@ using Vortice.DirectWrite;
 
 namespace Engine.Shared.GraphicEngine.RamResources.Single
 {
-    public class TextFormat :BaseRamSingleResource
+    public class TextFormatResource :BaseRamSingleResource
     {
         public static int ResourceGroupId = 2;
         public override string ResourceName { get; }
@@ -10,7 +10,7 @@ namespace Engine.Shared.GraphicEngine.RamResources.Single
         
         public override int GetResourceGroupId() => ResourceGroupId;
 
-        public TextFormat(string resourceName, IDWriteTextFormat textFormat)
+        public TextFormatResource(string resourceName, IDWriteTextFormat textFormat)
         {
             ResourceName = resourceName;
             Resource = textFormat;

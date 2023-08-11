@@ -77,9 +77,9 @@ namespace BombermanGame.DrawDataModel.Draw.Field
         {
             FieldItem fieldItem = (FieldItem)resource;
             
-            _fieldBackgroundBitmap = (ID2D1Bitmap) (fieldItem.FieldBackgroundBitmap.Resource);
-            _indestructibleFieldBitmap = (ID2D1Bitmap) (fieldItem.IndestructibleFieldBitmap.Resource);
-            _destructibleFieldBitmap = (ID2D1Bitmap) (fieldItem.DestructibleFieldBitmap.Resource);
+            _fieldBackgroundBitmap = (ID2D1Bitmap) (fieldItem.FieldBackgroundBitmapResource.Resource);
+            _indestructibleFieldBitmap = (ID2D1Bitmap) (fieldItem.IndestructibleFieldBitmapResource.Resource);
+            _destructibleFieldBitmap = (ID2D1Bitmap) (fieldItem.DestructibleFieldBitmapResource.Resource);
             _player1StartPointBitmap = (ID2D1Bitmap) (fieldItem.Player1StartPoint.Resource);
             _player2StartPointBitmap = (ID2D1Bitmap) (fieldItem.Player2StartPoint.Resource);
             _player3StartPointBitmap = (ID2D1Bitmap) (fieldItem.Player3StartPoint.Resource);
@@ -89,9 +89,9 @@ namespace BombermanGame.DrawDataModel.Draw.Field
             _player2Bitmap = (ID2D1Bitmap) (fieldItem.Player2.Resource);
             _player3Bitmap = (ID2D1Bitmap) (fieldItem.Player3.Resource);
             _player4Bitmap = (ID2D1Bitmap) (fieldItem.Player4.Resource);
-            _nicknameForegroundBrush = (ID2D1Brush) (fieldItem.NicknameForegroundBrush.Resource);
-            _nicknameTextFormat = (IDWriteTextFormat) (fieldItem.NicknameTextFormat.Resource);
-            _nicknameShadowBrush = (ID2D1Brush) (fieldItem.NicknameShadowBrush.Resource);
+            _nicknameForegroundBrush = (ID2D1Brush) (fieldItem.NicknameForegroundBrushResource.Resource);
+            _nicknameTextFormat = (IDWriteTextFormat) (fieldItem.NicknameTextFormatResource.Resource);
+            _nicknameShadowBrush = (ID2D1Brush) (fieldItem.NicknameShadowBrushResource.Resource);
         }
         
         protected override IRamResource CreateIRamResource(

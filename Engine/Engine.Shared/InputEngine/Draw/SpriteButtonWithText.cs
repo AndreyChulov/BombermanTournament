@@ -15,7 +15,7 @@ namespace Engine.Shared.InputEngine.Draw;
 public class SpriteButtonWithText : GraphicEngine.Draw.Text, IInputEngineMouseInteractableObject
 {
     protected override string LinkedResourceName => "Input.SpriteButtonWithText";
-    protected override int LinkedResourceGroupId => SpriteButtonWithTextResource.ResourceGroupId;
+    protected override int LinkedResourceGroupId => SpriteButtonWithTextResourceResource.ResourceGroupId;
 
     protected virtual string EmbeddedImageResourceName => "Engine.Shared.InputEngine.ImageResources.buttonBackground.png";
     
@@ -50,20 +50,20 @@ public class SpriteButtonWithText : GraphicEngine.Draw.Text, IInputEngineMouseIn
     protected override void SetRamResource(IRamResource resource)
     {
         base.SetRamResource(resource);
-        SpriteButtonWithTextResource spriteButtonWithTextResource = (SpriteButtonWithTextResource) resource;
+        SpriteButtonWithTextResourceResource spriteButtonWithTextResourceResource = (SpriteButtonWithTextResourceResource) resource;
             
-        _backgroundBitmap = spriteButtonWithTextResource.BackgroundBitmap;
+        _backgroundBitmap = spriteButtonWithTextResourceResource.BackgroundBitmap;
     }
     
     protected override IRamResource CreateIRamResource(
         ID2D1HwndRenderTarget renderTarget, IDWriteFactory directWriteFactory)
     {
-        SystemText textResource = (SystemText)base.CreateIRamResource(renderTarget, directWriteFactory);
+        SystemTextResource textResourceResource = (SystemTextResource)base.CreateIRamResource(renderTarget, directWriteFactory);
         
-        return new SpriteButtonWithTextResource(
+        return new SpriteButtonWithTextResourceResource(
             LinkedResourceName,
-            textResource.TextFormat,
-            textResource.TextBrush,
+            textResourceResource.TextFormatResource,
+            textResourceResource.TextBrushResource,
             renderTarget.LoadBitmapWithAlphaChannelFromEmbeddedResource(EmbeddedImageAssembly, EmbeddedImageResourceName)
         );
     }
