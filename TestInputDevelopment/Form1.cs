@@ -25,7 +25,7 @@ public partial class Form1 : Form
     {
         _engine.LoadDrawObject(Background.CreateInstance(_engine));
         _engine.LoadDrawObject(FpsMeter.CreateInPercents(_engine, new RectangleF(0.8f, 0.05f, 0.20f, 0.05f)));
-        _engine.LoadDrawObject(Input.Button.CreateInPercents(_engine, new RectangleF(0.2f, 0.2f, 0.3f, 0.3f)));
+        _engine.LoadDrawObject(SpriteButton.CreateInPercents(_engine, new RectangleF(0.2f, 0.2f, 0.3f, 0.3f)));
         _engine.LoadResources();
         _engine.Start();
     }

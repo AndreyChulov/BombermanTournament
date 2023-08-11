@@ -21,4 +21,8 @@
       <EmbeddedResource Include="Images\button.jpg" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Input\" />
+    </ItemGroup>
+
 </Project>

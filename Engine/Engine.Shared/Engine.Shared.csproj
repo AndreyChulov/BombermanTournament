@@ -12,10 +12,15 @@
 
     <ItemGroup>
       <EmbeddedResource Include="GraphicEngine\ImageResources\tree.jpg" />
+      <None Remove="InputEngine\ImageResources\buttonBackground.png" />
+      <EmbeddedResource Include="InputEngine\ImageResources\buttonBackground.png" />
     </ItemGroup>
 
     <ItemGroup>
       <PackageReference Include="Vortice.Direct2D1" Version="2.4.2" />
     </ItemGroup>
+
+
+
 
 </Project>
