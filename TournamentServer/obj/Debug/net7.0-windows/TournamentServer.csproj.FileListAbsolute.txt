@@ -22,3 +22,7 @@ Z:\Мой диск\GitHub\BombermanTournament\TournamentServer\obj\Debug\net7.0-
 Z:\Мой диск\GitHub\BombermanTournament\TournamentServer\obj\Debug\net7.0-windows\TournamentServer.pdb
 Z:\Мой диск\GitHub\BombermanTournament\TournamentServer\obj\Debug\net7.0-windows\TournamentServer.genruntimeconfig.cache
 Z:\Мой диск\GitHub\BombermanTournament\TournamentServer\obj\Debug\net7.0-windows\ref\TournamentServer.dll
+Z:\Мой диск\GitHub\BombermanTournament\TournamentServer\obj\Debug\net7.0-windows\Controls\ServerInfo.g.cs
+Z:\Мой диск\GitHub\BombermanTournament\TournamentServer\obj\Debug\net7.0-windows\Controls\ServerInfo.baml
+Z:\Мой диск\GitHub\BombermanTournament\TournamentServer\obj\Debug\net7.0-windows\Controls\ClientsInfoTable.g.cs
+Z:\Мой диск\GitHub\BombermanTournament\TournamentServer\obj\Debug\net7.0-windows\Controls\ClientsInfoTable.baml

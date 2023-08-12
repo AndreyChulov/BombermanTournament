@@ -21,44 +21,7 @@
             <RowDefinition Height="10*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid Row="0">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="1*"></RowDefinition>
-                    <RowDefinition Height="1*"></RowDefinition>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*"></ColumnDefinition>
-                    <ColumnDefinition Width="1*"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <Grid Row="0" Column="0">
-                    <controls:ClientInfo Title="Player 1 info" 
-                                         Server="{Binding TournamentServer}"
-                                         ClientIndex="0">
-                        
-                    </controls:ClientInfo>
-                </Grid>
-                <Grid Row="0" Column="1">
-                    <controls:ClientInfo Title="Player 2 info"
-                                         Server="{Binding TournamentServer}"
-                                         ClientIndex="1">
-                        
-                    </controls:ClientInfo>
-                </Grid>
-                <Grid Row="1" Column="0">
-                    <controls:ClientInfo Title="Player 3 info"
-                                         Server="{Binding TournamentServer}"
-                                         ClientIndex="2">
-                        
-                    </controls:ClientInfo>
-                </Grid>
-                <Grid Row="1" Column="1">
-                    <controls:ClientInfo Title="Player 4 info"
-                                         Server="{Binding TournamentServer}"
-                                         ClientIndex="3">
-                        
-                    </controls:ClientInfo>
-                </Grid>
-            </Grid>
+            <controls:ServerInfo Server="{Binding TournamentServer}"></controls:ServerInfo>
         </Grid>
         <Grid Row="1">
             <Button Name="BtnStartTournament" Click="BtnStartTournament_OnClick">Start tournament</Button>
