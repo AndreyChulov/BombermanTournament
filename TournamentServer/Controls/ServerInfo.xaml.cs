@@ -7,12 +7,8 @@ namespace TournamentServer.Controls;
 public partial class ServerInfo : UserControl
 {
     public static readonly DependencyProperty ServerProperty = 
-        DependencyProperty.Register(nameof(Server), typeof(IServer), 
-            typeof(ServerInfo), new PropertyMetadata(default(IServer)));
-
-    public static readonly DependencyProperty IsServerStartedTextProperty = 
-        DependencyProperty.Register(nameof(IsServerStartedText), typeof(object), 
-            typeof(ServerInfo), new PropertyMetadata(default(object)));
+        DependencyProperty.Register(nameof(Server), typeof(IServer), typeof(ServerInfo), 
+            new PropertyMetadata(default(IServer)));
 
     public ServerInfo()
     {
@@ -25,9 +21,15 @@ public partial class ServerInfo : UserControl
         set => SetValue(ServerProperty, value);
     }
 
-    public object IsServerStartedText
+    private void StartStopServerButton_OnClick(object sender, RoutedEventArgs e)
     {
-        get => (object)GetValue(IsServerStartedTextProperty);
-        set => SetValue(IsServerStartedTextProperty, value);
+        if (Server.IsServerStarted)
+        {
+            Server.StopServer();
+        }
+        else
+        {
+            Server.StartServer();
+        }
     }
 }

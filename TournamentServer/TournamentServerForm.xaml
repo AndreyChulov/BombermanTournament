@@ -12,19 +12,29 @@
         d:DataContext="{x:Static local:TournamentServerFormDesignContextFactory.TournamentServerFormContext}"
         DataContext="{x:Static local:TournamentServerFormContextFactory.TournamentServerFormContext}">
     <Window.Resources>
-        
         <local:TournamentServerFormContext x:Key="FormContext" d:DesignSource=""></local:TournamentServerFormContext>
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="90*"></RowDefinition>
+            <RowDefinition Height="10*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="78*"></RowDefinition>
             <RowDefinition Height="10*"></RowDefinition>
         </Grid.RowDefinitions>
-        <Grid Row="0">
-            <controls:ServerInfo Server="{Binding TournamentServer}"></controls:ServerInfo>
-        </Grid>
-        <Grid Row="1">
-            <Button Name="BtnStartTournament" Click="BtnStartTournament_OnClick">Start tournament</Button>
-        </Grid>
+        <controls:ServerInfo 
+            Grid.Row="0"
+            Server="{Binding TournamentServer}">
+        </controls:ServerInfo>
+        <Line Grid.Row="1" Grid.ColumnSpan="2"></Line>
+        <controls:ClientsInfoTable 
+            Grid.Row="2" 
+            Server="{Binding TournamentServer}"
+        >
+        </controls:ClientsInfoTable>
+        <Button 
+            Grid.Row="3"
+            Name="BtnStartTournament" 
+            Click="BtnStartTournament_OnClick"
+            >Start tournament</Button>
     </Grid>
 </Window>

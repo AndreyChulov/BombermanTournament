@@ -1,9 +1,13 @@
+using TournamentServer.Server.Utilities;
+
 namespace TournamentServer.Server;
 
 public interface IServer
 {
-    bool IsServerStarted { get; }
-
+    MonitoredVariable<bool> IsServerStarted { get; }
+    
     void StartServer();
     void StopServer();
+    
+    
 }

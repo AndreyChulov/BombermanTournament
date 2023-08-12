@@ -3,28 +3,34 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
              xmlns:controls="clr-namespace:TournamentServer.Controls"
+             xmlns:resources="clr-namespace:TournamentServer.Resources"
              mc:Ignorable="d"
              x:Name="This"
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="50" d:DesignWidth="600">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="10*"></RowDefinition>
-            <RowDefinition Height="90*"></RowDefinition>
-        </Grid.RowDefinitions>
-        <Grid
-            Grid.Row="0"
+        <Grid.Resources>
+            <resources:ServerInfoDataModel 
+                x:Key="DataModel"
+                Server="{Binding ElementName=This, Path=Server, Mode=OneWay}">
+            </resources:ServerInfoDataModel>
+        </Grid.Resources>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Label 
+            Grid.Column="0" 
+            Content="{Binding Source={StaticResource DataModel}, Path=IsServerStartedText}"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center">
+        </Label>
+        <Button 
+            Grid.Column="1"
+            Content="{Binding Source={StaticResource DataModel}, Path=StartStopServerButtonText}"
+            Click="StartStopServerButton_OnClick"
             >
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*"></ColumnDefinition>
-                <ColumnDefinition Width="1*"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Label Grid.Column="0" Content="{Binding ElementName=This, Path=IsServerStartedText}"></Label>
-            <Button Grid.Column="1"></Button>
-        </Grid>
-        <controls:ClientsInfoTable 
-            Grid.Row="1" 
-            Server="{Binding ElementName=This, Path=Server}">
-        </controls:ClientsInfoTable>
+        </Button>
     </Grid>
 </UserControl>

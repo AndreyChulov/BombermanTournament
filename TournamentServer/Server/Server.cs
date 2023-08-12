@@ -1,15 +1,18 @@
+using TournamentServer.Server.Utilities;
+
 namespace TournamentServer.Server;
 
 public class Server :IServer
 {
-    public bool IsServerStarted { get; private set; } = false;
+    public MonitoredVariable<bool> IsServerStarted { get; } = false;
+
     public void StartServer()
     {
-        IsServerStarted = true;
+        IsServerStarted.SetVariable(true);
     }
 
     public void StopServer()
     {
-        IsServerStarted = false;
+        IsServerStarted.SetVariable(false);
     }
 }
