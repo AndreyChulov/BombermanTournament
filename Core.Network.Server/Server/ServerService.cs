@@ -1,8 +1,7 @@
-﻿using System;
-using System.Net.Sockets;
-using ImageChat.Shared;
+﻿using System.Net.Sockets;
+using Core.Network.Shared;
 
-namespace ImageChat.Server.Server
+namespace Core.Network.Server.Server
 {
     public class ServerService :BaseThreadService
     {

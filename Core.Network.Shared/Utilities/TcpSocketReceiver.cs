@@ -1,7 +1,6 @@
 ﻿using System.Net.Sockets;
-using System.Threading;
 
-namespace ImageChat.Protocol.Utilities
+namespace Core.Network.Shared.Utilities
 {
     internal static class TcpSocketReceiver
     {

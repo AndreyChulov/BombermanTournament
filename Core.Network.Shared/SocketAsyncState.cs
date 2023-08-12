@@ -1,8 +1,6 @@
-﻿using System;
-using System.Net.Sockets;
-using System.Threading;
+﻿using System.Net.Sockets;
 
-namespace ImageChat.Shared
+namespace Core.Network.Shared
 {
     public class SocketAsyncState : IDisposable
     {

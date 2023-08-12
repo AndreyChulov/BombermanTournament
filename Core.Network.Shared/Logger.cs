@@ -1,7 +1,4 @@
-﻿using System;
-using System.IO;
-
-namespace ImageChat.Shared
+﻿namespace Core.Network.Shared
 {
     public static class Logger
     {

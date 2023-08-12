@@ -1,11 +1,8 @@
-﻿using System;
-using System.Linq;
-using System.Net;
+﻿using System.Net;
 using System.Net.Sockets;
-using ImageChat.Protocol;
-using ImageChat.Shared;
+using Core.Network.Shared;
 
-namespace ImageChat.Client.Client
+namespace Core.Network.Client.Client
 {
     public class ServerLocatorSenderService : BaseThreadService
     {

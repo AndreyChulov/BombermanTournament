@@ -1,8 +1,7 @@
-﻿using System;
-using System.Net.Sockets;
-using ImageChat.Protocol.Utilities;
+﻿using System.Net.Sockets;
+using Core.Network.Shared.Utilities;
 
-namespace ImageChat.Protocol
+namespace Core.Network.Shared
 {
     public static class TcpSocketUtility
     {

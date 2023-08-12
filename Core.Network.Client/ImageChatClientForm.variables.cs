@@ -1,6 +1,6 @@
-﻿using ImageChat.Client.Client;
+﻿using Core.Network.Client.Client;
 
-namespace ImageChat.Client
+namespace Core.Network.Client
 {
     public partial class ImageChatClientForm
     {

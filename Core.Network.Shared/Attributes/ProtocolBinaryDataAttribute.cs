@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ImageChat.Protocol.Attributes
+﻿namespace Core.Network.Shared.Attributes
 {
     public class ProtocolBinaryDataAttribute : Attribute
     {

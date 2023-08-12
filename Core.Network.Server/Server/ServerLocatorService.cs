@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Net;
-using ImageChat.Shared;
+﻿using System.Net;
+using Core.Network.Shared;
 
-namespace ImageChat.Server.Server
+namespace Core.Network.Server.Server
 {
     public class ServerLocatorService : IDisposable
     {

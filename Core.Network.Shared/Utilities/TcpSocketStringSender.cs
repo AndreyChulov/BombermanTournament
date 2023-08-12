@@ -1,7 +1,6 @@
-﻿using System.IO;
-using System.Net.Sockets;
+﻿using System.Net.Sockets;
 
-namespace ImageChat.Protocol.Utilities
+namespace Core.Network.Shared.Utilities
 {
     internal static class TcpSocketStringSender
     {

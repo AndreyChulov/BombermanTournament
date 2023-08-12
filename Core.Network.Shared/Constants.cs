@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ImageChat.Shared
+﻿namespace Core.Network.Shared
 {
     public static class Constants
     {

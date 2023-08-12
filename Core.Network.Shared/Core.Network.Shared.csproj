@@ -6,8 +6,5 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
-    <ItemGroup>
-      <Content Include="ImageChat.Protocol.csproj" />
-    </ItemGroup>
 
 </Project>

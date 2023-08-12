@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
+﻿using System.Net;
 using System.Net.Sockets;
-using System.Threading;
-using System.Threading.Tasks;
-using Utilities;
 
-namespace ChatClient
+namespace Core.Network.Client.Client
 {
     internal class ServerLocator : IDisposable
     {
@@ -55,7 +49,7 @@ namespace ChatClient
 
             while (_isStarted)
             {
-                SocketUtility.SendString(_udpBroadcastSocket, "Follow the white rabbit!", () => { });
+                //SocketUtility.SendString(_udpBroadcastSocket, "Follow the white rabbit!", () => { });
                 Task.Delay(1000).Wait();
             }
         }

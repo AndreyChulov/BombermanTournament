@@ -1,6 +1,6 @@
-﻿using ImageChat.Server.Server;
+﻿using Core.Network.Server.Server;
 
-namespace ImageChat.Server
+namespace Core.Network.Server
 {
     public partial class ImageChatServerForm
     {

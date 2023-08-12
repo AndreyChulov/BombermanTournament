@@ -1,7 +1,4 @@
-﻿using System;
-using System.IO;
-
-namespace ImageChat.Protocol.Utilities
+﻿namespace Core.Network.Shared.Utilities
 {
     internal static class SocketSender
     {
