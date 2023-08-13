@@ -9,7 +9,25 @@
     <ItemGroup>
       <ProjectReference Include="..\Core.Network.Client\Core.Network.Client.csproj" />
       <ProjectReference Include="..\Core.Network.Server\Core.Network.Server.csproj" />
-      <ProjectReference Include="..\Core.Network.Shared\Core.Network.Shared.csproj" />
+      <ProjectReference Include="..\Core.Network.InternalShared\Core.Network.InternalShared.csproj" />
+      <ProjectReference Include="Core.Network.ExternalShared\Core.Network.ExternalShared.csproj" />
+    </ItemGroup>
+
+
+
+    <ItemGroup>
+      <Folder Include="Network\" />
+    </ItemGroup>
+
+
+
+    <ItemGroup>
+      <Compile Update="Core.Network.ExternalShared\Enums\NetworkObjectType.cs">
+        <Link>Core.Network.ExternalSared\Enums\NetworkObjectType.cs</Link>
+      </Compile>
+      <Compile Update="Core.Network.ExternalShared\Interfaces\INetworkObject.cs">
+        <Link>Core.Network.ExternalSared\Interfaces\INetworkObject.cs</Link>
+      </Compile>
     </ItemGroup>
 
 </Project>

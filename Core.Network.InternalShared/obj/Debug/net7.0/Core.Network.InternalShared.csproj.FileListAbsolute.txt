@@ -1,0 +1,12 @@
+Z:\Мой диск\GitHub\BombermanTournament\Core.Network.InternalShared\bin\Debug\net7.0\Core.Network.InternalShared.deps.json
+Z:\Мой диск\GitHub\BombermanTournament\Core.Network.InternalShared\bin\Debug\net7.0\Core.Network.InternalShared.dll
+Z:\Мой диск\GitHub\BombermanTournament\Core.Network.InternalShared\bin\Debug\net7.0\Core.Network.InternalShared.pdb
+Z:\Мой диск\GitHub\BombermanTournament\Core.Network.InternalShared\obj\Debug\net7.0\Core.Network.InternalShared.csproj.AssemblyReference.cache
+Z:\Мой диск\GitHub\BombermanTournament\Core.Network.InternalShared\obj\Debug\net7.0\Core.Network.InternalShared.GeneratedMSBuildEditorConfig.editorconfig
+Z:\Мой диск\GitHub\BombermanTournament\Core.Network.InternalShared\obj\Debug\net7.0\Core.Network.InternalShared.AssemblyInfoInputs.cache
+Z:\Мой диск\GitHub\BombermanTournament\Core.Network.InternalShared\obj\Debug\net7.0\Core.Network.InternalShared.AssemblyInfo.cs
+Z:\Мой диск\GitHub\BombermanTournament\Core.Network.InternalShared\obj\Debug\net7.0\Core.Network.InternalShared.csproj.CoreCompileInputs.cache
+Z:\Мой диск\GitHub\BombermanTournament\Core.Network.InternalShared\obj\Debug\net7.0\Core.Network.InternalShared.dll
+Z:\Мой диск\GitHub\BombermanTournament\Core.Network.InternalShared\obj\Debug\net7.0\refint\Core.Network.InternalShared.dll
+Z:\Мой диск\GitHub\BombermanTournament\Core.Network.InternalShared\obj\Debug\net7.0\Core.Network.InternalShared.pdb
+Z:\Мой диск\GitHub\BombermanTournament\Core.Network.InternalShared\obj\Debug\net7.0\ref\Core.Network.InternalShared.dll

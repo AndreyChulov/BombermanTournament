@@ -1,0 +1,12 @@
+Z:\Мой диск\GitHub\BombermanTournament\Core\Core.Network.ExternalShared\bin\Debug\net7.0\Core.Network.ExternalShared.deps.json
+Z:\Мой диск\GitHub\BombermanTournament\Core\Core.Network.ExternalShared\bin\Debug\net7.0\Core.Network.ExternalShared.dll
+Z:\Мой диск\GitHub\BombermanTournament\Core\Core.Network.ExternalShared\bin\Debug\net7.0\Core.Network.ExternalShared.pdb
+Z:\Мой диск\GitHub\BombermanTournament\Core\Core.Network.ExternalShared\obj\Debug\net7.0\Core.Network.ExternalShared.csproj.AssemblyReference.cache
+Z:\Мой диск\GitHub\BombermanTournament\Core\Core.Network.ExternalShared\obj\Debug\net7.0\Core.Network.ExternalShared.GeneratedMSBuildEditorConfig.editorconfig
+Z:\Мой диск\GitHub\BombermanTournament\Core\Core.Network.ExternalShared\obj\Debug\net7.0\Core.Network.ExternalShared.AssemblyInfoInputs.cache
+Z:\Мой диск\GitHub\BombermanTournament\Core\Core.Network.ExternalShared\obj\Debug\net7.0\Core.Network.ExternalShared.AssemblyInfo.cs
+Z:\Мой диск\GitHub\BombermanTournament\Core\Core.Network.ExternalShared\obj\Debug\net7.0\Core.Network.ExternalShared.csproj.CoreCompileInputs.cache
+Z:\Мой диск\GitHub\BombermanTournament\Core\Core.Network.ExternalShared\obj\Debug\net7.0\Core.Network.ExternalShared.dll
+Z:\Мой диск\GitHub\BombermanTournament\Core\Core.Network.ExternalShared\obj\Debug\net7.0\refint\Core.Network.ExternalShared.dll
+Z:\Мой диск\GitHub\BombermanTournament\Core\Core.Network.ExternalShared\obj\Debug\net7.0\Core.Network.ExternalShared.pdb
+Z:\Мой диск\GitHub\BombermanTournament\Core\Core.Network.ExternalShared\obj\Debug\net7.0\ref\Core.Network.ExternalShared.dll

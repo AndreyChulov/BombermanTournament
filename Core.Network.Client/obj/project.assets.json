@@ -2,28 +2,28 @@
   "version": 3,
   "targets": {
     "net7.0": {
-      "Core.Network.Shared/1.0.0": {
+      "Core.Network.InternalShared/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "compile": {
-          "bin/placeholder/Core.Network.Shared.dll": {}
+          "bin/placeholder/Core.Network.InternalShared.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Core.Network.Shared.dll": {}
+          "bin/placeholder/Core.Network.InternalShared.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "Core.Network.Shared/1.0.0": {
+    "Core.Network.InternalShared/1.0.0": {
       "type": "project",
-      "path": "../Core.Network.Shared/Core.Network.Shared.csproj",
-      "msbuildProject": "../Core.Network.Shared/Core.Network.Shared.csproj"
+      "path": "../Core.Network.InternalShared/Core.Network.InternalShared.csproj",
+      "msbuildProject": "../Core.Network.InternalShared/Core.Network.InternalShared.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "Core.Network.Shared >= 1.0.0"
+      "Core.Network.InternalShared >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -51,8 +51,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "Z:\\Мой диск\\GitHub\\BombermanTournament\\Core.Network.Shared\\Core.Network.Shared.csproj": {
-              "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Core.Network.Shared\\Core.Network.Shared.csproj"
+            "Z:\\Мой диск\\GitHub\\BombermanTournament\\Core.Network.InternalShared\\Core.Network.InternalShared.csproj": {
+              "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Core.Network.InternalShared\\Core.Network.InternalShared.csproj"
             }
           }
         }

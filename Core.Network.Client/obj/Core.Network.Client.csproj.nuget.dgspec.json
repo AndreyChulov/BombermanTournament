@@ -26,8 +26,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "Z:\\Мой диск\\GitHub\\BombermanTournament\\Core.Network.Shared\\Core.Network.Shared.csproj": {
-                "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Core.Network.Shared\\Core.Network.Shared.csproj"
+              "Z:\\Мой диск\\GitHub\\BombermanTournament\\Core.Network.InternalShared\\Core.Network.InternalShared.csproj": {
+                "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Core.Network.InternalShared\\Core.Network.InternalShared.csproj"
               }
             }
           }
@@ -61,14 +61,14 @@
         }
       }
     },
-    "Z:\\Мой диск\\GitHub\\BombermanTournament\\Core.Network.Shared\\Core.Network.Shared.csproj": {
+    "Z:\\Мой диск\\GitHub\\BombermanTournament\\Core.Network.InternalShared\\Core.Network.InternalShared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Core.Network.Shared\\Core.Network.Shared.csproj",
-        "projectName": "Core.Network.Shared",
-        "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Core.Network.Shared\\Core.Network.Shared.csproj",
+        "projectUniqueName": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Core.Network.InternalShared\\Core.Network.InternalShared.csproj",
+        "projectName": "Core.Network.InternalShared",
+        "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Core.Network.InternalShared\\Core.Network.InternalShared.csproj",
         "packagesPath": "C:\\Users\\Andrey\\.nuget\\packages\\",
-        "outputPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Core.Network.Shared\\obj\\",
+        "outputPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Core.Network.InternalShared\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Andrey\\AppData\\Roaming\\NuGet\\NuGet.Config"

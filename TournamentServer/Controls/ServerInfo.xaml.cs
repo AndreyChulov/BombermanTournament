@@ -1,5 +1,8 @@
+using System;
+using System.Data;
 using System.Windows;
 using System.Windows.Controls;
+using TournamentServer.Resources;
 using TournamentServer.Server;
 
 namespace TournamentServer.Controls;
@@ -23,6 +26,7 @@ public partial class ServerInfo : UserControl
 
     private void StartStopServerButton_OnClick(object sender, RoutedEventArgs e)
     {
+        
         if (Server.IsServerStarted)
         {
             Server.StopServer();
@@ -31,5 +35,20 @@ public partial class ServerInfo : UserControl
         {
             Server.StartServer();
         }
+        
+    }
+
+    private void ServerInfo_OnLoaded(object sender, RoutedEventArgs e)
+    {
+        var dataModel = Resources["DataModel"] as DependencyObject;
+
+        if (dataModel == null)
+        {
+            throw new InvalidConstraintException($"{nameof(ServerInfoDataModel)} should be initialized at this stage");
+        }
+        
+        Server.IsServerStarted.OnChanged = 
+            (Action)(() => ServerInfoDataModel.ServerProperty_Changed(dataModel, 
+                new DependencyPropertyChangedEventArgs(ServerProperty, null, Server)));
     }
 }

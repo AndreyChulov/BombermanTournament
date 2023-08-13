@@ -8,15 +8,15 @@
     ".NETCoreApp,Version=v7.0": {
       "Core.Network.Client/1.0.0": {
         "dependencies": {
-          "Core.Network.Shared": "1.0.0"
+          "Core.Network.InternalShared": "1.0.0"
         },
         "runtime": {
           "Core.Network.Client.dll": {}
         }
       },
-      "Core.Network.Shared/1.0.0": {
+      "Core.Network.InternalShared/1.0.0": {
         "runtime": {
-          "Core.Network.Shared.dll": {}
+          "Core.Network.InternalShared.dll": {}
         }
       }
     }
@@ -27,7 +27,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Core.Network.Shared/1.0.0": {
+    "Core.Network.InternalShared/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

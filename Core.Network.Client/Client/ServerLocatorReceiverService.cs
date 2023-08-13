@@ -1,6 +1,6 @@
 ﻿using System.Net;
 using System.Net.Sockets;
-using Core.Network.Shared;
+using Core.Network.InternalShared;
 
 namespace Core.Network.Client.Client
 {

@@ -8,14 +8,15 @@
              xmlns:resources="clr-namespace:TournamentServer.Resources"
              mc:Ignorable="d"
              x:Name="This"
+             Loaded="ServerInfo_OnLoaded"
              d:DesignHeight="50" d:DesignWidth="600">
+    <UserControl.Resources>
+        <resources:ServerInfoDataModel 
+            x:Key="DataModel"
+            Server="{Binding ElementName=This, Path=Server, Mode=OneWay}">
+        </resources:ServerInfoDataModel>
+    </UserControl.Resources>
     <Grid>
-        <Grid.Resources>
-            <resources:ServerInfoDataModel 
-                x:Key="DataModel"
-                Server="{Binding ElementName=This, Path=Server, Mode=OneWay}">
-            </resources:ServerInfoDataModel>
-        </Grid.Resources>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"></ColumnDefinition>
             <ColumnDefinition Width="1*"></ColumnDefinition>
@@ -28,7 +29,7 @@
         </Label>
         <Button 
             Grid.Column="1"
-            Content="{Binding Source={StaticResource DataModel}, Path=StartStopServerButtonText}"
+            Content="{Binding Source={StaticResource DataModel}, Path=StartStopServerButtonText, Mode=TwoWay}"
             Click="StartStopServerButton_OnClick"
             >
         </Button>

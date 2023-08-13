@@ -1,3 +1,4 @@
+using System;
 using System.Windows;
 using System.Windows.Controls;
 using TournamentServer.Server;
@@ -19,9 +20,12 @@ public partial class ServerInfoDataModel : UserControl
             typeof(ServerInfoDataModel), new PropertyMetadata(default(string)));
 
 
-    private static void ServerProperty_Changed(DependencyObject d, DependencyPropertyChangedEventArgs e)
+    public static void ServerProperty_Changed(DependencyObject d, DependencyPropertyChangedEventArgs e)
     {
-        bool isServerStarted = ((IServer)e.NewValue).IsServerStarted;
+        IServer server = (IServer)e.NewValue;
+        bool isServerStarted = server.IsServerStarted;
+        
+        server.IsServerStarted.OnChanged = (Action)(() => ServerProperty_Changed(d, e));
         
         d.SetValue(StartStopServerButtonTextProperty, GetStartStopServerButtonText(isServerStarted));
         d.SetValue(IsServerStartedTextProperty, GetServerStartedText(isServerStarted));
@@ -44,7 +48,7 @@ public partial class ServerInfoDataModel : UserControl
     public IServer Server
     {
         get => (IServer)GetValue(ServerProperty);
-        set => SetValue(ServerProperty, value);
+        init => SetValue(ServerProperty, value);
     }
     
     public string IsServerStartedText

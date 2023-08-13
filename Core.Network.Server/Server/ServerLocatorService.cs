@@ -1,5 +1,5 @@
 ﻿using System.Net;
-using Core.Network.Shared;
+using Core.Network.InternalShared;
 
 namespace Core.Network.Server.Server
 {
