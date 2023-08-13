@@ -25,8 +25,6 @@ public partial class ServerInfoDataModel : UserControl
         IServer server = (IServer)e.NewValue;
         bool isServerStarted = server.IsServerStarted;
         
-        server.IsServerStarted.OnChanged = (Action)(() => ServerProperty_Changed(d, e));
-        
         d.SetValue(StartStopServerButtonTextProperty, GetStartStopServerButtonText(isServerStarted));
         d.SetValue(IsServerStartedTextProperty, GetServerStartedText(isServerStarted));
     }

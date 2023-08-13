@@ -47,8 +47,8 @@ public partial class ServerInfo : UserControl
             throw new InvalidConstraintException($"{nameof(ServerInfoDataModel)} should be initialized at this stage");
         }
         
-        Server.IsServerStarted.OnChanged = 
-            (Action)(() => ServerInfoDataModel.ServerProperty_Changed(dataModel, 
+        Server.IsServerStarted.OnChanged.AddAction(
+            () => ServerInfoDataModel.ServerProperty_Changed(dataModel, 
                 new DependencyPropertyChangedEventArgs(ServerProperty, null, Server)));
     }
 }

@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 Z:\Мой диск\GitHub\BombermanTournament\TournamentServer\App.xaml
-5825919438
+6349085689
 
-18-818306925
-198-2048575587
-Controls\ClientInfo.xaml;Controls\ClientsInfoTable.xaml;Controls\ServerInfo.xaml;Resources\ServerInfoDataModel.xaml;TournamentServerForm.xaml;
+19-1443916294
+203784971523
+Controls\ClientInfo.xaml;Controls\ClientsInfoTable.xaml;Controls\ServerInfo.xaml;Resources\ServerInfoDataModel.xaml;Resources\TournamentServerFormDataModel.xaml;TournamentServerForm.xaml;
 
 False
 

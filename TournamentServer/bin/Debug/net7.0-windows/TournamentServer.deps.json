@@ -7,14 +7,81 @@
   "targets": {
     ".NETCoreApp,Version=v7.0": {
       "TournamentServer/1.0.0": {
+        "dependencies": {
+          "Core.Network": "1.0.0",
+          "Core.Network.ExternalShared": "1.0.0"
+        },
         "runtime": {
           "TournamentServer.dll": {}
+        }
+      },
+      "Core.Network/1.0.0": {
+        "dependencies": {
+          "Core.Network.Client": "1.0.0",
+          "Core.Network.ExternalShared": "1.0.0",
+          "Core.Network.InternalShared": "1.0.0",
+          "Core.Network.Server": "1.0.0"
+        },
+        "runtime": {
+          "Core.Network.dll": {}
+        }
+      },
+      "Core.Network.Client/1.0.0": {
+        "dependencies": {
+          "Core.Network.InternalShared": "1.0.0"
+        },
+        "runtime": {
+          "Core.Network.Client.dll": {}
+        }
+      },
+      "Core.Network.ExternalShared/1.0.0": {
+        "runtime": {
+          "Core.Network.ExternalShared.dll": {}
+        }
+      },
+      "Core.Network.InternalShared/1.0.0": {
+        "runtime": {
+          "Core.Network.InternalShared.dll": {}
+        }
+      },
+      "Core.Network.Server/1.0.0": {
+        "dependencies": {
+          "Core.Network.ExternalShared": "1.0.0",
+          "Core.Network.InternalShared": "1.0.0"
+        },
+        "runtime": {
+          "Core.Network.Server.dll": {}
         }
       }
     }
   },
   "libraries": {
     "TournamentServer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Core.Network/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Core.Network.Client/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Core.Network.ExternalShared/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Core.Network.InternalShared/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Core.Network.Server/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

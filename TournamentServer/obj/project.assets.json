@@ -1,11 +1,104 @@
 {
   "version": 3,
   "targets": {
-    "net7.0-windows7.0": {}
+    "net7.0-windows7.0": {
+      "Core.Network/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Core.Network.Client": "1.0.0",
+          "Core.Network.ExternalShared": "1.0.0",
+          "Core.Network.InternalShared": "1.0.0",
+          "Core.Network.Server": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Core.Network.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Core.Network.dll": {}
+        }
+      },
+      "Core.Network.Client/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Core.Network.InternalShared": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Core.Network.Client.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Core.Network.Client.dll": {}
+        }
+      },
+      "Core.Network.ExternalShared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Core.Network.ExternalShared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Core.Network.ExternalShared.dll": {}
+        }
+      },
+      "Core.Network.InternalShared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Core.Network.InternalShared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Core.Network.InternalShared.dll": {}
+        }
+      },
+      "Core.Network.Server/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Core.Network.ExternalShared": "1.0.0",
+          "Core.Network.InternalShared": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Core.Network.Server.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Core.Network.Server.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Core.Network/1.0.0": {
+      "type": "project",
+      "path": "../Core/Core.Network/Core.Network.csproj",
+      "msbuildProject": "../Core/Core.Network/Core.Network.csproj"
+    },
+    "Core.Network.Client/1.0.0": {
+      "type": "project",
+      "path": "../Core.Network.Client/Core.Network.Client.csproj",
+      "msbuildProject": "../Core.Network.Client/Core.Network.Client.csproj"
+    },
+    "Core.Network.ExternalShared/1.0.0": {
+      "type": "project",
+      "path": "../Core/Core.Network.ExternalShared/Core.Network.ExternalShared.csproj",
+      "msbuildProject": "../Core/Core.Network.ExternalShared/Core.Network.ExternalShared.csproj"
+    },
+    "Core.Network.InternalShared/1.0.0": {
+      "type": "project",
+      "path": "../Core.Network.InternalShared/Core.Network.InternalShared.csproj",
+      "msbuildProject": "../Core.Network.InternalShared/Core.Network.InternalShared.csproj"
+    },
+    "Core.Network.Server/1.0.0": {
+      "type": "project",
+      "path": "../Core.Network.Server/Core.Network.Server.csproj",
+      "msbuildProject": "../Core.Network.Server/Core.Network.Server.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net7.0-windows7.0": []
+    "net7.0-windows7.0": [
+      "Core.Network >= 1.0.0",
+      "Core.Network.ExternalShared >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Andrey\\.nuget\\packages\\": {}
@@ -31,7 +124,14 @@
       "frameworks": {
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
-          "projectReferences": {}
+          "projectReferences": {
+            "Z:\\Мой диск\\GitHub\\BombermanTournament\\Core\\Core.Network.ExternalShared\\Core.Network.ExternalShared.csproj": {
+              "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Core\\Core.Network.ExternalShared\\Core.Network.ExternalShared.csproj"
+            },
+            "Z:\\Мой диск\\GitHub\\BombermanTournament\\Core\\Core.Network\\Core.Network.csproj": {
+              "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Core\\Core.Network\\Core.Network.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

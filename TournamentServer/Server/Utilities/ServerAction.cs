@@ -1,16 +1,22 @@
 using System;
+using System.Collections.Generic;
 
 namespace TournamentServer.Server.Utilities;
 
 public class ServerAction
 {
-    private Action? _action;
+    private List<Action> _actions = new List<Action>();
 
     public void Invoke()
     {
-        _action?.Invoke();
+        foreach (var action in _actions)
+        {
+            action.Invoke();
+        }
     }
-    
-    public static implicit operator ServerAction(Action action) => new() { _action = action };
-    public static implicit operator Action?(ServerAction serverAction) => serverAction._action;
+
+    public void AddAction(Action action)
+    {
+        _actions.Add(action);
+    }
 }
