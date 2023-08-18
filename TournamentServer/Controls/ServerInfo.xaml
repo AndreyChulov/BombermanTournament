@@ -16,20 +16,20 @@
             Server="{Binding ElementName=This, Path=Server, Mode=OneWay}">
         </resources:ServerInfoDataModel>
     </UserControl.Resources>
-    <Grid>
+    <Grid DataContext="{StaticResource DataModel}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"></ColumnDefinition>
             <ColumnDefinition Width="1*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Label 
             Grid.Column="0" 
-            Content="{Binding Source={StaticResource DataModel}, Path=IsServerStartedText}"
+            Content="{Binding IsServerStartedText}"
             HorizontalAlignment="Center"
             VerticalAlignment="Center">
         </Label>
         <Button 
             Grid.Column="1"
-            Content="{Binding Source={StaticResource DataModel}, Path=StartStopServerButtonText, Mode=TwoWay}"
+            Content="{Binding StartStopServerButtonText}"
             Click="StartStopServerButton_OnClick"
             >
         </Button>

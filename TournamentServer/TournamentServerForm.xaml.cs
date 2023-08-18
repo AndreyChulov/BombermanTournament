@@ -9,8 +9,4 @@ public partial class TournamentServerForm : Window
         InitializeComponent();
     }
 
-    private void BtnStartTournament_OnClick(object sender, RoutedEventArgs e)
-    {
-        throw new System.NotImplementedException();
-    }
 }

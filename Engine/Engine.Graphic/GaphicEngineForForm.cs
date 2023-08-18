@@ -49,6 +49,17 @@ namespace Engine.Graphic
             HwndRenderTarget = InitialiseHwndRenderTarget();
             DirectWriteFactory = DWrite.DWriteCreateFactory<IDWriteFactory>(Vortice.DirectWrite.FactoryType.Shared);
         }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
 
         private void OnRender_timerCallback(object? state)
         {
