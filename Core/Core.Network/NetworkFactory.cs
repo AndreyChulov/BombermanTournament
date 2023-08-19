@@ -6,19 +6,22 @@ namespace Core.Network;
 
 public static class NetworkFactory
 {
-    private static INetworkObject CreateNetworkObject(NetworkObjectType networkObjectType)
+    private static INetworkObject CreateNetworkObject(
+        NetworkObjectType networkObjectType, Action onNetworkObjectCreated, Action onNetworkObjectDestroyed)
     {
         switch (networkObjectType)
         {
             case NetworkObjectType.Server:
-                return new NetworkServer();
+                return new NetworkServer(onNetworkObjectCreated, onNetworkObjectDestroyed);
             default:
                 throw new NotImplementedException();
         }
     }
     
-    public static T CreateNetworkObject<T>(NetworkObjectType networkObjectType) where T:INetworkObject
+    public static T CreateNetworkObject<T>(
+        NetworkObjectType networkObjectType, Action onNetworkObjectCreated, Action onNetworkObjectDestroyed) 
+        where T:INetworkObject
     {
-        return (T)CreateNetworkObject(networkObjectType);
+        return (T)CreateNetworkObject(networkObjectType, onNetworkObjectCreated, onNetworkObjectDestroyed);
     }
 }

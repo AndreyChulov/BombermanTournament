@@ -41,8 +41,16 @@ public partial class TournamentServerFormControl : UserControl
             () => TournamentServerFormControlDataModel.ServerProperty_Changed(dataModel, 
                 new DependencyPropertyChangedEventArgs(TournamentServerFormControlDataModel.ServerProperty, 
                     null, Server)));
-
-        dataModel.Server = Server;//Force binding update (not the best solution), TODO:should be refactored later
+        Server.IsClientConnected.OnChanged.AddAction(
+            () => TournamentServerFormControlDataModel.ServerProperty_Changed(dataModel, 
+                new DependencyPropertyChangedEventArgs(TournamentServerFormControlDataModel.ServerProperty, 
+                    null, Server)));
+        Server.IsServerProcessingCommand.OnChanged.AddAction(
+            () => TournamentServerFormControlDataModel.ServerProperty_Changed(dataModel, 
+                new DependencyPropertyChangedEventArgs(TournamentServerFormControlDataModel.ServerProperty, 
+                    null, Server)));
+        
+        dataModel.Server = Server;//Force binding update (not the best solution)
     }
 
 }

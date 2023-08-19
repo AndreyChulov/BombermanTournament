@@ -11,17 +11,18 @@ public partial class TournamentServerFormControlDataModel : UserControl
             typeof(TournamentServerFormControlDataModel), 
             new PropertyMetadata(default(object), ServerProperty_Changed));
 
-    public static readonly DependencyProperty IsButtonStartEnabledProperty = 
-        DependencyProperty.Register(nameof(IsButtonStartEnabled), typeof(bool), 
+    public static readonly DependencyProperty IsButtonStartTournamentEnabledProperty = 
+        DependencyProperty.Register(nameof(IsButtonStartTournamentEnabled), typeof(bool), 
             typeof(TournamentServerFormControlDataModel), new PropertyMetadata(default(bool)));
 
     public static void ServerProperty_Changed(DependencyObject d, DependencyPropertyChangedEventArgs e)
     {
         IServer server = (IServer)e.NewValue;
         bool isServerProcessingCommand = server.IsServerProcessingCommand;
+        bool isClientConnected = server.IsClientConnected;
+        var isButtonStartTournamentEnabled = !isServerProcessingCommand && isClientConnected;
         
-        //d.SetValue(IsButtonStartEnabledProperty, !isServerProcessingCommand);
-        //d.SetValue(IsServerStartedTextProperty, GetServerStartedText(isServerStarted));
+        d.SetValue(IsButtonStartTournamentEnabledProperty, isButtonStartTournamentEnabled);
     }
     
     public TournamentServerFormControlDataModel()
@@ -35,9 +36,9 @@ public partial class TournamentServerFormControlDataModel : UserControl
         set => SetValue(ServerProperty, value);
     }
 
-    public bool IsButtonStartEnabled
+    public bool IsButtonStartTournamentEnabled
     {
-        get => (bool)GetValue(IsButtonStartEnabledProperty);
-        set => SetValue(IsButtonStartEnabledProperty, value);
+        get => (bool)GetValue(IsButtonStartTournamentEnabledProperty);
+        set => SetValue(IsButtonStartTournamentEnabledProperty, value);
     }
 }

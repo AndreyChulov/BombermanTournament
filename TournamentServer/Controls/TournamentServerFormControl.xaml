@@ -37,7 +37,7 @@
             Grid.Row="3"
             Name="BtnStartTournament" 
             Click="BtnStartTournament_OnClick"
-            IsEnabled="{Binding IsButtonStartEnabled}"
+            IsEnabled="{Binding IsButtonStartTournamentEnabled}"
         >Start tournament</Button>
     </Grid>
 </UserControl>

@@ -16,5 +16,5 @@ Z:\Мой диск\GitHub\BombermanTournament\TournamentServer\App.xaml
 203784971523
 Controls\ClientInfo.xaml;Controls\ClientsInfoTable.xaml;Controls\ServerInfo.xaml;Controls\TournamentServerFormControl.xaml;Resources\ServerInfoDataModel.xaml;Resources\TournamentServerFormControlDataModel.xaml;TournamentServerForm.xaml;
 
-True
+False
 

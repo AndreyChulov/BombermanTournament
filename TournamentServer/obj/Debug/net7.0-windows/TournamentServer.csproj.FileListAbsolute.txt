@@ -39,7 +39,7 @@ Z:\Мой диск\GitHub\BombermanTournament\TournamentServer\bin\Debug\net7.0-
 Z:\Мой диск\GitHub\BombermanTournament\TournamentServer\bin\Debug\net7.0-windows\Core.Network.InternalShared.pdb
 Z:\Мой диск\GitHub\BombermanTournament\TournamentServer\bin\Debug\net7.0-windows\Core.Network.Server.pdb
 Z:\Мой диск\GitHub\BombermanTournament\TournamentServer\obj\Debug\net7.0-windows\TournamentServer.csproj.CopyComplete
-Z:\Мой диск\GitHub\BombermanTournament\TournamentServer\obj\Debug\net7.0-windows\Resources\TournamentServerFormDataModel.g.cs
-Z:\Мой диск\GitHub\BombermanTournament\TournamentServer\obj\Debug\net7.0-windows\Resources\TournamentServerFormDataModel.baml
 Z:\Мой диск\GitHub\BombermanTournament\TournamentServer\obj\Debug\net7.0-windows\Controls\TournamentServerFormControl.g.cs
 Z:\Мой диск\GitHub\BombermanTournament\TournamentServer\obj\Debug\net7.0-windows\Controls\TournamentServerFormControl.baml
+Z:\Мой диск\GitHub\BombermanTournament\TournamentServer\obj\Debug\net7.0-windows\Resources\TournamentServerFormControlDataModel.g.cs
+Z:\Мой диск\GitHub\BombermanTournament\TournamentServer\obj\Debug\net7.0-windows\Resources\TournamentServerFormControlDataModel.baml

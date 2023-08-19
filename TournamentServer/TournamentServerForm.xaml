@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="TournamentServerForm" 
         Height="450" Width="800"
-        Name="This"
+        Closing="TournamentServerForm_OnClosing"
         d:DataContext="{x:Static local:TournamentServerFormDesignContextFactory.TournamentServerFormContext}"
         DataContext="{x:Static local:TournamentServerFormContextFactory.TournamentServerFormContext}">
     <controls:TournamentServerFormControl Server="{Binding Path=TournamentServer}">
