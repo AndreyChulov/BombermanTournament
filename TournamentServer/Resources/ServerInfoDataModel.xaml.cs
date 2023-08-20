@@ -19,14 +19,23 @@ public partial class ServerInfoDataModel : UserControl
         DependencyProperty.Register(nameof(StartStopServerButtonText), typeof(string), 
             typeof(ServerInfoDataModel), new PropertyMetadata(default(string)));
 
+    public static readonly DependencyProperty IsServerStartedLabelEnabledProperty = 
+        DependencyProperty.Register(nameof(IsServerStartedLabelEnabled), typeof(bool), 
+            typeof(ServerInfoDataModel), new PropertyMetadata(default(bool)));
+
+    public static readonly DependencyProperty IsStartStopServerButtonEnabledProperty = DependencyProperty.Register(nameof(IsStartStopServerButtonEnabled), typeof(bool), typeof(ServerInfoDataModel), new PropertyMetadata(default(bool)));
+
 
     public static void ServerProperty_Changed(DependencyObject d, DependencyPropertyChangedEventArgs e)
     {
         IServer server = (IServer)e.NewValue;
         bool isServerStarted = server.IsServerStarted;
+        bool isServerProcessingCommand = server.IsServerProcessingCommand;
         
         d.SetValue(StartStopServerButtonTextProperty, GetStartStopServerButtonText(isServerStarted));
         d.SetValue(IsServerStartedTextProperty, GetServerStartedText(isServerStarted));
+        d.SetValue(IsServerStartedLabelEnabledProperty, !isServerProcessingCommand);
+        d.SetValue(IsStartStopServerButtonEnabledProperty, !isServerProcessingCommand);
     }
 
     private static string GetStartStopServerButtonText(bool isServerStarted) 
@@ -46,7 +55,7 @@ public partial class ServerInfoDataModel : UserControl
     public IServer Server
     {
         get => (IServer)GetValue(ServerProperty);
-        init => SetValue(ServerProperty, value);
+        set => SetValue(ServerProperty, value);
     }
     
     public string IsServerStartedText
@@ -59,5 +68,17 @@ public partial class ServerInfoDataModel : UserControl
     {
         get => (string)GetValue(StartStopServerButtonTextProperty);
         init => SetValue(StartStopServerButtonTextProperty, value);
+    }
+
+    public bool IsServerStartedLabelEnabled
+    {
+        get => (bool)GetValue(IsServerStartedLabelEnabledProperty);
+        set => SetValue(IsServerStartedLabelEnabledProperty, value);
+    }
+
+    public bool IsStartStopServerButtonEnabled
+    {
+        get => (bool)GetValue(IsStartStopServerButtonEnabledProperty);
+        set => SetValue(IsStartStopServerButtonEnabledProperty, value);
     }
 }

@@ -25,12 +25,15 @@
             Grid.Column="0" 
             Content="{Binding IsServerStartedText}"
             HorizontalAlignment="Center"
-            VerticalAlignment="Center">
+            VerticalAlignment="Center"
+            IsEnabled="{Binding IsServerStartedLabelEnabled}"
+            >
         </Label>
         <Button 
             Grid.Column="1"
             Content="{Binding StartStopServerButtonText}"
             Click="StartStopServerButton_OnClick"
+            IsEnabled="{Binding IsStartStopServerButtonEnabled}"
             >
         </Button>
     </Grid>

@@ -24,6 +24,7 @@ public partial class TournamentServerFormControlDataModel : UserControl
         
         d.SetValue(IsButtonStartTournamentEnabledProperty, isButtonStartTournamentEnabled);
     }
+
     
     public TournamentServerFormControlDataModel()
     {

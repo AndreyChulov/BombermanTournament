@@ -12,4 +12,5 @@
       <ProjectReference Include="..\Core\Core.Network\Core.Network.csproj" />
     </ItemGroup>
 
+
 </Project>

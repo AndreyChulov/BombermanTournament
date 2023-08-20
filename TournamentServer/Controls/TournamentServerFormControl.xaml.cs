@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using TournamentServer.Resources;
 using TournamentServer.Server;
+using TournamentServer.Utilites;
 
 namespace TournamentServer.Controls;
 
@@ -38,19 +39,29 @@ public partial class TournamentServerFormControl : UserControl
         }
         
         Server.IsServerStarted.OnChanged.AddAction(
-            () => TournamentServerFormControlDataModel.ServerProperty_Changed(dataModel, 
-                new DependencyPropertyChangedEventArgs(TournamentServerFormControlDataModel.ServerProperty, 
-                    null, Server)));
+            ControlDataModelHelper.CreateUpdateAction(
+                Dispatcher,
+                TournamentServerFormControlDataModel.ServerProperty_Changed,
+                dataModel,
+                TournamentServerFormControlDataModel.ServerProperty,
+                Server));
         Server.IsClientConnected.OnChanged.AddAction(
-            () => TournamentServerFormControlDataModel.ServerProperty_Changed(dataModel, 
-                new DependencyPropertyChangedEventArgs(TournamentServerFormControlDataModel.ServerProperty, 
-                    null, Server)));
+            ControlDataModelHelper.CreateUpdateAction(
+                Dispatcher,
+                TournamentServerFormControlDataModel.ServerProperty_Changed,
+                dataModel,
+                TournamentServerFormControlDataModel.ServerProperty,
+                Server));
         Server.IsServerProcessingCommand.OnChanged.AddAction(
-            () => TournamentServerFormControlDataModel.ServerProperty_Changed(dataModel, 
-                new DependencyPropertyChangedEventArgs(TournamentServerFormControlDataModel.ServerProperty, 
-                    null, Server)));
+            ControlDataModelHelper.CreateUpdateAction(
+                Dispatcher,
+                TournamentServerFormControlDataModel.ServerProperty_Changed,
+                dataModel,
+                TournamentServerFormControlDataModel.ServerProperty,
+                Server));
+
         
-        dataModel.Server = Server;//Force binding update (not the best solution)
+        dataModel.Server = Server;//Force binding update
     }
 
 }

@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using Core.Network;
 using Core.Network.ExternalShared.Enums;
 using Core.Network.ExternalShared.Interfaces;
@@ -15,10 +16,13 @@ public class Server :IServer
     
     public void StartServer()
     {
-        IsServerProcessingCommand.SetVariable(true);
-        _networkServerObject = NetworkFactory.CreateNetworkObject<INetworkServerObject>(
-            NetworkObjectType.Server, OnServerCreated, OnServerDestroyed);
-        _networkServerObject.CreateServer();
+        Task.Run(() =>
+        {
+            IsServerProcessingCommand.SetVariable(true);
+            _networkServerObject = NetworkFactory.CreateNetworkObject<INetworkServerObject>(
+                NetworkObjectType.Server, OnServerCreated, OnServerDestroyed);
+            _networkServerObject.CreateServer();
+        });
     }
 
     private void OnServerDestroyed()
@@ -36,8 +40,11 @@ public class Server :IServer
 
     public void StopServer()
     {
-        _networkServerObject?.DestroyServer();
-        IsServerStarted.SetVariable(false);
-        IsServerProcessingCommand.SetVariable(true);
+        Task.Run(() =>
+        {
+            IsServerProcessingCommand.SetVariable(true);        
+            _networkServerObject?.DestroyServer();
+            IsServerStarted.SetVariable(false);
+        });
     }
 }
