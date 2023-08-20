@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "iq/d5KOlEoxSAFeMKUASVjnanwzQ41j+0tLqaGHrhWHL+HkfJnGsqE46qfZ7/eH2fwcVWNGgXmWYQ9ixqPSikw==",
+  "success": true,
+  "projectFilePath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Player1DumbBot\\Player1DumbBot.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Andrey\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
+    "C:\\Users\\Andrey\\.nuget\\packages\\system.text.json\\7.0.3\\system.text.json.7.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

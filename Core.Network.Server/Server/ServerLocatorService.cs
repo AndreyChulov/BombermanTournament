@@ -1,7 +1,6 @@
 ﻿using System.Net;
 using System.Net.Sockets;
 using System.Text.Json;
-using System.Text.Json.Serialization;
 using Core.Network.ExternalShared;
 using Core.Network.ExternalShared.Contracts;
 using Core.Network.InternalShared;
