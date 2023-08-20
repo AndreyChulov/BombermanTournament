@@ -9,7 +9,6 @@ namespace Core.Network.Server.Server
 {
     public class ServerLocatorService : BaseThreadService
     {
-        private readonly int _serverServicePort;
         private readonly ServerLocatorSenderService _serverLocatorSenderService;
         private readonly string _serverInfoDatagramSerialized;
         //private readonly ServerLocatorReceiverService _serverLocatorReceiverService;
@@ -18,14 +17,13 @@ namespace Core.Network.Server.Server
         public ServerLocatorService(int serverServicePort) 
             : base(NetworkSettings.ServerLocatorBroadcastDatagramSendTimeout)
         {
-            _serverServicePort = serverServicePort;
             _servers = new List<string>();
-            _serverLocatorSenderService = new ServerLocatorSenderService(TimeSpan.FromSeconds(0.5f));
+            _serverLocatorSenderService = new ServerLocatorSenderService();
             
             var serverInfoDatagram = new ServerInfoDatagram
             {
                 Message = "Tournament server info",
-                TcpServerPort = _serverServicePort.ToString(),
+                TcpServerPort = serverServicePort.ToString(),
                 TcpServerIP = IpAddressUtility.GetLocalIpAddress()
             };
 
@@ -84,7 +82,7 @@ namespace Core.Network.Server.Server
 
         protected override void ServiceWorkerLoop(Socket? serviceSocket)
         {
-            foreach (var port in NetworkSettings.ServerLocatorBroadcastPorts)
+            foreach (var port in NetworkSettings.ClientLocatorUdpPorts)
             {
                 _serverLocatorSenderService.SendInfo(
                     new IPEndPoint(IPAddress.Broadcast, port),

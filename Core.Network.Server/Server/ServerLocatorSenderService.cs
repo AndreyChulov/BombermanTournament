@@ -11,7 +11,7 @@ namespace Core.Network.Server.Server
         private readonly Queue<KeyValuePair<IPEndPoint, string>> _messagesToSend;
         private readonly object _messagesToSendLockObject;
         
-        public ServerLocatorSenderService(TimeSpan loopDelay) : base(loopDelay)
+        public ServerLocatorSenderService() : base(NetworkSettings.ServerLocatorQueueCheckTimeout)
         {
             _messagesToSend = new Queue<KeyValuePair<IPEndPoint, string>>();
             _messagesToSendLockObject = new object();

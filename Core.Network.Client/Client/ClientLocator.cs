@@ -3,7 +3,7 @@ using System.Net.Sockets;
 
 namespace Core.Network.Client.Client
 {
-    internal class ServerLocator : IDisposable
+    internal class ClientLocator : IDisposable
     {
         private List<string> _servers;
         private bool _isStarted;
@@ -11,7 +11,7 @@ namespace Core.Network.Client.Client
         private Thread _serverLocatorResieverThread;
         private Socket _udpBroadcastSocket;
 
-        public ServerLocator()
+        public ClientLocator()
         {
             _servers = new List<string>();
             _isStarted = false;

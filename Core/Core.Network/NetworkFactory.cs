@@ -1,3 +1,4 @@
+using Core.Network.Client;
 using Core.Network.ExternalShared.Enums;
 using Core.Network.ExternalShared.Interfaces;
 using Core.Network.Server;
@@ -14,7 +15,7 @@ public static class NetworkFactory
             case NetworkObjectType.Server:
                 return new NetworkServer(onNetworkObjectCreated, onNetworkObjectDestroyed);
             default:
-                throw new NotImplementedException();
+                return new NetworkClient(onNetworkObjectCreated, onNetworkObjectDestroyed);
         }
     }
     
