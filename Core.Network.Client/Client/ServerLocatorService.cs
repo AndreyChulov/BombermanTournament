@@ -1,4 +1,5 @@
 ﻿using System.Net;
+using Core.Network.ExternalShared;
 using Core.Network.InternalShared;
 
 namespace Core.Network.Client.Client
@@ -14,8 +15,8 @@ namespace Core.Network.Client.Client
             Servers = new List<IPEndPoint>();
             _serverLocatorReceiverService = new ServerLocatorReceiverService(TimeSpan.FromSeconds(0.5f));
             _serverLocatorSenderService = new ServerLocatorSenderService(
-                Constants.ServerLocatorBroadcastDatagramSendTimeout, 
-                Constants.ServerLocatorBroadcastPorts,
+                NetworkSettings.ServerLocatorBroadcastDatagramSendTimeout, 
+                NetworkSettings.ServerLocatorBroadcastPorts,
                 _serverLocatorReceiverService.UdpPort);
             
             _serverLocatorReceiverService.UdpMessageReceived += ServerLocatorReceiverService_OnUdpMessageReceived;

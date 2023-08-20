@@ -1,6 +1,6 @@
-﻿namespace Core.Network.InternalShared
+﻿namespace Core.Network.ExternalShared
 {
-    public static class Constants
+    public static class NetworkSettings
     {
         public static int[] ServerLocatorBroadcastPorts => new[] 
             {31110, 31111, 31112, 31113, 31114, 31115, 31116, 31117, 31118, 31119};
@@ -10,6 +10,7 @@
             {11110, 11111, 11112, 11113, 11114, 11115, 11116, 11117, 11118, 11119};
         public static int UdpDatagramSize => 1024;
         public static TimeSpan ServerLocatorBroadcastDatagramSendTimeout => TimeSpan.FromSeconds(1);
-        public static TimeSpan ServerLocatorBroadcastDatagramReceiveTimeout => TimeSpan.FromSeconds(0.3f);
+        public static TimeSpan ServerLocatorBroadcastDatagramReceiveTimeout => TimeSpan.FromSeconds(0.7f);
+        public static string ServerLogsFile => "Logs/server.log";
     }
 }

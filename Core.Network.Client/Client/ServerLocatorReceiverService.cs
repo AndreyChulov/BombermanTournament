@@ -1,5 +1,6 @@
 ﻿using System.Net;
 using System.Net.Sockets;
+using Core.Network.ExternalShared;
 using Core.Network.InternalShared;
 
 namespace Core.Network.Client.Client
@@ -12,7 +13,7 @@ namespace Core.Network.Client.Client
         public ServerLocatorReceiverService(TimeSpan loopDelay) : base(loopDelay)
         {
             Random randomGenerator = new Random();
-            UdpPort = Constants.ServerLocatorUdpPorts[randomGenerator.Next(0, Constants.ServerLocatorUdpPorts.Length)];
+            UdpPort = NetworkSettings.ServerLocatorUdpPorts[randomGenerator.Next(0, NetworkSettings.ServerLocatorUdpPorts.Length)];
         }
 
         protected override Socket CreateServiceSocket()
@@ -28,11 +29,11 @@ namespace Core.Network.Client.Client
         {
             if (serviceSocket.Available > 0)
             {
-                var datagram = new byte[Constants.UdpDatagramSize];
+                var datagram = new byte[NetworkSettings.UdpDatagramSize];
 
                 using (var asyncState = new SocketAsyncState(serviceSocket))
                 {
-                    serviceSocket.BeginReceive(datagram, 0, Constants.UdpDatagramSize, SocketFlags.None,
+                    serviceSocket.BeginReceive(datagram, 0, NetworkSettings.UdpDatagramSize, SocketFlags.None,
                                         serviceSocketReceive_Callback, asyncState);
 
                     asyncState.ManualResetEvent.WaitOne();

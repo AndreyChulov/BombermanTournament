@@ -28,6 +28,7 @@
       },
       "Core.Network.Client/1.0.0": {
         "dependencies": {
+          "Core.Network.ExternalShared": "1.0.0",
           "Core.Network.InternalShared": "1.0.0"
         },
         "runtime": {

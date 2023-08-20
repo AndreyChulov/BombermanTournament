@@ -15,20 +15,23 @@ namespace Core.Network.InternalShared
             _serviceThread = new Thread(ServiceWorker);
         }
 
-        protected abstract Socket CreateServiceSocket();
+        protected abstract Socket? CreateServiceSocket();
         
-        public void Start()
+        public virtual void Start()
         {
             _isStarted = true;
 
             _serviceThread.Start();
         }
 
-        public void Stop()
+        public virtual void Stop()
         {
             _isStarted = false;
 
-            _serviceThread.Abort();
+            while (_serviceThread.IsAlive)
+            {
+                Task.Delay(_loopDelay).Wait();
+            }
         }
 
         private void ServiceWorker()
@@ -46,7 +49,7 @@ namespace Core.Network.InternalShared
             }
         }
 
-        protected abstract void ServiceWorkerLoop(Socket serviceSocket);
+        protected abstract void ServiceWorkerLoop(Socket? serviceSocket);
         
         public virtual void Dispose()
         {

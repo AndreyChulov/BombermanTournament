@@ -1,5 +1,7 @@
-﻿using System.Net;
+﻿using System.Data;
+using System.Net;
 using System.Net.Sockets;
+using Core.Network.ExternalShared;
 using Core.Network.InternalShared;
 
 namespace Core.Network.Server.Server
@@ -21,7 +23,8 @@ namespace Core.Network.Server.Server
             {
                 _messagesToSend.Enqueue(new KeyValuePair<IPEndPoint, string>(targetLocatorServiceEndPoint, message));
             }
-            Logger.AddTypedVerboseMessage(GetType(), 
+            
+            Logger.AddVerboseMessage( 
                 $@"Message[{message}] with target endpoint" +
                 $@"[{targetLocatorServiceEndPoint.Address.MapToIPv4()}:" + 
                 $@"{targetLocatorServiceEndPoint.Port}] enqueued to send messages queue.");
@@ -36,8 +39,14 @@ namespace Core.Network.Server.Server
             return socket;
         }
 
-        protected override void ServiceWorkerLoop(Socket serviceSocket)
+        protected override void ServiceWorkerLoop(Socket? serviceSocket)
         {
+            if (serviceSocket == null)
+            {
+                throw new InvalidConstraintException(
+                    $"${nameof(ServerLocatorSenderService)}.{nameof(ServiceWorkerLoop)} can not work with null {nameof(serviceSocket)}");
+            }
+            
             lock (_messagesToSendLockObject)
             {
                 if (!_messagesToSend.Any())
@@ -48,7 +57,7 @@ namespace Core.Network.Server.Server
                 StartSendMessages(serviceSocket).Wait();
             }
             
-            Logger.AddTypedVerboseMessage(GetType(), @"All enqueue messages sent.");
+            Logger.AddVerboseMessage(@"All enqueue messages sent.");
        }
 
         private async Task StartSendMessages(Socket serviceSocket)
@@ -58,7 +67,7 @@ namespace Core.Network.Server.Server
                 var messageToSend = _messagesToSend.Dequeue();
                 var datagramArray =
                     UdpSocketUtility.PrepareDatagramForSendingString(
-                        Constants.UdpDatagramSize, 
+                        NetworkSettings.UdpDatagramSize, 
                         messageToSend.Value,
                         () => throw new ArgumentOutOfRangeException(
                             $"Can not send string, data size exceeds datagram size")

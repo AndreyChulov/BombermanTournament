@@ -28,6 +28,9 @@
             "projectReferences": {
               "Z:\\Мой диск\\GitHub\\BombermanTournament\\Core.Network.InternalShared\\Core.Network.InternalShared.csproj": {
                 "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Core.Network.InternalShared\\Core.Network.InternalShared.csproj"
+              },
+              "Z:\\Мой диск\\GitHub\\BombermanTournament\\Core\\Core.Network.ExternalShared\\Core.Network.ExternalShared.csproj": {
+                "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Core\\Core.Network.ExternalShared\\Core.Network.ExternalShared.csproj"
               }
             }
           }

@@ -1,5 +1,6 @@
 ﻿using System.Net;
 using System.Net.Sockets;
+using Core.Network.ExternalShared;
 using Core.Network.InternalShared;
 
 namespace Core.Network.Client.Client
@@ -20,7 +21,7 @@ namespace Core.Network.Client.Client
             
             _broadcastDatagram =
                 UdpSocketUtility.PrepareDatagramForSendingString(
-                    Constants.UdpDatagramSize, 
+                    NetworkSettings.UdpDatagramSize, 
                     $"[{IpAddressUtility.GetLocalIpAddress()}:{receiverPort}]Get image chat server IP&Port",
                     () => throw new ArgumentOutOfRangeException(
                         $"Can not send string [Follow the white rabbit!], data size exceeds datagram size")
@@ -40,7 +41,7 @@ namespace Core.Network.Client.Client
         {
             foreach (var broadcastIpEndPoint in _broadcastIpEndPoints)
             {
-                serviceSocket.BeginSendTo(_broadcastDatagram, 0, Constants.UdpDatagramSize, SocketFlags.None, 
+                serviceSocket.BeginSendTo(_broadcastDatagram, 0, NetworkSettings.UdpDatagramSize, SocketFlags.None, 
                                 broadcastIpEndPoint, SendToCallback, serviceSocket);
             }
         }

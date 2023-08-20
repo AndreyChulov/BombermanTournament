@@ -1,5 +1,6 @@
 ﻿using System.Net;
 using System.Net.Sockets;
+using Core.Network.ExternalShared;
 using Core.Network.InternalShared;
 
 namespace Core.Network.Server.Server
@@ -13,8 +14,8 @@ namespace Core.Network.Server.Server
         {
             Random randomGenerator = new Random();
             
-            _bindingPort = Constants.ServerLocatorBroadcastPorts
-                    [randomGenerator.Next(0, Constants.ServerLocatorBroadcastPorts.Length)];
+            _bindingPort = NetworkSettings.ServerLocatorBroadcastPorts
+                    [randomGenerator.Next(0, NetworkSettings.ServerLocatorBroadcastPorts.Length)];
         }
 
         protected override Socket CreateServiceSocket()
@@ -42,7 +43,7 @@ namespace Core.Network.Server.Server
 
         private static async Task<string> ReceiveMessage(Socket serviceSocket)
         {
-            ArraySegment<byte> buffer = new ArraySegment<byte>(new byte[Constants.UdpDatagramSize]);
+            ArraySegment<byte> buffer = new ArraySegment<byte>(new byte[NetworkSettings.UdpDatagramSize]);
 
             await serviceSocket.ReceiveAsync(buffer, SocketFlags.None);
 

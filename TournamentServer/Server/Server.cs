@@ -18,7 +18,7 @@ public class Server :IServer
         IsServerProcessingCommand.SetVariable(true);
         _networkServerObject = NetworkFactory.CreateNetworkObject<INetworkServerObject>(
             NetworkObjectType.Server, OnServerCreated, OnServerDestroyed);
-        _networkServerObject.StartServer();
+        _networkServerObject.CreateServer();
     }
 
     private void OnServerDestroyed()
@@ -36,7 +36,7 @@ public class Server :IServer
 
     public void StopServer()
     {
-        _networkServerObject?.StopServer();
+        _networkServerObject?.DestroyServer();
         IsServerStarted.SetVariable(false);
         IsServerProcessingCommand.SetVariable(true);
     }

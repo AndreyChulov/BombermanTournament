@@ -1,4 +1,5 @@
 ﻿using System.Net.Sockets;
+using Core.Network.ExternalShared;
 using Core.Network.InternalShared;
 
 namespace Core.Network.Server.Server
@@ -11,7 +12,7 @@ namespace Core.Network.Server.Server
         {
             Random randomGenerator = new Random();
             
-            TcpPort = Constants.ServerTcpPorts[randomGenerator.Next(0, Constants.ServerTcpPorts.Length)];
+            TcpPort = NetworkSettings.ServerTcpPorts[randomGenerator.Next(0, NetworkSettings.ServerTcpPorts.Length)];
         }
 
         protected override Socket CreateServiceSocket()
