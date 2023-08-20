@@ -36,6 +36,8 @@ namespace Core.Network.Server.Server
 
             socket.EnableBroadcast = true;
             
+            //socket.Connect(IPAddress.Any, NetworkSettings.ServerLocatorUdpPorts[0]);
+            
             return socket;
         }
 

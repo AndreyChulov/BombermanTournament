@@ -44,6 +44,12 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "System.Text.Json": {
+              "target": "Package",
+              "version": "[7.0.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -85,7 +91,11 @@
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "Z:\\Мой диск\\GitHub\\BombermanTournament\\Core\\Core.Network.ExternalShared\\Core.Network.ExternalShared.csproj": {
+                "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Core\\Core.Network.ExternalShared\\Core.Network.ExternalShared.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -157,6 +167,12 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "System.Text.Json": {
+              "target": "Package",
+              "version": "[7.0.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

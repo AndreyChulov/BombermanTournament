@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "uhe7nRm0HV4AkrphM7+B/T9c3BXuNva9GYJF3Z6c/Sjn4A4OELOqdSyw/Z5v2B4WFsIO5vukPO4rovlTjI+nrg==",
+  "dgSpecHash": "utUNn3NYWY7zPGmILXnGcszmbQC28BKZl077PvIdz0SD+SpHiZw3WOsLy8Mdd6pxnv1S/J2KagVy1MRkaHqbvQ==",
   "success": true,
   "projectFilePath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Core.Network.Client\\Core.Network.Client.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Andrey\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
+    "C:\\Users\\Andrey\\.nuget\\packages\\system.text.json\\7.0.3\\system.text.json.7.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -12,5 +12,6 @@
         public static TimeSpan ServerLocatorBroadcastDatagramSendTimeout => TimeSpan.FromSeconds(1);
         public static TimeSpan ServerLocatorBroadcastDatagramReceiveTimeout => TimeSpan.FromSeconds(0.7f);
         public static string ServerLogsFile => "Logs/server.log";
+        public static int MaxUnarchivedLogFileSize => 20;
     }
 }

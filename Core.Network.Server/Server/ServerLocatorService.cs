@@ -1,5 +1,7 @@
 ﻿using System.Net;
 using System.Net.Sockets;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using Core.Network.ExternalShared;
 using Core.Network.ExternalShared.Contracts;
 using Core.Network.InternalShared;
@@ -9,15 +11,26 @@ namespace Core.Network.Server.Server
     public class ServerLocatorService : BaseThreadService
     {
         private readonly int _serverServicePort;
-        private List<string> _servers;
         private readonly ServerLocatorSenderService _serverLocatorSenderService;
+        private readonly string _serverInfoDatagramSerialized;
         //private readonly ServerLocatorReceiverService _serverLocatorReceiverService;
+        private List<string> _servers;
 
-        public ServerLocatorService(int serverServicePort)
+        public ServerLocatorService(int serverServicePort) 
+            : base(NetworkSettings.ServerLocatorBroadcastDatagramSendTimeout)
         {
             _serverServicePort = serverServicePort;
             _servers = new List<string>();
             _serverLocatorSenderService = new ServerLocatorSenderService(TimeSpan.FromSeconds(0.5f));
+            
+            var serverInfoDatagram = new ServerInfoDatagram
+            {
+                Message = "Tournament server info",
+                TcpServerPort = _serverServicePort.ToString(),
+                TcpServerIP = IpAddressUtility.GetLocalIpAddress()
+            };
+
+            _serverInfoDatagramSerialized = JsonSerializer.Serialize(serverInfoDatagram);
             //_serverLocatorReceiverService = new ServerLocatorReceiverService(
             //    NetworkSettings.ServerLocatorBroadcastDatagramReceiveTimeout);
             
@@ -72,17 +85,11 @@ namespace Core.Network.Server.Server
 
         protected override void ServiceWorkerLoop(Socket? serviceSocket)
         {
-            var serverInfoDatagram = new ServerInfoDatagram
-            {
-                Message = "Tournament server info",
-                TcpServerPort = _serverServicePort.ToString(),
-                TcpServerIP = IpAddressUtility.GetLocalIpAddress()
-            };
-            
             foreach (var port in NetworkSettings.ServerLocatorBroadcastPorts)
             {
-                _serverLocatorSenderService.SendInfo(new IPEndPoint(IPAddress.Any, port),
-                    "$Tournament server info:[{IpAddressUtility.GetLocalIpAddress()}:{_serverServicePort}]");
+                _serverLocatorSenderService.SendInfo(
+                    new IPEndPoint(IPAddress.Broadcast, port),
+                    _serverInfoDatagramSerialized);
             }
         }
 

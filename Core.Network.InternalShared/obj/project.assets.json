@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net7.0": {}
+    "net7.0": {
+      "Core.Network.ExternalShared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Core.Network.ExternalShared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Core.Network.ExternalShared.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Core.Network.ExternalShared/1.0.0": {
+      "type": "project",
+      "path": "../Core/Core.Network.ExternalShared/Core.Network.ExternalShared.csproj",
+      "msbuildProject": "../Core/Core.Network.ExternalShared/Core.Network.ExternalShared.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net7.0": []
+    "net7.0": [
+      "Core.Network.ExternalShared >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Andrey\\.nuget\\packages\\": {}
@@ -31,7 +50,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "Z:\\Мой диск\\GitHub\\BombermanTournament\\Core\\Core.Network.ExternalShared\\Core.Network.ExternalShared.csproj": {
+              "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Core\\Core.Network.ExternalShared\\Core.Network.ExternalShared.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

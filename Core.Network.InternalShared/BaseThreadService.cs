@@ -45,7 +45,7 @@ namespace Core.Network.InternalShared
                     Task.Delay(_loopDelay).Wait();
                 }
                 
-                serviceSocket.Close();
+                serviceSocket?.Close();
             }
         }
 

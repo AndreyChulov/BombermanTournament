@@ -7,4 +7,8 @@
     </PropertyGroup>
 
 
+    <ItemGroup>
+      <ProjectReference Include="..\Core\Core.Network.ExternalShared\Core.Network.ExternalShared.csproj" />
+    </ItemGroup>
+
 </Project>

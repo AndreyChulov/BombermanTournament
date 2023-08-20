@@ -11,4 +11,8 @@
       <ProjectReference Include="..\Core\Core.Network.ExternalShared\Core.Network.ExternalShared.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="System.Text.Json" Version="7.0.3" />
+    </ItemGroup>
+
 </Project>

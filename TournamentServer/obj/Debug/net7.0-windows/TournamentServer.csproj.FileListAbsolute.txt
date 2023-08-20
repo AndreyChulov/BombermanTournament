@@ -43,3 +43,4 @@ Z:\Мой диск\GitHub\BombermanTournament\TournamentServer\obj\Debug\net7.0-
 Z:\Мой диск\GitHub\BombermanTournament\TournamentServer\obj\Debug\net7.0-windows\Controls\TournamentServerFormControl.baml
 Z:\Мой диск\GitHub\BombermanTournament\TournamentServer\obj\Debug\net7.0-windows\Resources\TournamentServerFormControlDataModel.g.cs
 Z:\Мой диск\GitHub\BombermanTournament\TournamentServer\obj\Debug\net7.0-windows\Resources\TournamentServerFormControlDataModel.baml
+Z:\Мой диск\GitHub\BombermanTournament\TournamentServer\bin\Debug\net7.0-windows\System.Text.Json.dll
