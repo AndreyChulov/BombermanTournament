@@ -49,19 +49,11 @@ public partial class ServerInfo : UserControl
         }
 
         Server.IsServerStarted.OnChanged.AddAction(
-            ControlDataModelHelper.CreateUpdateAction(
-                Dispatcher,
-                ServerInfoDataModel.ServerProperty_Changed,
-                dataModel,
-                ServerInfoDataModel.ServerProperty,
-                Server));
+            ControlDataModelHelper.CreateUpdateDataModelActionForServerInfoControl(
+                Dispatcher, dataModel, Server));
         Server.IsServerProcessingCommand.OnChanged.AddAction(            
-            ControlDataModelHelper.CreateUpdateAction(
-                Dispatcher,
-                ServerInfoDataModel.ServerProperty_Changed,
-                dataModel,
-                ServerInfoDataModel.ServerProperty,
-                Server));
+            ControlDataModelHelper.CreateUpdateDataModelActionForServerInfoControl(
+                Dispatcher, dataModel, Server));
         
         dataModel.Server = Server;//Force binding update
     }

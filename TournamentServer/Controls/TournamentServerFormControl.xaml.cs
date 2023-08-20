@@ -39,26 +39,14 @@ public partial class TournamentServerFormControl : UserControl
         }
         
         Server.IsServerStarted.OnChanged.AddAction(
-            ControlDataModelHelper.CreateUpdateAction(
-                Dispatcher,
-                TournamentServerFormControlDataModel.ServerProperty_Changed,
-                dataModel,
-                TournamentServerFormControlDataModel.ServerProperty,
-                Server));
+            ControlDataModelHelper.CreateUpdateDataModelActionForTournamentFormControl(
+                Dispatcher, dataModel, Server));
         Server.IsClientConnected.OnChanged.AddAction(
-            ControlDataModelHelper.CreateUpdateAction(
-                Dispatcher,
-                TournamentServerFormControlDataModel.ServerProperty_Changed,
-                dataModel,
-                TournamentServerFormControlDataModel.ServerProperty,
-                Server));
+            ControlDataModelHelper.CreateUpdateDataModelActionForTournamentFormControl(
+                Dispatcher, dataModel, Server));
         Server.IsServerProcessingCommand.OnChanged.AddAction(
-            ControlDataModelHelper.CreateUpdateAction(
-                Dispatcher,
-                TournamentServerFormControlDataModel.ServerProperty_Changed,
-                dataModel,
-                TournamentServerFormControlDataModel.ServerProperty,
-                Server));
+            ControlDataModelHelper.CreateUpdateDataModelActionForTournamentFormControl(
+                Dispatcher, dataModel, Server));
 
         
         dataModel.Server = Server;//Force binding update

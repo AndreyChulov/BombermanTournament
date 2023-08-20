@@ -1,13 +1,14 @@
 using System;
 using System.Windows;
 using System.Windows.Threading;
+using TournamentServer.Resources;
 using TournamentServer.Server;
 
 namespace TournamentServer.Utilites;
 
 public static class ControlDataModelHelper
 {
-    public static Action CreateUpdateAction(
+    private static Action CreateUpdateAction(
         Dispatcher dispatcher, 
         PropertyChangedCallback propertyChangedCallback,
         DependencyObject dataModel, 
@@ -22,5 +23,27 @@ public static class ControlDataModelHelper
                     serverProperty, 
                     null, 
                     server));
+    }
+
+    public static Action CreateUpdateDataModelActionForTournamentFormControl(
+        Dispatcher dispatcher, DependencyObject dataModel, IServer server)
+    {
+        return ControlDataModelHelper.CreateUpdateAction(
+            dispatcher,
+            TournamentServerFormControlDataModel.ServerProperty_Changed,
+            dataModel,
+            TournamentServerFormControlDataModel.ServerProperty,
+            server);
+    }
+    
+    public static Action CreateUpdateDataModelActionForServerInfoControl(
+        Dispatcher dispatcher, DependencyObject dataModel, IServer server)
+    {
+        return ControlDataModelHelper.CreateUpdateAction(
+            dispatcher,
+            ServerInfoDataModel.ServerProperty_Changed,
+            dataModel,
+            ServerInfoDataModel.ServerProperty,
+            server);
     }
 }
