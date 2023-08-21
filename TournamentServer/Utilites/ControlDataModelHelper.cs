@@ -46,4 +46,26 @@ public static class ControlDataModelHelper
             ServerInfoDataModel.ServerProperty,
             server);
     }
+    
+    public static Action CreateUpdateServerPortForServerInfoControl(
+        Dispatcher dispatcher, DependencyObject dataModel, IServer server)
+    {
+        return () => dispatcher.Invoke(
+            () => dataModel.SetValue(ServerInfoDataModel.ServerPortProperty, (string)server.ServerPort));
+    }
+    
+    public static Action CreateUpdateServerAddressForServerInfoControl(
+        Dispatcher dispatcher, DependencyObject dataModel, IServer server)
+    {
+        return () => dispatcher.Invoke(
+            () => dataModel.SetValue(ServerInfoDataModel.ServerAddressProperty, (string)server.ServerAddress));
+    }
+    
+    public static Action CreateUpdateConnectedClientsCountForServerInfoControl(
+        Dispatcher dispatcher, DependencyObject dataModel, IServer server)
+    {
+        return () => dispatcher.Invoke(
+            () => dataModel.SetValue(ServerInfoDataModel.ConnectedClientCountProperty, 
+                (string)server.ClientsConnected));
+    }
 }

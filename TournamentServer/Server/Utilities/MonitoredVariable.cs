@@ -2,11 +2,16 @@ using System;
 
 namespace TournamentServer.Server.Utilities;
 
-public class MonitoredVariable<T> where T:struct, IEquatable<T>
+public class MonitoredVariable<T> where T:IEquatable<T>
 {
     private T _variable;
 
     public ServerAction OnChanged { get; set; } = new();
+
+    private MonitoredVariable(T variable)
+    {
+        _variable = variable;
+    }
 
     public void SetVariable(T value)
     {
@@ -19,6 +24,6 @@ public class MonitoredVariable<T> where T:struct, IEquatable<T>
         OnChanged.Invoke();
     }
 
-    public static implicit operator MonitoredVariable<T>(T variable) => new() { _variable = variable };
+    public static implicit operator MonitoredVariable<T>(T variable) => new(variable);
     public static implicit operator T(MonitoredVariable<T> monitoredVariable) => monitoredVariable._variable;
 }

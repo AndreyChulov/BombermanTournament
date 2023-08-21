@@ -54,7 +54,17 @@ public partial class ServerInfo : UserControl
         Server.IsServerProcessingCommand.OnChanged.AddAction(            
             ControlDataModelHelper.CreateUpdateDataModelActionForServerInfoControl(
                 Dispatcher, dataModel, Server));
+        Server.ServerPort.OnChanged.AddAction(
+            ControlDataModelHelper.CreateUpdateServerPortForServerInfoControl(
+                Dispatcher, dataModel, Server));
+        Server.ServerAddress.OnChanged.AddAction(
+            ControlDataModelHelper.CreateUpdateServerAddressForServerInfoControl(
+                Dispatcher, dataModel, Server));
+        Server.ClientsConnected.OnChanged.AddAction(
+            ControlDataModelHelper.CreateUpdateConnectedClientsCountForServerInfoControl(
+                Dispatcher, dataModel, Server));
         
         dataModel.Server = Server;//Force binding update
+        //dataModel.ServerPort = Server.ServerPort;//Force binding update
     }
 }

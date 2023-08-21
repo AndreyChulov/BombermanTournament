@@ -8,8 +8,9 @@ namespace TournamentServer.Resources;
 public partial class ServerInfoDataModel : UserControl
 {
     public static readonly DependencyProperty ServerProperty = 
-        DependencyProperty.Register(nameof(Server), typeof(IServer), typeof(ServerInfoDataModel), 
-            new PropertyMetadata(default(IServer), ServerProperty_Changed));
+        DependencyProperty.Register(nameof(Server), typeof(IServer), 
+            typeof(ServerInfoDataModel), new PropertyMetadata(default(IServer), 
+                ServerProperty_Changed));
 
     public static readonly DependencyProperty IsServerStartedTextProperty = 
         DependencyProperty.Register(nameof(IsServerStartedText), typeof(string), 
@@ -19,23 +20,42 @@ public partial class ServerInfoDataModel : UserControl
         DependencyProperty.Register(nameof(StartStopServerButtonText), typeof(string), 
             typeof(ServerInfoDataModel), new PropertyMetadata(default(string)));
 
-    public static readonly DependencyProperty IsServerStartedLabelEnabledProperty = 
-        DependencyProperty.Register(nameof(IsServerStartedLabelEnabled), typeof(bool), 
+    public static readonly DependencyProperty IsServerInfoLabelsEnabledProperty = 
+        DependencyProperty.Register(nameof(IsServerInfoLabelsEnabled), typeof(bool), 
             typeof(ServerInfoDataModel), new PropertyMetadata(default(bool)));
 
-    public static readonly DependencyProperty IsStartStopServerButtonEnabledProperty = DependencyProperty.Register(nameof(IsStartStopServerButtonEnabled), typeof(bool), typeof(ServerInfoDataModel), new PropertyMetadata(default(bool)));
+    public static readonly DependencyProperty IsStartStopServerButtonEnabledProperty = 
+        DependencyProperty.Register(nameof(IsStartStopServerButtonEnabled), typeof(bool), 
+            typeof(ServerInfoDataModel), new PropertyMetadata(default(bool)));
+    
+    public static readonly DependencyProperty ServerPortProperty = 
+        DependencyProperty.Register(nameof(ServerPort), typeof(string), 
+            typeof(ServerInfoDataModel), new PropertyMetadata(default(string)));
 
+    public static readonly DependencyProperty ServerAddressProperty = 
+        DependencyProperty.Register(nameof(ServerAddress), typeof(string), 
+            typeof(ServerInfoDataModel), new PropertyMetadata(default(string)));
+    
+    public static readonly DependencyProperty ConnectedClientCountProperty = 
+        DependencyProperty.Register(nameof(ConnectedClientCount), typeof(string), 
+            typeof(ServerInfoDataModel), new PropertyMetadata(default(string)));
 
     public static void ServerProperty_Changed(DependencyObject d, DependencyPropertyChangedEventArgs e)
     {
         IServer server = (IServer)e.NewValue;
         bool isServerStarted = server.IsServerStarted;
         bool isServerProcessingCommand = server.IsServerProcessingCommand;
+        string serverAddress = server.ServerAddress;
+        string serverPort = server.ServerPort;
+        string connectedClientCount = server.ClientsConnected;
         
         d.SetValue(StartStopServerButtonTextProperty, GetStartStopServerButtonText(isServerStarted));
         d.SetValue(IsServerStartedTextProperty, GetServerStartedText(isServerStarted));
-        d.SetValue(IsServerStartedLabelEnabledProperty, !isServerProcessingCommand);
+        d.SetValue(IsServerInfoLabelsEnabledProperty, !isServerProcessingCommand);
         d.SetValue(IsStartStopServerButtonEnabledProperty, !isServerProcessingCommand);
+        d.SetValue(ServerAddressProperty, serverAddress);
+        d.SetValue(ServerPortProperty, serverPort);
+        d.SetValue(ConnectedClientCountProperty, connectedClientCount);
     }
 
     private static string GetStartStopServerButtonText(bool isServerStarted) 
@@ -70,15 +90,33 @@ public partial class ServerInfoDataModel : UserControl
         init => SetValue(StartStopServerButtonTextProperty, value);
     }
 
-    public bool IsServerStartedLabelEnabled
+    public bool IsServerInfoLabelsEnabled
     {
-        get => (bool)GetValue(IsServerStartedLabelEnabledProperty);
-        set => SetValue(IsServerStartedLabelEnabledProperty, value);
+        get => (bool)GetValue(IsServerInfoLabelsEnabledProperty);
+        set => SetValue(IsServerInfoLabelsEnabledProperty, value);
     }
 
     public bool IsStartStopServerButtonEnabled
     {
         get => (bool)GetValue(IsStartStopServerButtonEnabledProperty);
         set => SetValue(IsStartStopServerButtonEnabledProperty, value);
+    }
+
+    public string ServerPort
+    {
+        get => (string)GetValue(ServerPortProperty);
+        set => SetValue(ServerPortProperty, value);
+    }
+
+    public string ServerAddress
+    {
+        get => (string)GetValue(ServerAddressProperty);
+        set => SetValue(ServerAddressProperty, value);
+    }
+
+    public string ConnectedClientCount
+    {
+        get => (string)GetValue(ConnectedClientCountProperty);
+        set => SetValue(ConnectedClientCountProperty, value);
     }
 }

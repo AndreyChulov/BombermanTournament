@@ -6,31 +6,91 @@
              xmlns:system="clr-namespace:System;assembly=mscorlib"
              xmlns:controls="clr-namespace:TournamentServer.Controls"
              xmlns:resources="clr-namespace:TournamentServer.Resources"
+             xmlns:root="clr-namespace:TournamentServer"
              mc:Ignorable="d"
              x:Name="This"
              Loaded="ServerInfo_OnLoaded"
-             d:DesignHeight="50" d:DesignWidth="600">
+             d:DesignHeight="100" d:DesignWidth="600">
     <UserControl.Resources>
         <resources:ServerInfoDataModel 
             x:Key="DataModel"
-            Server="{Binding ElementName=This, Path=Server, Mode=OneWay}">
+            Server="{Binding ElementName=This, Path=Server, Mode=OneWay}"
+            >
         </resources:ServerInfoDataModel>
     </UserControl.Resources>
     <Grid DataContext="{StaticResource DataModel}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"></ColumnDefinition>
             <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Label 
-            Grid.Column="0" 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" 
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
             Content="{Binding IsServerStartedText}"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
-            IsEnabled="{Binding IsServerStartedLabelEnabled}"
+            IsEnabled="{Binding IsServerInfoLabelsEnabled}"
             >
         </Label>
+        <Label Grid.Row="1" 
+               Grid.Column="0" 
+               Content="Server address:"
+               HorizontalAlignment="Right"
+               VerticalAlignment="Center"
+               IsEnabled="{Binding IsServerInfoLabelsEnabled}"
+        >
+        </Label>
+        <Label Grid.Row="1" 
+               Grid.Column="1" 
+               Content="{Binding ServerAddress}"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Center"
+               IsEnabled="{Binding IsServerInfoLabelsEnabled}"
+        >
+        </Label>
+        <Label Grid.Row="2" 
+               Grid.Column="0" 
+               Content="Server port:"
+               HorizontalAlignment="Right"
+               VerticalAlignment="Center"
+               IsEnabled="{Binding IsServerInfoLabelsEnabled}"
+        >
+        </Label>
+        <Label Grid.Row="2" 
+               Grid.Column="1" 
+               Content="{Binding ServerPort}"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Center"
+               IsEnabled="{Binding IsServerInfoLabelsEnabled}"
+        >
+        </Label>
+        <Label Grid.Row="3" 
+               Grid.Column="0" 
+               Content="Connected clients count:"
+               HorizontalAlignment="Right"
+               VerticalAlignment="Center"
+               IsEnabled="{Binding IsServerInfoLabelsEnabled}"
+        >
+        </Label>
+        <Label Grid.Row="3" 
+               Grid.Column="1" 
+               Content="{Binding ConnectedClientCount}"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Center"
+               IsEnabled="{Binding IsServerInfoLabelsEnabled}"
+        >
+        </Label>
         <Button 
-            Grid.Column="1"
+            Grid.Row="0"
+            Grid.RowSpan="4"
+            Grid.Column="2"
             Content="{Binding StartStopServerButtonText}"
             Click="StartStopServerButton_OnClick"
             IsEnabled="{Binding IsStartStopServerButtonEnabled}"

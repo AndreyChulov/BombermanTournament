@@ -10,6 +10,7 @@ namespace Core.Network.Server.Server
     {
         private readonly Action _onClientConnected;
         public int ServerPort { get; }
+        public string ServerIp { get; private set; }
         public List<ConnectedClientService> ConnectedClientServices { get; }
         
         public ServerService(Action onClientConnected) : base(NetworkSettings.WaitForClientConnectionTimeout)
@@ -27,7 +28,8 @@ namespace Core.Network.Server.Server
             var socket = new Socket(SocketType.Stream, ProtocolType.Tcp);
 
             socket.Blocking = false;
-            socket.Bind(new IPEndPoint(IPAddress.Parse(IpAddressUtility.GetLocalIpAddress()), ServerPort));
+            ServerIp = IpAddressUtility.GetLocalIpAddress();
+            socket.Bind(new IPEndPoint(IPAddress.Parse(ServerIp), ServerPort));
             socket.Listen();
             
             return socket;

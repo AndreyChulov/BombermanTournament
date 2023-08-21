@@ -12,23 +12,38 @@ public class NetworkServer : INetworkServerObject
     
     private readonly ServerService _serverService;
     private readonly ServerLocatorService _serverLocatorService;
+    
+    private Action? _onClientConnected;
 
     public string[] ConnectedClients => _serverService
         .ConnectedClientServices
         .Select(x => x.ClientAddress)
         .ToArray();
 
+    public string ServerIP => _serverService.ServerIp;
+    public int ServerPort => _serverService.ServerPort;
+    public int ConnectedClientsCount => _serverService
+        .ConnectedClientServices
+        .Count();
+    
+
     public NetworkServer(Action onServerCreated, Action onServerDestroyed)
     {
         _onServerCreated = onServerCreated;
         _onServerDestroyed = onServerDestroyed;
+        _onClientConnected = null;
         _serverService = new ServerService(ServerService_OnClientConnected);
         _serverLocatorService = new ServerLocatorService(_serverService.ServerPort);
     }
 
     private void ServerService_OnClientConnected()
     {
-        throw new NotImplementedException();
+        if (_onClientConnected == null)
+        {
+            return;
+        }
+
+        Task.Run(() => _onClientConnected());
     }
 
     public void CreateServer()
@@ -36,17 +51,19 @@ public class NetworkServer : INetworkServerObject
         Logger.Initialize(NetworkSettings.ServerLogsFile);
         _serverService.Start();
         StartLocatorService();
-        _onServerCreated();
+        
+        Task.Run(() => _onServerCreated());
     }
 
     public void DestroyServer()
     {
         StopLocatorService();
         _serverService.Stop();
-        Logger.FreeUpResources();
         _serverLocatorService.Dispose();
         _serverService.Dispose();
-        _onServerDestroyed();
+        Logger.FreeUpResources();
+        
+        Task.Run(() => _onServerDestroyed());
     }
 
     public void StartLocatorService()
@@ -57,5 +74,10 @@ public class NetworkServer : INetworkServerObject
     public void StopLocatorService()
     {
         _serverLocatorService.Stop();
+    }
+
+    public void SetOnClientConnectedAction(Action onClientConnected)
+    {
+        _onClientConnected = onClientConnected;
     }
 }
