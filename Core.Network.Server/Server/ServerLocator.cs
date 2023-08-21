@@ -15,7 +15,7 @@ namespace Core.Network.Server.Server
             _isStarted = false;
 
             _serverLocatorSenderThread = new Thread(ServerLocatorSender);
-            _serverLocatorResieverThread = new Thread(ServerLocatorReciever);
+            _serverLocatorResieverThread = new Thread(ServerLocatorReceiver);
 
             _udpBroadcastSocket = new Socket(SocketType.Dgram, ProtocolType.Udp);
             _udpBroadcastSocket.EnableBroadcast = true;
@@ -52,24 +52,7 @@ namespace Core.Network.Server.Server
             }
         }
 
-        private static IPAddress CreateBroadcastAddress()
-        {
-            var localIpAddess = Dns
-                                     .GetHostEntry(Dns.GetHostName())
-                                     .AddressList
-                                     .First(x => x.AddressFamily == AddressFamily.InterNetwork)
-                                     .ToString();
-
-            var localIpAddessNumbers = localIpAddess.Split('.');
-            localIpAddessNumbers[3] = "255";
-            var remoteIpAddressInString = localIpAddessNumbers
-                .Aggregate("", (acc, value) => $"{acc}.{value}")
-                .Substring(1);
-            var broadcastAddress = IPAddress.Parse(remoteIpAddressInString);
-            return broadcastAddress;
-        }
-
-        private void ServerLocatorReciever()
+        private void ServerLocatorReceiver()
         {
             _udpBroadcastSocket.Bind(new IPEndPoint(IPAddress.Any, 11111));
 

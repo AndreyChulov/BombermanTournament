@@ -12,8 +12,8 @@
         public static TimeSpan ServerLocatorBroadcastDatagramSendTimeout => TimeSpan.FromSeconds(1);
         public static TimeSpan ServerLocatorQueueCheckTimeout => TimeSpan.FromSeconds(0.5f);
         public static TimeSpan ClientLocatorQueueCheckTimeout => TimeSpan.FromSeconds(0.5f);
-        public static TimeSpan ServerLocatorBroadcastDatagramReceiveTimeout => TimeSpan.FromSeconds(0.7f);
-        public static TimeSpan ClientCheckAvailableServersTimeout => TimeSpan.FromSeconds(0.5f);
+        public static TimeSpan WaitForClientConnectionTimeout => TimeSpan.FromSeconds(1);
+        public static TimeSpan ClientQueueCheckTimeout => TimeSpan.FromSeconds(0.1f);
         public static string ServerLogsFile => "Logs/server.log";
         public static string ClientLogsFile => "Logs/client.log";
         public static int MaxUnarchivedLogFileSize => 20;

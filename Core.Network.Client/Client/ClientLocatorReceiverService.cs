@@ -50,7 +50,7 @@ namespace Core.Network.Client.Client
 
                 var serverMessage = UdpSocketUtility.GetStringFromDatagram(datagram);
                 
-                _udpMessageReceived(serverMessage);
+                Task.Run(() => _udpMessageReceived(serverMessage));
             }
         }
     }

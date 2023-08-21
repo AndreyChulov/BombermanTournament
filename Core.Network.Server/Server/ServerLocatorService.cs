@@ -90,8 +90,9 @@ namespace Core.Network.Server.Server
             }
         }
 
-        public void Dispose()
+        public override void Dispose()
         {
+            base.Dispose();
             _serverLocatorSenderService.Dispose();
             //_serverLocatorReceiverService?.Dispose();
         }

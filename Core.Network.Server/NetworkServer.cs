@@ -13,18 +13,28 @@ public class NetworkServer : INetworkServerObject
     private readonly ServerService _serverService;
     private readonly ServerLocatorService _serverLocatorService;
 
+    public string[] ConnectedClients => _serverService
+        .ConnectedClientServices
+        .Select(x => x.ClientAddress)
+        .ToArray();
+
     public NetworkServer(Action onServerCreated, Action onServerDestroyed)
     {
         _onServerCreated = onServerCreated;
         _onServerDestroyed = onServerDestroyed;
-        _serverService = new ServerService(TimeSpan.FromSeconds(1));
-        _serverLocatorService = new ServerLocatorService(_serverService.TcpPort);
+        _serverService = new ServerService(ServerService_OnClientConnected);
+        _serverLocatorService = new ServerLocatorService(_serverService.ServerPort);
+    }
+
+    private void ServerService_OnClientConnected()
+    {
+        throw new NotImplementedException();
     }
 
     public void CreateServer()
     {
         Logger.Initialize(NetworkSettings.ServerLogsFile);
-        //_serverService.Start();
+        _serverService.Start();
         StartLocatorService();
         _onServerCreated();
     }
@@ -32,7 +42,7 @@ public class NetworkServer : INetworkServerObject
     public void DestroyServer()
     {
         StopLocatorService();
-        //_serverService.Stop();
+        _serverService.Stop();
         Logger.FreeUpResources();
         _serverLocatorService.Dispose();
         _serverService.Dispose();
