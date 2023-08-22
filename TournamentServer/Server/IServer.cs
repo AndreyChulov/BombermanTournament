@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TournamentServer.Server.Utilities;
 
 namespace TournamentServer.Server;
@@ -9,7 +10,8 @@ public interface IServer
     MonitoredVariable<bool> IsClientConnected { get; }
     MonitoredVariable<string> ServerAddress { get; }
     MonitoredVariable<string> ServerPort { get; }
-    MonitoredVariable<string> ClientsConnected { get; }
+    MonitoredVariable<string> ClientsConnectedCount { get; }
+    MonitoredVariable<ConnectedClientInfoArray> ClientsConnectedInfoArray { get; }
     MonitoredVariable<string> ServerLogFile { get; }
     
     void StartServer();

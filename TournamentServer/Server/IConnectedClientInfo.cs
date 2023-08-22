@@ -1,6 +1,8 @@
+using System;
+
 namespace TournamentServer.Server;
 
-public interface IConnectedClientInfo
+public interface IConnectedClientInfo : IEquatable<IConnectedClientInfo>
 {
     
 }

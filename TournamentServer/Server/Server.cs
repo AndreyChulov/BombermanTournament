@@ -1,3 +1,4 @@
+using System;
 using System.Data;
 using System.Threading.Tasks;
 using Core.Network;
@@ -15,7 +16,9 @@ public class Server :IServer
     public MonitoredVariable<bool> IsClientConnected { get; } = false;
     public MonitoredVariable<string> ServerAddress { get; } = "unknown";
     public MonitoredVariable<string> ServerPort { get; } = "unknown";
-    public MonitoredVariable<string> ClientsConnected { get; } = "unknown";
+    public MonitoredVariable<string> ClientsConnectedCount { get; } = "unknown";
+    public MonitoredVariable<ConnectedClientInfoArray> ClientsConnectedInfoArray { get; } = 
+        (ConnectedClientInfoArray)Array.Empty<ConnectedClientInfo>();
     public MonitoredVariable<string> ServerLogFile { get; } = "unknown";
 
     private INetworkServerObject? _networkServer = null;
@@ -41,7 +44,7 @@ public class Server :IServer
             throw new InvalidConstraintException($"{nameof(Server)}.{nameof(_networkServer)} should be created at this stage");
         }
         
-        ClientsConnected.SetVariable(_networkServer.ConnectedClientsCount.ToString());
+        ClientsConnectedCount.SetVariable(_networkServer.ConnectedClientsCount.ToString());
     }
 
     private void OnServerDestroyed()
@@ -50,7 +53,7 @@ public class Server :IServer
         IsServerProcessingCommand.SetVariable(false);
         ServerAddress.SetVariable("unknown");
         ServerPort.SetVariable("unknown");
-        ClientsConnected.SetVariable("unknown");
+        ClientsConnectedCount.SetVariable("unknown");
         ServerLogFile.SetVariable("unknown");
         _networkServer = null;
     }
@@ -65,7 +68,7 @@ public class Server :IServer
         IsServerStarted.SetVariable(true);       
         ServerAddress.SetVariable(_networkServer.ServerIP);
         ServerPort.SetVariable(_networkServer.ServerPort.ToString());
-        ClientsConnected.SetVariable(_networkServer.ConnectedClientsCount.ToString());
+        ClientsConnectedCount.SetVariable(_networkServer.ConnectedClientsCount.ToString());
         IsServerProcessingCommand.SetVariable(false);
         ServerLogFile.SetVariable(NetworkSettings.ServerLogsFile);
     }
