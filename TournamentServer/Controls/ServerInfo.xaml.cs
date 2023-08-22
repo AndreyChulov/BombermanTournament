@@ -48,21 +48,7 @@ public partial class ServerInfo : UserControl
             throw new InvalidConstraintException($"{nameof(ServerInfoDataModel)} should be initialized at this stage");
         }
 
-        Server.IsServerStarted.OnChanged.AddAction(
-            ControlDataModelHelper.CreateUpdateDataModelActionForServerInfoControl(
-                Dispatcher, dataModel, Server));
-        Server.IsServerProcessingCommand.OnChanged.AddAction(            
-            ControlDataModelHelper.CreateUpdateDataModelActionForServerInfoControl(
-                Dispatcher, dataModel, Server));
-        Server.ServerPort.OnChanged.AddAction(
-            ControlDataModelHelper.CreateUpdateServerPortForServerInfoControl(
-                Dispatcher, dataModel, Server));
-        Server.ServerAddress.OnChanged.AddAction(
-            ControlDataModelHelper.CreateUpdateServerAddressForServerInfoControl(
-                Dispatcher, dataModel, Server));
-        Server.ClientsConnected.OnChanged.AddAction(
-            ControlDataModelHelper.CreateUpdateConnectedClientsCountForServerInfoControl(
-                Dispatcher, dataModel, Server));
+        ServerInfoDataModelHelper.AddUpdateActions(Dispatcher, dataModel, Server);
         
         dataModel.Server = Server;//Force binding update
         //dataModel.ServerPort = Server.ServerPort;//Force binding update

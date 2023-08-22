@@ -2,6 +2,7 @@ using System;
 using System.Windows;
 using System.Windows.Controls;
 using TournamentServer.Server;
+using TournamentServer.Utilites;
 
 namespace TournamentServer.Resources;
 
@@ -40,36 +41,33 @@ public partial class ServerInfoDataModel : UserControl
         DependencyProperty.Register(nameof(ConnectedClientCount), typeof(string), 
             typeof(ServerInfoDataModel), new PropertyMetadata(default(string)));
 
+    public static readonly DependencyProperty ServerLogFileProperty = 
+        DependencyProperty.Register(nameof(ServerLogFile), typeof(string), 
+            typeof(ServerInfoDataModel), new PropertyMetadata(default(string)));
+
     public static void ServerProperty_Changed(DependencyObject d, DependencyPropertyChangedEventArgs e)
     {
         IServer server = (IServer)e.NewValue;
-        bool isServerStarted = server.IsServerStarted;
-        bool isServerProcessingCommand = server.IsServerProcessingCommand;
-        string serverAddress = server.ServerAddress;
-        string serverPort = server.ServerPort;
-        string connectedClientCount = server.ClientsConnected;
         
-        d.SetValue(StartStopServerButtonTextProperty, GetStartStopServerButtonText(isServerStarted));
-        d.SetValue(IsServerStartedTextProperty, GetServerStartedText(isServerStarted));
-        d.SetValue(IsServerInfoLabelsEnabledProperty, !isServerProcessingCommand);
-        d.SetValue(IsStartStopServerButtonEnabledProperty, !isServerProcessingCommand);
-        d.SetValue(ServerAddressProperty, serverAddress);
-        d.SetValue(ServerPortProperty, serverPort);
-        d.SetValue(ConnectedClientCountProperty, connectedClientCount);
+        ServerInfoDataModelHelper.InvokeUpdateActions(d.Dispatcher, d, server);
     }
 
-    private static string GetStartStopServerButtonText(bool isServerStarted) 
+    public static string GetStartStopServerButtonText(bool isServerStarted) 
         => isServerStarted ? "Stop server" : "Start server";
 
-    private static string GetServerStartedText(bool isServerStarted) 
+    public static string GetServerStartedText(bool isServerStarted) 
         => isServerStarted ? "Server started" : "Server stopped";
     
     public ServerInfoDataModel()
     {
         InitializeComponent();
         
-        IsServerStartedText = GetServerStartedText(false);
-        StartStopServerButtonText = GetStartStopServerButtonText(false);
+        ServerProperty_Changed(
+            this, 
+            new DependencyPropertyChangedEventArgs(ServerProperty, null, new ServerStub()));
+        //IsServerStartedText = GetServerStartedText(false);
+        //StartStopServerButtonText = GetStartStopServerButtonText(false);
+        
     }
 
     public IServer Server
@@ -118,5 +116,11 @@ public partial class ServerInfoDataModel : UserControl
     {
         get => (string)GetValue(ConnectedClientCountProperty);
         set => SetValue(ConnectedClientCountProperty, value);
+    }
+
+    public string ServerLogFile
+    {
+        get => (string)GetValue(ServerLogFileProperty);
+        set => SetValue(ServerLogFileProperty, value);
     }
 }

@@ -1,6 +1,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using TournamentServer.Server;
+using TournamentServer.Utilites;
 
 namespace TournamentServer.Resources;
 
@@ -18,11 +19,8 @@ public partial class TournamentServerFormControlDataModel : UserControl
     public static void ServerProperty_Changed(DependencyObject d, DependencyPropertyChangedEventArgs e)
     {
         IServer server = (IServer)e.NewValue;
-        bool isServerProcessingCommand = server.IsServerProcessingCommand;
-        bool isClientConnected = server.IsClientConnected;
-        var isButtonStartTournamentEnabled = !isServerProcessingCommand && isClientConnected;
         
-        d.SetValue(IsButtonStartTournamentEnabledProperty, isButtonStartTournamentEnabled);
+        TournamentServerFormControlDataModelHelper.InvokeUpdateActions(d.Dispatcher, d, server);
     }
 
     

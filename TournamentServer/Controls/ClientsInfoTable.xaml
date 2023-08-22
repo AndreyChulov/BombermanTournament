@@ -4,10 +4,20 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:controls="clr-namespace:TournamentServer.Controls"
+             xmlns:resources="clr-namespace:TournamentServer.Resources"
              mc:Ignorable="d"
              x:Name="This"
+             Loaded="ClientsInfoTable_OnLoaded"
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
+    <UserControl.Resources>
+        <resources:ClientsInfoTableDataModel 
+            x:Key="DataModel"
+            Server="{Binding ElementName=This, Path=Server}"
+            >
+            
+        </resources:ClientsInfoTableDataModel>
+    </UserControl.Resources>
+    <Grid DataContext="{StaticResource DataModel}">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
@@ -19,25 +29,29 @@
         <controls:ClientInfo Title="Player 1 info" 
                              Grid.Row="0"
                              Grid.Column="0"
-                             Server="{Binding ElementName=This, Path=Server}"
+                             Background="Cyan"
+                             Server="{Binding Server}"
                              ClientIndex="0">
         </controls:ClientInfo>
         <controls:ClientInfo Title="Player 2 info"
                              Grid.Row="0"
                              Grid.Column="1"
-                             Server="{Binding ElementName=This, Path=Server}"
+                             Background="Coral"
+                             Server="{Binding Server}"
                              ClientIndex="1">
         </controls:ClientInfo>
         <controls:ClientInfo Title="Player 3 info"
                              Grid.Row="1"
                              Grid.Column="0"
-                             Server="{Binding ElementName=This, Path=Server}"
+                             Background="Gold"
+                             Server="{Binding Server}"
                              ClientIndex="2">
         </controls:ClientInfo>
         <controls:ClientInfo Title="Player 4 info"
                              Grid.Row="1"
                              Grid.Column="1"
-                             Server="{Binding ElementName=This, Path=Server}"
+                             Background="Lime"
+                             Server="{Binding Server}"
                              ClientIndex="3">
         </controls:ClientInfo>
     </Grid>

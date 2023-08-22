@@ -10,6 +10,7 @@ public interface IServer
     MonitoredVariable<string> ServerAddress { get; }
     MonitoredVariable<string> ServerPort { get; }
     MonitoredVariable<string> ClientsConnected { get; }
+    MonitoredVariable<string> ServerLogFile { get; }
     
     void StartServer();
     void StopServer();

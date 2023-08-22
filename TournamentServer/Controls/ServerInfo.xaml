@@ -3,28 +3,29 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:system="clr-namespace:System;assembly=mscorlib"
-             xmlns:controls="clr-namespace:TournamentServer.Controls"
              xmlns:resources="clr-namespace:TournamentServer.Resources"
-             xmlns:root="clr-namespace:TournamentServer"
              mc:Ignorable="d"
              x:Name="This"
              Loaded="ServerInfo_OnLoaded"
-             d:DesignHeight="100" d:DesignWidth="600">
+             d:DesignHeight="150" d:DesignWidth="600">
     <UserControl.Resources>
         <resources:ServerInfoDataModel 
             x:Key="DataModel"
-            Server="{Binding ElementName=This, Path=Server, Mode=OneWay}"
+            Server="{Binding ElementName=This, Path=Server}"
             >
         </resources:ServerInfoDataModel>
     </UserControl.Resources>
-    <Grid DataContext="{StaticResource DataModel}">
+    <Grid 
+        DataContext="{StaticResource DataModel}"
+        Background="Aquamarine"
+        >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"></ColumnDefinition>
             <ColumnDefinition Width="1*"></ColumnDefinition>
             <ColumnDefinition Width="1*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
@@ -87,10 +88,29 @@
                IsEnabled="{Binding IsServerInfoLabelsEnabled}"
         >
         </Label>
+        <Label Grid.Row="4" 
+               Grid.Column="0" 
+               Content="Server log file:"
+               HorizontalAlignment="Right"
+               VerticalAlignment="Center"
+               IsEnabled="{Binding IsServerInfoLabelsEnabled}"
+        >
+        </Label>
+        <Label Grid.Row="4" 
+               Grid.Column="1" 
+               Content="{Binding ServerLogFile}"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Center"
+               IsEnabled="{Binding IsServerInfoLabelsEnabled}"
+        >
+        </Label>
         <Button 
             Grid.Row="0"
-            Grid.RowSpan="4"
+            Grid.RowSpan="5"
             Grid.Column="2"
+            Background="Aqua"
+            VerticalContentAlignment="Center"
+            HorizontalContentAlignment="Center"
             Content="{Binding StartStopServerButtonText}"
             Click="StartStopServerButton_OnClick"
             IsEnabled="{Binding IsStartStopServerButtonEnabled}"

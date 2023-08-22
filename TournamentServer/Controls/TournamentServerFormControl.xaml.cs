@@ -38,16 +38,8 @@ public partial class TournamentServerFormControl : UserControl
             throw new InvalidConstraintException($"{nameof(TournamentServerFormControlDataModel)} should be initialized at this stage");
         }
         
-        Server.IsServerStarted.OnChanged.AddAction(
-            ControlDataModelHelper.CreateUpdateDataModelActionForTournamentFormControl(
-                Dispatcher, dataModel, Server));
-        Server.IsClientConnected.OnChanged.AddAction(
-            ControlDataModelHelper.CreateUpdateDataModelActionForTournamentFormControl(
-                Dispatcher, dataModel, Server));
-        Server.IsServerProcessingCommand.OnChanged.AddAction(
-            ControlDataModelHelper.CreateUpdateDataModelActionForTournamentFormControl(
-                Dispatcher, dataModel, Server));
-
+        TournamentServerFormControlDataModelHelper.AddUpdateActions(
+            Dispatcher, dataModel, Server);
         
         dataModel.Server = Server;//Force binding update
     }

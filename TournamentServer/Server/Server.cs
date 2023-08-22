@@ -1,6 +1,7 @@
 using System.Data;
 using System.Threading.Tasks;
 using Core.Network;
+using Core.Network.ExternalShared;
 using Core.Network.ExternalShared.Enums;
 using Core.Network.ExternalShared.Interfaces;
 using TournamentServer.Server.Utilities;
@@ -15,6 +16,7 @@ public class Server :IServer
     public MonitoredVariable<string> ServerAddress { get; } = "unknown";
     public MonitoredVariable<string> ServerPort { get; } = "unknown";
     public MonitoredVariable<string> ClientsConnected { get; } = "unknown";
+    public MonitoredVariable<string> ServerLogFile { get; } = "unknown";
 
     private INetworkServerObject? _networkServer = null;
 
@@ -49,6 +51,7 @@ public class Server :IServer
         ServerAddress.SetVariable("unknown");
         ServerPort.SetVariable("unknown");
         ClientsConnected.SetVariable("unknown");
+        ServerLogFile.SetVariable("unknown");
         _networkServer = null;
     }
 
@@ -64,6 +67,7 @@ public class Server :IServer
         ServerPort.SetVariable(_networkServer.ServerPort.ToString());
         ClientsConnected.SetVariable(_networkServer.ConnectedClientsCount.ToString());
         IsServerProcessingCommand.SetVariable(false);
+        ServerLogFile.SetVariable(NetworkSettings.ServerLogsFile);
     }
     
     public void StopServer()

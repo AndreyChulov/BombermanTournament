@@ -18,9 +18,9 @@
     </UserControl.Resources>
     <Grid DataContext="{StaticResource DataModel}">
         <Grid.RowDefinitions>
-            <RowDefinition Height="25*"></RowDefinition>
+            <RowDefinition Height="30*"></RowDefinition>
             <RowDefinition Height="2*"></RowDefinition>
-            <RowDefinition Height="63*"></RowDefinition>
+            <RowDefinition Height="58*"></RowDefinition>
             <RowDefinition Height="10*"></RowDefinition>
         </Grid.RowDefinitions>
         <controls:ServerInfo 
