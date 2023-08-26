@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Core.Network;
 using Core.Network.ExternalShared;
+using Core.Network.ExternalShared.Contracts;
 using Core.Network.ExternalShared.Enums;
 using Core.Network.ExternalShared.Interfaces;
 using TournamentServer.Server.Utilities;
@@ -39,7 +40,7 @@ public class Server :IServer
         _networkServer.CreateServer();
     }
 
-    private void OnClientUpdated()
+    private void OnClientUpdated(ConnectedClientId connectedClientId)
     {
         throw new NotImplementedException();
     }
