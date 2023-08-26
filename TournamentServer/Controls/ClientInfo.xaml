@@ -4,12 +4,20 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:TournamentServer.Controls"
+             xmlns:resources="clr-namespace:TournamentServer.Resources"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="600"
-             Name="ClientInfoControl"
-             d:DataContext="{d:DesignInstance local:ClientInfoDesignContext, IsDesignTimeCreatable=True}"
-             DataContext="{Binding ElementName=ClientInfoControl}">
-    <Grid>
+             Name="This"
+             Loaded="ClientInfo_OnLoaded">
+    <UserControl.Resources>
+        <resources:ClientInfoDataModel
+            x:Key="DataModel"
+            ClientInfo="{Binding ElementName=This, Path=ClientInfoData}"
+            Title="{Binding ElementName=This, Path=Title}"
+            >
+        </resources:ClientInfoDataModel>
+    </UserControl.Resources>
+    <Grid DataContext="{StaticResource DataModel}">
         <Grid.RowDefinitions>
             <RowDefinition Height="50"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>

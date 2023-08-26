@@ -12,6 +12,11 @@ public partial class ClientsInfoTableDataModel : UserControl
             typeof(ClientsInfoTableDataModel), new PropertyMetadata(default(IServer), 
                 ServerProperty_Changed));
 
+    public static readonly DependencyProperty ClientsInfoProperty = 
+        DependencyProperty.Register(nameof(ClientsInfo), typeof(ConnectedClientInfoArray), 
+            typeof(ClientsInfoTableDataModel), 
+            new PropertyMetadata(default(ConnectedClientInfoArray)));
+
     private static void ServerProperty_Changed(DependencyObject d, DependencyPropertyChangedEventArgs e)
     {
         IServer server = (IServer)e.NewValue;
@@ -22,11 +27,21 @@ public partial class ClientsInfoTableDataModel : UserControl
     public ClientsInfoTableDataModel()
     {
         InitializeComponent();
+        
+        ServerProperty_Changed(
+            this, 
+            new DependencyPropertyChangedEventArgs(ServerProperty, null, new ServerStub()));
     }
 
     public IServer Server
     {
         get => (IServer)GetValue(ServerProperty);
         set => SetValue(ServerProperty, value);
+    }
+
+    public ConnectedClientInfoArray ClientsInfo
+    {
+        get => (ConnectedClientInfoArray)GetValue(ClientsInfoProperty);
+        set => SetValue(ClientsInfoProperty, value);
     }
 }

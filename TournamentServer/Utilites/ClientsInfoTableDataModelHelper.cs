@@ -8,29 +8,25 @@ namespace TournamentServer.Utilites;
 
 public static class ClientsInfoTableDataModelHelper
 {
-    private static Action CreateUpdateIsButtonStartTournamentEnabledPropertyAction(
+    private static Action CreateUpdateClientsInfoPropertyAction(
         Dispatcher dispatcher, DependencyObject dataModel, IServer server)
     {
         return () => dispatcher.Invoke(
-            () => dataModel.SetValue(TournamentServerFormControlDataModel.IsButtonStartTournamentEnabledProperty, 
-                server.IsServerStarted && server.IsClientConnected && !server.IsServerProcessingCommand));
+            () => dataModel.SetValue(ClientsInfoTableDataModel.ClientsInfoProperty, 
+                (ConnectedClientInfoArray)server.ClientsConnectedInfoArray));
     }
 
     public static void AddUpdateActions(
         Dispatcher dispatcher, DependencyObject dataModel, IServer server)
     {
-        /*server.IsServerProcessingCommand.OnChanged.AddAction(
-            CreateUpdateIsButtonStartTournamentEnabledPropertyAction(dispatcher, dataModel, server));        
-        server.IsClientConnected.OnChanged.AddAction(
-            CreateUpdateIsButtonStartTournamentEnabledPropertyAction(dispatcher, dataModel, server));        
-        server.IsServerStarted.OnChanged.AddAction(
-            CreateUpdateIsButtonStartTournamentEnabledPropertyAction(dispatcher, dataModel, server));*/        
+        server.ClientsConnectedInfoArray.OnChanged.AddAction(
+            CreateUpdateClientsInfoPropertyAction(dispatcher, dataModel, server));
     }
 
     public static void InvokeUpdateActions(
         Dispatcher dispatcher, DependencyObject dataModel, IServer server)
     {
-        //CreateUpdateIsButtonStartTournamentEnabledPropertyAction(dispatcher, dataModel, server)();
+        CreateUpdateClientsInfoPropertyAction(dispatcher, dataModel, server)();
     }
 
 }

@@ -14,7 +14,6 @@
             x:Key="DataModel"
             Server="{Binding ElementName=This, Path=Server}"
             >
-            
         </resources:ClientsInfoTableDataModel>
     </UserControl.Resources>
     <Grid DataContext="{StaticResource DataModel}">
@@ -30,28 +29,28 @@
                              Grid.Row="0"
                              Grid.Column="0"
                              Background="Cyan"
-                             Server="{Binding Server}"
+                             ClientInfoData="{Binding ClientsInfo[0]}"
                              ClientIndex="0">
         </controls:ClientInfo>
         <controls:ClientInfo Title="Player 2 info"
                              Grid.Row="0"
                              Grid.Column="1"
                              Background="Coral"
-                             Server="{Binding Server}"
+                             ClientInfoData="{Binding ClientsInfo[1]}"
                              ClientIndex="1">
         </controls:ClientInfo>
         <controls:ClientInfo Title="Player 3 info"
                              Grid.Row="1"
                              Grid.Column="0"
                              Background="Gold"
-                             Server="{Binding Server}"
+                             ClientInfoData="{Binding ClientsInfo[2]}"
                              ClientIndex="2">
         </controls:ClientInfo>
         <controls:ClientInfo Title="Player 4 info"
                              Grid.Row="1"
                              Grid.Column="1"
                              Background="Lime"
-                             Server="{Binding Server}"
+                             ClientInfoData="{Binding ClientsInfo[3]}"
                              ClientIndex="3">
         </controls:ClientInfo>
     </Grid>
