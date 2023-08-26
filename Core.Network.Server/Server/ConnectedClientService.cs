@@ -11,18 +11,25 @@ namespace Core.Network.Server.Server;
 public class ConnectedClientService : BaseThreadService
 {
     private readonly Socket _clientSocket;
+    private readonly Action _onConnectedClientUpdated;
     private readonly Queue<string> _messagesToSend;
 
-    public string ClientAddress { get; }
+    public ConnectedClient ConnectedClient { get; private set; }
 
-    public ConnectedClientService(Socket clientSocket) : base(NetworkSettings.ClientQueueCheckTimeout)
+    public ConnectedClientService(Socket clientSocket, Action onConnectedClientUpdated) 
+        : base(NetworkSettings.ClientQueueCheckTimeout)
     {
         _clientSocket = clientSocket;
+        _onConnectedClientUpdated = onConnectedClientUpdated;
 
         _messagesToSend = new Queue<string>();
 
         var ipEndpoint = (IPEndPoint?)clientSocket.RemoteEndPoint;
-        ClientAddress = $"{ipEndpoint?.Address.MapToIPv4()}:{ipEndpoint?.Port}";
+        var connectedClientId = new ConnectedClientId(
+            ipEndpoint?.Address.MapToIPv4().ToString() ?? "unknown",
+            ipEndpoint?.Port ?? -1
+        );
+        ConnectedClient = new ConnectedClient(connectedClientId);
     }
 
     public void SendMessage<T>(T messageObject)

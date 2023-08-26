@@ -14,10 +14,11 @@ public class NetworkServer : INetworkServerObject
     private readonly ServerLocatorService _serverLocatorService;
     
     private Action? _onClientConnected;
+    private Action? _onClientUpdated;
 
-    public string[] ConnectedClients => _serverService
+    public IConnectedClient[] ConnectedClients => _serverService
         .ConnectedClientServices
-        .Select(x => x.ClientAddress)
+        .Select(x => (IConnectedClient)x.ConnectedClient)
         .ToArray();
 
     public string ServerIP => _serverService.ServerIp;
@@ -32,8 +33,18 @@ public class NetworkServer : INetworkServerObject
         _onServerCreated = onServerCreated;
         _onServerDestroyed = onServerDestroyed;
         _onClientConnected = null;
-        _serverService = new ServerService(ServerService_OnClientConnected);
+        _serverService = new ServerService(ServerService_OnClientConnected, ServerService_OnClientUpdated);
         _serverLocatorService = new ServerLocatorService(_serverService.ServerPort);
+    }
+
+    private void ServerService_OnClientUpdated()
+    {
+        if (_onClientUpdated == null)
+        {
+            return;
+        }
+
+        Task.Run(() => _onClientUpdated());
     }
 
     private void ServerService_OnClientConnected()
@@ -79,5 +90,10 @@ public class NetworkServer : INetworkServerObject
     public void SetOnClientConnectedAction(Action onClientConnected)
     {
         _onClientConnected = onClientConnected;
+    }
+    
+    public void SetOnClientUpdatedAction(Action onClientUpdated)
+    {
+        _onClientUpdated = onClientUpdated;
     }
 }

@@ -1,9 +1,11 @@
+using Core.Network.ExternalShared.Contracts;
+using Core.Network.ExternalShared.Interfaces;
+
 namespace TournamentServer.Server;
 
-public class ConnectedClientInfo : IConnectedClientInfo
+public class ConnectedClientInfo : ConnectedClient
 {
-    public bool Equals(IConnectedClientInfo? other)
+    public ConnectedClientInfo(ConnectedClient connectedClient) : base(connectedClient.ConnectedClientId)
     {
-        return true;
     }
 }

@@ -9,17 +9,22 @@ namespace Core.Network.Server.Server
     public class ServerService :BaseThreadService
     {
         private readonly Action _onClientConnected;
+        private readonly Action _onClientUpdated;
         public int ServerPort { get; }
         public string ServerIp { get; private set; }
         public List<ConnectedClientService> ConnectedClientServices { get; }
         
-        public ServerService(Action onClientConnected) : base(NetworkSettings.WaitForClientConnectionTimeout)
+        public ServerService(Action onClientConnected, Action onClientUpdated) 
+            : base(NetworkSettings.WaitForClientConnectionTimeout)
         {
             _onClientConnected = onClientConnected;
+            _onClientUpdated = onClientUpdated;
             ConnectedClientServices = new List<ConnectedClientService>();
+            
             
             Random randomGenerator = new Random();
             
+            ServerIp = IpAddressUtility.GetLocalIpAddress();
             ServerPort = NetworkSettings.ServerTcpPorts[randomGenerator.Next(0, NetworkSettings.ServerTcpPorts.Length)];
         }
 
@@ -28,7 +33,7 @@ namespace Core.Network.Server.Server
             var socket = new Socket(SocketType.Stream, ProtocolType.Tcp);
 
             socket.Blocking = false;
-            ServerIp = IpAddressUtility.GetLocalIpAddress();
+            
             socket.Bind(new IPEndPoint(IPAddress.Parse(ServerIp), ServerPort));
             socket.Listen();
             
@@ -46,7 +51,7 @@ namespace Core.Network.Server.Server
             try
             {
                 var clientSocket = serviceSocket.Accept();
-                var connectedClientService = new ConnectedClientService(clientSocket);
+                var connectedClientService = new ConnectedClientService(clientSocket, OnConnectedClientUpdated);
                 connectedClientService.Start();
                 ConnectedClientServices.Add(connectedClientService);
                 
@@ -59,6 +64,11 @@ namespace Core.Network.Server.Server
                     throw;
                 }
             }
+        }
+        
+        private void OnConnectedClientUpdated()
+        {
+            Task.Run(() => _onClientUpdated());
         }
     }
 }

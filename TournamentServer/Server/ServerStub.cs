@@ -12,7 +12,7 @@ public class ServerStub : IServer
     public MonitoredVariable<string> ServerPort { get; } = "-888";
     public MonitoredVariable<string> ClientsConnectedCount { get; } = "-1";
     public MonitoredVariable<ConnectedClientInfoArray> ClientsConnectedInfoArray { get; }= 
-        (ConnectedClientInfoArray)Array.Empty<ConnectedClientInfo>();
+        (ConnectedClientInfoArray)Array.Empty<IConnectedClientInfo>();
     public MonitoredVariable<string> ServerLogFile { get; } = "server.log";
 
     public void StartServer()

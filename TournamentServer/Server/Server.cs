@@ -1,5 +1,6 @@
 using System;
 using System.Data;
+using System.Linq;
 using System.Threading.Tasks;
 using Core.Network;
 using Core.Network.ExternalShared;
@@ -18,7 +19,7 @@ public class Server :IServer
     public MonitoredVariable<string> ServerPort { get; } = "unknown";
     public MonitoredVariable<string> ClientsConnectedCount { get; } = "unknown";
     public MonitoredVariable<ConnectedClientInfoArray> ClientsConnectedInfoArray { get; } = 
-        (ConnectedClientInfoArray)Array.Empty<ConnectedClientInfo>();
+        (ConnectedClientInfoArray)Array.Empty<IConnectedClientInfo>();
     public MonitoredVariable<string> ServerLogFile { get; } = "unknown";
 
     private INetworkServerObject? _networkServer = null;
@@ -34,7 +35,13 @@ public class Server :IServer
         _networkServer = NetworkFactory.CreateNetworkObject<INetworkServerObject>(
             NetworkObjectType.Server, OnServerCreated, OnServerDestroyed);
         _networkServer.SetOnClientConnectedAction(OnClientConnected);
+        _networkServer.SetOnClientUpdatedAction(OnClientUpdated);
         _networkServer.CreateServer();
+    }
+
+    private void OnClientUpdated()
+    {
+        throw new NotImplementedException();
     }
 
     private void OnClientConnected()
@@ -45,6 +52,8 @@ public class Server :IServer
         }
         
         ClientsConnectedCount.SetVariable(_networkServer.ConnectedClientsCount.ToString());
+        ClientsConnectedInfoArray.SetVariable(
+            _networkServer.ConnectedClients.Cast<IConnectedClientInfo>().ToArray());
     }
 
     private void OnServerDestroyed()

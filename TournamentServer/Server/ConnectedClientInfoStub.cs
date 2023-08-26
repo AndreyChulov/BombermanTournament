@@ -1,10 +1,11 @@
+using Core.Network.ExternalShared.Contracts;
+
 namespace TournamentServer.Server;
 
-public class ConnectedClientInfoStub : IConnectedClientInfo
+public class ConnectedClientInfoStub : ConnectedClient
 {
-    public bool Equals(IConnectedClientInfo? other)
+    public ConnectedClientInfoStub() 
+        : base(new ConnectedClientId("unknown", -1))
     {
-        return true;
     }
-
 }
