@@ -28,7 +28,10 @@ public class ConnectedClientInfoArray : IEquatable<ConnectedClientInfoArray>
         _connectedClientInfoArray = connectedClientInfos;
     }
 
-    public IConnectedClientInfo this[int index] => _connectedClientInfoArray[index];
+    public IConnectedClientInfo this[int index] => 
+        index >= _connectedClientInfoArray.Length ? 
+            new ConnectedClientInfoStub() :
+            _connectedClientInfoArray[index];
     public IConnectedClientInfo this[ConnectedClientId id] => 
         _connectedClientInfoArray.FirstOrDefault(x => x.ConnectedClientId.Equals(id)) ?? 
             (IConnectedClientInfo)new ConnectedClientInfoStub();
