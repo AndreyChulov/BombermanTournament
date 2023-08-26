@@ -1,4 +1,5 @@
 using Core.Network.ExternalShared;
+using Core.Network.ExternalShared.Contracts;
 using Core.Network.ExternalShared.Interfaces;
 using Core.Network.InternalShared;
 using Core.Network.Server.Server;
@@ -14,7 +15,7 @@ public class NetworkServer : INetworkServerObject
     private readonly ServerLocatorService _serverLocatorService;
     
     private Action? _onClientConnected;
-    private Action? _onClientUpdated;
+    private Action<ConnectedClientId>? _onClientUpdated;
 
     public IConnectedClient[] ConnectedClients => _serverService
         .ConnectedClientServices
@@ -37,14 +38,14 @@ public class NetworkServer : INetworkServerObject
         _serverLocatorService = new ServerLocatorService(_serverService.ServerPort);
     }
 
-    private void ServerService_OnClientUpdated()
+    private void ServerService_OnClientUpdated(ConnectedClientId connectedClientId)
     {
         if (_onClientUpdated == null)
         {
             return;
         }
 
-        Task.Run(() => _onClientUpdated());
+        Task.Run(() => _onClientUpdated(connectedClientId));
     }
 
     private void ServerService_OnClientConnected()
@@ -92,7 +93,7 @@ public class NetworkServer : INetworkServerObject
         _onClientConnected = onClientConnected;
     }
     
-    public void SetOnClientUpdatedAction(Action onClientUpdated)
+    public void SetOnClientUpdatedAction(Action<ConnectedClientId> onClientUpdated)
     {
         _onClientUpdated = onClientUpdated;
     }

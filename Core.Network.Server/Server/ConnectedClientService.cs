@@ -11,12 +11,12 @@ namespace Core.Network.Server.Server;
 public class ConnectedClientService : BaseThreadService
 {
     private readonly Socket _clientSocket;
-    private readonly Action _onConnectedClientUpdated;
+    private readonly Action<ConnectedClientId> _onConnectedClientUpdated;
     private readonly Queue<string> _messagesToSend;
 
     public ConnectedClient ConnectedClient { get; private set; }
 
-    public ConnectedClientService(Socket clientSocket, Action onConnectedClientUpdated) 
+    public ConnectedClientService(Socket clientSocket, Action<ConnectedClientId> onConnectedClientUpdated) 
         : base(NetworkSettings.ClientQueueCheckTimeout)
     {
         _clientSocket = clientSocket;

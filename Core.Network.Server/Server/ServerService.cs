@@ -2,6 +2,7 @@
 using System.Net;
 using System.Net.Sockets;
 using Core.Network.ExternalShared;
+using Core.Network.ExternalShared.Contracts;
 using Core.Network.InternalShared;
 
 namespace Core.Network.Server.Server
@@ -9,12 +10,12 @@ namespace Core.Network.Server.Server
     public class ServerService :BaseThreadService
     {
         private readonly Action _onClientConnected;
-        private readonly Action _onClientUpdated;
+        private readonly Action<ConnectedClientId> _onClientUpdated;
         public int ServerPort { get; }
         public string ServerIp { get; private set; }
         public List<ConnectedClientService> ConnectedClientServices { get; }
         
-        public ServerService(Action onClientConnected, Action onClientUpdated) 
+        public ServerService(Action onClientConnected, Action<ConnectedClientId> onClientUpdated) 
             : base(NetworkSettings.WaitForClientConnectionTimeout)
         {
             _onClientConnected = onClientConnected;
@@ -66,9 +67,9 @@ namespace Core.Network.Server.Server
             }
         }
         
-        private void OnConnectedClientUpdated()
+        private void OnConnectedClientUpdated(ConnectedClientId connectedClientId)
         {
-            Task.Run(() => _onClientUpdated());
+            Task.Run(() => _onClientUpdated(connectedClientId));
         }
     }
 }

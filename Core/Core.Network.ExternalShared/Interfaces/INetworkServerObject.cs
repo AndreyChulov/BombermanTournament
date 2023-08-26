@@ -1,3 +1,5 @@
+using Core.Network.ExternalShared.Contracts;
+
 namespace Core.Network.ExternalShared.Interfaces;
 
 public interface INetworkServerObject:INetworkObject
@@ -12,5 +14,5 @@ public interface INetworkServerObject:INetworkObject
     void StartLocatorService();
     void StopLocatorService();
     void SetOnClientConnectedAction(Action onClientConnected);
-    void SetOnClientUpdatedAction(Action onClientUpdated);
+    void SetOnClientUpdatedAction(Action<ConnectedClientId> onClientUpdated);
 }

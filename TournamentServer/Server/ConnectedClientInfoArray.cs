@@ -1,4 +1,6 @@
 using System;
+using System.Linq;
+using Core.Network.ExternalShared.Contracts;
 
 namespace TournamentServer.Server;
 
@@ -27,6 +29,9 @@ public class ConnectedClientInfoArray : IEquatable<ConnectedClientInfoArray>
     }
 
     public IConnectedClientInfo this[int index] => _connectedClientInfoArray[index];
+    public IConnectedClientInfo this[ConnectedClientId id] => 
+        _connectedClientInfoArray.FirstOrDefault(x => x.ConnectedClientId.Equals(id)) ?? 
+            (IConnectedClientInfo)new ConnectedClientInfoStub();
     
     public static implicit operator ConnectedClientInfoArray(IConnectedClientInfo[] connectedClientInfos) =>
         new(connectedClientInfos);
