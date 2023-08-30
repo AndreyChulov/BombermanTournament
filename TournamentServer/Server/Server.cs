@@ -42,7 +42,7 @@ public class Server :IServer
 
     private void OnClientUpdated(ConnectedClientId connectedClientId)
     {
-        throw new NotImplementedException();
+        Task.Run(() => ((ConnectedClientInfoArray)ClientsConnectedInfoArray).OnClientUpdated(connectedClientId));
     }
 
     private void OnClientConnected()

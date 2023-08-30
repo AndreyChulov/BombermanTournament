@@ -17,9 +17,9 @@ public partial class ClientInfo : UserControl
         DependencyProperty.Register(nameof(ClientIndex), typeof(int), 
             typeof(ClientInfo), new PropertyMetadata(default(int)));
 
-    public static readonly DependencyProperty ClientInfoDataProperty = 
-        DependencyProperty.Register(nameof(ClientInfoData), typeof(IConnectedClientInfo), 
-            typeof(ClientInfo), new PropertyMetadata(default(IConnectedClientInfo)));
+    public static readonly DependencyProperty ServerProperty = 
+        DependencyProperty.Register(nameof(Server), typeof(IServer), 
+            typeof(ClientInfo), new PropertyMetadata(default(IServer)));
 
     public ClientInfo()
     {
@@ -38,10 +38,10 @@ public partial class ClientInfo : UserControl
         set => SetValue(ClientIndexProperty, value);
     }
 
-    public IConnectedClientInfo ClientInfoData
+    public IServer Server
     {
-        get => (IConnectedClientInfo)GetValue(ClientInfoDataProperty);
-        set => SetValue(ClientInfoDataProperty, value);
+        get => (IServer)GetValue(ServerProperty);
+        set => SetValue(ServerProperty, value);
     }
 
     private void ClientInfo_OnLoaded(object sender, RoutedEventArgs e)
@@ -53,8 +53,10 @@ public partial class ClientInfo : UserControl
             throw new InvalidConstraintException($"{nameof(ClientInfoDataModel)} should be initialized at this stage");
         }
 
-        ClientInfoDataModelHelper.AddUpdateActions(Dispatcher, dataModel, ClientInfoData);
+        ClientInfoDataModelHelper.AddUpdateActions(Dispatcher, dataModel, Server);
         
-        dataModel.ClientInfo = ClientInfoData;//Force binding update
+        dataModel.ClientIndex = ClientIndex;
+        dataModel.Server = Server;//Force binding update
+        dataModel.Title = Title;
     }
 }

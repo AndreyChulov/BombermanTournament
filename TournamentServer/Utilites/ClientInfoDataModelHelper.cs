@@ -8,29 +8,37 @@ namespace TournamentServer.Utilites;
 
 public static class ClientInfoDataModelHelper
 {
-    private static Action CreateUpdateIsButtonStartTournamentEnabledPropertyAction(
-        Dispatcher dispatcher, DependencyObject dataModel, IServer server)
+    private static Action CreateUpdateClientIPPropertyAction(
+        Dispatcher dispatcher, ClientInfoDataModel dataModel, IServer server)
     {
         return () => dispatcher.Invoke(
-            () => dataModel.SetValue(TournamentServerFormControlDataModel.IsButtonStartTournamentEnabledProperty, 
-                server.IsServerStarted && server.IsClientConnected && !server.IsServerProcessingCommand));
+            () => dataModel.SetValue(ClientInfoDataModel.ClientIPProperty, 
+                ((ConnectedClientInfoArray)server.ClientsConnectedInfoArray)[dataModel.ClientIndex]
+                    .ConnectedClientId.ClientIP));
+    }
+
+    private static Action CreateUpdateClientPortPropertyAction(
+        Dispatcher dispatcher, ClientInfoDataModel dataModel, IServer server)
+    {
+        return () => dispatcher.Invoke(
+            () => dataModel.SetValue(ClientInfoDataModel.ClientPortProperty, 
+                ((ConnectedClientInfoArray)server.ClientsConnectedInfoArray)[dataModel.ClientIndex]
+                    .ConnectedClientId.ClientPort));
     }
 
     public static void AddUpdateActions(
-        Dispatcher dispatcher, DependencyObject dataModel, IConnectedClientInfo server)
+        Dispatcher dispatcher, ClientInfoDataModel dataModel, IServer server)
     {
-        /*server.IsServerProcessingCommand.OnChanged.AddAction(
-            CreateUpdateIsButtonStartTournamentEnabledPropertyAction(dispatcher, dataModel, server));        
-        server.IsClientConnected.OnChanged.AddAction(
-            CreateUpdateIsButtonStartTournamentEnabledPropertyAction(dispatcher, dataModel, server));        
-        server.IsServerStarted.OnChanged.AddAction(
-            CreateUpdateIsButtonStartTournamentEnabledPropertyAction(dispatcher, dataModel, server));*/        
+        
+        ((ConnectedClientInfoArray)server.ClientsConnectedInfoArray)[dataModel.ClientIndex]
+            .SetOnClientUpdatedAction(() => InvokeUpdateActions(dispatcher, dataModel, server));
     }
 
     public static void InvokeUpdateActions(
-        Dispatcher dispatcher, DependencyObject dataModel, IConnectedClientInfo server)
+        Dispatcher dispatcher, ClientInfoDataModel dataModel, IServer server)
     {
-        //CreateUpdateIsButtonStartTournamentEnabledPropertyAction(dispatcher, dataModel, server)();
+        CreateUpdateClientIPPropertyAction(dispatcher, dataModel, server)();
+        CreateUpdateClientPortPropertyAction(dispatcher, dataModel, server)();
     }
 
 }

@@ -5,5 +5,6 @@ namespace TournamentServer.Server;
 
 public interface IConnectedClientInfo : IConnectedClient
 {
-    
+    void OnClientUpdated();
+    void SetOnClientUpdatedAction(Action onClientUpdated);
 }

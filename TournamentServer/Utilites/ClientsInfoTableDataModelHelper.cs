@@ -12,8 +12,7 @@ public static class ClientsInfoTableDataModelHelper
         Dispatcher dispatcher, DependencyObject dataModel, IServer server)
     {
         return () => dispatcher.Invoke(
-            () => dataModel.SetValue(ClientsInfoTableDataModel.ClientsInfoProperty, 
-                (ConnectedClientInfoArray)server.ClientsConnectedInfoArray));
+            () => dataModel.SetValue(ClientsInfoTableDataModel.ServerProperty, server));
     }
 
     public static void AddUpdateActions(

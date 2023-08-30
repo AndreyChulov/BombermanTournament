@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using System.Threading.Tasks;
 using Core.Network.ExternalShared.Contracts;
 
 namespace TournamentServer.Server;
@@ -23,6 +24,11 @@ public class ConnectedClientInfoArray : IEquatable<ConnectedClientInfoArray>
         return true;
     }
 
+    public void OnClientUpdated(ConnectedClientId id)
+    {
+        Task.Run(() => this[id].OnClientUpdated());
+    }
+
     private ConnectedClientInfoArray(IConnectedClientInfo[] connectedClientInfos)
     {
         _connectedClientInfoArray = connectedClientInfos;
@@ -32,7 +38,7 @@ public class ConnectedClientInfoArray : IEquatable<ConnectedClientInfoArray>
         index >= _connectedClientInfoArray.Length ? 
             new ConnectedClientInfoStub() :
             _connectedClientInfoArray[index];
-    public IConnectedClientInfo this[ConnectedClientId id] => 
+    private IConnectedClientInfo this[ConnectedClientId id] => 
         _connectedClientInfoArray.FirstOrDefault(x => x.ConnectedClientId.Equals(id)) ?? 
             (IConnectedClientInfo)new ConnectedClientInfoStub();
     

@@ -7,41 +7,73 @@ namespace TournamentServer.Resources;
 
 public partial class ClientInfoDataModel : UserControl
 {
-    public static readonly DependencyProperty ClientInfoProperty = 
-        DependencyProperty.Register(nameof(ClientInfo), typeof(IConnectedClientInfo), 
+    public static readonly DependencyProperty ServerProperty = 
+        DependencyProperty.Register(nameof(Server), typeof(IServer), 
             typeof(ClientInfoDataModel), new 
-                PropertyMetadata(default(IConnectedClientInfo), ClientInfoProperty_Changed));
+                PropertyMetadata(default(IServer), ServerProperty_Changed));
 
     public static readonly DependencyProperty TitleProperty = 
         DependencyProperty.Register(nameof(Title), typeof(string), 
             typeof(ClientInfoDataModel), new PropertyMetadata("Client info"));
 
-    private static void ClientInfoProperty_Changed(DependencyObject d, DependencyPropertyChangedEventArgs e)
+    public static readonly DependencyProperty ClientIPProperty = 
+        DependencyProperty.Register(nameof(ClientIP), typeof(string), 
+            typeof(ClientInfoDataModel), new PropertyMetadata(default(string)));
+    
+    public static readonly DependencyProperty ClientPortProperty = 
+        DependencyProperty.Register(nameof(ClientPort), typeof(int), 
+            typeof(ClientInfoDataModel), new PropertyMetadata(default(int)));
+
+    public static readonly DependencyProperty ClientIndexProperty = 
+        DependencyProperty.Register(nameof(ClientIndex), typeof(int), 
+            typeof(ClientInfoDataModel), new PropertyMetadata(default(int)));
+
+    private static void ServerProperty_Changed(DependencyObject d, DependencyPropertyChangedEventArgs e)
     {
-        IConnectedClientInfo connectedClientInfo = (IConnectedClientInfo)e.NewValue;
+        IServer server = (IServer)e.NewValue;
+        ClientInfoDataModel clientInfoDataModel = (ClientInfoDataModel)d;
         
-        ClientInfoDataModelHelper.InvokeUpdateActions(d.Dispatcher, d, connectedClientInfo);
+        ClientInfoDataModelHelper.InvokeUpdateActions(d.Dispatcher, clientInfoDataModel, server);
     }
 
     public ClientInfoDataModel()
     {
         InitializeComponent();
-        
-        ClientInfoProperty_Changed(
+
+        ClientIndex = 0;
+        ServerProperty_Changed(
             this, 
-            new DependencyPropertyChangedEventArgs(ClientInfoProperty, null, 
-                new ConnectedClientInfoStub()));
+            new DependencyPropertyChangedEventArgs(ServerProperty, null, 
+                new ServerStub()));
     }
 
-    public IConnectedClientInfo ClientInfo
+    public IServer Server
     {
-        get => (IConnectedClientInfo)GetValue(ClientInfoProperty);
-        set => SetValue(ClientInfoProperty, value);
+        get => (IServer)GetValue(ServerProperty);
+        set => SetValue(ServerProperty, value);
     }
 
     public string Title
     {
         get => (string)GetValue(TitleProperty);
         set => SetValue(TitleProperty, value);
+    }
+
+    public string ClientIP
+    {
+        get => (string)GetValue(ClientIPProperty);
+        set => SetValue(ClientIPProperty, value);
+    }
+
+    public int ClientPort
+    {
+        get => (int)GetValue(ClientPortProperty);
+        set => SetValue(ClientPortProperty, value);
+    }
+
+    public int ClientIndex
+    {
+        get => (int)GetValue(ClientIndexProperty);
+        set => SetValue(ClientIndexProperty, value);
     }
 }
