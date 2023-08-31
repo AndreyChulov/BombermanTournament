@@ -54,7 +54,8 @@ public class Server :IServer
         
         ClientsConnectedCount.SetVariable(_networkServer.ConnectedClientsCount.ToString());
         ClientsConnectedInfoArray.SetVariable(
-            _networkServer.ConnectedClients.Cast<IConnectedClientInfo>().ToArray());
+            _networkServer.ConnectedClients.Select(x => new ConnectedClientInfo(x))
+                .Cast<IConnectedClientInfo>().ToArray());
     }
 
     private void OnServerDestroyed()
@@ -90,6 +91,7 @@ public class Server :IServer
 
     private void StopServerInternal()
     {
+        ClientsConnectedInfoArray.SetVariable(Array.Empty<IConnectedClientInfo>());
         IsServerProcessingCommand.SetVariable(true);
         _networkServer?.DestroyServer();
         IsServerStarted.SetVariable(false);

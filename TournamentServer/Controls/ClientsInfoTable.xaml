@@ -37,7 +37,7 @@
                              Grid.Row="0"
                              Grid.Column="1"
                              Background="Coral"
-                             Server="{Binding ClientsInfo}"
+                             Server="{Binding Server}"
                              ClientIndex="1"
                              >
         </controls:ClientInfo>
@@ -45,7 +45,7 @@
                              Grid.Row="1"
                              Grid.Column="0"
                              Background="Gold"
-                             Server="{Binding ClientsInfo}"
+                             Server="{Binding Server}"
                              ClientIndex="2"
                              >
         </controls:ClientInfo>
@@ -53,7 +53,7 @@
                              Grid.Row="1"
                              Grid.Column="1"
                              Background="Lime"
-                             Server="{Binding ClientsInfo}"
+                             Server="{Binding Server}"
                              ClientIndex="3"
                              >
         </controls:ClientInfo>

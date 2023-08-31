@@ -71,5 +71,16 @@ namespace Core.Network.Server.Server
         {
             Task.Run(() => _onClientUpdated(connectedClientId));
         }
+
+        public override void Dispose()
+        {
+            base.Dispose();
+            
+            foreach (var connectedClientService in ConnectedClientServices)
+            {
+                connectedClientService.Dispose();
+            }
+            ConnectedClientServices.Clear();
+        }
     }
 }

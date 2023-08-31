@@ -26,12 +26,23 @@ public static class ClientInfoDataModelHelper
                     .ConnectedClientId.ClientPort));
     }
 
+    private static Action CreateUpdateClientsConnectedInfoArrayPropertyAction(
+        Dispatcher dispatcher, ClientInfoDataModel dataModel, IServer server)
+    {
+        return () => dispatcher.Invoke(
+            () =>
+            {
+                ((ConnectedClientInfoArray)server.ClientsConnectedInfoArray)[dataModel.ClientIndex]
+                    .SetOnClientUpdatedAction(() => InvokeUpdateActions(dispatcher, dataModel, server));
+                InvokeUpdateActions(dispatcher, dataModel, server);
+            });
+    }
+    
     public static void AddUpdateActions(
         Dispatcher dispatcher, ClientInfoDataModel dataModel, IServer server)
     {
-        
-        ((ConnectedClientInfoArray)server.ClientsConnectedInfoArray)[dataModel.ClientIndex]
-            .SetOnClientUpdatedAction(() => InvokeUpdateActions(dispatcher, dataModel, server));
+        server.ClientsConnectedInfoArray.OnChanged.AddAction(
+            CreateUpdateClientsConnectedInfoArrayPropertyAction(dispatcher, dataModel, server));
     }
 
     public static void InvokeUpdateActions(

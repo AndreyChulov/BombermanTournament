@@ -47,5 +47,4 @@ public class ConnectedClientInfoArray : IEquatable<ConnectedClientInfoArray>
 
     public static implicit operator IConnectedClientInfo[](ConnectedClientInfoArray connectedClientInfoArray) =>
         connectedClientInfoArray._connectedClientInfoArray;
-
 }
