@@ -11,15 +11,19 @@ namespace Core.Network.Server.Server
     {
         private readonly Action _onClientConnected;
         private readonly Action<ConnectedClientId> _onClientUpdated;
+        private readonly Action<ConnectedClientId> _onClientDisconnected;
         public int ServerPort { get; }
         public string ServerIp { get; private set; }
         public List<ConnectedClientService> ConnectedClientServices { get; }
         
-        public ServerService(Action onClientConnected, Action<ConnectedClientId> onClientUpdated) 
+        public ServerService(Action onClientConnected, 
+            Action<ConnectedClientId> onClientUpdated,
+            Action<ConnectedClientId> onClientDisconnected) 
             : base(NetworkSettings.WaitForClientConnectionTimeout)
         {
             _onClientConnected = onClientConnected;
             _onClientUpdated = onClientUpdated;
+            _onClientDisconnected = onClientDisconnected;
             ConnectedClientServices = new List<ConnectedClientService>();
             
             
@@ -52,7 +56,8 @@ namespace Core.Network.Server.Server
             try
             {
                 var clientSocket = serviceSocket.Accept();
-                var connectedClientService = new ConnectedClientService(clientSocket, OnConnectedClientUpdated);
+                var connectedClientService = new ConnectedClientService(clientSocket, 
+                    OnConnectedClientUpdated, OnConnectedClientDisconnected);
                 connectedClientService.Start();
                 ConnectedClientServices.Add(connectedClientService);
                 
@@ -66,7 +71,18 @@ namespace Core.Network.Server.Server
                 }
             }
         }
-        
+
+        private void OnConnectedClientDisconnected(ConnectedClientId connectedClientId)
+        {
+            var disconnectedClientService = ConnectedClientServices
+                .First(x => x.ConnectedClient.ConnectedClientId.Equals(connectedClientId));
+            
+            ConnectedClientServices.Remove(disconnectedClientService);
+            disconnectedClientService.Dispose();
+            
+            Task.Run(() => _onClientDisconnected(connectedClientId));
+        }
+
         private void OnConnectedClientUpdated(ConnectedClientId connectedClientId)
         {
             Task.Run(() => _onClientUpdated(connectedClientId));

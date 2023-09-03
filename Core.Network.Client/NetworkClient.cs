@@ -1,6 +1,8 @@
 using System.Net;
+using System.Net.NetworkInformation;
 using Core.Network.Client.Client;
 using Core.Network.ExternalShared.Contracts;
+using Core.Network.ExternalShared.Contracts.Messages;
 using Core.Network.ExternalShared.Interfaces;
 
 namespace Core.Network.Client;
@@ -29,9 +31,20 @@ public class NetworkClient : INetworkClientObject
         _clientService.Start();
     }
 
-    private void ClientService_OnMessageReceived(BaseMessage? arg1, string arg2)
+    private void ClientService_OnMessageReceived(BaseMessage? baseMessage, string arg2)
     {
-        throw new NotImplementedException();
+        if (baseMessage == null)
+        {
+            return;
+        }
+        
+        switch (baseMessage.Message)
+        {
+            case PingMessage.MessageString:
+                break;
+            default:
+                throw new NotImplementedException(); 
+        }
     }
 
     public void StartClient()

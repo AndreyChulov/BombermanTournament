@@ -1,2 +1,4 @@
-[4:50:10] -> [ClientLocatorService] ->Client locator service started
-[4:50:11] -> [ClientLocatorService] ->Client locator service stopped
+[3:56:25] -> [ClientLocatorService] ->Client locator service started
+[3:56:26] -> [ClientLocatorService] ->Client locator service stopped
+[3:56:30] -> [ClientLocatorService] ->Client locator service stopped
+[3:56:30] -> [ClientLocatorService] ->Client locator service disposed

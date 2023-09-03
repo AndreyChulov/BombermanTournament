@@ -37,7 +37,27 @@ public class Server :IServer
             NetworkObjectType.Server, OnServerCreated, OnServerDestroyed);
         _networkServer.SetOnClientConnectedAction(OnClientConnected);
         _networkServer.SetOnClientUpdatedAction(OnClientUpdated);
+        _networkServer.SetOnClientDisconnectedAction(OnClientDisconnected);
         _networkServer.CreateServer();
+    }
+
+    private void OnClientDisconnected(ConnectedClientId disconnectedClientId)
+    {
+        UpdateConnectedClients();
+    }
+
+    private void UpdateConnectedClients()
+    {
+        if (_networkServer == null)
+        {
+            throw new InvalidConstraintException(
+                $"{nameof(Server)}.{nameof(_networkServer)} should be created at this stage");
+        }
+
+        ClientsConnectedCount.SetVariable(_networkServer.ConnectedClientsCount.ToString());
+        ClientsConnectedInfoArray.SetVariable(
+            _networkServer.ConnectedClients.Select(x => new ConnectedClientInfo(x))
+                .Cast<IConnectedClientInfo>().ToArray());
     }
 
     private void OnClientUpdated(ConnectedClientId connectedClientId)
@@ -47,15 +67,7 @@ public class Server :IServer
 
     private void OnClientConnected()
     {
-        if (_networkServer == null)
-        {
-            throw new InvalidConstraintException($"{nameof(Server)}.{nameof(_networkServer)} should be created at this stage");
-        }
-        
-        ClientsConnectedCount.SetVariable(_networkServer.ConnectedClientsCount.ToString());
-        ClientsConnectedInfoArray.SetVariable(
-            _networkServer.ConnectedClients.Select(x => new ConnectedClientInfo(x))
-                .Cast<IConnectedClientInfo>().ToArray());
+        UpdateConnectedClients();
     }
 
     private void OnServerDestroyed()

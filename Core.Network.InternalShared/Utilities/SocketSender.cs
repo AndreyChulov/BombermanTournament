@@ -5,8 +5,8 @@
         internal static byte[] GetSendDataBuffer(Action onSendDataCheckFail, Stream dataStream)
         {
             dataStream.Seek(0, SeekOrigin.Begin);
+            byte[] sendDataBuffer = new byte[dataStream.Length];
 
-            byte[] sendDataBuffer = new byte[dataStream.Position];
             int readBytesFromMemoryStream = dataStream.Read(sendDataBuffer, 0, sendDataBuffer.Length);
 
             if (readBytesFromMemoryStream != sendDataBuffer.Length)

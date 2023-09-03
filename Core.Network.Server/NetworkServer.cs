@@ -16,6 +16,7 @@ public class NetworkServer : INetworkServerObject
     
     private Action? _onClientConnected;
     private Action<ConnectedClientId>? _onClientUpdated;
+    private Action<ConnectedClientId>? _onClientDisconnected;
 
     public IConnectedClient[] ConnectedClients => _serverService
         .ConnectedClientServices
@@ -34,8 +35,20 @@ public class NetworkServer : INetworkServerObject
         _onServerCreated = onServerCreated;
         _onServerDestroyed = onServerDestroyed;
         _onClientConnected = null;
-        _serverService = new ServerService(ServerService_OnClientConnected, ServerService_OnClientUpdated);
+        _onClientDisconnected = null;
+        _serverService = new ServerService(
+            ServerService_OnClientConnected, ServerService_OnClientUpdated, ServerService_OnClientDisconnected);
         _serverLocatorService = new ServerLocatorService(_serverService.ServerPort);
+    }
+
+    private void ServerService_OnClientDisconnected(ConnectedClientId connectedClientId)
+    {
+        if (_onClientDisconnected == null)
+        {
+            return;
+        }
+        
+        Task.Run(() => _onClientDisconnected(connectedClientId));
     }
 
     private void ServerService_OnClientUpdated(ConnectedClientId connectedClientId)
@@ -91,6 +104,11 @@ public class NetworkServer : INetworkServerObject
     public void SetOnClientConnectedAction(Action onClientConnected)
     {
         _onClientConnected = onClientConnected;
+    }
+    
+    public void SetOnClientDisconnectedAction(Action<ConnectedClientId> onClientDisconnected)
+    {
+        _onClientDisconnected = onClientDisconnected;
     }
     
     public void SetOnClientUpdatedAction(Action<ConnectedClientId> onClientUpdated)

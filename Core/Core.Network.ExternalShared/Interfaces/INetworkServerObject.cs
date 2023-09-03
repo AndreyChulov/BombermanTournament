@@ -15,4 +15,6 @@ public interface INetworkServerObject:INetworkObject
     void StopLocatorService();
     void SetOnClientConnectedAction(Action onClientConnected);
     void SetOnClientUpdatedAction(Action<ConnectedClientId> onClientUpdated);
+    void SetOnClientDisconnectedAction(Action<ConnectedClientId> onClientDisconnected);
+
 }
