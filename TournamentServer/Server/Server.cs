@@ -44,6 +44,11 @@ public class Server :IServer
     private void OnClientDisconnected(ConnectedClientId disconnectedClientId)
     {
         UpdateConnectedClients();
+
+        if (_networkServer?.ConnectedClients.Length < 4 && !(_networkServer?.IsLocatorServiceStarted ?? true))
+        {
+            _networkServer.StartLocatorService();
+        }
     }
 
     private void UpdateConnectedClients()
@@ -68,6 +73,11 @@ public class Server :IServer
     private void OnClientConnected()
     {
         UpdateConnectedClients();
+        
+        if (_networkServer?.ConnectedClients.Length == 4 && (_networkServer?.IsLocatorServiceStarted ?? false))
+        {
+            _networkServer.StopLocatorService();
+        }
     }
 
     private void OnServerDestroyed()

@@ -12,7 +12,7 @@ public class Client : IDisposable
 
     public Client()
     {
-        Logger.Initialize(NetworkSettings.ClientLogsFile);
+        Logger.Initialize(NetworkSettings.ClientLogsFiles);
         _networkClient = NetworkFactory.CreateNetworkObject<INetworkClientObject>(NetworkObjectType.Client,
             OnNetworkClentCreated, OnNetworkClientDestroyed);
         _networkClient.StartClient();

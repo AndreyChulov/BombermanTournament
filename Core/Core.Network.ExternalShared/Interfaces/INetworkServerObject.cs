@@ -8,6 +8,7 @@ public interface INetworkServerObject:INetworkObject
     public string ServerIP { get; }
     public int ServerPort { get; }
     public int ConnectedClientsCount { get; }
+    public bool IsLocatorServiceStarted { get; }
     
     void CreateServer();
     void DestroyServer();

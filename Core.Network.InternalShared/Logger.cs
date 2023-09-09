@@ -70,6 +70,26 @@ namespace Core.Network.InternalShared
             }
         }
 
+        public static void Initialize(string[] logFileNames)
+        {
+            foreach (var logFileName in logFileNames)
+            {
+                try
+                {
+                    Initialize(logFileName);
+                    return;
+                }
+                catch (IOException e)
+                {
+                    var fileName = Path.GetFileName(logFileName);
+                    if (!e.Message.Contains(fileName))
+                    {
+                        throw;
+                    }
+                }
+            }
+        }
+        
         public static void Initialize(string logFileName)
         {
             _logFileName = logFileName;

@@ -15,7 +15,13 @@
         public static TimeSpan WaitForClientConnectionTimeout => TimeSpan.FromSeconds(1);
         public static TimeSpan ClientQueueCheckTimeout => TimeSpan.FromSeconds(0.1f);
         public static string ServerLogsFile => "Logs/server.log";
-        public static string ClientLogsFile => "Logs/client.log";
+        public static string[] ClientLogsFiles => new []
+        {
+            "Logs/client1.log",
+            "Logs/client2.log",
+            "Logs/client3.log",
+            "Logs/client4.log",
+        };
         public static int MaxUnarchivedLogFileSize => 20;
     }
 }

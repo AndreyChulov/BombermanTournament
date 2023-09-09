@@ -28,6 +28,8 @@ public class NetworkServer : INetworkServerObject
     public int ConnectedClientsCount => _serverService
         .ConnectedClientServices
         .Count();
+
+    public bool IsLocatorServiceStarted => _serverLocatorService.IsServiceStarted;
     
 
     public NetworkServer(Action onServerCreated, Action onServerDestroyed)

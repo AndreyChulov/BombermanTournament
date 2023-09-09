@@ -7,6 +7,8 @@ namespace Core.Network.InternalShared
         private readonly TimeSpan _loopDelay;
         private bool _isStarted;
         private readonly Thread _serviceThread;
+        
+        public bool IsServiceStarted => _isStarted;
 
         protected BaseThreadService(TimeSpan loopDelay)
         {

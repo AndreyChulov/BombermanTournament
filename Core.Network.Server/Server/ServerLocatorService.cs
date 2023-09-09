@@ -13,7 +13,7 @@ namespace Core.Network.Server.Server
         private readonly string _serverInfoDatagramSerialized;
         //private readonly ServerLocatorReceiverService _serverLocatorReceiverService;
         private List<string> _servers;
-
+        
         public ServerLocatorService(int serverServicePort) 
             : base(NetworkSettings.ServerLocatorBroadcastDatagramSendTimeout)
         {
