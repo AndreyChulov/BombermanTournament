@@ -9,8 +9,8 @@ namespace Core.Network.Server.Server
 {
     public class ServerLocatorService : BaseThreadService
     {
-        private readonly ServerLocatorSenderService _serverLocatorSenderService;
         private readonly string _serverInfoDatagramSerialized;
+        private readonly ServerLocatorSenderService _serverLocatorSenderService;
         //private readonly ServerLocatorReceiverService _serverLocatorReceiverService;
         private List<string> _servers;
         

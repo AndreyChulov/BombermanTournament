@@ -6,7 +6,7 @@ namespace Core.Network.InternalShared
     {
         private readonly TimeSpan _loopDelay;
         private bool _isStarted;
-        private readonly Thread _serviceThread;
+        private Thread _serviceThread;
         
         public bool IsServiceStarted => _isStarted;
 
@@ -23,6 +23,11 @@ namespace Core.Network.InternalShared
         {
             _isStarted = true;
 
+            if (_serviceThread.ThreadState is ThreadState.Aborted or ThreadState.Stopped)
+            {
+                _serviceThread = new Thread(ServiceWorker);    
+            }
+            
             _serviceThread.Start();
         }
 
