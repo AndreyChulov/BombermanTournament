@@ -1,0 +1,13 @@
+[5:10:41] -> [NetworkClient] ->OnMessageReceivedAction set.
+[5:10:41] -> [ClientLocatorService] ->Client locator service started
+[5:10:53] -> [ClientLocatorService] ->Client locator service stopped
+[5:10:56] -> [ClientService] ->Message sent:
+{"Nickname":"Player 1","StrategyDescription":"No strategy","IsDebugMode":false,"Message":"ClientInfo"}
+[5:10:57] -> [ClientService] ->Message sent:
+{"Nickname":"Player 1","StrategyDescription":"No strategy","IsDebugMode":false,"Message":"ClientInfo"}
+[5:11:12] -> [ClientService] ->Message sent:
+{"Nickname":"Player 1","StrategyDescription":"No strategy","IsDebugMode":false,"Message":"ClientInfo"}
+[5:12:01] -> [ClientService] ->Message sent:
+{"Nickname":"Player 1","StrategyDescription":"No strategy","IsDebugMode":false,"Message":"ClientInfo"}
+[5:12:02] -> [ClientService] ->Message sent:
+{"Nickname":"Player 1","StrategyDescription":"No strategy","IsDebugMode":false,"Message":"ClientInfo"}

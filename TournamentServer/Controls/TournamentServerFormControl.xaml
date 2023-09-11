@@ -8,7 +8,7 @@
              mc:Ignorable="d"
              x:Name="This"
              Loaded="TournamentServerFormControl_OnLoaded"
-             d:DesignHeight="450" d:DesignWidth="800"
+             d:DesignHeight="750" d:DesignWidth="800"
              >
     <UserControl.Resources>
         <resources:TournamentServerFormControlDataModel 
@@ -19,9 +19,10 @@
     <Grid DataContext="{StaticResource DataModel}">
         <Grid.RowDefinitions>
             <RowDefinition Height="30*"></RowDefinition>
-            <RowDefinition Height="2*"></RowDefinition>
-            <RowDefinition Height="58*"></RowDefinition>
-            <RowDefinition Height="10*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="62*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="6*"></RowDefinition>
         </Grid.RowDefinitions>
         <controls:ServerInfo 
             Grid.Row="0"
@@ -33,8 +34,9 @@
             Server="{Binding Server}"
         >
         </controls:ClientsInfoTable>
+        <Line Grid.Row="3" Grid.ColumnSpan="2"></Line>
         <Button 
-            Grid.Row="3"
+            Grid.Row="4"
             Name="BtnStartTournament" 
             Click="BtnStartTournament_OnClick"
             IsEnabled="{Binding IsButtonStartTournamentEnabled}"

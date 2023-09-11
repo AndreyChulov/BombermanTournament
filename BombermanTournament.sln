@@ -16,9 +16,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BombermanGame", "BombermanG
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BombermanGame.Shared", "BombermanGame.Shared\BombermanGame.Shared.csproj", "{4DF81B5C-7BDB-4DE6-8716-C8854FCC6319}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BombermanBotExamples", "BombermanBotExamples\BombermanBotExamples.csproj", "{B7351349-E1D2-475A-82A9-E9222FBD43B7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BombermanBotExamples", "Bots\Bomberman\BombermanBotExamples\BombermanBotExamples.csproj", "{B7351349-E1D2-475A-82A9-E9222FBD43B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BombermanBots", "BombermanBots\BombermanBots.csproj", "{0F40CB4D-6898-4821-A2BA-7201AA47DDF6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BombermanBots", "Bots\Bomberman\BombermanBots\BombermanBots.csproj", "{0F40CB4D-6898-4821-A2BA-7201AA47DDF6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TournamentServer", "TournamentServer\TournamentServer.csproj", "{E00827C8-246B-4DEB-93EC-1409875DB2D4}"
 EndProject
@@ -46,7 +46,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bots", "Bots", "{57877572-3
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bomberman", "Bomberman", "{4C26DF48-4628-41FC-B90B-55F2DB9AEEB6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Player1DumbBot", "Player1DumbBot\Player1DumbBot.csproj", "{ECE45B22-D967-4402-B181-C0D74BCF574A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Player1DumbBot", "Bots\Bomberman\Player1DumbBot\Player1DumbBot.csproj", "{ECE45B22-D967-4402-B181-C0D74BCF574A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Games", "Games", "{EB75CDE5-067F-44BA-850A-ECB84C2CAFC8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bomberman", "Bomberman", "{BDE342AD-D9FF-436E-9FCD-44ED3B44AD37}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -150,5 +154,6 @@ Global
 		{ECE45B22-D967-4402-B181-C0D74BCF574A} = {4C26DF48-4628-41FC-B90B-55F2DB9AEEB6}
 		{0F40CB4D-6898-4821-A2BA-7201AA47DDF6} = {4C26DF48-4628-41FC-B90B-55F2DB9AEEB6}
 		{B7351349-E1D2-475A-82A9-E9222FBD43B7} = {4C26DF48-4628-41FC-B90B-55F2DB9AEEB6}
+		{BDE342AD-D9FF-436E-9FCD-44ED3B44AD37} = {EB75CDE5-067F-44BA-850A-ECB84C2CAFC8}
 	EndGlobalSection
 EndGlobal

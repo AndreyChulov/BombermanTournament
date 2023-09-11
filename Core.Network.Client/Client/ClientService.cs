@@ -3,7 +3,6 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text.Json;
 using Core.Network.ExternalShared;
-using Core.Network.ExternalShared.Contracts;
 using Core.Network.ExternalShared.Contracts.Extensions;
 using Core.Network.ExternalShared.Contracts.Messages;
 using Core.Network.InternalShared;
@@ -15,17 +14,30 @@ public class ClientService : BaseThreadService
     private readonly string _serverIp;
     private readonly int _serverPort;
     private readonly Action<BaseMessage?, string> _onMessageReceived;
-    private Socket _clientSocket;
+    private readonly Socket _clientSocket;
+    private readonly string _pingMessage;
+    private readonly Queue<string> _messagesToSend;
 
-    public ClientService(string serverIP, int serverPort, Action<BaseMessage?, string> onMessageReceived) : base(NetworkSettings.ClientQueueCheckTimeout)
+    public ClientService(string serverIP, int serverPort, Action<BaseMessage?, string> onMessageReceived) 
+        : base(NetworkSettings.ClientQueueCheckTimeout)
     {
         _serverIp = serverIP;
         _serverPort = serverPort;
         _onMessageReceived = onMessageReceived;
         
+        _messagesToSend = new Queue<string>();
+        _pingMessage = PingMessage.Initialize().Serialize();
+        
         _clientSocket = new Socket(SocketType.Stream, ProtocolType.Tcp);
     }
 
+    public void SendMessage<T>(T messageObject)
+        where T:BaseMessage
+    {
+        var jsonMessage = JsonSerializer.Serialize(messageObject);
+        _messagesToSend.Enqueue(jsonMessage);
+    }
+    
     protected override Socket? CreateServiceSocket()
     {
         _clientSocket.Connect(IPAddress.Parse(_serverIp), _serverPort);
@@ -40,13 +52,29 @@ public class ClientService : BaseThreadService
             throw new InvalidConstraintException(
                 $"${nameof(ClientService)}.{nameof(ServiceWorkerLoop)} can not work with null {nameof(serviceSocket)}");
         }
+        
+        try
+        {
+            TcpSocketUtility.SendString(serviceSocket, _pingMessage);
+        }
+        catch (SocketException) { }
+        
+        if (!serviceSocket.Connected)
+        {
+            //Task.Run(() => _onConnectedClientDisconnected((ConnectedClientId)ConnectedClient.ConnectedClientId));
+            return;
+        }
+        
+        while (_messagesToSend.Any())
+        {
+            var messageToSend = _messagesToSend.Dequeue();
+            TcpSocketUtility.SendString(serviceSocket, messageToSend);
+            Logger.AddVerboseMessage($"Message sent:\n{messageToSend}");
+        }
 
-        //serviceSocket.Poll(10, SelectMode.SelectRead);
         if (serviceSocket.Available > 0)
         {
-            //serviceSocket.Blocking = true;
             var message = TcpSocketUtility.ReceiveString(serviceSocket, OnReceiveDataSizeCheckFail, OnReceiveDataCheckFail);
-            //serviceSocket.Blocking = false;
             var messageObject = message.Deserialize<BaseMessage>();
             Task.Run(() => _onMessageReceived(messageObject, message));
         }

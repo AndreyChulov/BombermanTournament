@@ -28,6 +28,10 @@ public partial class ClientInfoDataModel : UserControl
         DependencyProperty.Register(nameof(ClientIndex), typeof(int), 
             typeof(ClientInfoDataModel), new PropertyMetadata(default(int)));
 
+    public static readonly DependencyProperty NickNameProperty = DependencyProperty.Register(nameof(NickName), typeof(string), typeof(ClientInfoDataModel), new PropertyMetadata(default(string)));
+    public static readonly DependencyProperty StrategyDescriptionProperty = DependencyProperty.Register(nameof(StrategyDescription), typeof(string), typeof(ClientInfoDataModel), new PropertyMetadata(default(string)));
+    public static readonly DependencyProperty ReadyForTournamentTextProperty = DependencyProperty.Register(nameof(ReadyForTournamentText), typeof(string), typeof(ClientInfoDataModel), new PropertyMetadata(default(string)));
+
     private static void ServerProperty_Changed(DependencyObject d, DependencyPropertyChangedEventArgs e)
     {
         IServer server = (IServer)e.NewValue;
@@ -75,5 +79,23 @@ public partial class ClientInfoDataModel : UserControl
     {
         get => (int)GetValue(ClientIndexProperty);
         set => SetValue(ClientIndexProperty, value);
+    }
+
+    public string NickName
+    {
+        get => (string)GetValue(NickNameProperty);
+        set => SetValue(NickNameProperty, value);
+    }
+
+    public string StrategyDescription
+    {
+        get => (string)GetValue(StrategyDescriptionProperty);
+        set => SetValue(StrategyDescriptionProperty, value);
+    }
+
+    public string ReadyForTournamentText
+    {
+        get => (string)GetValue(ReadyForTournamentTextProperty);
+        set => SetValue(ReadyForTournamentTextProperty, value);
     }
 }

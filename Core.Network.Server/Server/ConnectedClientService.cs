@@ -6,7 +6,6 @@ using Core.Network.ExternalShared;
 using Core.Network.ExternalShared.Contracts;
 using Core.Network.ExternalShared.Contracts.Extensions;
 using Core.Network.ExternalShared.Contracts.Messages;
-using Core.Network.ExternalShared.Interfaces;
 using Core.Network.InternalShared;
 
 namespace Core.Network.Server.Server;
@@ -37,14 +36,14 @@ public class ConnectedClientService : BaseThreadService
             ipEndpoint?.Address.MapToIPv4().ToString() ?? "unknown",
             ipEndpoint?.Port ?? -1
         );
-        ConnectedClient = new ConnectedClient(connectedClientId);
+        ConnectedClient = new ConnectedClient(connectedClientId, SendMessage);
         _pingMessage = PingMessage.Initialize().Serialize();
     }
 
-    public void SendMessage<T>(T messageObject)
+    private void SendMessage<T>(T messageObject)
         where T:BaseMessage
     {
-        var jsonMessage = JsonSerializer.Serialize<T>(messageObject);
+        var jsonMessage = JsonSerializer.Serialize(messageObject);
         _messagesToSend.Enqueue(jsonMessage);
     }
     
@@ -70,6 +69,7 @@ public class ConnectedClientService : BaseThreadService
         if (!serviceSocket.Connected)
         {
             Task.Run(() => _onConnectedClientDisconnected((ConnectedClientId)ConnectedClient.ConnectedClientId));
+            return;
         }
 
         while (_messagesToSend.Any())
@@ -77,5 +77,38 @@ public class ConnectedClientService : BaseThreadService
             var messageToSend = _messagesToSend.Dequeue();
             TcpSocketUtility.SendString(serviceSocket, messageToSend);
         }
+        
+        if (serviceSocket.Available > 0)
+        {
+            var message = TcpSocketUtility.ReceiveString(
+                serviceSocket, OnReceiveDataSizeCheckFail, OnReceiveDataCheckFail);
+            var messageObject = message.Deserialize<BaseMessage>();
+            Task.Run(() => OnMessageReceived(messageObject, message));
+        }
+    }
+
+    private void OnMessageReceived(BaseMessage? baseMessage, string serializedMessage)
+    {
+        if (baseMessage == null)
+        {
+            return;
+        }
+
+        switch (baseMessage.Message)
+        {
+            case PingMessage.MessageString:
+                break;
+            default:
+                ConnectedClient.RiseMessageReceived(baseMessage, serializedMessage);
+                break;
+        }
+    }
+
+    private void OnReceiveDataCheckFail()
+    {
+    }
+
+    private void OnReceiveDataSizeCheckFail()
+    {
     }
 }

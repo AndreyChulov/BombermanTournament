@@ -19,4 +19,9 @@ public class ServerAction
     {
         _actions.Add(action);
     }
+    
+    public void RemoveAction(Action action)
+    {
+        _actions.Remove(action);
+    }
 }

@@ -13,7 +13,7 @@ public static class TournamentServerFormControlDataModelHelper
     {
         return () => dispatcher.Invoke(
             () => dataModel.SetValue(TournamentServerFormControlDataModel.IsButtonStartTournamentEnabledProperty, 
-                server.IsServerStarted && server.IsClientConnected && !server.IsServerProcessingCommand));
+                server.IsServerStarted && server.IsClientsReadyForTournament && !server.IsServerProcessingCommand));
     }
 
     public static void AddUpdateActions(
@@ -21,7 +21,7 @@ public static class TournamentServerFormControlDataModelHelper
     {
         server.IsServerProcessingCommand.OnChanged.AddAction(
             CreateUpdateIsButtonStartTournamentEnabledPropertyAction(dispatcher, dataModel, server));        
-        server.IsClientConnected.OnChanged.AddAction(
+        server.IsClientsReadyForTournament.OnChanged.AddAction(
             CreateUpdateIsButtonStartTournamentEnabledPropertyAction(dispatcher, dataModel, server));        
         server.IsServerStarted.OnChanged.AddAction(
             CreateUpdateIsButtonStartTournamentEnabledPropertyAction(dispatcher, dataModel, server));        

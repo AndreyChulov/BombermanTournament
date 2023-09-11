@@ -30,7 +30,7 @@ public static class ServerInfoDataModelHelper
                 (string)server.ClientsConnectedCount));
     }
 
-    private static Action CreateUpdateServerLogsFileAction(
+    private static Action CreateUpdateServerLogsFilePropertyAction(
         Dispatcher dispatcher, DependencyObject dataModel, IServer server)
     {
         return () => dispatcher.Invoke(
@@ -38,7 +38,7 @@ public static class ServerInfoDataModelHelper
                 (string)server.ServerLogFile));
     }
 
-    private static Action CreateUpdateIsStartStopServerButtonEnabledAction(
+    private static Action CreateUpdateIsStartStopServerButtonEnabledPropertyAction(
         Dispatcher dispatcher, DependencyObject dataModel, IServer server)
     {
         return () => dispatcher.Invoke(
@@ -46,7 +46,7 @@ public static class ServerInfoDataModelHelper
                 !(bool)server.IsServerProcessingCommand));
     }
 
-    private static Action CreateUpdateIsServerInfoLabelsEnabledAction(
+    private static Action CreateUpdateIsServerInfoLabelsEnabledPropertyAction(
         Dispatcher dispatcher, DependencyObject dataModel, IServer server)
     {
         return () => dispatcher.Invoke(
@@ -54,7 +54,7 @@ public static class ServerInfoDataModelHelper
                 !(bool)server.IsServerProcessingCommand));
     }
 
-    private static Action CreateUpdateIsServerStartedTextAction(
+    private static Action CreateUpdateIsServerStartedTextPropertyAction(
         Dispatcher dispatcher, DependencyObject dataModel, IServer server)
     {
         return () => dispatcher.Invoke(
@@ -62,7 +62,7 @@ public static class ServerInfoDataModelHelper
                 ServerInfoDataModel.GetServerStartedText(server.IsServerStarted)));
     }
 
-    private static Action CreateUpdateStartStopServerButtonTextAction(
+    private static Action CreateUpdateStartStopServerButtonTextPropertyAction(
         Dispatcher dispatcher, DependencyObject dataModel, IServer server)
     {
         return () => dispatcher.Invoke(
@@ -80,15 +80,15 @@ public static class ServerInfoDataModelHelper
         server.ClientsConnectedCount.OnChanged.AddAction(
             CreateUpdateConnectedClientsCountAction(dispatcher, dataModel, server));
         server.IsServerProcessingCommand.OnChanged.AddAction(
-            CreateUpdateIsStartStopServerButtonEnabledAction(dispatcher, dataModel, server));
+            CreateUpdateIsStartStopServerButtonEnabledPropertyAction(dispatcher, dataModel, server));
         server.IsServerProcessingCommand.OnChanged.AddAction(
-            CreateUpdateIsServerInfoLabelsEnabledAction(dispatcher, dataModel, server));
+            CreateUpdateIsServerInfoLabelsEnabledPropertyAction(dispatcher, dataModel, server));
         server.IsServerStarted.OnChanged.AddAction(
-            CreateUpdateIsServerStartedTextAction(dispatcher, dataModel, server));        
+            CreateUpdateIsServerStartedTextPropertyAction(dispatcher, dataModel, server));        
         server.IsServerStarted.OnChanged.AddAction(
-            CreateUpdateStartStopServerButtonTextAction(dispatcher, dataModel, server));        
+            CreateUpdateStartStopServerButtonTextPropertyAction(dispatcher, dataModel, server));        
         server.ServerLogFile.OnChanged.AddAction(
-            CreateUpdateServerLogsFileAction(dispatcher, dataModel, server));    
+            CreateUpdateServerLogsFilePropertyAction(dispatcher, dataModel, server));    
     }
 
     public static void InvokeUpdateActions(
@@ -97,11 +97,11 @@ public static class ServerInfoDataModelHelper
         CreateUpdateServerPortAction(dispatcher, dataModel, server)();
         CreateUpdateServerAddressAction(dispatcher, dataModel, server)();
         CreateUpdateConnectedClientsCountAction(dispatcher, dataModel, server)();
-        CreateUpdateIsStartStopServerButtonEnabledAction(dispatcher, dataModel, server)();
-        CreateUpdateIsServerInfoLabelsEnabledAction(dispatcher, dataModel, server)();
-        CreateUpdateIsServerStartedTextAction(dispatcher, dataModel, server)();
-        CreateUpdateStartStopServerButtonTextAction(dispatcher, dataModel, server)();
-        CreateUpdateServerLogsFileAction(dispatcher, dataModel, server)();
+        CreateUpdateIsStartStopServerButtonEnabledPropertyAction(dispatcher, dataModel, server)();
+        CreateUpdateIsServerInfoLabelsEnabledPropertyAction(dispatcher, dataModel, server)();
+        CreateUpdateIsServerStartedTextPropertyAction(dispatcher, dataModel, server)();
+        CreateUpdateStartStopServerButtonTextPropertyAction(dispatcher, dataModel, server)();
+        CreateUpdateServerLogsFilePropertyAction(dispatcher, dataModel, server)();
     }
 
 }

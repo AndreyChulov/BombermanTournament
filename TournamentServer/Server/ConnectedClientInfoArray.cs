@@ -34,6 +34,16 @@ public class ConnectedClientInfoArray : IEquatable<ConnectedClientInfoArray>
         _connectedClientInfoArray = connectedClientInfos;
     }
 
+    public void ForEach(Action<IConnectedClientInfo> predicate)
+    {
+        foreach (var connectedClientInfo in _connectedClientInfoArray)
+        {
+            predicate(connectedClientInfo);
+        }
+    }
+
+    public bool All(Func<IConnectedClientInfo, bool> predicate) => _connectedClientInfoArray.All(predicate);
+
     public IConnectedClientInfo this[int index] => 
         index >= _connectedClientInfoArray.Length ? 
             new ConnectedClientInfoStub() :

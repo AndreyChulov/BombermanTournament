@@ -1,12 +1,17 @@
 using System;
 using Core.Network.ExternalShared.Contracts;
+using TournamentServer.Server.Utilities;
 
 namespace TournamentServer.Server;
 
 public class ConnectedClientInfoStub : ConnectedClient, IConnectedClientInfo
 {
+    public MonitoredVariable<bool> IsReadyForTournamentStart => false;
+    public MonitoredVariable<string> NickName => "unknown";
+    public MonitoredVariable<string> StrategyDescription => "unknown";
+
     public ConnectedClientInfoStub() 
-        : base(new ConnectedClientId("unknown", -1))
+        : base(new ConnectedClientId("unknown", -1), _ => { })
     {
     }
 

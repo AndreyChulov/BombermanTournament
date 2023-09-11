@@ -23,6 +23,9 @@
             <RowDefinition Height="50"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"></ColumnDefinition>
@@ -61,6 +64,48 @@
             Grid.Row="2"
             Grid.Column="1"
             Content="{Binding ClientPort}" 
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Center"
+        ></Label>
+        <Label 
+            Grid.Row="3"
+            Grid.Column="0"
+            Content="NickName:" 
+            HorizontalAlignment="Right" 
+            VerticalAlignment="Center"
+        ></Label>
+        <Label 
+            Grid.Row="3"
+            Grid.Column="1"
+            Content="{Binding NickName}" 
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Center"
+        ></Label>
+        <Label 
+            Grid.Row="4"
+            Grid.Column="0"
+            Content="Strategy description:" 
+            HorizontalAlignment="Right" 
+            VerticalAlignment="Center"
+        ></Label>
+        <Label 
+            Grid.Row="4"
+            Grid.Column="1"
+            Content="{Binding StrategyDescription}" 
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Center"
+        ></Label>
+        <Label 
+            Grid.Row="5"
+            Grid.Column="0"
+            Content="Ready for tournament:" 
+            HorizontalAlignment="Right" 
+            VerticalAlignment="Center"
+        ></Label>
+        <Label 
+            Grid.Row="5"
+            Grid.Column="1"
+            Content="{Binding ReadyForTournamentText}" 
             HorizontalAlignment="Left" 
             VerticalAlignment="Center"
         ></Label>

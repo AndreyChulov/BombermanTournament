@@ -7,7 +7,7 @@ public interface IServer
 {
     MonitoredVariable<bool> IsServerStarted { get; }
     MonitoredVariable<bool> IsServerProcessingCommand { get; }
-    MonitoredVariable<bool> IsClientConnected { get; }
+    MonitoredVariable<bool> IsClientsReadyForTournament { get; }
     MonitoredVariable<string> ServerAddress { get; }
     MonitoredVariable<string> ServerPort { get; }
     MonitoredVariable<string> ClientsConnectedCount { get; }

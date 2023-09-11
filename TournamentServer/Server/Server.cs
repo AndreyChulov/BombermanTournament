@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
@@ -15,7 +16,7 @@ public class Server :IServer
 {
     public MonitoredVariable<bool> IsServerStarted { get; } = false;
     public MonitoredVariable<bool> IsServerProcessingCommand { get; } = false;
-    public MonitoredVariable<bool> IsClientConnected { get; } = false;
+    public MonitoredVariable<bool> IsClientsReadyForTournament { get; } = false;
     public MonitoredVariable<string> ServerAddress { get; } = "unknown";
     public MonitoredVariable<string> ServerPort { get; } = "unknown";
     public MonitoredVariable<string> ClientsConnectedCount { get; } = "unknown";
@@ -63,6 +64,37 @@ public class Server :IServer
         ClientsConnectedInfoArray.SetVariable(
             _networkServer.ConnectedClients.Select(x => new ConnectedClientInfo(x))
                 .Cast<IConnectedClientInfo>().ToArray());
+
+        var clientsConnectedInfoArray = (ConnectedClientInfoArray)ClientsConnectedInfoArray;
+        if (ClientsConnectedCount == "4")
+        {
+            clientsConnectedInfoArray.ForEach(x => 
+                    x.IsReadyForTournamentStart.OnChanged.AddAction(Client_IsReadyForTournamentStartUpdated));
+        }
+        else
+        {
+            clientsConnectedInfoArray.ForEach(x => 
+                    x.IsReadyForTournamentStart.OnChanged.RemoveAction(Client_IsReadyForTournamentStartUpdated));
+        }
+        
+        Client_IsReadyForTournamentStartUpdated();
+    }
+
+    private void Client_IsReadyForTournamentStartUpdated()
+    {
+        if (ClientsConnectedCount == "4")
+        {
+            var clientsConnectedInfoArray = (ConnectedClientInfoArray)ClientsConnectedInfoArray;
+            var isAllClientsReadyForTournamentStart = clientsConnectedInfoArray
+                .All(x => x.IsReadyForTournamentStart);
+            
+            IsClientsReadyForTournament.SetVariable(isAllClientsReadyForTournamentStart);
+        }
+        else
+        {
+            IsClientsReadyForTournament.SetVariable(false);
+        }
+
     }
 
     private void OnClientUpdated(ConnectedClientId connectedClientId)
