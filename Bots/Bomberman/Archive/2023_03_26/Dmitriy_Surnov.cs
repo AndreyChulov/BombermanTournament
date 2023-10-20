@@ -12,7 +12,8 @@ namespace Bots.Bomberman.Archive._2023_03_26
         public string StrategyDescription { get; } = "Rand";
 
         public bool IsDebugMode { get; } = false;
-
+        public string AiDevelopedForGame => "Bomberman";
+        
         private FieldItemEnum _playerBomb = FieldItemEnum.EmptyField;
 
         void IPlayer.OnTurnTimeExceeded()

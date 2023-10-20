@@ -21,7 +21,8 @@ namespace Bots.Bomberman.Archive._2023_03_26
         public string Nickname { get; } = "Darya";
         public string StrategyDescription { get; } = "move with an A*-algorithm pathfinder";
         public bool IsDebugMode { get; } = false;
-
+        public string AiDevelopedForGame => "Bomberman";
+        
         private bool isNotPathDefined; //проверка на наличие какого либо пути
         private bool isFirstTurn; //проверка на первый ход в игре
 

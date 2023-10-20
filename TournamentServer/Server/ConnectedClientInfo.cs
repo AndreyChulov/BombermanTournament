@@ -13,7 +13,8 @@ public class ConnectedClientInfo : ConnectedClient, IConnectedClientInfo
     private Action? _onClientUpdated;
     public MonitoredVariable<bool> IsReadyForTournamentStart { get; } = false;
     public MonitoredVariable<string> NickName { get; } = "unknown";
-    public MonitoredVariable<string> StrategyDescription { get; } = "unknown";
+    public MonitoredVariable<string> StrategyDescription { get; } = "unknown";    
+    public MonitoredVariable<string> Game { get; } = "unknown";
     
     public ConnectedClientInfo(IConnectedClient connectedClient) 
         : base(connectedClient.ConnectedClientId, connectedClient.SendMessage)
@@ -33,6 +34,7 @@ public class ConnectedClientInfo : ConnectedClient, IConnectedClientInfo
                                         new ClientInfoMessage();
                 NickName.SetVariable(clientInfoMessage.Nickname);
                 StrategyDescription.SetVariable(clientInfoMessage.StrategyDescription);
+                Game.SetVariable(clientInfoMessage.DevelopedForGame);
                 IsReadyForTournamentStart.SetVariable(true);
                 break;
             default:

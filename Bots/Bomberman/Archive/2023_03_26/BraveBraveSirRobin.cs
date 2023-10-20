@@ -9,7 +9,8 @@ namespace Bots.Bomberman.Archive._2023_03_26
         public string Nickname => "Brave Brave Sir Robin";
         public string StrategyDescription => "Simple and very courageous strategy";
         public bool IsDebugMode => false;
-
+        public string AiDevelopedForGame => "Bomberman";
+        
         static FieldItemEnum[] danger = new FieldItemEnum[] 
         { 
             FieldItemEnum.Bomb,

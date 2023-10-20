@@ -26,6 +26,7 @@
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"></ColumnDefinition>
@@ -98,12 +99,26 @@
         <Label 
             Grid.Row="5"
             Grid.Column="0"
-            Content="Ready for tournament:" 
+            Content="Ai developed for game:" 
             HorizontalAlignment="Right" 
             VerticalAlignment="Center"
         ></Label>
         <Label 
             Grid.Row="5"
+            Grid.Column="1"
+            Content="{Binding Game}" 
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Center"
+        ></Label>
+        <Label 
+            Grid.Row="6"
+            Grid.Column="0"
+            Content="Ready for tournament:" 
+            HorizontalAlignment="Right" 
+            VerticalAlignment="Center"
+        ></Label>
+        <Label 
+            Grid.Row="6"
             Grid.Column="1"
             Content="{Binding ReadyForTournamentText}" 
             HorizontalAlignment="Left" 

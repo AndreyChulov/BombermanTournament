@@ -8,7 +8,8 @@ namespace Bots.Bomberman.Archive._2023_03_08
         public string Nickname => "Mikhail the Random Idiot";
         public string StrategyDescription => "Do random shit like an idiot";
         public bool IsDebugMode => false;
-
+        public string AiDevelopedForGame => "Bomberman";
+        
         public PlayerTurnEnum Turn(IGameInfo gameInfo, IPlayerInfo currentPlayerInfo)
         {
             Random random = new Random();

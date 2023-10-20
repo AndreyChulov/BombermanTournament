@@ -9,6 +9,8 @@ namespace Bots.Bomberman.Archive._2023_03_26
         public string Nickname { get; } = "AlexAI";
         public string StrategyDescription { get; } = "Trying to WIN :)";
         public bool IsDebugMode { get; } = false;
+        public string AiDevelopedForGame => "Bomberman";
+        
         private PlayerTurnEnum PreviosMove { get; set; } = PlayerTurnEnum.None;
         private int Repetitions { get; set; } = 0;
         private List<FieldItemEnum> DestructableItems { get; } = new List<FieldItemEnum> { FieldItemEnum.DestructibleField, FieldItemEnum.Player1, FieldItemEnum.Player1WithBomb,

@@ -9,6 +9,7 @@ public class ConnectedClientInfoStub : ConnectedClient, IConnectedClientInfo
     public MonitoredVariable<bool> IsReadyForTournamentStart => false;
     public MonitoredVariable<string> NickName => "unknown";
     public MonitoredVariable<string> StrategyDescription => "unknown";
+    public MonitoredVariable<string> Game => "unknown";
 
     public ConnectedClientInfoStub() 
         : base(new ConnectedClientId("unknown", -1), _ => { })

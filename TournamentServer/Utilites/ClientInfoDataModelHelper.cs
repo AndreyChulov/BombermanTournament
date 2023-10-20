@@ -47,6 +47,20 @@ public static class ClientInfoDataModelHelper
                     (string)clientInfo.StrategyDescription);
             });
     }
+    
+    private static Action CreateUpdateGamePropertyAction(
+        Dispatcher dispatcher, ClientInfoDataModel dataModel, IServer server)
+    {
+        return () => dispatcher.Invoke(
+            () =>
+            {
+                var clientsConnectedInfoArray = (ConnectedClientInfoArray)server.ClientsConnectedInfoArray;
+                var clientInfo = clientsConnectedInfoArray[dataModel.ClientIndex];
+                
+                dataModel.SetValue(ClientInfoDataModel.GameProperty, 
+                    (string)clientInfo.Game);
+            });
+    }
 
     private static Action CreateUpdateClientIPPropertyAction(
         Dispatcher dispatcher, ClientInfoDataModel dataModel, IServer server)
@@ -89,6 +103,8 @@ public static class ClientInfoDataModelHelper
                     CreateUpdateStrategyDescriptionPropertyAction(dispatcher, dataModel, server));
                 clientInfo.IsReadyForTournamentStart.OnChanged.AddAction(
                     CreateUpdateReadyForTournamentTextPropertyAction(dispatcher, dataModel, server));
+                clientInfo.Game.OnChanged.AddAction(
+                    CreateUpdateGamePropertyAction(dispatcher, dataModel, server));
                 
                 InvokeUpdateActions(dispatcher, dataModel, server);
             });
@@ -109,6 +125,7 @@ public static class ClientInfoDataModelHelper
         CreateUpdateNicknamePropertyAction(dispatcher, dataModel, server)();
         CreateUpdateStrategyDescriptionPropertyAction(dispatcher, dataModel, server)();
         CreateUpdateReadyForTournamentTextPropertyAction(dispatcher, dataModel, server)();
+        CreateUpdateGamePropertyAction(dispatcher, dataModel, server)();
     }
 
 }

@@ -9,7 +9,8 @@ namespace Bots.Bomberman.Archive._2023_03_08
         public string Nickname { get; } = "TestStas";
         public string StrategyDescription { get; } = "Dumb";
         public bool IsDebugMode { get; } = true;
-
+        public string AiDevelopedForGame => "Bomberman";
+        
         public PlayerTurnEnum Turn(IGameInfo gameInfo, IPlayerInfo currentPlayerInfo)
         {
             // Find all destructible fields

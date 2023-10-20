@@ -5,6 +5,7 @@ public class ClientInfoMessage : BaseMessage
     public const string MessageString = "ClientInfo";
     public string Nickname { get; set; }
     public string StrategyDescription { get; set; }
+    public string DevelopedForGame { get; set; }
     public bool IsDebugMode { get; set; }
 
     public ClientInfoMessage()

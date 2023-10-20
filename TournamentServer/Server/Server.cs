@@ -87,8 +87,11 @@ public class Server :IServer
             var clientsConnectedInfoArray = (ConnectedClientInfoArray)ClientsConnectedInfoArray;
             var isAllClientsReadyForTournamentStart = clientsConnectedInfoArray
                 .All(x => x.IsReadyForTournamentStart);
+            var isAllClientsReadyForGame = clientsConnectedInfoArray
+                .All(x => x.Game == "Bomberman");
             
-            IsClientsReadyForTournament.SetVariable(isAllClientsReadyForTournamentStart);
+            IsClientsReadyForTournament.SetVariable(
+                isAllClientsReadyForTournamentStart && isAllClientsReadyForGame);
         }
         else
         {

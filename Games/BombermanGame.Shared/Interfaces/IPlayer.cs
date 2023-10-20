@@ -13,7 +13,15 @@ namespace Games.BombermanGame.Shared.Interfaces
         /// </summary>
         string StrategyDescription { get; }
 
+        /// <summary>
+        /// Is bot in debug mode (disabled timeout for turn) 
+        /// </summary>
         bool IsDebugMode { get; }
+        
+        /// <summary>
+        /// The game name for which Ai/bot was developed
+        /// </summary>
+        string AiDevelopedForGame { get; }
 
         /// <summary>
         /// Method which is used for turn calculation

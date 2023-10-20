@@ -8,7 +8,8 @@ namespace Bots.Bomberman.Archive._2023_03_08
         public string Nickname { get; } = "Darya Kursanova";
         public string StrategyDescription { get; } = "random move";
         public bool IsDebugMode { get; } = false;
-
+        public string AiDevelopedForGame => "Bomberman";
+        
         public PlayerTurnEnum Turn(IGameInfo gameInfo, IPlayerInfo currentPlayerInfo)
         {
             int currentX = currentPlayerInfo.X;

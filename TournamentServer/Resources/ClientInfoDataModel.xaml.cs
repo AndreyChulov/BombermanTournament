@@ -31,6 +31,7 @@ public partial class ClientInfoDataModel : UserControl
     public static readonly DependencyProperty NickNameProperty = DependencyProperty.Register(nameof(NickName), typeof(string), typeof(ClientInfoDataModel), new PropertyMetadata(default(string)));
     public static readonly DependencyProperty StrategyDescriptionProperty = DependencyProperty.Register(nameof(StrategyDescription), typeof(string), typeof(ClientInfoDataModel), new PropertyMetadata(default(string)));
     public static readonly DependencyProperty ReadyForTournamentTextProperty = DependencyProperty.Register(nameof(ReadyForTournamentText), typeof(string), typeof(ClientInfoDataModel), new PropertyMetadata(default(string)));
+    public static readonly DependencyProperty GameProperty = DependencyProperty.Register(nameof(Game), typeof(string), typeof(ClientInfoDataModel), new PropertyMetadata(default(string)));
 
     private static void ServerProperty_Changed(DependencyObject d, DependencyPropertyChangedEventArgs e)
     {
@@ -97,5 +98,11 @@ public partial class ClientInfoDataModel : UserControl
     {
         get => (string)GetValue(ReadyForTournamentTextProperty);
         set => SetValue(ReadyForTournamentTextProperty, value);
+    }
+
+    public string Game
+    {
+        get => (string)GetValue(GameProperty);
+        set => SetValue(GameProperty, value);
     }
 }

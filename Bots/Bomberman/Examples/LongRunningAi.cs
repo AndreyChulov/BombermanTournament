@@ -8,7 +8,8 @@ namespace Bots.Bomberman.Examples
         public string Nickname => "LongRunningAi";
         public string StrategyDescription => "AI with long running turn function - should stack on field";
         public bool IsDebugMode => false;
-
+        public string AiDevelopedForGame => "Bomberman";
+        
         public PlayerTurnEnum Turn(IGameInfo gameInfo, IPlayerInfo currentPlayerInfo)
         {
             for (int count = 0; count < 500; count++)
