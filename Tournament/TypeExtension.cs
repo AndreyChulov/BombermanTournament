@@ -1,4 +1,5 @@
-using BombermanGame.Shared.Interfaces;
+
+using Games.BombermanGame.Shared.Interfaces;
 
 namespace Tournament
 {

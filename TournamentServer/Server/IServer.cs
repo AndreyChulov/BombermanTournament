@@ -16,6 +16,6 @@ public interface IServer
     
     void StartServer();
     void StopServer();
-    
-    
+    void StartTournament();
+
 }

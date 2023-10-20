@@ -1,5 +1,5 @@
 using System;
-using Core.Network.ExternalShared.Contracts;
+using Core.Network.Shared.Contracts;
 using TournamentServer.Server.Utilities;
 
 namespace TournamentServer.Server;

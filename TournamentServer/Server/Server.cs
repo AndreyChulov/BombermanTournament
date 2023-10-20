@@ -4,10 +4,10 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using Core.Network;
-using Core.Network.ExternalShared;
-using Core.Network.ExternalShared.Contracts;
-using Core.Network.ExternalShared.Enums;
-using Core.Network.ExternalShared.Interfaces;
+using Core.Network.Shared;
+using Core.Network.Shared.Contracts;
+using Core.Network.Shared.Enums;
+using Core.Network.Shared.Interfaces;
 using TournamentServer.Server.Utilities;
 
 namespace TournamentServer.Server;
@@ -149,5 +149,15 @@ public class Server :IServer
         IsServerProcessingCommand.SetVariable(true);
         _networkServer?.DestroyServer();
         IsServerStarted.SetVariable(false);
+    }
+
+    private void StartTournamentInternal()
+    {
+        
+    }
+    
+    public void StartTournament()
+    {
+        Task.Run(StartServerInternal);
     }
 }

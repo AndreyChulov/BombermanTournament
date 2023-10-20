@@ -1,0 +1,12 @@
+Z:\Мой диск\GitHub\BombermanTournament\Core\Network.Shared\bin\Debug\net7.0\Core.Network.Shared.deps.json
+Z:\Мой диск\GitHub\BombermanTournament\Core\Network.Shared\bin\Debug\net7.0\Core.Network.Shared.dll
+Z:\Мой диск\GitHub\BombermanTournament\Core\Network.Shared\bin\Debug\net7.0\Core.Network.Shared.pdb
+Z:\Мой диск\GitHub\BombermanTournament\Core\Network.Shared\obj\Debug\net7.0\Network.Shared.csproj.AssemblyReference.cache
+Z:\Мой диск\GitHub\BombermanTournament\Core\Network.Shared\obj\Debug\net7.0\Network.Shared.GeneratedMSBuildEditorConfig.editorconfig
+Z:\Мой диск\GitHub\BombermanTournament\Core\Network.Shared\obj\Debug\net7.0\Network.Shared.AssemblyInfoInputs.cache
+Z:\Мой диск\GitHub\BombermanTournament\Core\Network.Shared\obj\Debug\net7.0\Network.Shared.AssemblyInfo.cs
+Z:\Мой диск\GitHub\BombermanTournament\Core\Network.Shared\obj\Debug\net7.0\Network.Shared.csproj.CoreCompileInputs.cache
+Z:\Мой диск\GitHub\BombermanTournament\Core\Network.Shared\obj\Debug\net7.0\Core.Network.Shared.dll
+Z:\Мой диск\GitHub\BombermanTournament\Core\Network.Shared\obj\Debug\net7.0\refint\Core.Network.Shared.dll
+Z:\Мой диск\GitHub\BombermanTournament\Core\Network.Shared\obj\Debug\net7.0\Core.Network.Shared.pdb
+Z:\Мой диск\GitHub\BombermanTournament\Core\Network.Shared\obj\Debug\net7.0\ref\Core.Network.Shared.dll

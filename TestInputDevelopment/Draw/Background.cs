@@ -1,9 +1,10 @@
 using System.Reflection;
-using Engine.SharedInterfaces;
+using Core.Engine.Shared.Interfaces;
+using Image = Core.Engine.Shared.Objects.GraphicEngine.Draw.Image;
 
 namespace TestInputDevelopment.Draw;
 
-public class Background : Engine.Shared.GraphicEngine.Draw.Image
+public class Background : Image
 {
     protected override string LinkedResourceName => "Image.Background";
     protected override string EmbeddedImageResourceName => "TestInputDevelopment.Images.background.jpg";

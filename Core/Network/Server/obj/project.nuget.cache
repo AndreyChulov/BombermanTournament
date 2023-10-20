@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "8eRUAgmZebwm1F0VebVH5jPJaGI8fNRZ+jDh+mnpPvIww2gosbUzyVAW97pr0UGUm0JBcAkOHPmJ0SRfJL5ugw==",
+  "success": true,
+  "projectFilePath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Core\\Network\\Server\\Server.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Andrey\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
+    "C:\\Users\\Andrey\\.nuget\\packages\\system.text.json\\7.0.3\\system.text.json.7.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

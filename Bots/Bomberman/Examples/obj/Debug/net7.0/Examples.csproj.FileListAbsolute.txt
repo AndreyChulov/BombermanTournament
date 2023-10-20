@@ -1,0 +1,15 @@
+Z:\Мой диск\GitHub\BombermanTournament\Bots\Bomberman\Examples\obj\Debug\net7.0\Examples.csproj.AssemblyReference.cache
+Z:\Мой диск\GitHub\BombermanTournament\Bots\Bomberman\Examples\obj\Debug\net7.0\Examples.GeneratedMSBuildEditorConfig.editorconfig
+Z:\Мой диск\GitHub\BombermanTournament\Bots\Bomberman\Examples\obj\Debug\net7.0\Examples.AssemblyInfoInputs.cache
+Z:\Мой диск\GitHub\BombermanTournament\Bots\Bomberman\Examples\obj\Debug\net7.0\Examples.AssemblyInfo.cs
+Z:\Мой диск\GitHub\BombermanTournament\Bots\Bomberman\Examples\obj\Debug\net7.0\Examples.csproj.CoreCompileInputs.cache
+Z:\Мой диск\GitHub\BombermanTournament\Bots\Bomberman\Examples\obj\Debug\net7.0\Examples.csproj.CopyComplete
+Z:\Мой диск\GitHub\BombermanTournament\Bots\Bomberman\Examples\bin\Debug\net7.0\Bots.Bomberman.Examples.deps.json
+Z:\Мой диск\GitHub\BombermanTournament\Bots\Bomberman\Examples\bin\Debug\net7.0\Bots.Bomberman.Examples.dll
+Z:\Мой диск\GitHub\BombermanTournament\Bots\Bomberman\Examples\bin\Debug\net7.0\Bots.Bomberman.Examples.pdb
+Z:\Мой диск\GitHub\BombermanTournament\Bots\Bomberman\Examples\obj\Debug\net7.0\Bots.Bomberman.Examples.dll
+Z:\Мой диск\GitHub\BombermanTournament\Bots\Bomberman\Examples\obj\Debug\net7.0\refint\Bots.Bomberman.Examples.dll
+Z:\Мой диск\GitHub\BombermanTournament\Bots\Bomberman\Examples\obj\Debug\net7.0\Bots.Bomberman.Examples.pdb
+Z:\Мой диск\GitHub\BombermanTournament\Bots\Bomberman\Examples\obj\Debug\net7.0\ref\Bots.Bomberman.Examples.dll
+Z:\Мой диск\GitHub\BombermanTournament\Bots\Bomberman\Examples\bin\Debug\net7.0\Games.BombermanGame.Shared.dll
+Z:\Мой диск\GitHub\BombermanTournament\Bots\Bomberman\Examples\bin\Debug\net7.0\Games.BombermanGame.Shared.pdb

@@ -132,7 +132,74 @@
           }
         }
       },
-      "Engine/1.0.0": {
+      "Core.Engine.Graphic/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Core.Engine.Shared": "1.0.0",
+          "Vortice.Direct2D1": "2.4.2"
+        },
+        "compile": {
+          "bin/placeholder/Core.Engine.Graphic.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Core.Engine.Graphic.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
+      },
+      "Core.Engine.Input/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Core.Engine.Shared": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Core.Engine.Input.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Core.Engine.Input.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
+      },
+      "Core.Engine.Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Vortice.Direct2D1": "2.4.2"
+        },
+        "compile": {
+          "bin/placeholder/Core.Engine.Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Core.Engine.Shared.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
+      },
+      "Core.EngineFactory/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Core.Engine.Graphic": "1.0.0",
+          "Core.Engine.Input": "1.0.0",
+          "Core.Engine.Shared": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Core.EngineFactory.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Core.EngineFactory.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
+      },
+      "Engine.EngineFactory/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
@@ -140,10 +207,10 @@
           "Engine.Input": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/Engine.dll": {}
+          "bin/placeholder/Engine.EngineFactory.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Engine.dll": {}
+          "bin/placeholder/Engine.EngineFactory.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.WindowsDesktop.App.WindowsForms"
@@ -152,9 +219,6 @@
       "Engine.Graphic/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Engine.SharedInterfaces": "1.0.0"
-        },
         "compile": {
           "bin/placeholder/Engine.Graphic.dll": {}
         },
@@ -169,8 +233,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
-          "Engine.Shared": "1.0.0",
-          "Engine.SharedInterfaces": "1.0.0"
+          "Engine.Shared": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Engine.Input.dll": {}
@@ -186,7 +249,6 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
-          "Engine.SharedInterfaces": "1.0.0",
           "Vortice.Direct2D1": "2.4.2"
         },
         "compile": {
@@ -195,22 +257,6 @@
         "runtime": {
           "bin/placeholder/Engine.Shared.dll": {}
         }
-      },
-      "Engine.SharedInterfaces/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Vortice.Direct2D1": "2.4.2"
-        },
-        "compile": {
-          "bin/placeholder/Engine.SharedInterfaces.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Engine.SharedInterfaces.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WindowsForms"
-        ]
       }
     }
   },
@@ -361,37 +407,53 @@
         "vortice.mathematics.nuspec"
       ]
     },
-    "Engine/1.0.0": {
+    "Core.Engine.Graphic/1.0.0": {
       "type": "project",
-      "path": "../Engine/Engine/Engine.csproj",
-      "msbuildProject": "../Engine/Engine/Engine.csproj"
+      "path": "../Core/Engine/Graphic/Graphic.csproj",
+      "msbuildProject": "../Core/Engine/Graphic/Graphic.csproj"
+    },
+    "Core.Engine.Input/1.0.0": {
+      "type": "project",
+      "path": "../Core/Engine/Input/Input.csproj",
+      "msbuildProject": "../Core/Engine/Input/Input.csproj"
+    },
+    "Core.Engine.Shared/1.0.0": {
+      "type": "project",
+      "path": "../Core/Engine.Shared/Engine.Shared.csproj",
+      "msbuildProject": "../Core/Engine.Shared/Engine.Shared.csproj"
+    },
+    "Core.EngineFactory/1.0.0": {
+      "type": "project",
+      "path": "../Core/EngineFactory/EngineFactory.csproj",
+      "msbuildProject": "../Core/EngineFactory/EngineFactory.csproj"
+    },
+    "Engine.EngineFactory/1.0.0": {
+      "type": "project",
+      "path": "../Engine/EngineFactory/EngineFactory.csproj",
+      "msbuildProject": "../Engine/EngineFactory/EngineFactory.csproj"
     },
     "Engine.Graphic/1.0.0": {
       "type": "project",
-      "path": "../Engine/Engine.Graphic/Engine.Graphic.csproj",
-      "msbuildProject": "../Engine/Engine.Graphic/Engine.Graphic.csproj"
+      "path": "../Engine/Graphic/Graphic.csproj",
+      "msbuildProject": "../Engine/Graphic/Graphic.csproj"
     },
     "Engine.Input/1.0.0": {
       "type": "project",
-      "path": "../Engine/Engine.Input/Engine.Input.csproj",
-      "msbuildProject": "../Engine/Engine.Input/Engine.Input.csproj"
+      "path": "../Engine/Input/Input.csproj",
+      "msbuildProject": "../Engine/Input/Input.csproj"
     },
     "Engine.Shared/1.0.0": {
       "type": "project",
       "path": "../Engine/Engine.Shared/Engine.Shared.csproj",
       "msbuildProject": "../Engine/Engine.Shared/Engine.Shared.csproj"
-    },
-    "Engine.SharedInterfaces/1.0.0": {
-      "type": "project",
-      "path": "../Engine/Engine.SharedInterfaces/Engine.SharedInterfaces.csproj",
-      "msbuildProject": "../Engine/Engine.SharedInterfaces/Engine.SharedInterfaces.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0-windows7.0": [
-      "Engine >= 1.0.0",
-      "Engine.Shared >= 1.0.0",
-      "Engine.SharedInterfaces >= 1.0.0"
+      "Core.Engine.Shared >= 1.0.0",
+      "Core.EngineFactory >= 1.0.0",
+      "Engine.EngineFactory >= 1.0.0",
+      "Engine.Shared >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -419,14 +481,17 @@
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
           "projectReferences": {
-            "Z:\\Мой диск\\GitHub\\BombermanTournament\\Engine\\Engine.SharedInterfaces\\Engine.SharedInterfaces.csproj": {
-              "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Engine\\Engine.SharedInterfaces\\Engine.SharedInterfaces.csproj"
+            "Z:\\Мой диск\\GitHub\\BombermanTournament\\Core\\Engine.Shared\\Engine.Shared.csproj": {
+              "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Core\\Engine.Shared\\Engine.Shared.csproj"
+            },
+            "Z:\\Мой диск\\GitHub\\BombermanTournament\\Core\\EngineFactory\\EngineFactory.csproj": {
+              "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Core\\EngineFactory\\EngineFactory.csproj"
             },
             "Z:\\Мой диск\\GitHub\\BombermanTournament\\Engine\\Engine.Shared\\Engine.Shared.csproj": {
               "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Engine\\Engine.Shared\\Engine.Shared.csproj"
             },
-            "Z:\\Мой диск\\GitHub\\BombermanTournament\\Engine\\Engine\\Engine.csproj": {
-              "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Engine\\Engine\\Engine.csproj"
+            "Z:\\Мой диск\\GitHub\\BombermanTournament\\Engine\\EngineFactory\\EngineFactory.csproj": {
+              "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Engine\\EngineFactory\\EngineFactory.csproj"
             }
           }
         }

@@ -1,0 +1,15 @@
+Z:\Мой диск\GitHub\BombermanTournament\Core\Engine\Graphic\obj\Debug\net7.0-windows\Graphic.csproj.AssemblyReference.cache
+Z:\Мой диск\GitHub\BombermanTournament\Core\Engine\Graphic\obj\Debug\net7.0-windows\Graphic.GeneratedMSBuildEditorConfig.editorconfig
+Z:\Мой диск\GitHub\BombermanTournament\Core\Engine\Graphic\obj\Debug\net7.0-windows\Graphic.AssemblyInfoInputs.cache
+Z:\Мой диск\GitHub\BombermanTournament\Core\Engine\Graphic\obj\Debug\net7.0-windows\Graphic.AssemblyInfo.cs
+Z:\Мой диск\GitHub\BombermanTournament\Core\Engine\Graphic\obj\Debug\net7.0-windows\Graphic.csproj.CoreCompileInputs.cache
+Z:\Мой диск\GitHub\BombermanTournament\Core\Engine\Graphic\bin\Debug\net7.0-windows\Core.Engine.Graphic.deps.json
+Z:\Мой диск\GitHub\BombermanTournament\Core\Engine\Graphic\bin\Debug\net7.0-windows\Core.Engine.Graphic.dll
+Z:\Мой диск\GitHub\BombermanTournament\Core\Engine\Graphic\bin\Debug\net7.0-windows\Core.Engine.Graphic.pdb
+Z:\Мой диск\GitHub\BombermanTournament\Core\Engine\Graphic\bin\Debug\net7.0-windows\Core.Engine.Shared.dll
+Z:\Мой диск\GitHub\BombermanTournament\Core\Engine\Graphic\bin\Debug\net7.0-windows\Core.Engine.Shared.pdb
+Z:\Мой диск\GitHub\BombermanTournament\Core\Engine\Graphic\obj\Debug\net7.0-windows\Graphic.csproj.CopyComplete
+Z:\Мой диск\GitHub\BombermanTournament\Core\Engine\Graphic\obj\Debug\net7.0-windows\Core.Engine.Graphic.dll
+Z:\Мой диск\GitHub\BombermanTournament\Core\Engine\Graphic\obj\Debug\net7.0-windows\refint\Core.Engine.Graphic.dll
+Z:\Мой диск\GitHub\BombermanTournament\Core\Engine\Graphic\obj\Debug\net7.0-windows\Core.Engine.Graphic.pdb
+Z:\Мой диск\GitHub\BombermanTournament\Core\Engine\Graphic\obj\Debug\net7.0-windows\ref\Core.Engine.Graphic.dll

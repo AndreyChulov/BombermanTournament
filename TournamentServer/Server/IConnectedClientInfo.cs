@@ -1,5 +1,5 @@
 using System;
-using Core.Network.ExternalShared.Interfaces;
+using Core.Network.Shared.Interfaces;
 using TournamentServer.Server.Utilities;
 
 namespace TournamentServer.Server;

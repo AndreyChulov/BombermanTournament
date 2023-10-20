@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <ImplicitUsings>disable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <TargetFramework>net7.0-windows</TargetFramework>
+        <UseWindowsForms>true</UseWindowsForms>
+        <RootNamespace>Core.EngineFactory</RootNamespace>
+        <AssemblyName>Core.EngineFactory</AssemblyName>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Engine.Shared\Engine.Shared.csproj" />
+      <ProjectReference Include="..\Engine\Graphic\Graphic.csproj" />
+      <ProjectReference Include="..\Engine\Input\Input.csproj" />
+    </ItemGroup>
+
+</Project>

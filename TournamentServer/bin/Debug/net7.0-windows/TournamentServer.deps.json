@@ -8,8 +8,13 @@
     ".NETCoreApp,Version=v7.0": {
       "TournamentServer/1.0.0": {
         "dependencies": {
-          "Core.Network": "1.0.0",
-          "Core.Network.ExternalShared": "1.0.0"
+          "Core.Network.Shared": "1.0.0",
+          "Core.NetworkFactory": "1.0.0",
+          "Core.Network.Client.Reference": "1.0.0.0",
+          "Core.Network.InternalShared.Reference": "1.0.0.0",
+          "Core.Network.Server.Reference": "1.0.0.0",
+          "Core.Network.Shared.Reference": "1.0.0.0",
+          "Core.NetworkFactory.Reference": "1.0.0.0"
         },
         "runtime": {
           "TournamentServer.dll": {}
@@ -27,35 +32,19 @@
           }
         }
       },
-      "Core.Network/1.0.0": {
-        "dependencies": {
-          "Core.Network.Client": "1.0.0",
-          "Core.Network.ExternalShared": "1.0.0",
-          "Core.Network.InternalShared": "1.0.0",
-          "Core.Network.Server": "1.0.0"
-        },
-        "runtime": {
-          "Core.Network.dll": {}
-        }
-      },
       "Core.Network.Client/1.0.0": {
         "dependencies": {
-          "Core.Network.ExternalShared": "1.0.0",
           "Core.Network.InternalShared": "1.0.0",
+          "Core.Network.Shared": "1.0.0",
           "System.Text.Json": "7.0.3"
         },
         "runtime": {
           "Core.Network.Client.dll": {}
         }
       },
-      "Core.Network.ExternalShared/1.0.0": {
-        "runtime": {
-          "Core.Network.ExternalShared.dll": {}
-        }
-      },
       "Core.Network.InternalShared/1.0.0": {
         "dependencies": {
-          "Core.Network.ExternalShared": "1.0.0"
+          "Core.Network.Shared": "1.0.0"
         },
         "runtime": {
           "Core.Network.InternalShared.dll": {}
@@ -63,12 +52,68 @@
       },
       "Core.Network.Server/1.0.0": {
         "dependencies": {
-          "Core.Network.ExternalShared": "1.0.0",
           "Core.Network.InternalShared": "1.0.0",
+          "Core.Network.Shared": "1.0.0",
           "System.Text.Json": "7.0.3"
         },
         "runtime": {
           "Core.Network.Server.dll": {}
+        }
+      },
+      "Core.Network.Shared/1.0.0": {
+        "runtime": {
+          "Core.Network.Shared.dll": {}
+        }
+      },
+      "Core.NetworkFactory/1.0.0": {
+        "dependencies": {
+          "Core.Network.Client": "1.0.0",
+          "Core.Network.InternalShared": "1.0.0",
+          "Core.Network.Server": "1.0.0",
+          "Core.Network.Shared": "1.0.0"
+        },
+        "runtime": {
+          "Core.NetworkFactory.dll": {}
+        }
+      },
+      "Core.Network.Client.Reference/1.0.0.0": {
+        "runtime": {
+          "Core.Network.Client.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Core.Network.InternalShared.Reference/1.0.0.0": {
+        "runtime": {
+          "Core.Network.InternalShared.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Core.Network.Server.Reference/1.0.0.0": {
+        "runtime": {
+          "Core.Network.Server.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Core.Network.Shared.Reference/1.0.0.0": {
+        "runtime": {
+          "Core.Network.Shared.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Core.NetworkFactory.Reference/1.0.0.0": {
+        "runtime": {
+          "Core.NetworkFactory.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }
@@ -93,17 +138,7 @@
       "path": "system.text.json/7.0.3",
       "hashPath": "system.text.json.7.0.3.nupkg.sha512"
     },
-    "Core.Network/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
     "Core.Network.Client/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Core.Network.ExternalShared/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -115,6 +150,41 @@
     },
     "Core.Network.Server/1.0.0": {
       "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Core.Network.Shared/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Core.NetworkFactory/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Core.Network.Client.Reference/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Core.Network.InternalShared.Reference/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Core.Network.Server.Reference/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Core.Network.Shared.Reference/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Core.NetworkFactory.Reference/1.0.0.0": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }

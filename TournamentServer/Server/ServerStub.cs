@@ -24,4 +24,9 @@ public class ServerStub : IServer
     {
         IsServerStarted.SetVariable(false);
     }
+
+    public void StartTournament()
+    {
+        
+    }
 }

@@ -1,0 +1,17 @@
+Z:\Мой диск\GitHub\BombermanTournament\Core\Network\Client\bin\Debug\net7.0\Core.Network.Shared.dll
+Z:\Мой диск\GitHub\BombermanTournament\Core\Network\Client\bin\Debug\net7.0\Core.Network.Shared.pdb
+Z:\Мой диск\GitHub\BombermanTournament\Core\Network\Client\obj\Debug\net7.0\Client.csproj.AssemblyReference.cache
+Z:\Мой диск\GitHub\BombermanTournament\Core\Network\Client\obj\Debug\net7.0\Client.GeneratedMSBuildEditorConfig.editorconfig
+Z:\Мой диск\GitHub\BombermanTournament\Core\Network\Client\obj\Debug\net7.0\Client.AssemblyInfoInputs.cache
+Z:\Мой диск\GitHub\BombermanTournament\Core\Network\Client\obj\Debug\net7.0\Client.AssemblyInfo.cs
+Z:\Мой диск\GitHub\BombermanTournament\Core\Network\Client\obj\Debug\net7.0\Client.csproj.CoreCompileInputs.cache
+Z:\Мой диск\GitHub\BombermanTournament\Core\Network\Client\obj\Debug\net7.0\Client.csproj.CopyComplete
+Z:\Мой диск\GitHub\BombermanTournament\Core\Network\Client\bin\Debug\net7.0\Core.Network.Client.deps.json
+Z:\Мой диск\GitHub\BombermanTournament\Core\Network\Client\bin\Debug\net7.0\Core.Network.Client.dll
+Z:\Мой диск\GitHub\BombermanTournament\Core\Network\Client\bin\Debug\net7.0\Core.Network.Client.pdb
+Z:\Мой диск\GitHub\BombermanTournament\Core\Network\Client\bin\Debug\net7.0\Core.Network.InternalShared.dll
+Z:\Мой диск\GitHub\BombermanTournament\Core\Network\Client\bin\Debug\net7.0\Core.Network.InternalShared.pdb
+Z:\Мой диск\GitHub\BombermanTournament\Core\Network\Client\obj\Debug\net7.0\Core.Network.Client.dll
+Z:\Мой диск\GitHub\BombermanTournament\Core\Network\Client\obj\Debug\net7.0\refint\Core.Network.Client.dll
+Z:\Мой диск\GitHub\BombermanTournament\Core\Network\Client\obj\Debug\net7.0\Core.Network.Client.pdb
+Z:\Мой диск\GitHub\BombermanTournament\Core\Network\Client\obj\Debug\net7.0\ref\Core.Network.Client.dll

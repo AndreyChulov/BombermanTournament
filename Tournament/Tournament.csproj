@@ -13,6 +13,8 @@
       <ProjectReference Include="..\BombermanBotExamples\BombermanBotExamples.csproj" />
       <ProjectReference Include="..\BombermanBots\BombermanBots.csproj" />
       <ProjectReference Include="..\BombermanGame\BombermanGame.csproj" />
+      <ProjectReference Include="..\Games\BombermanGame.Shared\BombermanGame.Shared.csproj" />
+      <ProjectReference Include="..\Games\BombermanGame\BombermanGame.csproj" />
     </ItemGroup>
 
     <ItemGroup>

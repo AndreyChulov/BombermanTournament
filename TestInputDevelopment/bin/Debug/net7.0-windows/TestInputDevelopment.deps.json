@@ -8,9 +8,13 @@
     ".NETCoreApp,Version=v7.0": {
       "TestInputDevelopment/1.0.0": {
         "dependencies": {
-          "Engine": "1.0.0",
+          "Core.Engine.Shared": "1.0.0",
+          "Core.EngineFactory": "1.0.0",
+          "Engine.EngineFactory": "1.0.0",
           "Engine.Shared": "1.0.0",
-          "Engine.SharedInterfaces": "1.0.0"
+          "Core.Engine.Graphic.Reference": "1.0.0.0",
+          "Core.Engine.Input.Reference": "1.0.0.0",
+          "Core.EngineFactory.Reference": "1.0.0.0"
         },
         "runtime": {
           "TestInputDevelopment.dll": {}
@@ -89,47 +93,63 @@
           }
         }
       },
-      "Engine/1.0.0": {
+      "Core.Engine.Graphic/1.0.0": {
         "dependencies": {
-          "Engine.Graphic": "1.0.0",
-          "Engine.Input": "1.0.0"
-        },
-        "runtime": {
-          "Engine.dll": {}
-        }
-      },
-      "Engine.Graphic/1.0.0": {
-        "dependencies": {
-          "Engine.SharedInterfaces": "1.0.0"
-        },
-        "runtime": {
-          "Engine.Graphic.dll": {}
-        }
-      },
-      "Engine.Input/1.0.0": {
-        "dependencies": {
-          "Engine.Shared": "1.0.0",
-          "Engine.SharedInterfaces": "1.0.0"
-        },
-        "runtime": {
-          "Engine.Input.dll": {}
-        }
-      },
-      "Engine.Shared/1.0.0": {
-        "dependencies": {
-          "Engine.SharedInterfaces": "1.0.0",
+          "Core.Engine.Shared": "1.0.0",
           "Vortice.Direct2D1": "2.4.2"
         },
         "runtime": {
-          "Engine.Shared.dll": {}
+          "Core.Engine.Graphic.dll": {}
         }
       },
-      "Engine.SharedInterfaces/1.0.0": {
+      "Core.Engine.Input/1.0.0": {
+        "dependencies": {
+          "Core.Engine.Shared": "1.0.0"
+        },
+        "runtime": {
+          "Core.Engine.Input.dll": {}
+        }
+      },
+      "Core.Engine.Shared/1.0.0": {
         "dependencies": {
           "Vortice.Direct2D1": "2.4.2"
         },
         "runtime": {
-          "Engine.SharedInterfaces.dll": {}
+          "Core.Engine.Shared.dll": {}
+        }
+      },
+      "Core.EngineFactory/1.0.0": {
+        "dependencies": {
+          "Core.Engine.Graphic": "1.0.0",
+          "Core.Engine.Input": "1.0.0",
+          "Core.Engine.Shared": "1.0.0"
+        },
+        "runtime": {
+          "Core.EngineFactory.dll": {}
+        }
+      },
+      "Core.Engine.Graphic.Reference/1.0.0.0": {
+        "runtime": {
+          "Core.Engine.Graphic.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Core.Engine.Input.Reference/1.0.0.0": {
+        "runtime": {
+          "Core.Engine.Input.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Core.EngineFactory.Reference/1.0.0.0": {
+        "runtime": {
+          "Core.EngineFactory.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }
@@ -189,28 +209,38 @@
       "path": "vortice.mathematics/1.4.25",
       "hashPath": "vortice.mathematics.1.4.25.nupkg.sha512"
     },
-    "Engine/1.0.0": {
+    "Core.Engine.Graphic/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "Engine.Graphic/1.0.0": {
+    "Core.Engine.Input/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "Engine.Input/1.0.0": {
+    "Core.Engine.Shared/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "Engine.Shared/1.0.0": {
+    "Core.EngineFactory/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "Engine.SharedInterfaces/1.0.0": {
-      "type": "project",
+    "Core.Engine.Graphic.Reference/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Core.Engine.Input.Reference/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Core.EngineFactory.Reference/1.0.0.0": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }

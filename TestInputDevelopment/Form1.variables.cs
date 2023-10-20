@@ -1,4 +1,4 @@
-using Engine.SharedInterfaces;
+using Core.Engine.Shared.Interfaces;
 
 namespace TestInputDevelopment;
 

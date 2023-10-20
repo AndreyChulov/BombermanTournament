@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "Games.RaceGame/1.0.0": {
+        "runtime": {
+          "Games.RaceGame.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Games.RaceGame/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

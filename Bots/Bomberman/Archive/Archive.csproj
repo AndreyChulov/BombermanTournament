@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <RootNamespace>Bots.Bomberman.Archive</RootNamespace>
+        <AssemblyName>Bots.Bomberman.Archive</AssemblyName>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\BombermanGame.Shared\BombermanGame.Shared.csproj" />
+      <ProjectReference Include="..\..\..\Games\BombermanGame.Shared\BombermanGame.Shared.csproj" />
+    </ItemGroup>
+
+</Project>

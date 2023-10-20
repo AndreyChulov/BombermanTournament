@@ -1,5 +1,6 @@
 using System.ComponentModel;
-using Engine.Shared.GraphicEngine.Draw;
+using Core.Engine.Shared.Objects.GraphicEngine.Draw;
+using Core.EngineFactory;
 using TestInputDevelopment.Draw;
 
 namespace TestInputDevelopment;
@@ -13,7 +14,7 @@ public partial class Form1 : Form
 
     private void OnHandleCreated(object? sender, EventArgs e)
     {
-        _engine = Engine.EngineFactory.CreateEngine(this, 2, true);
+        _engine = EngineFactory.CreateEngine(this, 2, true);
     }
 
     private void OnClosing(object? sender, CancelEventArgs e)

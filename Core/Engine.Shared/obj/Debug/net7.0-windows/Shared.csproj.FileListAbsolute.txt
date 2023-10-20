@@ -1,0 +1,15 @@
+Z:\Мой диск\GitHub\BombermanTournament\Engine\Shared\bin\Debug\net7.0-windows\Shared.deps.json
+Z:\Мой диск\GitHub\BombermanTournament\Engine\Shared\bin\Debug\net7.0-windows\Shared.dll
+Z:\Мой диск\GitHub\BombermanTournament\Engine\Shared\bin\Debug\net7.0-windows\Shared.pdb
+Z:\Мой диск\GitHub\BombermanTournament\Engine\Shared\bin\Debug\net7.0-windows\SharedInterfaces.dll
+Z:\Мой диск\GitHub\BombermanTournament\Engine\Shared\bin\Debug\net7.0-windows\SharedInterfaces.pdb
+Z:\Мой диск\GitHub\BombermanTournament\Engine\Shared\obj\Debug\net7.0-windows\Shared.csproj.AssemblyReference.cache
+Z:\Мой диск\GitHub\BombermanTournament\Engine\Shared\obj\Debug\net7.0-windows\Shared.GeneratedMSBuildEditorConfig.editorconfig
+Z:\Мой диск\GitHub\BombermanTournament\Engine\Shared\obj\Debug\net7.0-windows\Shared.AssemblyInfoInputs.cache
+Z:\Мой диск\GitHub\BombermanTournament\Engine\Shared\obj\Debug\net7.0-windows\Shared.AssemblyInfo.cs
+Z:\Мой диск\GitHub\BombermanTournament\Engine\Shared\obj\Debug\net7.0-windows\Shared.csproj.CoreCompileInputs.cache
+Z:\Мой диск\GitHub\BombermanTournament\Engine\Shared\obj\Debug\net7.0-windows\Shared.csproj.CopyComplete
+Z:\Мой диск\GitHub\BombermanTournament\Engine\Shared\obj\Debug\net7.0-windows\Shared.dll
+Z:\Мой диск\GitHub\BombermanTournament\Engine\Shared\obj\Debug\net7.0-windows\refint\Shared.dll
+Z:\Мой диск\GitHub\BombermanTournament\Engine\Shared\obj\Debug\net7.0-windows\Shared.pdb
+Z:\Мой диск\GitHub\BombermanTournament\Engine\Shared\obj\Debug\net7.0-windows\ref\Shared.dll

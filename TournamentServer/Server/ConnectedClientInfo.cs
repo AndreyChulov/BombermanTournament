@@ -1,9 +1,9 @@
 using System;
 using System.Text.Json;
 using System.Threading.Tasks;
-using Core.Network.ExternalShared.Contracts;
-using Core.Network.ExternalShared.Contracts.Messages;
-using Core.Network.ExternalShared.Interfaces;
+using Core.Network.Shared.Contracts;
+using Core.Network.Shared.Contracts.Messages;
+using Core.Network.Shared.Interfaces;
 using TournamentServer.Server.Utilities;
 
 namespace TournamentServer.Server;

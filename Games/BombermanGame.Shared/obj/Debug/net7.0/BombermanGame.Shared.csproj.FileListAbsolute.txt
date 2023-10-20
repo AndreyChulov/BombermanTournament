@@ -1,0 +1,36 @@
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\BombermanGame.Shared\bin\Debug\net7.0\BombermanGame.Shared.deps.json
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\BombermanGame.Shared\bin\Debug\net7.0\BombermanGame.Shared.dll
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\BombermanGame.Shared\bin\Debug\net7.0\BombermanGame.Shared.pdb
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\BombermanGame.Shared\obj\Debug\net7.0\BombermanGame.Shared.csproj.AssemblyReference.cache
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\BombermanGame.Shared\obj\Debug\net7.0\BombermanGame.Shared.GeneratedMSBuildEditorConfig.editorconfig
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\BombermanGame.Shared\obj\Debug\net7.0\BombermanGame.Shared.AssemblyInfoInputs.cache
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\BombermanGame.Shared\obj\Debug\net7.0\BombermanGame.Shared.AssemblyInfo.cs
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\BombermanGame.Shared\obj\Debug\net7.0\BombermanGame.Shared.csproj.CoreCompileInputs.cache
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\BombermanGame.Shared\obj\Debug\net7.0\BombermanGame.Shared.dll
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\BombermanGame.Shared\obj\Debug\net7.0\refint\BombermanGame.Shared.dll
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\BombermanGame.Shared\obj\Debug\net7.0\BombermanGame.Shared.pdb
+Z:\Мой диск\Академия ТОП\OutClass\BombermanTournament\BombermanGame.Shared\obj\Debug\net7.0\ref\BombermanGame.Shared.dll
+Z:\Мой диск\GitHub\BombermanTournament\BombermanGame.Shared\bin\Debug\net7.0\BombermanGame.Shared.deps.json
+Z:\Мой диск\GitHub\BombermanTournament\BombermanGame.Shared\bin\Debug\net7.0\BombermanGame.Shared.dll
+Z:\Мой диск\GitHub\BombermanTournament\BombermanGame.Shared\bin\Debug\net7.0\BombermanGame.Shared.pdb
+Z:\Мой диск\GitHub\BombermanTournament\BombermanGame.Shared\obj\Debug\net7.0\BombermanGame.Shared.csproj.AssemblyReference.cache
+Z:\Мой диск\GitHub\BombermanTournament\BombermanGame.Shared\obj\Debug\net7.0\BombermanGame.Shared.GeneratedMSBuildEditorConfig.editorconfig
+Z:\Мой диск\GitHub\BombermanTournament\BombermanGame.Shared\obj\Debug\net7.0\BombermanGame.Shared.AssemblyInfoInputs.cache
+Z:\Мой диск\GitHub\BombermanTournament\BombermanGame.Shared\obj\Debug\net7.0\BombermanGame.Shared.AssemblyInfo.cs
+Z:\Мой диск\GitHub\BombermanTournament\BombermanGame.Shared\obj\Debug\net7.0\BombermanGame.Shared.csproj.CoreCompileInputs.cache
+Z:\Мой диск\GitHub\BombermanTournament\BombermanGame.Shared\obj\Debug\net7.0\BombermanGame.Shared.dll
+Z:\Мой диск\GitHub\BombermanTournament\BombermanGame.Shared\obj\Debug\net7.0\refint\BombermanGame.Shared.dll
+Z:\Мой диск\GitHub\BombermanTournament\BombermanGame.Shared\obj\Debug\net7.0\BombermanGame.Shared.pdb
+Z:\Мой диск\GitHub\BombermanTournament\BombermanGame.Shared\obj\Debug\net7.0\ref\BombermanGame.Shared.dll
+Z:\Мой диск\GitHub\BombermanTournament\Games\BombermanGame.Shared\bin\Debug\net7.0\Games.BombermanGame.Shared.deps.json
+Z:\Мой диск\GitHub\BombermanTournament\Games\BombermanGame.Shared\bin\Debug\net7.0\Games.BombermanGame.Shared.dll
+Z:\Мой диск\GitHub\BombermanTournament\Games\BombermanGame.Shared\bin\Debug\net7.0\Games.BombermanGame.Shared.pdb
+Z:\Мой диск\GitHub\BombermanTournament\Games\BombermanGame.Shared\obj\Debug\net7.0\BombermanGame.Shared.csproj.AssemblyReference.cache
+Z:\Мой диск\GitHub\BombermanTournament\Games\BombermanGame.Shared\obj\Debug\net7.0\BombermanGame.Shared.GeneratedMSBuildEditorConfig.editorconfig
+Z:\Мой диск\GitHub\BombermanTournament\Games\BombermanGame.Shared\obj\Debug\net7.0\BombermanGame.Shared.AssemblyInfoInputs.cache
+Z:\Мой диск\GitHub\BombermanTournament\Games\BombermanGame.Shared\obj\Debug\net7.0\BombermanGame.Shared.AssemblyInfo.cs
+Z:\Мой диск\GitHub\BombermanTournament\Games\BombermanGame.Shared\obj\Debug\net7.0\BombermanGame.Shared.csproj.CoreCompileInputs.cache
+Z:\Мой диск\GitHub\BombermanTournament\Games\BombermanGame.Shared\obj\Debug\net7.0\Games.BombermanGame.Shared.dll
+Z:\Мой диск\GitHub\BombermanTournament\Games\BombermanGame.Shared\obj\Debug\net7.0\refint\Games.BombermanGame.Shared.dll
+Z:\Мой диск\GitHub\BombermanTournament\Games\BombermanGame.Shared\obj\Debug\net7.0\Games.BombermanGame.Shared.pdb
+Z:\Мой диск\GitHub\BombermanTournament\Games\BombermanGame.Shared\obj\Debug\net7.0\ref\Games.BombermanGame.Shared.dll

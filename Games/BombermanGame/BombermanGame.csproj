@@ -1,0 +1,85 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0-windows</TargetFramework>
+        <Nullable>enable</Nullable>
+        <UseWindowsForms>true</UseWindowsForms>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <AssemblyName>Games.BombermanGame</AssemblyName>
+        <RootNamespace>Games.BombermanGame</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <None Remove="EmbeddedResources\PlayerGreen.png" />
+      <None Include="EmbeddedResources\Robo\f3.png" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="BombermanGameForm.cs">
+        <SubType>Form</SubType>
+      </Compile>
+    </ItemGroup>
+
+
+    <ItemGroup>
+      <Folder Include="DrawDataModel\RamResources\Single" />
+    </ItemGroup>
+
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\Core\Engine.Shared\Engine.Shared.csproj" />
+      <ProjectReference Include="..\..\Core\EngineFactory\EngineFactory.csproj" />
+      <ProjectReference Include="..\BombermanGame.Shared\BombermanGame.Shared.csproj" />
+    </ItemGroup>
+
+
+    <ItemGroup>
+      <EmbeddedResource Include="EmbeddedResources\background.png" />
+    </ItemGroup>
+
+
+    <ItemGroup>
+      <EmbeddedResource Include="EmbeddedResources\fieldBackground.png" />
+    </ItemGroup>
+
+
+    <ItemGroup>
+      <EmbeddedResource Include="EmbeddedResources\indestructibleCell.png" />
+    </ItemGroup>
+
+
+    <ItemGroup>
+      <EmbeddedResource Include="EmbeddedResources\destructibleCell.png" />
+    </ItemGroup>
+
+
+    <ItemGroup>
+      <EmbeddedResource Include="EmbeddedResources\playerGreenStartPoint.png" />
+    </ItemGroup>
+
+
+    <ItemGroup>
+      <EmbeddedResource Include="EmbeddedResources\playerBlueStartPoint.png" />
+      <EmbeddedResource Include="EmbeddedResources\playerRedStartPoint.png" />
+      <EmbeddedResource Include="EmbeddedResources\playerYellowStartPoint.png" />
+    </ItemGroup>
+
+
+    <ItemGroup>
+      <EmbeddedResource Include="EmbeddedResources\bomb.png" />
+    </ItemGroup>
+
+
+    <ItemGroup>
+      <EmbeddedResource Include="EmbeddedResources\Robo\p1.png" />
+      <EmbeddedResource Include="EmbeddedResources\Robo\p2.png" />
+      <EmbeddedResource Include="EmbeddedResources\Robo\p3.png" />
+      <EmbeddedResource Include="EmbeddedResources\Robo\p4.png" />
+    </ItemGroup>
+
+
+    <ItemGroup>
+      <PackageReference Include="Vortice.Direct2D1" Version="2.4.2" />
+    </ItemGroup>
+
+</Project>

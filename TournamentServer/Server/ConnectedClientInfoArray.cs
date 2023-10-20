@@ -1,7 +1,7 @@
 using System;
 using System.Linq;
 using System.Threading.Tasks;
-using Core.Network.ExternalShared.Contracts;
+using Core.Network.Shared.Contracts;
 
 namespace TournamentServer.Server;
 

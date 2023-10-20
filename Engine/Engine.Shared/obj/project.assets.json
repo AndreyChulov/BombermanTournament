@@ -131,22 +131,6 @@
             "related": ".pdb;.xml"
           }
         }
-      },
-      "Engine.SharedInterfaces/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Vortice.Direct2D1": "2.4.2"
-        },
-        "compile": {
-          "bin/placeholder/Engine.SharedInterfaces.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Engine.SharedInterfaces.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WindowsForms"
-        ]
       }
     }
   },
@@ -296,16 +280,10 @@
         "vortice.mathematics.1.4.25.nupkg.sha512",
         "vortice.mathematics.nuspec"
       ]
-    },
-    "Engine.SharedInterfaces/1.0.0": {
-      "type": "project",
-      "path": "../Engine.SharedInterfaces/Engine.SharedInterfaces.csproj",
-      "msbuildProject": "../Engine.SharedInterfaces/Engine.SharedInterfaces.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0-windows7.0": [
-      "Engine.SharedInterfaces >= 1.0.0",
       "Vortice.Direct2D1 >= 2.4.2"
     ]
   },
@@ -333,11 +311,7 @@
       "frameworks": {
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
-          "projectReferences": {
-            "Z:\\Мой диск\\GitHub\\BombermanTournament\\Engine\\Engine.SharedInterfaces\\Engine.SharedInterfaces.csproj": {
-              "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Engine\\Engine.SharedInterfaces\\Engine.SharedInterfaces.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {

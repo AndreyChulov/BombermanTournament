@@ -8,8 +8,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Core\Core.Network.ExternalShared\Core.Network.ExternalShared.csproj" />
-      <ProjectReference Include="..\Core\Core.Network\Core.Network.csproj" />
+      <ProjectReference Include="..\Core\Network.Shared\Network.Shared.csproj" />
+      <ProjectReference Include="..\Core\NetworkFactory\NetworkFactory.csproj" />
     </ItemGroup>
 
 

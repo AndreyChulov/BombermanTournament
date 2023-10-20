@@ -1,6 +1,6 @@
 using System.Reflection;
-using BombermanGame;
-using BombermanGame.Shared.Interfaces;
+using Games.BombermanGame;
+using Games.BombermanGame.Shared.Interfaces;
 
 namespace Tournament
 {

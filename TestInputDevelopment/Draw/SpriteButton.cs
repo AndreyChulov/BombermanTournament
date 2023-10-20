@@ -1,11 +1,8 @@
-using System.Reflection;
-using Engine.SharedInterfaces;
-using Engine.SharedInterfaces.InputEngine;
-using Image = Engine.Shared.GraphicEngine.Draw.Image;
+using Core.Engine.Shared.Interfaces;
 
 namespace TestInputDevelopment.Draw;
 
-public class SpriteButton : Engine.Shared.InputEngine.Draw.SpriteButtonWithShadowedText
+public class SpriteButton : Core.Engine.Shared.Objects.InputEngine.Draw.SpriteButtonWithShadowedText
 {
     private readonly string _textToDraw;
     //protected override string LinkedResourceName => "Input.Button";

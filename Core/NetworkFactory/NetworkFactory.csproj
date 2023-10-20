@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <RootNamespace>Core.NetworkFactory</RootNamespace>
+        <AssemblyName>Core.NetworkFactory</AssemblyName>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Network.Shared\Network.Shared.csproj" />
+      <ProjectReference Include="..\Network\Client\Client.csproj" />
+      <ProjectReference Include="..\Network\InternalShared\InternalShared.csproj" />
+      <ProjectReference Include="..\Network\Server\Server.csproj" />
+    </ItemGroup>
+
+</Project>
