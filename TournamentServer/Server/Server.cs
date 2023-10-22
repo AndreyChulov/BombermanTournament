@@ -62,14 +62,7 @@ public class Server :IServer
         }
 
         ClientsConnectedCount.SetVariable(_networkServer.ConnectedClientsCount.ToString());
-        ClientsConnectedInfoArray.Update(
-            x => x.Update(
-                _networkServer.ConnectedClients
-                    //.Select(y => x.FirstOrDefault(z => z.Equals(y), new ConnectedClientInfo(y)))
-                    //.Cast<IConnectedClientInfo>()
-                    //.ToArray()
-                )
-        );
+        ClientsConnectedInfoArray.Update(x => x.Update(_networkServer.ConnectedClients));
 
         var clientsConnectedInfoArray = (ConnectedClientInfoArray)ClientsConnectedInfoArray;
         if (ClientsConnectedCount == "4")
