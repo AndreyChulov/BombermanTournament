@@ -34,6 +34,20 @@ public static class ClientInfoDataModelHelper
                     clientInfo.IsReadyForTournamentStart ? "Yes" : "No");
             });
     }
+    
+    private static Action CreateUpdateIsInDebugModePropertyAction(
+        Dispatcher dispatcher, ClientInfoDataModel dataModel, IServer server)
+    {
+        return () => dispatcher.Invoke(
+            () =>
+            {
+                var clientsConnectedInfoArray = (ConnectedClientInfoArray)server.ClientsConnectedInfoArray;
+                var clientInfo = clientsConnectedInfoArray[dataModel.ClientIndex];
+                
+                dataModel.SetValue(ClientInfoDataModel.IsOnDebugModeProperty, 
+                    (bool)clientInfo.IsDebugMode);
+            });
+    }
 
     private static Action CreateUpdateStrategyDescriptionPropertyAction(
         Dispatcher dispatcher, ClientInfoDataModel dataModel, IServer server)
@@ -106,6 +120,8 @@ public static class ClientInfoDataModelHelper
                     CreateUpdateReadyForTournamentTextPropertyAction(dispatcher, dataModel, server));
                 clientInfo.Game.OnChanged.AddAction(
                     CreateUpdateGamePropertyAction(dispatcher, dataModel, server));
+                clientInfo.IsDebugMode.OnChanged.AddAction(
+                    CreateUpdateIsInDebugModePropertyAction(dispatcher, dataModel, server));
                 
                 InvokeUpdateActions(dispatcher, dataModel, server);
             });
@@ -127,6 +143,7 @@ public static class ClientInfoDataModelHelper
         CreateUpdateStrategyDescriptionPropertyAction(dispatcher, dataModel, server)();
         CreateUpdateReadyForTournamentTextPropertyAction(dispatcher, dataModel, server)();
         CreateUpdateGamePropertyAction(dispatcher, dataModel, server)();
+        CreateUpdateIsInDebugModePropertyAction(dispatcher, dataModel, server)();
     }
 
 }

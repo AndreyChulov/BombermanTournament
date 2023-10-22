@@ -10,6 +10,7 @@ public class ConnectedClientInfo : ConnectedClient, IConnectedClientInfo
 {
     private Action? _onClientUpdated;
     public MonitoredVariable<bool> IsReadyForTournamentStart { get; } = false;
+    public MonitoredVariable<bool> IsDebugMode { get; } = false;
     public MonitoredVariable<string> NickName { get; } = "unknown";
     public MonitoredVariable<string> StrategyDescription { get; } = "unknown";    
     public MonitoredVariable<string> Game { get; } = "unknown";
@@ -34,6 +35,7 @@ public class ConnectedClientInfo : ConnectedClient, IConnectedClientInfo
                 NickName.SetVariable(clientInfoMessage.Nickname);
                 StrategyDescription.SetVariable(clientInfoMessage.StrategyDescription);
                 Game.SetVariable(clientInfoMessage.DevelopedForGame);
+                IsDebugMode.SetVariable(clientInfoMessage.IsDebugMode);
                 IsReadyForTournamentStart.SetVariable(true);
                 break;
             default:

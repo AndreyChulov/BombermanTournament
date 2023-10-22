@@ -32,6 +32,7 @@ public partial class ClientInfoDataModel : UserControl
     public static readonly DependencyProperty StrategyDescriptionProperty = DependencyProperty.Register(nameof(StrategyDescription), typeof(string), typeof(ClientInfoDataModel), new PropertyMetadata(default(string)));
     public static readonly DependencyProperty ReadyForTournamentTextProperty = DependencyProperty.Register(nameof(ReadyForTournamentText), typeof(string), typeof(ClientInfoDataModel), new PropertyMetadata(default(string)));
     public static readonly DependencyProperty GameProperty = DependencyProperty.Register(nameof(Game), typeof(string), typeof(ClientInfoDataModel), new PropertyMetadata(default(string)));
+    public static readonly DependencyProperty IsOnDebugModeProperty = DependencyProperty.Register(nameof(IsOnDebugMode), typeof(bool), typeof(ClientInfoDataModel), new PropertyMetadata(default(bool)));
 
     private static void ServerProperty_Changed(DependencyObject d, DependencyPropertyChangedEventArgs e)
     {
@@ -104,5 +105,11 @@ public partial class ClientInfoDataModel : UserControl
     {
         get => (string)GetValue(GameProperty);
         set => SetValue(GameProperty, value);
+    }
+
+    public bool IsOnDebugMode
+    {
+        get => (bool)GetValue(IsOnDebugModeProperty);
+        set => SetValue(IsOnDebugModeProperty, value);
     }
 }

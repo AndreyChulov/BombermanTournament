@@ -7,6 +7,7 @@ namespace TournamentServer.Shared;
 public interface IConnectedClientInfo : IConnectedClient
 {
     MonitoredVariable<bool> IsReadyForTournamentStart { get; }
+    MonitoredVariable<bool> IsDebugMode { get; }
     MonitoredVariable<string> NickName { get; } 
     MonitoredVariable<string> StrategyDescription { get; }
     MonitoredVariable<string> Game { get; }

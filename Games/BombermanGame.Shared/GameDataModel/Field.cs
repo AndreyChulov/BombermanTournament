@@ -1,5 +1,7 @@
 using System.Drawing;
+using Games.BombermanGame.Shared.Delegates;
 using Games.BombermanGame.Shared.Enums;
+using Games.BombermanGame.Shared.Extensions;
 using Games.BombermanGame.Shared.Interfaces;
 
 namespace Games.BombermanGame.Shared.GameDataModel
@@ -14,6 +16,7 @@ namespace Games.BombermanGame.Shared.GameDataModel
             _field.Select(x => (FieldItemEnum[]) x.Clone()).ToArray();
 
         public FieldItemEnum[][] GetField() => _field;
+        
         public Field(int fieldWidth, int fieldHeight)
         {
             _fieldWidth = fieldWidth;
@@ -83,6 +86,7 @@ namespace Games.BombermanGame.Shared.GameDataModel
         {
             SetFieldCell(currentPosition.Y, currentPosition.X, cell);
         }
+        
         public void SetFieldCell(int lineIndex, int columnIndex, FieldItemEnum cell)
         {
             if (lineIndex < 0 || lineIndex >= _fieldHeight)
@@ -113,106 +117,68 @@ namespace Games.BombermanGame.Shared.GameDataModel
             {
                 case FieldItemEnum.Player1:
                 case FieldItemEnum.Player1WithBomb:
-                    var player1Count = _field.Sum(
-                        x => x.Count(
-                            y => y == FieldItemEnum.Player1 || y == FieldItemEnum.Player1WithBomb)
-                    );
-                    if (
-                        player1Count == 1 &&
-                        _field[lineIndex][columnIndex] != FieldItemEnum.Player1 &&
-                        _field[lineIndex][columnIndex] != FieldItemEnum.Player1WithBomb
-                    )
-                    {
-                        return true;
-                    }
+                    if (CheckFieldForDuplicateUser(lineIndex, columnIndex, FieldItemEnum.Player1)) return true;
                     break;
                 case FieldItemEnum.Player2:
                 case FieldItemEnum.Player2WithBomb:
-                    var player2Count = _field.Sum(
-                        x => x.Count(
-                            y => y == FieldItemEnum.Player2 || y == FieldItemEnum.Player2WithBomb)
-                    );
-                    if (
-                        player2Count == 1 &&
-                        _field[lineIndex][columnIndex] != FieldItemEnum.Player2 &&
-                        _field[lineIndex][columnIndex] != FieldItemEnum.Player2WithBomb
-                    )
-                    {
-                        return true;
-                    }
+                    if (CheckFieldForDuplicateUser(lineIndex, columnIndex, FieldItemEnum.Player2)) return true;
                     break;
                 case FieldItemEnum.Player3:
                 case FieldItemEnum.Player3WithBomb:
-                    var player3Count = _field.Sum(
-                        x => x.Count(
-                            y => y == FieldItemEnum.Player3 || y == FieldItemEnum.Player3WithBomb)
-                    );
-                    if (
-                        player3Count == 1 &&
-                        _field[lineIndex][columnIndex] != FieldItemEnum.Player3 &&
-                        _field[lineIndex][columnIndex] != FieldItemEnum.Player3WithBomb
-                    )
-                    {
-                        return true;
-                    }
+                    if (CheckFieldForDuplicateUser(lineIndex, columnIndex, FieldItemEnum.Player3)) return true;
                     break;
                 case FieldItemEnum.Player4:
                 case FieldItemEnum.Player4WithBomb:
-                    var player4Count = _field.Sum(
-                        x => x.Count(
-                            y => y == FieldItemEnum.Player4 || y == FieldItemEnum.Player4WithBomb)
-                    );
-                    if (
-                        player4Count == 1 &&
-                        _field[lineIndex][columnIndex] != FieldItemEnum.Player4 &&
-                        _field[lineIndex][columnIndex] != FieldItemEnum.Player4WithBomb
-                    )
-                    {
-                        return true;
-                    }
+                    if (CheckFieldForDuplicateUser(lineIndex, columnIndex, FieldItemEnum.Player4)) return true;
                     break;
             }
 
             return false;
         }
 
+        private bool CheckFieldForDuplicateUser(int lineIndex, int columnIndex, FieldItemEnum player)
+        {
+            var playerWithBomb = player.AddBombToFieldItem();
+            var player1Count = _field.Sum(
+                x => x.Count(y => y == player || y == playerWithBomb)
+            );
+            return player1Count == 1 &&
+                   _field[lineIndex][columnIndex] != player &&
+                   _field[lineIndex][columnIndex] != playerWithBomb;
+        }
+
         public Point GetPlayerStartPosition(int playerIndex)
         {
-            FieldItemEnum itemToSearch = 
-                playerIndex == 0 ? FieldItemEnum.Player1StartPoint :
-                    playerIndex == 1 ? FieldItemEnum.Player2StartPoint :
-                    playerIndex == 2 ? FieldItemEnum.Player3StartPoint :
-                    FieldItemEnum.Player4StartPoint;
+            FieldItemEnum itemToSearch = FieldItemEnum.EmptyField.GetStartPointByIndex(playerIndex);
             
+            return EnumerateField((rowIndex, columnIndex, cell) =>
+            {
+                if (cell != itemToSearch)
+                {
+                    return (Point?)null;
+                }
+                
+                _field[rowIndex][columnIndex] = itemToSearch.GetStartPointRelatedPlayer();
+                
+                return new Point(columnIndex, rowIndex);
+
+            }) ?? Point.Empty;
+        }
+
+        public T? EnumerateField<T>(FieldEnumeratorDelegate<T> fieldEnumeratorDelegate) where T:struct
+        {
             for (int rowIndex = 0; rowIndex < _fieldHeight; rowIndex++)
             {
                 for (int columnIndex = 0; columnIndex < _fieldWidth; columnIndex++)
                 {
-                    if (_field[rowIndex][columnIndex] == itemToSearch)
-                    {
-                        switch (playerIndex)
-                        {
-                            case 0:
-                                _field[rowIndex][columnIndex] = FieldItemEnum.Player1;
-                                break;
-                            case 1:
-                                _field[rowIndex][columnIndex] = FieldItemEnum.Player2;
-                                break;
-                            case 2:
-                                _field[rowIndex][columnIndex] = FieldItemEnum.Player3;
-                                break;
-                            case 3:
-                                _field[rowIndex][columnIndex] = FieldItemEnum.Player4;
-                                break;
-                            default:
-                                break;
-                        }
-                        return new Point(columnIndex, rowIndex);
-                    }
+                    var result = fieldEnumeratorDelegate
+                        .Invoke(rowIndex, columnIndex, _field[rowIndex][columnIndex]);
+                    
+                    if (result != null) return result.Value;
                 }
             }
-            
-            return Point.Empty;
+
+            return null;
         }
     }
 }

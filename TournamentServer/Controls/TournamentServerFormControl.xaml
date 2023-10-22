@@ -37,7 +37,6 @@
         <Line Grid.Row="3" Grid.ColumnSpan="2"></Line>
         <Button 
             Grid.Row="4"
-            Name="BtnStartTournament" 
             Click="BtnStartTournament_OnClick"
             IsEnabled="{Binding IsButtonStartTournamentEnabled}"
         >Start tournament</Button>

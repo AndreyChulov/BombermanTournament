@@ -20,7 +20,8 @@
     </UserControl.Resources>
     <Grid DataContext="{StaticResource DataModel}">
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
@@ -113,12 +114,26 @@
         <Label 
             Grid.Row="6"
             Grid.Column="0"
-            Content="Ready for tournament:" 
+            Content="Is Ai on debug mode:" 
             HorizontalAlignment="Right" 
             VerticalAlignment="Center"
         ></Label>
         <Label 
             Grid.Row="6"
+            Grid.Column="1"
+            Content="{Binding IsOnDebugMode}" 
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Center"
+        ></Label>
+        <Label 
+            Grid.Row="7"
+            Grid.Column="0"
+            Content="Ready for tournament:" 
+            HorizontalAlignment="Right" 
+            VerticalAlignment="Center"
+        ></Label>
+        <Label 
+            Grid.Row="7"
             Grid.Column="1"
             Content="{Binding ReadyForTournamentText}" 
             HorizontalAlignment="Left" 
