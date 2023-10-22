@@ -1,7 +1,4 @@
-using System;
-using System.Threading.Tasks;
-
-namespace TournamentServer.Server.Utilities;
+namespace TournamentServer.Shared.Utilities;
 
 public class MonitoredVariable<T> where T:IEquatable<T>
 {

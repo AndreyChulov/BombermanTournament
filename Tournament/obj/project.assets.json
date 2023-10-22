@@ -331,6 +331,7 @@
           "Core.Engine.Shared": "1.0.0",
           "Core.EngineFactory": "1.0.0",
           "Games.BombermanGame.Shared": "1.0.0",
+          "TournamentServer.Shared": "1.0.0",
           "Vortice.Direct2D1": "2.4.2"
         },
         "compile": {
@@ -354,6 +355,19 @@
         },
         "runtime": {
           "bin/placeholder/Games.BombermanGame.Shared.dll": {}
+        }
+      },
+      "TournamentServer.Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Core.Network.Shared": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/TournamentServer.Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TournamentServer.Shared.dll": {}
         }
       }
     }
@@ -579,6 +593,11 @@
       "type": "project",
       "path": "../Games/BombermanGame.Shared/BombermanGame.Shared.csproj",
       "msbuildProject": "../Games/BombermanGame.Shared/BombermanGame.Shared.csproj"
+    },
+    "TournamentServer.Shared/1.0.0": {
+      "type": "project",
+      "path": "../TournamentServer.Shared/TournamentServer.Shared.csproj",
+      "msbuildProject": "../TournamentServer.Shared/TournamentServer.Shared.csproj"
     }
   },
   "projectFileDependencyGroups": {

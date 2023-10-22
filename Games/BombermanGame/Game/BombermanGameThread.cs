@@ -1,7 +1,7 @@
-using BombermanGame.Game.DataModel;
+using Games.BombermanGame.Shared.GameDataModel;
 using Games.BombermanGame.Shared.Interfaces;
 
-namespace BombermanGame.Game
+namespace Games.BombermanGame.Game
 {
     public abstract class BombermanGameThread
     {

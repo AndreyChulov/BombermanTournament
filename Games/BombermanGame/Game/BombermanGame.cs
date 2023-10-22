@@ -1,9 +1,9 @@
-using BombermanGame.Game.DataModel;
-using BombermanGame.Game.Extensions;
 using Games.BombermanGame.Shared.Enums;
+using Games.BombermanGame.Shared.GameDataModel;
 using Games.BombermanGame.Shared.Interfaces;
+using Games.BombermanGame.Shared.Extensions;
 
-namespace BombermanGame.Game
+namespace Games.BombermanGame.Game
 {
     public class BombermanGame : BombermanGameThread
     {

@@ -1,7 +1,7 @@
 using Games.BombermanGame.Shared.Enums;
 using Games.BombermanGame.Shared.Interfaces;
 
-namespace BombermanGame.Game
+namespace Games.BombermanGame.Game
 {
     public class DefaultBombermanPlayer : IPlayer
     {

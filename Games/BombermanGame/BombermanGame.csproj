@@ -29,6 +29,7 @@
     <ItemGroup>
       <ProjectReference Include="..\..\Core\Engine.Shared\Engine.Shared.csproj" />
       <ProjectReference Include="..\..\Core\EngineFactory\EngineFactory.csproj" />
+      <ProjectReference Include="..\..\TournamentServer.Shared\TournamentServer.Shared.csproj" />
       <ProjectReference Include="..\BombermanGame.Shared\BombermanGame.Shared.csproj" />
     </ItemGroup>
 

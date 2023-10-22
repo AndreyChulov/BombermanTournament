@@ -1,4 +1,4 @@
-namespace BombermanGame.DrawDataModel.Draw.Field;
+namespace Games.BombermanGame.DrawDataModel.Draw.Field;
 
 public class FieldCellsGrid
 {

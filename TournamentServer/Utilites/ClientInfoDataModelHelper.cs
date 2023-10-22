@@ -2,6 +2,7 @@ using System;
 using System.Windows.Threading;
 using TournamentServer.Resources;
 using TournamentServer.Server;
+using TournamentServer.Shared;
 
 namespace TournamentServer.Utilites;
 

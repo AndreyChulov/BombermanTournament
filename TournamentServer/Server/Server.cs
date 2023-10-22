@@ -7,7 +7,8 @@ using Core.Network.Shared.Contracts;
 using Core.Network.Shared.Enums;
 using Core.Network.Shared.Interfaces;
 using Games.BombermanGame;
-using TournamentServer.Server.Utilities;
+using TournamentServer.Shared;
+using TournamentServer.Shared.Utilities;
 
 namespace TournamentServer.Server;
 
@@ -153,7 +154,8 @@ public class Server :IServer
 
     private void StartTournamentInternal()
     {
-        BombermanNetworkGame game = new BombermanNetworkGame();
+        BombermanNetworkGame game = new BombermanNetworkGame(
+            ((ConnectedClientInfoArray)ClientsConnectedInfoArray).Clients);
     }
     
     public void StartTournament()

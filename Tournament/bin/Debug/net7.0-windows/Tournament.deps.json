@@ -140,6 +140,7 @@
           "Core.Engine.Shared": "1.0.0",
           "Core.EngineFactory": "1.0.0",
           "Games.BombermanGame.Shared": "1.0.0",
+          "TournamentServer.Shared": "1.0.0",
           "Vortice.Direct2D1": "2.4.2"
         },
         "runtime": {
@@ -152,6 +153,14 @@
         },
         "runtime": {
           "Games.BombermanGame.Shared.dll": {}
+        }
+      },
+      "TournamentServer.Shared/1.0.0": {
+        "dependencies": {
+          "Core.Network.Shared": "1.0.0"
+        },
+        "runtime": {
+          "TournamentServer.Shared.dll": {}
         }
       },
       "Core.Engine.Graphic.Reference/1.0.0.0": {
@@ -274,6 +283,11 @@
       "sha512": ""
     },
     "Games.BombermanGame.Shared/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TournamentServer.Shared/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

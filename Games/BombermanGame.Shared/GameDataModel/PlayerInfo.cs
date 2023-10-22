@@ -1,6 +1,7 @@
+using System.Drawing;
 using Games.BombermanGame.Shared.Interfaces;
 
-namespace BombermanGame.Game.DataModel
+namespace Games.BombermanGame.Shared.GameDataModel
 {
     public class PlayerInfo : IPlayerInfo
     {

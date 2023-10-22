@@ -1,11 +1,10 @@
-using BombermanGame.DrawDataModel.Draw.Field;
-using BombermanGame.Game.DataModel;
 using Core.Engine.Shared.Interfaces;
 using Core.Engine.Shared.Interfaces.GraphicEngine.RamResources;
 using Core.Engine.Shared.Objects.GraphicEngine.Draw;
 using Games.BombermanGame.DrawDataModel.Draw.Field.Cell;
 using Games.BombermanGame.DrawDataModel.RamResources.Multi;
 using Games.BombermanGame.Shared.Enums;
+using Games.BombermanGame.Shared.GameDataModel;
 using Vortice.Direct2D1;
 using Vortice.DirectWrite;
 
@@ -41,7 +40,7 @@ namespace Games.BombermanGame.DrawDataModel.Draw.Field
 
         private FieldCellsGrid _fieldCellsGrid;
 
-        public static Field Create(IEngine engine, global::BombermanGame.Game.BombermanGame game)
+        public static Field Create(IEngine engine, global::Games.BombermanGame.Game.BombermanGame game)
         {
             var canvasSize = engine.GetCanvasSize();
             var canvasWidth = canvasSize.Width;

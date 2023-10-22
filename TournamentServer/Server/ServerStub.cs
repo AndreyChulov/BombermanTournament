@@ -1,5 +1,6 @@
 using System;
-using TournamentServer.Server.Utilities;
+using TournamentServer.Shared;
+using TournamentServer.Shared.Utilities;
 
 namespace TournamentServer.Server;
 

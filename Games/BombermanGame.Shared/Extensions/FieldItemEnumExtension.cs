@@ -1,6 +1,6 @@
 using Games.BombermanGame.Shared.Enums;
 
-namespace BombermanGame.Game.Extensions
+namespace Games.BombermanGame.Shared.Extensions
 {
     public static class FieldItemEnumExtension
     {

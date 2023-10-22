@@ -1,15 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Core.Network.Shared.Contracts;
 using Core.Network.Shared.Interfaces;
 
-namespace TournamentServer.Server;
+namespace TournamentServer.Shared;
 
 public class ConnectedClientInfoArray : IEquatable<ConnectedClientInfoArray>
 {
     private IConnectedClientInfo[] _connectedClientInfoArray;
+    public IConnectedClientInfo[] Clients => _connectedClientInfoArray.ToArray();
 
     public bool Equals(ConnectedClientInfoArray? other)
     {

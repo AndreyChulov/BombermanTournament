@@ -84,3 +84,5 @@ Z:\Мой диск\GitHub\BombermanTournament\Tournament\bin\Debug\net7.0-window
 Z:\Мой диск\GitHub\BombermanTournament\Tournament\bin\Debug\net7.0-windows\Games.BombermanGame.pdb
 Z:\Мой диск\GitHub\BombermanTournament\Tournament\bin\Debug\net7.0-windows\Core.Network.Shared.dll
 Z:\Мой диск\GitHub\BombermanTournament\Tournament\bin\Debug\net7.0-windows\Core.Network.Shared.pdb
+Z:\Мой диск\GitHub\BombermanTournament\Tournament\bin\Debug\net7.0-windows\TournamentServer.Shared.dll
+Z:\Мой диск\GitHub\BombermanTournament\Tournament\bin\Debug\net7.0-windows\TournamentServer.Shared.pdb

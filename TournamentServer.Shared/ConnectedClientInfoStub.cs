@@ -1,8 +1,8 @@
-using System;
 using Core.Network.Shared.Contracts;
-using TournamentServer.Server.Utilities;
+using Core.Network.Shared.Contracts.Messages;
+using TournamentServer.Shared.Utilities;
 
-namespace TournamentServer.Server;
+namespace TournamentServer.Shared;
 
 public class ConnectedClientInfoStub : ConnectedClient, IConnectedClientInfo
 {
@@ -10,6 +10,7 @@ public class ConnectedClientInfoStub : ConnectedClient, IConnectedClientInfo
     public MonitoredVariable<string> NickName => "unknown";
     public MonitoredVariable<string> StrategyDescription => "unknown";
     public MonitoredVariable<string> Game => "unknown";
+    public new Action<BaseMessage, string>? OnMessageReceivedAction { get; set; }
 
     public ConnectedClientInfoStub() 
         : base(new ConnectedClientId("unknown", -1), _ => { })

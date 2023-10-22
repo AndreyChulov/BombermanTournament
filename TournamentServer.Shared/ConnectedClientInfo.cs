@@ -1,12 +1,10 @@
-using System;
 using System.Text.Json;
-using System.Threading.Tasks;
 using Core.Network.Shared.Contracts;
 using Core.Network.Shared.Contracts.Messages;
 using Core.Network.Shared.Interfaces;
-using TournamentServer.Server.Utilities;
+using TournamentServer.Shared.Utilities;
 
-namespace TournamentServer.Server;
+namespace TournamentServer.Shared;
 
 public class ConnectedClientInfo : ConnectedClient, IConnectedClientInfo
 {
@@ -15,6 +13,7 @@ public class ConnectedClientInfo : ConnectedClient, IConnectedClientInfo
     public MonitoredVariable<string> NickName { get; } = "unknown";
     public MonitoredVariable<string> StrategyDescription { get; } = "unknown";    
     public MonitoredVariable<string> Game { get; } = "unknown";
+    public new Action<BaseMessage, string>? OnMessageReceivedAction { private get; set; }
 
     public ConnectedClientInfo(IConnectedClient connectedClient) 
         : base(connectedClient.ConnectedClientId, connectedClient.SendMessage)
@@ -38,7 +37,7 @@ public class ConnectedClientInfo : ConnectedClient, IConnectedClientInfo
                 IsReadyForTournamentStart.SetVariable(true);
                 break;
             default:
-                throw new NotImplementedException();
+                Task.Run(() => OnMessageReceivedAction?.Invoke(baseMessage, serializedMessage));
                 break;
         }
     }
