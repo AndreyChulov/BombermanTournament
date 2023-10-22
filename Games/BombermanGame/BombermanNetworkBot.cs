@@ -32,7 +32,7 @@ public class BombermanNetworkBot : IPlayer
 
         Nickname = _connectedClientInfo.NickName;
         StrategyDescription = _connectedClientInfo.StrategyDescription;
-        IsDebugMode = false;
+        IsDebugMode = _connectedClientInfo.IsDebugMode;
     }
 
     private void ConnectedClientInfo_OnMessageReceivedAction(BaseMessage baseMessage, string serializedMessage)

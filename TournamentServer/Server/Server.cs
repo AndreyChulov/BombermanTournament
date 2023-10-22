@@ -160,6 +160,6 @@ public class Server :IServer
     
     public void StartTournament()
     {
-        Task.Run(StartServerInternal);
+        Task.Run(StartTournamentInternal);
     }
 }
