@@ -1,13 +1,15 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Core.Network.Shared.Contracts;
+using Core.Network.Shared.Interfaces;
 
 namespace TournamentServer.Server;
 
 public class ConnectedClientInfoArray : IEquatable<ConnectedClientInfoArray>
 {
-    private readonly IConnectedClientInfo[] _connectedClientInfoArray;
+    private IConnectedClientInfo[] _connectedClientInfoArray;
 
     public bool Equals(ConnectedClientInfoArray? other)
     {
@@ -34,6 +36,23 @@ public class ConnectedClientInfoArray : IEquatable<ConnectedClientInfoArray>
         _connectedClientInfoArray = connectedClientInfos;
     }
 
+    public void Update(IConnectedClient[] connectedClients)
+    {
+        var comparer = new ConnectedClientComparer();
+
+        List<ConnectedClientInfo> connectedClientInfos = new List<ConnectedClientInfo>();
+
+        foreach (var connectedClient in connectedClients)
+        {
+            var connectedClientInfo = _connectedClientInfoArray
+                .FirstOrDefault(x => (x as IConnectedClient)?.Equals(connectedClient) ?? false, null);
+            connectedClientInfos.Add(
+                connectedClientInfo as ConnectedClientInfo ?? new ConnectedClientInfo(connectedClient));
+        }
+
+        _connectedClientInfoArray = connectedClientInfos.ToArray();
+    }
+
     public void ForEach(Action<IConnectedClientInfo> predicate)
     {
         foreach (var connectedClientInfo in _connectedClientInfoArray)
@@ -42,6 +61,10 @@ public class ConnectedClientInfoArray : IEquatable<ConnectedClientInfoArray>
         }
     }
 
+    public IConnectedClientInfo FirstOrDefault(
+        Func<IConnectedClientInfo, bool> predicate, IConnectedClientInfo @default) =>
+            _connectedClientInfoArray.FirstOrDefault(predicate, @default);
+    
     public bool All(Func<IConnectedClientInfo, bool> predicate) => _connectedClientInfoArray.All(predicate);
 
     public IConnectedClientInfo this[int index] => 

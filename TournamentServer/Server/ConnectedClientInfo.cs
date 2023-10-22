@@ -15,7 +15,7 @@ public class ConnectedClientInfo : ConnectedClient, IConnectedClientInfo
     public MonitoredVariable<string> NickName { get; } = "unknown";
     public MonitoredVariable<string> StrategyDescription { get; } = "unknown";    
     public MonitoredVariable<string> Game { get; } = "unknown";
-    
+
     public ConnectedClientInfo(IConnectedClient connectedClient) 
         : base(connectedClient.ConnectedClientId, connectedClient.SendMessage)
     {

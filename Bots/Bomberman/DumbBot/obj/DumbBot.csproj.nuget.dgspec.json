@@ -452,7 +452,11 @@
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "Z:\\Мой диск\\GitHub\\BombermanTournament\\Core\\Network.Shared\\Network.Shared.csproj": {
+                "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Core\\Network.Shared\\Network.Shared.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

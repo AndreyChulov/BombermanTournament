@@ -16,6 +16,7 @@
           "Core.Engine.Input.Reference": "1.0.0.0",
           "Core.Engine.Shared.Reference": "1.0.0.0",
           "Core.EngineFactory.Reference": "1.0.0.0",
+          "Core.Network.Shared.Reference": "1.0.0.0",
           "Games.BombermanGame.Shared.Reference": "1.0.0.0"
         },
         "runtime": {
@@ -130,7 +131,15 @@
           "Core.EngineFactory.dll": {}
         }
       },
+      "Core.Network.Shared/1.0.0": {
+        "runtime": {
+          "Core.Network.Shared.dll": {}
+        }
+      },
       "Games.BombermanGame.Shared/1.0.0": {
+        "dependencies": {
+          "Core.Network.Shared": "1.0.0"
+        },
         "runtime": {
           "Games.BombermanGame.Shared.dll": {}
         }
@@ -162,6 +171,14 @@
       "Core.EngineFactory.Reference/1.0.0.0": {
         "runtime": {
           "Core.EngineFactory.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Core.Network.Shared.Reference/1.0.0.0": {
+        "runtime": {
+          "Core.Network.Shared.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -252,6 +269,11 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Core.Network.Shared/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Games.BombermanGame.Shared/1.0.0": {
       "type": "project",
       "serviceable": false,
@@ -273,6 +295,11 @@
       "sha512": ""
     },
     "Core.EngineFactory.Reference/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Core.Network.Shared.Reference/1.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

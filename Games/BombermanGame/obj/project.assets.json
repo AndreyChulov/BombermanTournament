@@ -199,9 +199,22 @@
           "Microsoft.WindowsDesktop.App.WindowsForms"
         ]
       },
+      "Core.Network.Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Core.Network.Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Core.Network.Shared.dll": {}
+        }
+      },
       "Games.BombermanGame.Shared/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Core.Network.Shared": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/Games.BombermanGame.Shared.dll": {}
         },
@@ -377,6 +390,11 @@
       "type": "project",
       "path": "../../Core/EngineFactory/EngineFactory.csproj",
       "msbuildProject": "../../Core/EngineFactory/EngineFactory.csproj"
+    },
+    "Core.Network.Shared/1.0.0": {
+      "type": "project",
+      "path": "../../Core/Network.Shared/Network.Shared.csproj",
+      "msbuildProject": "../../Core/Network.Shared/Network.Shared.csproj"
     },
     "Games.BombermanGame.Shared/1.0.0": {
       "type": "project",

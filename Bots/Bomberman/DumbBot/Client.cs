@@ -32,7 +32,9 @@ public class Client : IDisposable
         {
             case GetClientInfoMessage.MessageString:
                 var responseMessage =
-                    ClientInfoMessage.Initialize(_bot.Nickname, _bot.StrategyDescription, _bot.IsDebugMode);
+                    ClientInfoMessage.Initialize(
+                        _bot.Nickname, _bot.StrategyDescription, 
+                        _bot.IsDebugMode, _bot.AiDevelopedForGame);
                 _networkClient.SendMessage(responseMessage);
                 baseResponseMessage = responseMessage;
                 break;
@@ -61,6 +63,5 @@ public class Client : IDisposable
     {
         _networkClient.StopClient();
         Logger.FreeUpResources();
-        // TODO release managed resources here
     }
 }

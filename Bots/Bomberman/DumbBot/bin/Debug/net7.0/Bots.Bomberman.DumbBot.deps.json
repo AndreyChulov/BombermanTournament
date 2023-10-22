@@ -79,6 +79,9 @@
         }
       },
       "Games.BombermanGame.Shared/1.0.0": {
+        "dependencies": {
+          "Core.Network.Shared": "1.0.0"
+        },
         "runtime": {
           "Games.BombermanGame.Shared.dll": {}
         }

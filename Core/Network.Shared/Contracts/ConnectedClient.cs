@@ -23,7 +23,7 @@ public class ConnectedClient : IConnectedClient
     {
         return ConnectedClientId.Equals(other?.ConnectedClientId);
     }
-    
+
     public void SendMessage<T>(T messageObject)
         where T:BaseMessage
     {

@@ -13,3 +13,5 @@ Z:\Мой диск\GitHub\BombermanTournament\Bots\Bomberman\Archive\obj\Debug\n
 Z:\Мой диск\GitHub\BombermanTournament\Bots\Bomberman\Archive\obj\Debug\net7.0\ref\Bots.Bomberman.Archive.dll
 Z:\Мой диск\GitHub\BombermanTournament\Bots\Bomberman\Archive\bin\Debug\net7.0\Games.BombermanGame.Shared.dll
 Z:\Мой диск\GitHub\BombermanTournament\Bots\Bomberman\Archive\bin\Debug\net7.0\Games.BombermanGame.Shared.pdb
+Z:\Мой диск\GitHub\BombermanTournament\Bots\Bomberman\Archive\bin\Debug\net7.0\Core.Network.Shared.dll
+Z:\Мой диск\GitHub\BombermanTournament\Bots\Bomberman\Archive\bin\Debug\net7.0\Core.Network.Shared.pdb

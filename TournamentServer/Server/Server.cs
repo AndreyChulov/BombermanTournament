@@ -8,6 +8,7 @@ using Core.Network.Shared;
 using Core.Network.Shared.Contracts;
 using Core.Network.Shared.Enums;
 using Core.Network.Shared.Interfaces;
+using Games.BombermanGame;
 using TournamentServer.Server.Utilities;
 
 namespace TournamentServer.Server;
@@ -61,9 +62,14 @@ public class Server :IServer
         }
 
         ClientsConnectedCount.SetVariable(_networkServer.ConnectedClientsCount.ToString());
-        ClientsConnectedInfoArray.SetVariable(
-            _networkServer.ConnectedClients.Select(x => new ConnectedClientInfo(x))
-                .Cast<IConnectedClientInfo>().ToArray());
+        ClientsConnectedInfoArray.Update(
+            x => x.Update(
+                _networkServer.ConnectedClients
+                    //.Select(y => x.FirstOrDefault(z => z.Equals(y), new ConnectedClientInfo(y)))
+                    //.Cast<IConnectedClientInfo>()
+                    //.ToArray()
+                )
+        );
 
         var clientsConnectedInfoArray = (ConnectedClientInfoArray)ClientsConnectedInfoArray;
         if (ClientsConnectedCount == "4")
@@ -156,7 +162,7 @@ public class Server :IServer
 
     private void StartTournamentInternal()
     {
-        
+        BombermanNetworkGame game = new BombermanNetworkGame();
     }
     
     public void StartTournament()

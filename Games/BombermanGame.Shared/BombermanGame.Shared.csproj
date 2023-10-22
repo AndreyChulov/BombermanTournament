@@ -8,4 +8,8 @@
         <AssemblyName>Games.BombermanGame.Shared</AssemblyName>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\..\Core\Network.Shared\Network.Shared.csproj" />
+    </ItemGroup>
+
 </Project>

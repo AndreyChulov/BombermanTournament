@@ -12,9 +12,22 @@
           "bin/placeholder/BombermanGame.Shared.dll": {}
         }
       },
+      "Core.Network.Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Core.Network.Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Core.Network.Shared.dll": {}
+        }
+      },
       "Games.BombermanGame.Shared/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Core.Network.Shared": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/Games.BombermanGame.Shared.dll": {}
         },
@@ -29,6 +42,11 @@
       "type": "project",
       "path": "../../../BombermanGame.Shared/BombermanGame.Shared.csproj",
       "msbuildProject": "../../../BombermanGame.Shared/BombermanGame.Shared.csproj"
+    },
+    "Core.Network.Shared/1.0.0": {
+      "type": "project",
+      "path": "../../../Core/Network.Shared/Network.Shared.csproj",
+      "msbuildProject": "../../../Core/Network.Shared/Network.Shared.csproj"
     },
     "Games.BombermanGame.Shared/1.0.0": {
       "type": "project",

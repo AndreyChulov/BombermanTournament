@@ -1,7 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using Bots.Bomberman.DumbBot;
-using Core.Network;
 
 Console.WriteLine("Press Enter to close bot client");
 

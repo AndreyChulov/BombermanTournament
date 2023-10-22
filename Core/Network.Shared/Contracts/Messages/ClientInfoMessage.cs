@@ -10,19 +10,23 @@ public class ClientInfoMessage : BaseMessage
 
     public ClientInfoMessage()
     {
+        DevelopedForGame = "unknown";
         Nickname = "unknown";
         StrategyDescription = "unknown";
         IsDebugMode = false;
     }
     
-    private ClientInfoMessage(string nickname, string strategyDescription, bool isDebugMode)
+    protected ClientInfoMessage(
+        string nickname, string strategyDescription, bool isDebugMode, string developedForGame)
     {
         Message = MessageString;
         Nickname = nickname;
         StrategyDescription = strategyDescription;
         IsDebugMode = isDebugMode;
+        DevelopedForGame = developedForGame;
     }
     
-    public static ClientInfoMessage Initialize(string nickname, string strategyDescription, bool isDebugMode) => 
-        new ClientInfoMessage(nickname, strategyDescription, isDebugMode);
+    public static ClientInfoMessage Initialize(
+        string nickname, string strategyDescription, bool isDebugMode, string developedForGame) =>
+            new(nickname, strategyDescription, isDebugMode, developedForGame);
 }
