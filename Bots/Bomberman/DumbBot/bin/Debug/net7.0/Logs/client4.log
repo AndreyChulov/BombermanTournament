@@ -1,5 +1,5 @@
-[1:55:01] -> [NetworkClient] ->OnMessageReceivedAction set.
-[1:55:01] -> [ClientLocatorService] ->Client locator service started
-[1:55:05] -> [ClientLocatorService] ->Client locator service stopped
-[1:55:07] -> [ClientService] ->Message sent:
+[1:59:36] -> [NetworkClient] ->OnMessageReceivedAction set.
+[1:59:36] -> [ClientLocatorService] ->Client locator service started
+[1:59:40] -> [ClientLocatorService] ->Client locator service stopped
+[1:59:42] -> [ClientService] ->Message sent:
 {"Nickname":"Player 1","StrategyDescription":"No strategy","DevelopedForGame":"Bomberman","IsDebugMode":true,"Message":"ClientInfo"}

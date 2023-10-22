@@ -26,7 +26,7 @@ public partial class TournamentServerFormControl : UserControl
 
     private void BtnStartTournament_OnClick(object sender, RoutedEventArgs e)
     {
-        Server.StartServer();
+        Server.StartTournament();
     }
 
     private void TournamentServerFormControl_OnLoaded(object sender, RoutedEventArgs e)
