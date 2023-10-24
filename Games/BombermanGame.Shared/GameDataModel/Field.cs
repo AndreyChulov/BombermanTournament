@@ -8,8 +8,9 @@ namespace Games.BombermanGame.Shared.GameDataModel
 {
     public class Field
     {
-        private readonly int _fieldWidth;
-        private readonly int _fieldHeight;
+        public int FieldWidth { get; }
+        public int FieldHeight { get; }
+        
         private readonly FieldItemEnum[][] _field;
 
         public FieldItemEnum[][] GetFieldCloned() =>
@@ -19,19 +20,19 @@ namespace Games.BombermanGame.Shared.GameDataModel
         
         public Field(int fieldWidth, int fieldHeight)
         {
-            _fieldWidth = fieldWidth;
-            _fieldHeight = fieldHeight;
+            FieldWidth = fieldWidth;
+            FieldHeight = fieldHeight;
             
             _field = CreateField();
         }
 
         private FieldItemEnum[][] CreateField()
         {
-            FieldItemEnum[][] field = new FieldItemEnum[_fieldHeight][];
+            FieldItemEnum[][] field = new FieldItemEnum[FieldHeight][];
 
-            for (int count = 0; count < _fieldHeight; count++)
+            for (int count = 0; count < FieldHeight; count++)
             {
-                field[count] = new FieldItemEnum[_fieldWidth];
+                field[count] = new FieldItemEnum[FieldWidth];
             }
 
             return field;
@@ -39,7 +40,7 @@ namespace Games.BombermanGame.Shared.GameDataModel
 
         public FieldItemEnum? GetDownFieldItem(IPositionItem currentPosition)
         {
-            if (currentPosition.Y + 1 == _fieldHeight)
+            if (currentPosition.Y + 1 == FieldHeight)
             {
                 return null;
             }
@@ -69,7 +70,7 @@ namespace Games.BombermanGame.Shared.GameDataModel
         
         public FieldItemEnum? GetRightFieldItem(IPositionItem currentPosition)
         {
-            if (currentPosition.X + 1 == _fieldWidth)
+            if (currentPosition.X + 1 == FieldWidth)
             {
                 return null;
             }
@@ -89,16 +90,16 @@ namespace Games.BombermanGame.Shared.GameDataModel
         
         public void SetFieldCell(int lineIndex, int columnIndex, FieldItemEnum cell)
         {
-            if (lineIndex < 0 || lineIndex >= _fieldHeight)
+            if (lineIndex < 0 || lineIndex >= FieldHeight)
             {
                 throw new ArgumentException(
-                    $"{nameof(lineIndex)} should be in range [0, {_fieldHeight - 1}] but equal to {lineIndex}");
+                    $"{nameof(lineIndex)} should be in range [0, {FieldHeight - 1}] but equal to {lineIndex}");
             }
 
-            if (columnIndex < 0 || columnIndex >= _fieldWidth)
+            if (columnIndex < 0 || columnIndex >= FieldWidth)
             {
                 throw new ArgumentException(
-                    $"{nameof(columnIndex)} should be in range [0, {_fieldWidth - 1}] but equal to {columnIndex}");
+                    $"{nameof(columnIndex)} should be in range [0, {FieldWidth - 1}] but equal to {columnIndex}");
                 
             }
 
@@ -167,9 +168,9 @@ namespace Games.BombermanGame.Shared.GameDataModel
 
         public T? EnumerateField<T>(FieldEnumeratorDelegate<T> fieldEnumeratorDelegate) where T:struct
         {
-            for (int rowIndex = 0; rowIndex < _fieldHeight; rowIndex++)
+            for (int rowIndex = 0; rowIndex < FieldHeight; rowIndex++)
             {
-                for (int columnIndex = 0; columnIndex < _fieldWidth; columnIndex++)
+                for (int columnIndex = 0; columnIndex < FieldWidth; columnIndex++)
                 {
                     var result = fieldEnumeratorDelegate
                         .Invoke(rowIndex, columnIndex, _field[rowIndex][columnIndex]);

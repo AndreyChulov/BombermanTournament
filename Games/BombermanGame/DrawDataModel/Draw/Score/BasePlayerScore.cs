@@ -11,7 +11,7 @@ namespace Games.BombermanGame.DrawDataModel.Draw.Score
 {
     public abstract class BasePlayerScore : TextWithShadow
     {
-        protected override string LinkedResourceName => "BombermanGame.Score.BasePlayerScore";
+        protected override string LinkedResourceName => "Game.BombermanGame.Score.BasePlayerScore";
         protected override int LinkedResourceGroupId => SystemTextWithShadowResource.ResourceGroupId;
 
         protected new float FontSize { get; }

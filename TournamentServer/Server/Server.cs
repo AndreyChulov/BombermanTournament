@@ -7,6 +7,7 @@ using Core.Network.Shared.Contracts;
 using Core.Network.Shared.Enums;
 using Core.Network.Shared.Interfaces;
 using Games.BombermanGame;
+using Games.BombermanGame.NetworkGame;
 using TournamentServer.Shared;
 using TournamentServer.Shared.Utilities;
 

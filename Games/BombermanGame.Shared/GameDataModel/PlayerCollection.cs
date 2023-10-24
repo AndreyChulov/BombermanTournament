@@ -8,6 +8,8 @@ namespace Games.BombermanGame.Shared.GameDataModel
         public IPlayer Player2 { get; }
         public IPlayer Player3 { get; }
         public IPlayer Player4 { get; }
+
+        private readonly Random _randomizer = new();
         
         public PlayerCollection(IPlayer player1, IPlayer player2, IPlayer player3, IPlayer player4)
         {
@@ -16,6 +18,15 @@ namespace Games.BombermanGame.Shared.GameDataModel
             Player3 = player3;
             Player4 = player4;
         }
+        
+        public PlayerCollection(IPlayer[] players)
+        {
+            players = MixPlayers(players);
+            Player1 = players[0];
+            Player2 = players[1];
+            Player3 = players[2];
+            Player4 = players[3];
+        }
 
         public int GetCurrentPlayerIndex(IPlayer currentPlayer)
         {
@@ -23,6 +34,22 @@ namespace Games.BombermanGame.Shared.GameDataModel
                 currentPlayer == Player1 ? 0 :
                 currentPlayer == Player2 ? 1 :
                 currentPlayer == Player3 ? 2 : 3;
+        }
+        
+        private IPlayer[] MixPlayers(IPlayer[] players)
+        {
+            List<KeyValuePair<IPlayer, int>> playerLottery = new List<KeyValuePair<IPlayer, int>>
+            {
+                new(players[0], _randomizer.Next(100)),
+                new(players[1], _randomizer.Next(100)),
+                new(players[2], _randomizer.Next(100)),
+                new(players[3], _randomizer.Next(100)),
+            };
+            
+            return playerLottery
+                    .OrderBy(x=>x.Value)
+                    .Select(x => x.Key)
+                    .ToArray();
         }
     }
 }

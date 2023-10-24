@@ -1,7 +1,7 @@
 using Games.BombermanGame.Shared.Enums;
 using Games.BombermanGame.Shared.GameDataModel;
 
-namespace Games.BombermanGame;
+namespace Games.BombermanGame.NetworkGame;
 
 public class LevelGenerator
 {

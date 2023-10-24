@@ -8,7 +8,7 @@ namespace Games.BombermanGame.DrawDataModel.Draw
     {
         protected override string LinkedResourceName => "BombermanGame.Background";
         protected override string EmbeddedImageResourceName => 
-            "BombermanGame.EmbeddedResources.background.png";
+            "Games.BombermanGame.EmbeddedResources.background.png";
 
         public static Background Create(IEngine engine)
         {

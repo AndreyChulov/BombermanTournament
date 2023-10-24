@@ -6,7 +6,7 @@ namespace Games.BombermanGame.DrawDataModel.Draw.Score
 {
     public class Player1Score : BasePlayerScore
     {
-        protected override string LinkedResourceName => "BombermanGame.Score.Player1Score";
+        protected override string LinkedResourceName => "Game.BombermanGame.Score.Player1Score";
         protected override int LinkedResourceGroupId => SystemTextWithShadowResource.ResourceGroupId;
         protected override int PlayerNubmer => 1;
 

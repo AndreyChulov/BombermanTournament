@@ -4,7 +4,7 @@ using Games.BombermanGame.Shared.Enums;
 using Games.BombermanGame.Shared.Interfaces;
 using TournamentServer.Shared;
 
-namespace Games.BombermanGame;
+namespace Games.BombermanGame.NetworkGame;
 
 public class BombermanNetworkBot : IPlayer
 {

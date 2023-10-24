@@ -13,7 +13,7 @@ namespace Games.BombermanGame.DrawDataModel.Draw.Field
     public class Field :BaseDraw
     {
         protected override string LinkedResourceName => "BombermanGame.Field";
-        protected override int LinkedResourceGroupId => FieldItem.ResourceGroupId;
+        protected override int LinkedResourceGroupId => FieldResource.ResourceGroupId;
 
         private ID2D1Bitmap? _fieldBackgroundBitmap;
         private ID2D1Bitmap? _indestructibleFieldBitmap;
@@ -75,29 +75,29 @@ namespace Games.BombermanGame.DrawDataModel.Draw.Field
 
         protected override void SetRamResource(IRamResource resource)
         {
-            FieldItem fieldItem = (FieldItem)resource;
+            FieldResource fieldResource = (FieldResource)resource;
             
-            _fieldBackgroundBitmap = (ID2D1Bitmap) (fieldItem.FieldBackgroundBitmapResource.Resource);
-            _indestructibleFieldBitmap = (ID2D1Bitmap) (fieldItem.IndestructibleFieldBitmapResource.Resource);
-            _destructibleFieldBitmap = (ID2D1Bitmap) (fieldItem.DestructibleFieldBitmapResource.Resource);
-            _player1StartPointBitmap = (ID2D1Bitmap) (fieldItem.Player1StartPoint.Resource);
-            _player2StartPointBitmap = (ID2D1Bitmap) (fieldItem.Player2StartPoint.Resource);
-            _player3StartPointBitmap = (ID2D1Bitmap) (fieldItem.Player3StartPoint.Resource);
-            _player4StartPointBitmap = (ID2D1Bitmap) (fieldItem.Player4StartPoint.Resource);
-            _bombBitmap = (ID2D1Bitmap) (fieldItem.Bomb.Resource);
-            _player1Bitmap = (ID2D1Bitmap) (fieldItem.Player1.Resource);
-            _player2Bitmap = (ID2D1Bitmap) (fieldItem.Player2.Resource);
-            _player3Bitmap = (ID2D1Bitmap) (fieldItem.Player3.Resource);
-            _player4Bitmap = (ID2D1Bitmap) (fieldItem.Player4.Resource);
-            _nicknameForegroundBrush = (ID2D1Brush) (fieldItem.NicknameForegroundBrushResource.Resource);
-            _nicknameTextFormat = (IDWriteTextFormat) (fieldItem.NicknameTextFormatResource.Resource);
-            _nicknameShadowBrush = (ID2D1Brush) (fieldItem.NicknameShadowBrushResource.Resource);
+            _fieldBackgroundBitmap = (ID2D1Bitmap) (fieldResource.FieldBackgroundBitmapResource.Resource);
+            _indestructibleFieldBitmap = (ID2D1Bitmap) (fieldResource.IndestructibleFieldBitmapResource.Resource);
+            _destructibleFieldBitmap = (ID2D1Bitmap) (fieldResource.DestructibleFieldBitmapResource.Resource);
+            _player1StartPointBitmap = (ID2D1Bitmap) (fieldResource.Player1StartPoint.Resource);
+            _player2StartPointBitmap = (ID2D1Bitmap) (fieldResource.Player2StartPoint.Resource);
+            _player3StartPointBitmap = (ID2D1Bitmap) (fieldResource.Player3StartPoint.Resource);
+            _player4StartPointBitmap = (ID2D1Bitmap) (fieldResource.Player4StartPoint.Resource);
+            _bombBitmap = (ID2D1Bitmap) (fieldResource.Bomb.Resource);
+            _player1Bitmap = (ID2D1Bitmap) (fieldResource.Player1.Resource);
+            _player2Bitmap = (ID2D1Bitmap) (fieldResource.Player2.Resource);
+            _player3Bitmap = (ID2D1Bitmap) (fieldResource.Player3.Resource);
+            _player4Bitmap = (ID2D1Bitmap) (fieldResource.Player4.Resource);
+            _nicknameForegroundBrush = (ID2D1Brush) (fieldResource.NicknameForegroundBrushResource.Resource);
+            _nicknameTextFormat = (IDWriteTextFormat) (fieldResource.NicknameTextFormatResource.Resource);
+            _nicknameShadowBrush = (ID2D1Brush) (fieldResource.NicknameShadowBrushResource.Resource);
         }
         
         protected override IRamResource CreateIRamResource(
             ID2D1HwndRenderTarget renderTarget, IDWriteFactory directWriteFactory)
         {
-            FieldItem fieldItem = new(
+            FieldResource fieldResource = new(
                 LinkedResourceName,
                 FieldBackground.CreateBitmapResource(LinkedResourceName, renderTarget),
                 IndestructibleCell.CreateBitmapResource(LinkedResourceName, renderTarget),
@@ -116,7 +116,7 @@ namespace Games.BombermanGame.DrawDataModel.Draw.Field
                 NicknameCell.CreateShadowBrushResource(LinkedResourceName, renderTarget)
             );
 
-            return fieldItem;
+            return fieldResource;
         }
         
         public override void Draw(ID2D1HwndRenderTarget renderTarget)

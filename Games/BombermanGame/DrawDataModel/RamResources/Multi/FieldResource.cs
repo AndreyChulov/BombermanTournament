@@ -3,7 +3,7 @@ using Core.Engine.Shared.Objects.GraphicEngine.RamResources.Single;
 
 namespace Games.BombermanGame.DrawDataModel.RamResources.Multi
 {
-    public class FieldItem :BaseRamMultiResource
+    public class FieldResource :BaseRamMultiResource
     {
         public static int ResourceGroupId = 2000;
 
@@ -28,7 +28,7 @@ namespace Games.BombermanGame.DrawDataModel.RamResources.Multi
         
         public override int GetResourceGroupId() => ResourceGroupId;
 
-        public FieldItem(
+        public FieldResource(
             string resourceName, 
             BitmapResource fieldBackgroundBitmapResource,
             BitmapResource indestructibleFieldBitmapResource, 

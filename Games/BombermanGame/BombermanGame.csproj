@@ -18,11 +18,15 @@
       <Compile Update="BombermanGameForm.cs">
         <SubType>Form</SubType>
       </Compile>
+      <Compile Update="BombermanNetworkGameForm.cs">
+        <SubType>Form</SubType>
+      </Compile>
     </ItemGroup>
 
 
     <ItemGroup>
       <Folder Include="DrawDataModel\RamResources\Single" />
+      <Folder Include="NetworkGame\DrawDataModel\Field\" />
     </ItemGroup>
 
 
