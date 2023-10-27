@@ -1,13 +1,20 @@
 using Core.Engine.Shared.Interfaces;
 using Core.Engine.Shared.Interfaces.GraphicEngine.RamResources;
 using Core.Engine.Shared.Objects.GraphicEngine.Draw;
-using Games.BombermanGame.DrawDataModel.Draw.Field;
-using Games.BombermanGame.DrawDataModel.Draw.Field.Cell;
-using Games.BombermanGame.DrawDataModel.RamResources.Multi;
+using Games.BombermanGame.ObsoleteGame.DrawDataModel.Draw.Field;
+using Games.BombermanGame.ObsoleteGame.DrawDataModel.Draw.Field.Cell;
+using Games.BombermanGame.ObsoleteGame.DrawDataModel.RamResources.Multi;
+using Games.BombermanGame.NetworkGame.DrawDataModel.DrawableFieldObjects;
+using Games.BombermanGame.NetworkGame.DrawDataModel.DrawableFieldObjects.Players;
 using Games.BombermanGame.Shared.Enums;
+using Games.BombermanGame.Shared.Extensions;
 using Games.BombermanGame.Shared.GameDataModel;
 using Vortice.Direct2D1;
 using Vortice.DirectWrite;
+using BombCell = Games.BombermanGame.NetworkGame.DrawDataModel.DrawableFieldObjects.BombCell;
+using DestructibleCell = Games.BombermanGame.NetworkGame.DrawDataModel.DrawableFieldObjects.DestructibleCell;
+using FieldBackground = Games.BombermanGame.NetworkGame.DrawDataModel.DrawableFieldObjects.FieldBackground;
+using IndestructibleCell = Games.BombermanGame.NetworkGame.DrawDataModel.DrawableFieldObjects.IndestructibleCell;
 
 namespace Games.BombermanGame.NetworkGame.DrawDataModel;
 
@@ -16,8 +23,8 @@ namespace Games.BombermanGame.NetworkGame.DrawDataModel;
         protected override string LinkedResourceName => "BombermanNetworkGame.Field";
         protected override int LinkedResourceGroupId => FieldResource.ResourceGroupId;
 
-        private ID2D1Bitmap? _fieldBackgroundBitmap;
-        private ID2D1Bitmap? _indestructibleFieldBitmap;
+        //private ID2D1Bitmap? _fieldBackgroundBitmap;
+        /*private ID2D1Bitmap? _indestructibleFieldBitmap;
         private ID2D1Bitmap? _destructibleFieldBitmap;
         private ID2D1Bitmap? _player1StartPointBitmap;
         private ID2D1Bitmap? _player2StartPointBitmap;
@@ -30,17 +37,20 @@ namespace Games.BombermanGame.NetworkGame.DrawDataModel;
         private ID2D1Bitmap? _player4Bitmap;
         private IDWriteTextFormat? _nicknameTextFormat;
         private ID2D1Brush? _nicknameForegroundBrush;
-        private ID2D1Brush? _nicknameShadowBrush;
+        private ID2D1Brush? _nicknameShadowBrush;*/
+        private FieldResource _fieldResource;
 
         private readonly BombermanNetworkGame _game;
-        private readonly FieldItemEnum[][] _fieldItems;
+        //private readonly FieldItemEnum[][] _fieldItems;
         private readonly RectangleF _targetRectangle;
         //private readonly PlayerInfoCollection _playerInfoCollection;
         //private readonly int _fieldItemsWidth;
         //private readonly int _fieldItemsHeight;
         private readonly float _nicknameFontSize;
 
-        private FieldCellsGrid _fieldCellsGrid;
+        private readonly FieldCellsGrid _fieldCellsGrid;
+        private List<IDrawableFieldObject> _drawableFieldObjects = new List<IDrawableFieldObject>();
+
         //private Game
 
         public static Field Create(IEngine engine, BombermanNetworkGame game)
@@ -69,7 +79,8 @@ namespace Games.BombermanGame.NetworkGame.DrawDataModel;
             /*PlayerInfoCollection playerInfoCollection*/)
         {
             _game = game;
-            _fieldItems = _game.Field.GetField();
+            //_fieldItems = _game.Field.GetField();
+            _game.Field.OnFieldUpdated  = Field_OnFieldUpdated;
             _targetRectangle = targetRectangle;
             //_playerInfoCollection = playerInfoCollection;
             //_fieldItemsHeight = _fieldItems.Length;
@@ -82,12 +93,109 @@ namespace Games.BombermanGame.NetworkGame.DrawDataModel;
                 _game.Field.FieldHeight);
         }
 
+        private void Field_OnFieldUpdated()
+        {
+            var drawableFieldObjects = new List<IDrawableFieldObject>();
+            AddFieldBackgroundToDrawableFieldObjects(drawableFieldObjects);
+            AddIndestructibleCellsToDrawableFieldObjects(drawableFieldObjects);
+            AddDestructibleCellsToDrawableFieldObjects(drawableFieldObjects);
+            AddPlayersToDrawableFieldObjects(drawableFieldObjects);
+            AddBombsToDrawableFieldObjects(drawableFieldObjects);
+
+            _drawableFieldObjects = drawableFieldObjects;
+            //throw new NotImplementedException();
+        }
+
+        private void AddDestructibleCellsToDrawableFieldObjects(List<IDrawableFieldObject> drawableFieldObjects)
+        {
+            _game.Field.EnumerateField((row, column, cell) =>
+            {
+                if (cell != FieldItemEnum.DestructibleField)
+                {
+                    return null;
+                }
+
+                var indestructibleCell = new DestructibleCell(_fieldCellsGrid.GetCellRectangle(column, row));
+                indestructibleCell.SetFieldResource(_fieldResource);
+                drawableFieldObjects.Add(indestructibleCell);
+
+                return (int?)null;
+            });
+        }
+
+        private void AddIndestructibleCellsToDrawableFieldObjects(List<IDrawableFieldObject> drawableFieldObjects)
+        {
+            _game.Field.EnumerateField((row, column, cell) =>
+            {
+                if (cell != FieldItemEnum.IndestructibleField)
+                {
+                    return null;
+                }
+
+                var indestructibleCell = new IndestructibleCell(_fieldCellsGrid.GetCellRectangle(column, row));
+                indestructibleCell.SetFieldResource(_fieldResource);
+                drawableFieldObjects.Add(indestructibleCell);
+
+                return (int?)null;
+            });
+        }
+
+        private void AddBombsToDrawableFieldObjects(List<IDrawableFieldObject> drawableFieldObjects)
+        {
+            _game.Field.EnumerateField((row, column, cell) =>
+            {
+                if (!cell.IsBombOnField())
+                {
+                    return null;
+                }
+
+                var bomb = new BombCell(_fieldCellsGrid.GetCellRectangle(column, row));
+                bomb.SetFieldResource(_fieldResource);
+                drawableFieldObjects.Add(bomb);
+
+                return (int?)null;
+            });
+        }
+
+        private void AddFieldBackgroundToDrawableFieldObjects(List<IDrawableFieldObject> drawableFieldObjects)
+        {
+            var fieldBackground = new FieldBackground(_targetRectangle);
+            fieldBackground.SetFieldResource(_fieldResource);
+            drawableFieldObjects.Add(fieldBackground);
+        }
+
+        private void AddPlayersToDrawableFieldObjects(List<IDrawableFieldObject> drawableFieldObjects)
+        {
+            _game.Field.EnumerateField((row, column, cell) =>
+            {
+                if (!cell.IsPlayerOnField())
+                {
+                    return null;
+                }
+
+                IDrawableFieldObject player = cell switch
+                {
+                    FieldItemEnum.Player1 => new Player1(_fieldCellsGrid.GetCellRectangle(column, row)),
+                    FieldItemEnum.Player2 => new Player2(_fieldCellsGrid.GetCellRectangle(column, row)),
+                    FieldItemEnum.Player3 => new Player3(_fieldCellsGrid.GetCellRectangle(column, row)),
+                    FieldItemEnum.Player4 => new Player4(_fieldCellsGrid.GetCellRectangle(column, row)),
+                    _ => throw new InvalidOperationException(
+                        $"Unexpected [{nameof(cell)}] value [{cell}]")
+                };
+
+                player.SetFieldResource(_fieldResource);
+                drawableFieldObjects.Add(player);
+
+                return (int?)null;
+            });
+        }
+
         protected override void SetRamResource(IRamResource resource)
         {
-            FieldResource fieldResource = (FieldResource)resource;
+            _fieldResource = (FieldResource)resource;
             
-            _fieldBackgroundBitmap = (ID2D1Bitmap) (fieldResource.FieldBackgroundBitmapResource.Resource);
-            _indestructibleFieldBitmap = (ID2D1Bitmap) (fieldResource.IndestructibleFieldBitmapResource.Resource);
+            //_fieldBackgroundBitmap = (ID2D1Bitmap) (_fieldResource.FieldBackgroundBitmapResource.Resource);
+            /*_indestructibleFieldBitmap = (ID2D1Bitmap) (fieldResource.IndestructibleFieldBitmapResource.Resource);
             _destructibleFieldBitmap = (ID2D1Bitmap) (fieldResource.DestructibleFieldBitmapResource.Resource);
             _player1StartPointBitmap = (ID2D1Bitmap) (fieldResource.Player1StartPoint.Resource);
             _player2StartPointBitmap = (ID2D1Bitmap) (fieldResource.Player2StartPoint.Resource);
@@ -100,7 +208,8 @@ namespace Games.BombermanGame.NetworkGame.DrawDataModel;
             _player4Bitmap = (ID2D1Bitmap) (fieldResource.Player4.Resource);
             _nicknameForegroundBrush = (ID2D1Brush) (fieldResource.NicknameForegroundBrushResource.Resource);
             _nicknameTextFormat = (IDWriteTextFormat) (fieldResource.NicknameTextFormatResource.Resource);
-            _nicknameShadowBrush = (ID2D1Brush) (fieldResource.NicknameShadowBrushResource.Resource);
+            _nicknameShadowBrush = (ID2D1Brush) (fieldResource.NicknameShadowBrushResource.Resource);*/
+            Field_OnFieldUpdated();
         }
         
         protected override IRamResource CreateIRamResource(
@@ -111,6 +220,19 @@ namespace Games.BombermanGame.NetworkGame.DrawDataModel;
                 FieldBackground.CreateBitmapResource(LinkedResourceName, renderTarget),
                 IndestructibleCell.CreateBitmapResource(LinkedResourceName, renderTarget),
                 DestructibleCell.CreateBitmapResource(LinkedResourceName, renderTarget),
+                FieldBackground.CreateBitmapResource(LinkedResourceName, renderTarget),
+                FieldBackground.CreateBitmapResource(LinkedResourceName, renderTarget),
+                FieldBackground.CreateBitmapResource(LinkedResourceName, renderTarget),
+                FieldBackground.CreateBitmapResource(LinkedResourceName, renderTarget),
+                BombCell.CreateBitmapResource(LinkedResourceName, renderTarget),
+                Player1.CreateBitmapResource(LinkedResourceName, renderTarget),
+                Player2.CreateBitmapResource(LinkedResourceName, renderTarget),
+                Player3.CreateBitmapResource(LinkedResourceName, renderTarget),
+                Player4.CreateBitmapResource(LinkedResourceName, renderTarget),
+                
+                
+                /*IndestructibleCell.CreateBitmapResource(LinkedResourceName, renderTarget),
+                DestructibleCell.CreateBitmapResource(LinkedResourceName, renderTarget),
                 Player1StartPointCell.CreateBitmapResource(LinkedResourceName, renderTarget),
                 Player2StartPointCell.CreateBitmapResource(LinkedResourceName, renderTarget),
                 Player3StartPointCell.CreateBitmapResource(LinkedResourceName, renderTarget),
@@ -119,7 +241,7 @@ namespace Games.BombermanGame.NetworkGame.DrawDataModel;
                 Player1Cell.CreateBitmapResource(LinkedResourceName, renderTarget),
                 Player2Cell.CreateBitmapResource(LinkedResourceName, renderTarget),
                 Player3Cell.CreateBitmapResource(LinkedResourceName, renderTarget),
-                Player4Cell.CreateBitmapResource(LinkedResourceName, renderTarget),
+                Player4Cell.CreateBitmapResource(LinkedResourceName, renderTarget),*/
                 NicknameCell.CreateTextFormatResource(LinkedResourceName, directWriteFactory, _nicknameFontSize),
                 NicknameCell.CreateForegroundBrushResource(LinkedResourceName, renderTarget),
                 NicknameCell.CreateShadowBrushResource(LinkedResourceName, renderTarget)
@@ -130,15 +252,19 @@ namespace Games.BombermanGame.NetworkGame.DrawDataModel;
         
         public override void Draw(ID2D1HwndRenderTarget renderTarget)
         {
-            BitmapCell.Draw(renderTarget, _fieldBackgroundBitmap, _targetRectangle);
-
-            _game.Field.EnumerateField((rowCounter, columnCounter, cell) =>
+            foreach (var drawableFieldObject in _drawableFieldObjects)
             {
-                var targetRectangle = _fieldCellsGrid.GetCellRectangle(columnCounter, rowCounter);
+                drawableFieldObject.Draw(renderTarget);
+            }
+            //BitmapCell.Draw(renderTarget, _fieldBackgroundBitmap, _targetRectangle);
+
+            //_game.Field.EnumerateField((rowCounter, columnCounter, cell) =>
+            {
+               // var targetRectangle = _fieldCellsGrid.GetCellRectangle(columnCounter, rowCounter);
                 
-                switch (_fieldItems[rowCounter][columnCounter])
+                //switch (_fieldItems[rowCounter][columnCounter])
                 {
-                    case FieldItemEnum.EmptyField:
+                    /*case FieldItemEnum.EmptyField:
                         break;
                     case FieldItemEnum.IndestructibleField:
                         BitmapCell.Draw(renderTarget, _indestructibleFieldBitmap, targetRectangle);
@@ -160,7 +286,7 @@ namespace Games.BombermanGame.NetworkGame.DrawDataModel;
                         break;
                     case FieldItemEnum.Bomb:
                         BitmapCell.Draw(renderTarget, _bombBitmap, targetRectangle);
-                        break;
+                        break;*/
                     /*case FieldItemEnum.Player1:
                         PlayerCell.Draw(renderTarget, targetRectangle, _player1Bitmap, 
                             _playerInfoCollection.GetPlayerInfo(0).Nickname, _nicknameFontSize, 
@@ -201,11 +327,11 @@ namespace Games.BombermanGame.NetworkGame.DrawDataModel;
                             _playerInfoCollection.GetPlayerInfo(3).Nickname, _nicknameFontSize, 
                             _nicknameForegroundBrush, _nicknameShadowBrush, _nicknameTextFormat);
                         break;*/
-                    default:
-                        break;
+                    //default:
+                    //    break;
                 }
 
-                return (int?)null;
-            });
+                //return (int?)null;
+            }//);
         }
     }

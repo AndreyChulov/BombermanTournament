@@ -1,14 +1,16 @@
 using Core.Engine.Shared.Interfaces;
 using Core.EngineFactory;
-using Games.BombermanGame.DrawDataModel.Draw;
-using Games.BombermanGame.DrawDataModel.Draw.Score;
 using Games.BombermanGame.Game;
+using Games.BombermanGame.ObsoleteGame.DrawDataModel.Draw.Score;
+using Games.BombermanGame.Shared.DrawDataModel;
 using Games.BombermanGame.Shared.GameDataModel;
 using Games.BombermanGame.Shared.Interfaces;
-using Field = Games.BombermanGame.DrawDataModel.Draw.Field.Field;
+using Field = Games.BombermanGame.ObsoleteGame.DrawDataModel.Draw.Field.Field;
 
 namespace Games.BombermanGame
 {
+
+    [Obsolete]
     public partial class BombermanGameForm : Form
     {
         private readonly IPlayer _player1;

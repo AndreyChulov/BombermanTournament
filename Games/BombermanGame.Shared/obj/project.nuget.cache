@@ -1,8 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "PPIluJ3/R+ha7BZKBap3wqEFcsqwbsdpIbNKV1Nzjc/kcZMOaTkuIfTIxoN/pPQqcD1XEWhijXl8uOUQIHDx6g==",
+  "dgSpecHash": "kpSsMWsgqzlgO7Te1fQzwnBc37qpn7uex1s9awLeqYpQKGjFaLpY1kJA3gfRiQWJlwa5l3/LpmfPKIHz1pU9AA==",
   "success": true,
   "projectFilePath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Games\\BombermanGame.Shared\\BombermanGame.Shared.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Andrey\\.nuget\\packages\\polysharp\\1.10.0\\polysharp.1.10.0.nupkg.sha512",
+    "C:\\Users\\Andrey\\.nuget\\packages\\sharpgen.runtime\\2.0.0-beta.13\\sharpgen.runtime.2.0.0-beta.13.nupkg.sha512",
+    "C:\\Users\\Andrey\\.nuget\\packages\\sharpgen.runtime.com\\2.0.0-beta.13\\sharpgen.runtime.com.2.0.0-beta.13.nupkg.sha512",
+    "C:\\Users\\Andrey\\.nuget\\packages\\vortice.direct2d1\\2.4.2\\vortice.direct2d1.2.4.2.nupkg.sha512",
+    "C:\\Users\\Andrey\\.nuget\\packages\\vortice.directx\\2.4.2\\vortice.directx.2.4.2.nupkg.sha512",
+    "C:\\Users\\Andrey\\.nuget\\packages\\vortice.dxgi\\2.4.2\\vortice.dxgi.2.4.2.nupkg.sha512",
+    "C:\\Users\\Andrey\\.nuget\\packages\\vortice.mathematics\\1.4.25\\vortice.mathematics.1.4.25.nupkg.sha512"
+  ],
   "logs": []
 }

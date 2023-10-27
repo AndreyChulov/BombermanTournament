@@ -1,15 +1,21 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <RootNamespace>Games.BombermanGame.Shared</RootNamespace>
         <AssemblyName>Games.BombermanGame.Shared</AssemblyName>
+        <TargetFramework>net7.0-windows</TargetFramework>
+        <UseWindowsForms>true</UseWindowsForms>
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\Core\Engine.Shared\Engine.Shared.csproj" />
       <ProjectReference Include="..\..\Core\Network.Shared\Network.Shared.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Include="EmbeddedResources\background.png" />
     </ItemGroup>
 
 </Project>

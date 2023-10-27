@@ -1,3 +1,5 @@
+using Games.BombermanGame.Shared.Enums;
+using Games.BombermanGame.Shared.Extensions;
 using Games.BombermanGame.Shared.GameDataModel;
 using Games.BombermanGame.Shared.Interfaces;
 using TournamentServer.Shared;
@@ -34,7 +36,26 @@ public class BombermanNetworkGame
         
         levelGenerator.FillFieldStartCells(field);
         levelGenerator.FillPlayersStartPoints(field);
+
+        SetPlayersOnField(field);
+        
+        field.SetFieldCell(5,5, FieldItemEnum.Bomb);
         
         return field;
+    }
+
+    private static void SetPlayersOnField(Field field)
+    {
+        field.EnumerateField((row, column, cell) =>
+        {
+            if (!cell.IsPlayerStartPointOnField())
+            {
+                return null;
+            }
+
+            field.SetFieldCell(row, column, cell.GetPlayerFromStartPoint());
+
+            return (int?)null;
+        });
     }
 }

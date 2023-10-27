@@ -4,6 +4,68 @@
     "Z:\\Мой диск\\GitHub\\BombermanTournament\\Games\\BombermanGame.Shared\\BombermanGame.Shared.csproj": {}
   },
   "projects": {
+    "Z:\\Мой диск\\GitHub\\BombermanTournament\\Core\\Engine.Shared\\Engine.Shared.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Core\\Engine.Shared\\Engine.Shared.csproj",
+        "projectName": "Core.Engine.Shared",
+        "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Core\\Engine.Shared\\Engine.Shared.csproj",
+        "packagesPath": "C:\\Users\\Andrey\\.nuget\\packages\\",
+        "outputPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Core\\Engine.Shared\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Andrey\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0-windows"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0-windows7.0": {
+            "targetAlias": "net7.0-windows",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0-windows7.0": {
+          "targetAlias": "net7.0-windows",
+          "dependencies": {
+            "Vortice.Direct2D1": {
+              "target": "Package",
+              "version": "[2.4.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "Z:\\Мой диск\\GitHub\\BombermanTournament\\Core\\Network.Shared\\Network.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -70,15 +132,18 @@
           "C:\\Users\\Andrey\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net7.0"
+          "net7.0-windows"
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net7.0": {
-            "targetAlias": "net7.0",
+          "net7.0-windows7.0": {
+            "targetAlias": "net7.0-windows",
             "projectReferences": {
+              "Z:\\Мой диск\\GitHub\\BombermanTournament\\Core\\Engine.Shared\\Engine.Shared.csproj": {
+                "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Core\\Engine.Shared\\Engine.Shared.csproj"
+              },
               "Z:\\Мой диск\\GitHub\\BombermanTournament\\Core\\Network.Shared\\Network.Shared.csproj": {
                 "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Core\\Network.Shared\\Network.Shared.csproj"
               }
@@ -92,8 +157,8 @@
         }
       },
       "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
+        "net7.0-windows7.0": {
+          "targetAlias": "net7.0-windows",
           "imports": [
             "net461",
             "net462",
@@ -108,6 +173,9 @@
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"

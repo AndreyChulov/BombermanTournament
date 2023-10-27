@@ -75,7 +75,35 @@ namespace Games.BombermanGame.Shared.Extensions
                     return false;
             }
         }
-        
+
+        public static bool IsPlayerStartPointOnField(this FieldItemEnum fieldItemEnum)
+        {
+            switch (fieldItemEnum)
+            {
+                case FieldItemEnum.Player1StartPoint:
+                case FieldItemEnum.Player2StartPoint:
+                case FieldItemEnum.Player3StartPoint:
+                case FieldItemEnum.Player4StartPoint:
+                    return true;
+                default:
+                    return false;
+            }
+        }
+
+        public static bool IsPlayerOnField(this FieldItemEnum fieldItemEnum)
+        {
+            switch (fieldItemEnum)
+            {
+                case FieldItemEnum.Player1:
+                case FieldItemEnum.Player2:
+                case FieldItemEnum.Player3:
+                case FieldItemEnum.Player4:
+                    return true;
+                default:
+                    return false;
+            }
+        }
+
         /// <summary>
         /// 0 => FieldItemEnum.Player1StartPoint<br/>
         /// 1 => FieldItemEnum.Player2StartPoint<br/>
@@ -96,7 +124,7 @@ namespace Games.BombermanGame.Shared.Extensions
             };
         }        
         
-        public static FieldItemEnum GetStartPointRelatedPlayer(this FieldItemEnum playerStartPoint)
+        public static FieldItemEnum GetPlayerFromStartPoint(this FieldItemEnum playerStartPoint)
         {
             return playerStartPoint switch
             {

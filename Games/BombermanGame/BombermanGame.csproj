@@ -25,21 +25,10 @@
 
 
     <ItemGroup>
-      <Folder Include="DrawDataModel\RamResources\Single" />
-      <Folder Include="NetworkGame\DrawDataModel\Field\" />
-    </ItemGroup>
-
-
-    <ItemGroup>
       <ProjectReference Include="..\..\Core\Engine.Shared\Engine.Shared.csproj" />
       <ProjectReference Include="..\..\Core\EngineFactory\EngineFactory.csproj" />
       <ProjectReference Include="..\..\TournamentServer.Shared\TournamentServer.Shared.csproj" />
       <ProjectReference Include="..\BombermanGame.Shared\BombermanGame.Shared.csproj" />
-    </ItemGroup>
-
-
-    <ItemGroup>
-      <EmbeddedResource Include="EmbeddedResources\background.png" />
     </ItemGroup>
 
 

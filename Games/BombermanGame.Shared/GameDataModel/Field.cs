@@ -17,6 +17,8 @@ namespace Games.BombermanGame.Shared.GameDataModel
             _field.Select(x => (FieldItemEnum[]) x.Clone()).ToArray();
 
         public FieldItemEnum[][] GetField() => _field;
+
+        public Action? OnFieldUpdated { private get; set; } = null;
         
         public Field(int fieldWidth, int fieldHeight)
         {
@@ -110,6 +112,8 @@ namespace Games.BombermanGame.Shared.GameDataModel
             }
 
             _field[lineIndex][columnIndex] = cell;
+            
+            OnFieldUpdated?.Invoke();
         }
 
         private bool CheckFieldForDuplicateUsers(int lineIndex, int columnIndex, FieldItemEnum cell)
@@ -159,7 +163,7 @@ namespace Games.BombermanGame.Shared.GameDataModel
                     return (Point?)null;
                 }
                 
-                _field[rowIndex][columnIndex] = itemToSearch.GetStartPointRelatedPlayer();
+                _field[rowIndex][columnIndex] = itemToSearch.GetPlayerFromStartPoint();
                 
                 return new Point(columnIndex, rowIndex);
 

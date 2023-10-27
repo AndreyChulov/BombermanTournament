@@ -1,10 +1,8 @@
 using Core.Engine.Shared.Interfaces;
 using Core.EngineFactory;
-using Games.BombermanGame.DrawDataModel.Draw;
-using Games.BombermanGame.DrawDataModel.Draw.Score;
 using Games.BombermanGame.NetworkGame;
+using Games.BombermanGame.Shared.DrawDataModel;
 using Games.BombermanGame.Shared.GameDataModel;
-using Field = Games.BombermanGame.DrawDataModel.Draw.Field.Field;
 
 namespace Games.BombermanGame;
 
@@ -28,7 +26,7 @@ public partial class BombermanNetworkGameForm : Form
         _engine = EngineFactory.CreateEngine(this, 2f);
         _engine.LoadDrawObject(Background.Create(_engine));
         _engine.LoadDrawObject(FpsMeter.Create(_engine));
-        //_engine.LoadDrawObject(Field.Create(_engine, _game));
+        _engine.LoadDrawObject(NetworkGame.DrawDataModel.Field.Create(_engine, _game));
         //_engine.LoadDrawObject(Player1Score.Create(_engine, _game.PlayerInfoCollection.Player1Info));
         //_engine.LoadDrawObject(Player2Score.Create(_engine, _game.PlayerInfoCollection.Player2Info));
         //_engine.LoadDrawObject(Player3Score.Create(_engine, _game.PlayerInfoCollection.Player3Info));
