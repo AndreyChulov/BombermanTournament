@@ -4,6 +4,7 @@ namespace Games.BombermanGame.Shared.Interfaces
     {
         int Score { get; }
         string Nickname { get; }
+        Action? OnScoreUpdated { set; }
 
         void BlowUpPlayer();
         void PlayerBlowUpDestroyableCell();

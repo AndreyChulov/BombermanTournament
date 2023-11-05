@@ -1,4 +1,6 @@
+using Games.BombermanGame.Shared.DrawDataModel;
 using Games.BombermanGame.Shared.DrawDataModel.Field.Cell;
+using Games.BombermanGame.Shared.DrawDataModel.Helpers;
 using Vortice.Direct2D1;
 using Vortice.DirectWrite;
 
@@ -20,7 +22,7 @@ public class PlayerCell
             return;
         }
         
-        BitmapCell.Draw(renderTarget, playerBitmap, targetRectangle);
+        BitmapDrawHelper.Draw(renderTarget, playerBitmap, targetRectangle);
         renderTarget.DrawText(
             nickname,
             nicknameTextFormat,

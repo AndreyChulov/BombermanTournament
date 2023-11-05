@@ -1,13 +1,18 @@
 using Core.Engine.Shared.Interfaces;
 using Core.Engine.Shared.Interfaces.GraphicEngine.RamResources;
 using Core.Engine.Shared.Objects.GraphicEngine.Draw;
+using Games.BombermanGame.Shared.DrawDataModel.Field;
 using Games.BombermanGame.ObsoleteGame.DrawDataModel.Draw.Field.Cell;
-using Games.BombermanGame.ObsoleteGame.DrawDataModel.RamResources.Multi;
+using Games.BombermanGame.Shared.DrawDataModel;
 using Games.BombermanGame.Shared.DrawDataModel.Field.Cell;
+using Games.BombermanGame.Shared.DrawDataModel.Helpers;
 using Games.BombermanGame.Shared.Enums;
 using Games.BombermanGame.Shared.GameDataModel;
+using Games.BombermanGame.Shared.GameDataModel.Player;
+using Games.BombermanGame.Shared.RamResources.Multi;
 using Vortice.Direct2D1;
 using Vortice.DirectWrite;
+using PlayerCell = Games.BombermanGame.ObsoleteGame.DrawDataModel.Draw.Field.Cell.PlayerCell;
 
 namespace Games.BombermanGame.ObsoleteGame.DrawDataModel.Draw.Field
 {
@@ -123,7 +128,7 @@ namespace Games.BombermanGame.ObsoleteGame.DrawDataModel.Draw.Field
         
         public override void Draw(ID2D1HwndRenderTarget renderTarget)
         {
-            BitmapCell.Draw(renderTarget, _fieldBackgroundBitmap, _targetRectangle);
+            BitmapDrawHelper.Draw(renderTarget, _fieldBackgroundBitmap, _targetRectangle);
             
             for (int rowCounter = 0; rowCounter < _fieldItemsHeight; rowCounter++)
             {
@@ -136,25 +141,25 @@ namespace Games.BombermanGame.ObsoleteGame.DrawDataModel.Draw.Field
                         case FieldItemEnum.EmptyField:
                             break;
                         case FieldItemEnum.IndestructibleField:
-                            BitmapCell.Draw(renderTarget, _indestructibleFieldBitmap, targetRectangle);
+                            BitmapDrawHelper.Draw(renderTarget, _indestructibleFieldBitmap, targetRectangle);
                             break;
                         case FieldItemEnum.DestructibleField:
-                            BitmapCell.Draw(renderTarget, _destructibleFieldBitmap, targetRectangle);
+                            BitmapDrawHelper.Draw(renderTarget, _destructibleFieldBitmap, targetRectangle);
                             break;
                         case FieldItemEnum.Player1StartPoint:
-                            BitmapCell.Draw(renderTarget, _player1StartPointBitmap, targetRectangle);
+                            BitmapDrawHelper.Draw(renderTarget, _player1StartPointBitmap, targetRectangle);
                             break;
                         case FieldItemEnum.Player2StartPoint:
-                            BitmapCell.Draw(renderTarget, _player2StartPointBitmap, targetRectangle);
+                            BitmapDrawHelper.Draw(renderTarget, _player2StartPointBitmap, targetRectangle);
                             break;
                         case FieldItemEnum.Player3StartPoint:
-                            BitmapCell.Draw(renderTarget, _player3StartPointBitmap, targetRectangle);
+                            BitmapDrawHelper.Draw(renderTarget, _player3StartPointBitmap, targetRectangle);
                             break;
                         case FieldItemEnum.Player4StartPoint:
-                            BitmapCell.Draw(renderTarget, _player4StartPointBitmap, targetRectangle);
+                            BitmapDrawHelper.Draw(renderTarget, _player4StartPointBitmap, targetRectangle);
                             break;
                         case FieldItemEnum.Bomb:
-                            BitmapCell.Draw(renderTarget, _bombBitmap, targetRectangle);
+                            BitmapDrawHelper.Draw(renderTarget, _bombBitmap, targetRectangle);
                             break;
                         case FieldItemEnum.Player1:
                             PlayerCell.Draw(renderTarget, targetRectangle, _player1Bitmap, 

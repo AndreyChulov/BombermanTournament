@@ -1,7 +1,7 @@
 using Core.Engine.Shared.Objects.GraphicEngine.RamResources.Multi;
 using Core.Engine.Shared.Objects.GraphicEngine.RamResources.Single;
 
-namespace Games.BombermanGame.ObsoleteGame.DrawDataModel.RamResources.Multi
+namespace Games.BombermanGame.Shared.RamResources.Multi
 {
     public class FieldResource :BaseRamMultiResource
     {

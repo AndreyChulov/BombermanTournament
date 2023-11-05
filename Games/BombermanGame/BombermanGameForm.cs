@@ -4,6 +4,7 @@ using Games.BombermanGame.Game;
 using Games.BombermanGame.ObsoleteGame.DrawDataModel.Draw.Score;
 using Games.BombermanGame.Shared.DrawDataModel;
 using Games.BombermanGame.Shared.GameDataModel;
+using Games.BombermanGame.Shared.GameDataModel.Player;
 using Games.BombermanGame.Shared.Interfaces;
 using Field = Games.BombermanGame.ObsoleteGame.DrawDataModel.Draw.Field.Field;
 

@@ -1,8 +1,13 @@
 using System.Reflection;
 using Core.Engine.Shared.Objects.GraphicEngine;
 using Core.Engine.Shared.Objects.GraphicEngine.RamResources.Single;
-using Games.BombermanGame.ObsoleteGame.DrawDataModel.RamResources.Multi;
+using Games.BombermanGame.Shared.DrawDataModel;
+using Games.BombermanGame.Shared.DrawDataModel.Field;
 using Games.BombermanGame.Shared.DrawDataModel.Field.Cell;
+using Games.BombermanGame.Shared.DrawDataModel.Helpers;
+using Games.BombermanGame.Shared.Interfaces;
+using Games.BombermanGame.Shared.Interfaces.DrawableObject;
+using Games.BombermanGame.Shared.RamResources.Multi;
 using Vortice.Direct2D1;
 
 namespace Games.BombermanGame.NetworkGame.DrawDataModel.DrawableFieldObjects;
@@ -35,6 +40,6 @@ public class DestructibleCell : IDrawableFieldObject
 
     public void Draw(ID2D1HwndRenderTarget renderTarget)
     {
-        BitmapCell.Draw(renderTarget, _destructibleCellBitmap, DrawRectangle);
+        BitmapDrawHelper.Draw(renderTarget, _destructibleCellBitmap, DrawRectangle);
     }
 }

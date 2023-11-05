@@ -1,4 +1,6 @@
+using Games.BombermanGame.Shared.DrawDataModel;
 using Games.BombermanGame.Shared.DrawDataModel.Field.Cell;
+using Games.BombermanGame.Shared.DrawDataModel.Helpers;
 using Vortice.Direct2D1;
 using Vortice.DirectWrite;
 
@@ -14,7 +16,7 @@ public class PlayerWithBombCell
         ID2D1Brush? nicknameForegroundBrush, ID2D1Brush? nicknameShadowBrush, 
         IDWriteTextFormat? nicknameTextFormat)
     {
-        BitmapCell.Draw(renderTarget, bombBitmap, targetRectangle);
+        BitmapDrawHelper.Draw(renderTarget, bombBitmap, targetRectangle);
         PlayerCell.Draw(renderTarget, targetRectangle, 
             playerBitmap, nickname, nicknameFontSize, 
             nicknameForegroundBrush, nicknameShadowBrush, nicknameTextFormat);

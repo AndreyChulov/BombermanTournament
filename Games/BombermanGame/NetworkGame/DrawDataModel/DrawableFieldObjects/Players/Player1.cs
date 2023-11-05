@@ -1,22 +1,16 @@
 using System.Reflection;
 using Core.Engine.Shared.Objects.GraphicEngine;
 using Core.Engine.Shared.Objects.GraphicEngine.RamResources.Single;
-using Games.BombermanGame.ObsoleteGame.DrawDataModel.RamResources.Multi;
-using Games.BombermanGame.Shared.DrawDataModel.Field.Cell;
+using Games.BombermanGame.Shared.DrawDataModel.Field;
+using Games.BombermanGame.Shared.Interfaces;
+using Games.BombermanGame.Shared.RamResources.Multi;
 using Vortice.Direct2D1;
 
 namespace Games.BombermanGame.NetworkGame.DrawDataModel.DrawableFieldObjects.Players;
 
-public class Player1 : IDrawableFieldObject
+public class Player1 : BasePlayer
 {
-    public RectangleF DrawRectangle { get; }
-    
-    private ID2D1Bitmap? _playerBitmap;
-    
-    public Player1(RectangleF drawRectangle)
-    {
-        DrawRectangle = drawRectangle;
-    }
+    public Player1(RectangleF drawRectangle, IPlayer player) : base (drawRectangle, player) { }
     
     public static BitmapResource CreateBitmapResource(string linkedResourceName, ID2D1HwndRenderTarget renderTarget)
     {
@@ -28,13 +22,10 @@ public class Player1 : IDrawableFieldObject
         );
     }
 
-    public void SetFieldResource(FieldResource resource)
+    public override void SetFieldResource(FieldResource resource)
     {
-        _playerBitmap = (ID2D1Bitmap)resource.Player1.Resource;
-    }
-
-    public void Draw(ID2D1HwndRenderTarget renderTarget)
-    {
-        BitmapCell.Draw(renderTarget, _playerBitmap, DrawRectangle);
+        PlayerBitmap = (ID2D1Bitmap)resource.Player1.Resource;
+        
+        base.SetFieldResource(resource);
     }
 }

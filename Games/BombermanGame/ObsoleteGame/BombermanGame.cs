@@ -2,6 +2,7 @@ using Games.BombermanGame.Shared.Enums;
 using Games.BombermanGame.Shared.GameDataModel;
 using Games.BombermanGame.Shared.Interfaces;
 using Games.BombermanGame.Shared.Extensions;
+using Games.BombermanGame.Shared.GameDataModel.Player;
 
 namespace Games.BombermanGame.Game
 {

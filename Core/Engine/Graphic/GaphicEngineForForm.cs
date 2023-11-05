@@ -41,10 +41,10 @@ namespace Core.Engine.Graphic
                 (int)(formSize.Width * dxCanvasSizeFactor), 
                 (int)(formSize.Height * dxCanvasSizeFactor)
                 );
-            _renderTimerTimeout = TimeSpan.FromMilliseconds(10);
+            _renderTimerTimeout = TimeSpan.FromMilliseconds(5);
 
             _renderTimer = new Timer(OnRender_timerCallback);
-            _renderTimer.Change(Timeout.InfiniteTimeSpan, _renderTimerTimeout);
+            _renderTimer.Change(Timeout.InfiniteTimeSpan, Timeout.InfiniteTimeSpan);
 
             HwndRenderTarget = InitialiseHwndRenderTarget();
             DirectWriteFactory = DWrite.DWriteCreateFactory<IDWriteFactory>(Vortice.DirectWrite.FactoryType.Shared);
@@ -56,6 +56,7 @@ namespace Core.Engine.Graphic
             HwndRenderTarget.Clear(new Color4(Color3.Black, 1f));
             _drawContainer.DrawAll(HwndRenderTarget);
             HwndRenderTarget.EndDraw();
+            _renderTimer.Change(_renderTimerTimeout, Timeout.InfiniteTimeSpan);
         }
 
         private ID2D1HwndRenderTarget InitialiseHwndRenderTarget()
