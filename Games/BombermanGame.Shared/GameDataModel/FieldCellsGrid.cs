@@ -1,4 +1,3 @@
-using System.Drawing;
 using Games.BombermanGame.Shared.Delegates;
 
 namespace Games.BombermanGame.Shared.GameDataModel;

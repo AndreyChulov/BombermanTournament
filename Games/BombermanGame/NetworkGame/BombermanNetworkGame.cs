@@ -9,7 +9,6 @@ namespace Games.BombermanGame.NetworkGame;
 
 public class BombermanNetworkGame
 {
-    //private BombermanNetworkBot[] _bots;
     private BombermanNetworkGameForm _form;
 
     public Field Field { get; }
@@ -27,9 +26,8 @@ public class BombermanNetworkGame
         PlayersInfo = InitializePlayersInfo();
         _form = new BombermanNetworkGameForm(this);
 
-        Task.Run(() => Application.Run(_form)); 
-        
-        //throw new NotImplementedException();
+        Task.Run(() => Application.Run(_form));
+        Parallel.ForEach(Players.Players, (player, state) => {state.});
     }
 
     private PlayerInfoCollection InitializePlayersInfo()

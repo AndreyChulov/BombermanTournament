@@ -28,6 +28,17 @@ namespace Games.BombermanGame.Shared.GameDataModel.Player
             Player4 = players[3];
         }
 
+        public IEnumerable<IPlayer> Players
+        {
+            get
+            {
+                yield return Player1;
+                yield return Player2;
+                yield return Player3;
+                yield return Player4;
+            }
+        }
+
         public int GetCurrentPlayerIndex(IPlayer currentPlayer)
         {
             return
