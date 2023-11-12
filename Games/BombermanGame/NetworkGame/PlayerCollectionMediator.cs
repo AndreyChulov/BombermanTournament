@@ -111,7 +111,10 @@ public class PlayerCollectionMediator
         _playersTurn.Clear();
         
         CancellationTokenSource cancellationTokenSource = 
-            new CancellationTokenSource(NetworkGameSettings.TurnTimeout);
+            Players.Players.Any(x=>x.IsDebugMode) ?
+                new CancellationTokenSource( ) :
+                new CancellationTokenSource(NetworkGameSettings.TurnTimeout);
+        
         var parallelOptions = new ParallelOptions
         {
             CancellationToken = cancellationTokenSource.Token

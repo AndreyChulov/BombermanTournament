@@ -1,3 +1,4 @@
+using System.Collections.ObjectModel;
 using Games.BombermanGame.Shared.Enums;
 using Games.BombermanGame.Shared.Extensions;
 using Games.BombermanGame.Shared.GameDataModel;
@@ -13,6 +14,9 @@ public class BombermanNetworkGame
     public Field Field { get; }
     public PlayerCollectionMediator PlayerCollectionMediator { get; }
 
+    private ReadOnlyDictionary<PlayerTurnEnum, Func<PlayerInfo, FieldItemEnum?>> _getFieldNextCellDictionary;
+    private ReadOnlyDictionary<PlayerTurnEnum, Action<PlayerInfo>> _movePlayerDictionary;
+
 
     public BombermanNetworkGame(IConnectedClientInfo[] clients)
     {
@@ -21,6 +25,9 @@ public class BombermanNetworkGame
         PlayerCollectionMediator.SetTurnAction(OnTurn);
         
         Field = InitializeField();
+
+        _getFieldNextCellDictionary = PopulateGetFieldNextCellDictionary();
+        _movePlayerDictionary = PopulateMovePlayerDictionary();
         
         PlayerCollectionMediator.InitializePlayersInfo(Field);
 
@@ -32,52 +39,55 @@ public class BombermanNetworkGame
         //Parallel.ForEach(Players.Players, (player, state) => {state.});
     }
 
-    private void OnTurn(Dictionary<int, PlayerTurnEnum> botCommands)
+    private static ReadOnlyDictionary<PlayerTurnEnum, Action<PlayerInfo>> PopulateMovePlayerDictionary()
     {
-        Field.EnumerateField<int>((row, column, cell) =>
+        return new(new Dictionary<PlayerTurnEnum, Action<PlayerInfo>>
         {
-            if (cell.IsPlayerOnField())
-            {
-                foreach (var (index, command) in botCommands)
-                {
-                    if (cell.IsPlayerOnField(index))
-                    {
-                        switch (command)
-                        {
-                            case PlayerTurnEnum.MoveDown:
-                                return ApplyPlayerCommand(index, cell);
-                            case PlayerTurnEnum.MoveRight:
-                            case PlayerTurnEnum.MoveLeft:
-                            case PlayerTurnEnum.MoveUp:
-                            case PlayerTurnEnum.PutBomb:
-                            case PlayerTurnEnum.None:
-                                break;
-                        }
-                    }
-                }
-            }
-            if (cell.IsPlayerOnField(Index))
-            switch (cell)
-            {
-                
-            }
+            { PlayerTurnEnum.None, _ => { } },
+            { PlayerTurnEnum.MoveDown, playerInfo => playerInfo.MoveDown() },
+            { PlayerTurnEnum.MoveRight, playerInfo => playerInfo.MoveRight() },
+            { PlayerTurnEnum.MoveLeft, playerInfo => playerInfo.MoveLeft() },
+            { PlayerTurnEnum.PutBomb, _ => { } },
+            { PlayerTurnEnum.MoveUp, playerInfo => playerInfo.MoveUp() },
         });
     }
 
-    private int? ApplyPlayerCommand(int index, FieldItemEnum cell)
+    private ReadOnlyDictionary<PlayerTurnEnum, Func<PlayerInfo, FieldItemEnum?>> PopulateGetFieldNextCellDictionary()
+    {
+        return new(new Dictionary<PlayerTurnEnum, Func<PlayerInfo, FieldItemEnum?>>
+        {
+            { PlayerTurnEnum.None, _ => null },
+            { PlayerTurnEnum.MoveRight, Field.GetRightFieldItem },
+            { PlayerTurnEnum.MoveLeft, Field.GetLeftFieldItem },
+            { PlayerTurnEnum.MoveDown, Field.GetDownFieldItem },
+            { PlayerTurnEnum.PutBomb, _ => null },
+            { PlayerTurnEnum.MoveUp, Field.GetUpFieldItem },
+        });
+    }
+
+    private void OnTurn(Dictionary<int, PlayerTurnEnum> botCommands)
+    {
+        foreach (var (index, command) in botCommands)
+        {
+            ApplyPlayerCommand(index, command);
+        }
+        
+        Field.ForceFieldUpdated();
+    }
+
+    private void ApplyPlayerCommand(int index, PlayerTurnEnum command)
     {
         var playerInfo =
             (PlayerInfo)PlayerCollectionMediator.PlayersInfo.GetPlayerInfo(index);
-        if (Field.GetDownFieldItem(playerInfo) != FieldItemEnum.EmptyField)
+        
+        if (_getFieldNextCellDictionary[command](playerInfo) != FieldItemEnum.EmptyField)
         {
-            return null;
+            return;
         }
 
-        Field.SetFieldCell(playerInfo, cell.RemovePlayerFromFieldItem());
-        playerInfo.MoveDown();
+        Field.SetFieldCell(playerInfo, Field.GetCurrentFieldItem(playerInfo).RemovePlayerFromFieldItem());
+        _movePlayerDictionary[command](playerInfo);
         Field.SetFieldCell(playerInfo, FieldItemEnum.EmptyField.GetPlayerFieldItem(index));
-
-        return null;
     }
 
 
