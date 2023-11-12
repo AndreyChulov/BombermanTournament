@@ -10,8 +10,6 @@ namespace Games.BombermanGame.Shared.GameDataModel.Player
         public IPlayerInfo Player4Info { get; }
         public IPlayerInfo[] PlayerInfos { get; }
 
-        public IPlayerInfo[] GetPlayerInfos() => PlayerInfos;
-
         public PlayerInfoCollection(
             in IPlayerInfo player1Info, IPlayerInfo player2Info, IPlayerInfo player3Info, IPlayerInfo player4Info)
         {

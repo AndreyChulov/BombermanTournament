@@ -1,8 +1,7 @@
-using Games.BombermanGame.Shared.GameDataModel;
 using Games.BombermanGame.Shared.GameDataModel.Player;
 using Games.BombermanGame.Shared.Interfaces;
 
-namespace Games.BombermanGame.Game
+namespace Games.BombermanGame.ObsoleteGame
 {
     [Obsolete]
     public abstract class BombermanGameThread

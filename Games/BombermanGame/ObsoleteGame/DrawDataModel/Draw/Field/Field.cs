@@ -47,7 +47,7 @@ namespace Games.BombermanGame.ObsoleteGame.DrawDataModel.Draw.Field
 
         private FieldCellsGrid _fieldCellsGrid;
 
-        public static Field Create(IEngine engine, global::Games.BombermanGame.Game.BombermanGame game)
+        public static Field Create(IEngine engine, global::Games.BombermanGame.ObsoleteGame.BombermanGame game)
         {
             var canvasSize = engine.GetCanvasSize();
             var canvasWidth = canvasSize.Width;

@@ -2,6 +2,7 @@ using System.Drawing;
 using Games.BombermanGame.Shared.Delegates;
 using Games.BombermanGame.Shared.Enums;
 using Games.BombermanGame.Shared.Extensions;
+using Games.BombermanGame.Shared.GameDataModel.Player;
 using Games.BombermanGame.Shared.Interfaces;
 
 namespace Games.BombermanGame.Shared.GameDataModel
@@ -112,7 +113,10 @@ namespace Games.BombermanGame.Shared.GameDataModel
             }
 
             _field[lineIndex][columnIndex] = cell;
-            
+        }
+
+        public void ForceFieldUpdated()
+        {
             OnFieldUpdated?.Invoke();
         }
 

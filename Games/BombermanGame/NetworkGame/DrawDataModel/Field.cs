@@ -46,7 +46,7 @@ namespace Games.BombermanGame.NetworkGame.DrawDataModel;
                     0.74f * canvasWidth,
                     0.74f * canvasHeight
                 ),
-                game.Players
+                game.PlayerCollectionMediator.Players
             );
         }
 

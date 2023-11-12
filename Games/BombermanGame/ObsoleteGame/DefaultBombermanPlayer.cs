@@ -1,7 +1,7 @@
 using Games.BombermanGame.Shared.Enums;
 using Games.BombermanGame.Shared.Interfaces;
 
-namespace Games.BombermanGame.Game
+namespace Games.BombermanGame.ObsoleteGame
 {
     [Obsolete]
     public class DefaultBombermanPlayer : IPlayer

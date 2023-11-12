@@ -2,7 +2,6 @@ using Games.BombermanGame.Shared.Enums;
 using Games.BombermanGame.Shared.Extensions;
 using Games.BombermanGame.Shared.GameDataModel;
 using Games.BombermanGame.Shared.GameDataModel.Player;
-using Games.BombermanGame.Shared.Interfaces;
 using TournamentServer.Shared;
 
 namespace Games.BombermanGame.NetworkGame;
@@ -12,59 +11,75 @@ public class BombermanNetworkGame
     private BombermanNetworkGameForm _form;
 
     public Field Field { get; }
-    public PlayerCollection Players { get; }
-    public PlayerInfoCollection PlayersInfo { get; }
+    public PlayerCollectionMediator PlayerCollectionMediator { get; }
+
 
     public BombermanNetworkGame(IConnectedClientInfo[] clients)
     {
-        Players = new PlayerCollection(
-            clients
-                .Select(x => new BombermanNetworkBot(x))
-                .Cast<IPlayer>()
-                .ToArray());
+        PlayerCollectionMediator = new PlayerCollectionMediator();
+        PlayerCollectionMediator.SetPlayers(clients);
+        PlayerCollectionMediator.SetTurnAction(OnTurn);
+        
         Field = InitializeField();
-        PlayersInfo = InitializePlayersInfo();
+        
+        PlayerCollectionMediator.InitializePlayersInfo(Field);
+
         _form = new BombermanNetworkGameForm(this);
 
         Task.Run(() => Application.Run(_form));
-        Parallel.ForEach(Players.Players, (player, state) => {state.});
+
+        PlayerCollectionMediator.Turn(Field);
+        //Parallel.ForEach(Players.Players, (player, state) => {state.});
     }
 
-    private PlayerInfoCollection InitializePlayersInfo()
+    private void OnTurn(Dictionary<int, PlayerTurnEnum> botCommands)
     {
-        PlayerInfo? player1Info = null;
-        PlayerInfo? player2Info = null;
-        PlayerInfo? player3Info = null;
-        PlayerInfo? player4Info = null;
-        
-        Field.EnumerateField<int>((rowIndex, columnIndex, cell) =>
+        Field.EnumerateField<int>((row, column, cell) =>
         {
+            if (cell.IsPlayerOnField())
+            {
+                foreach (var (index, command) in botCommands)
+                {
+                    if (cell.IsPlayerOnField(index))
+                    {
+                        switch (command)
+                        {
+                            case PlayerTurnEnum.MoveDown:
+                                return ApplyPlayerCommand(index, cell);
+                            case PlayerTurnEnum.MoveRight:
+                            case PlayerTurnEnum.MoveLeft:
+                            case PlayerTurnEnum.MoveUp:
+                            case PlayerTurnEnum.PutBomb:
+                            case PlayerTurnEnum.None:
+                                break;
+                        }
+                    }
+                }
+            }
+            if (cell.IsPlayerOnField(Index))
             switch (cell)
             {
-                case FieldItemEnum.Player1:
-                    player1Info = new PlayerInfo(Players.Player1, columnIndex, rowIndex);
-                    return null;
-                case FieldItemEnum.Player2:
-                    player2Info = new PlayerInfo(Players.Player2, columnIndex, rowIndex);
-                    return null;
-                case FieldItemEnum.Player3:
-                    player3Info = new PlayerInfo(Players.Player3, columnIndex, rowIndex);
-                    return null;                
-                case FieldItemEnum.Player4:
-                    player4Info = new PlayerInfo(Players.Player4, columnIndex, rowIndex);
-                    return null;        
-                default:
-                    return null;
+                
             }
         });
+    }
 
-        if (player1Info == null || player2Info == null || player3Info == null || player4Info == null)
+    private int? ApplyPlayerCommand(int index, FieldItemEnum cell)
+    {
+        var playerInfo =
+            (PlayerInfo)PlayerCollectionMediator.PlayersInfo.GetPlayerInfo(index);
+        if (Field.GetDownFieldItem(playerInfo) != FieldItemEnum.EmptyField)
         {
-            throw new InvalidOperationException($"Unexpected state: not 4 players on field");
+            return null;
         }
 
-        return new PlayerInfoCollection(player1Info, player2Info, player3Info, player4Info);
+        Field.SetFieldCell(playerInfo, cell.RemovePlayerFromFieldItem());
+        playerInfo.MoveDown();
+        Field.SetFieldCell(playerInfo, FieldItemEnum.EmptyField.GetPlayerFieldItem(index));
+
+        return null;
     }
+
 
     private Field InitializeField()
     {
@@ -77,6 +92,8 @@ public class BombermanNetworkGame
         SetPlayersOnField(field);
         
         field.SetFieldCell(5,5, FieldItemEnum.Bomb);
+        
+        field.ForceFieldUpdated();
         
         return field;
     }

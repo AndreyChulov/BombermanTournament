@@ -38,7 +38,7 @@ public class Scores : BaseDraw
                 0.74f * canvasWidth,
                 0.1f * canvasHeight
             ),
-            game.PlayersInfo
+            game.PlayerCollectionMediator.PlayersInfo
         );
     }
     

@@ -1,6 +1,6 @@
 using Core.Engine.Shared.Interfaces;
 using Core.EngineFactory;
-using Games.BombermanGame.Game;
+using Games.BombermanGame.ObsoleteGame;
 using Games.BombermanGame.ObsoleteGame.DrawDataModel.Draw.Score;
 using Games.BombermanGame.Shared.DrawDataModel;
 using Games.BombermanGame.Shared.GameDataModel;
@@ -19,7 +19,7 @@ namespace Games.BombermanGame
         private readonly IPlayer _player3;
         private readonly IPlayer _player4;
         private IEngine? _engine = null;
-        private global::Games.BombermanGame.Game.BombermanGame? _game;
+        private global::Games.BombermanGame.ObsoleteGame.BombermanGame? _game;
         
         public BombermanGameForm(
             IPlayer? player1, IPlayer? player2, IPlayer? player3, IPlayer? player4)

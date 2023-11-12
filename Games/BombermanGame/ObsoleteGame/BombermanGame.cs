@@ -1,10 +1,10 @@
 using Games.BombermanGame.Shared.Enums;
-using Games.BombermanGame.Shared.GameDataModel;
-using Games.BombermanGame.Shared.Interfaces;
 using Games.BombermanGame.Shared.Extensions;
+using Games.BombermanGame.Shared.GameDataModel;
 using Games.BombermanGame.Shared.GameDataModel.Player;
+using Games.BombermanGame.Shared.Interfaces;
 
-namespace Games.BombermanGame.Game
+namespace Games.BombermanGame.ObsoleteGame
 {
     [Obsolete]
     public class BombermanGame : BombermanGameThread
@@ -153,7 +153,7 @@ namespace Games.BombermanGame.Game
 
         protected override void TimeLimitedPlayerTurn(IPlayer currentPlayerTurn, int currentPlayerIndex)
         {
-            var playerInfos = PlayerInfoCollection.GetPlayerInfos();
+            var playerInfos = PlayerInfoCollection.PlayerInfos;
             var gameInfo = new GameInfo(GetFieldEnumForPlayers(), playerInfos);
             var currentPlayerInfo = (PlayerInfo) playerInfos[currentPlayerIndex];
             var playerTurn = currentPlayerTurn.Turn(gameInfo, currentPlayerInfo);

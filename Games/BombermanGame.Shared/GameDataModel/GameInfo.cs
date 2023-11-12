@@ -17,5 +17,16 @@ namespace Games.BombermanGame.Shared.GameDataModel
             FieldHeight = field.Length;
             FieldWidth = field[0].Length;
         }
+
+        public GameInfo(Field field, IPlayerInfo[] playersInfos)
+        {
+            Field = field.GetFieldCloned();
+            PlayersInfos = playersInfos;
+            FieldHeight = field.FieldHeight;
+            FieldWidth = field.FieldWidth;
+        }
+
+        public static GameInfo Create(Field field, IPlayerInfo[] playersInfos) 
+            => new GameInfo(field, playersInfos);
     }
 }
