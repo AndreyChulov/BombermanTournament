@@ -1,6 +1,8 @@
 using Core.Network.Shared.Contracts.Messages;
 using Games.BombermanGame.Shared.Contracts.Messages;
 using Games.BombermanGame.Shared.Enums;
+using Games.BombermanGame.Shared.GameDataModel;
+using Games.BombermanGame.Shared.GameDataModel.Player;
 using Games.BombermanGame.Shared.Interfaces;
 using TournamentServer.Shared;
 
@@ -15,6 +17,7 @@ public class BombermanNetworkBot : IPlayer
     public string AiDevelopedForGame { get; }
 
     private PlayerTurnEnum? _playerTurn = null;
+    private ManualResetEvent _turnResetEvent = new ManualResetEvent(false);
 
     public BombermanNetworkBot(IConnectedClientInfo connectedClientInfo)
     {
@@ -40,6 +43,7 @@ public class BombermanNetworkBot : IPlayer
         switch (baseMessage.Message)
         { 
             case TurnBotMessage.MessageString:
+                _turnResetEvent.Set();
                 throw new NotImplementedException();
                     break;
             default:
@@ -49,6 +53,10 @@ public class BombermanNetworkBot : IPlayer
 
     public PlayerTurnEnum Turn(IGameInfo gameInfo, IPlayerInfo currentPlayerInfo)
     {
+        _connectedClientInfo.SendMessage(
+            TurnInfoMessage.Initialize((GameInfo)gameInfo, (PlayerInfo)currentPlayerInfo));
+        _turnResetEvent.Reset();
+        _turnResetEvent.WaitOne();
         throw new NotImplementedException();
     }
 

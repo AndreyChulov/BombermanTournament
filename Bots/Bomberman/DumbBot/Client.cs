@@ -1,9 +1,12 @@
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using Core.Network;
 using Core.Network.InternalShared;
 using Core.Network.Shared;
 using Core.Network.Shared.Contracts.Messages;
 using Core.Network.Shared.Enums;
 using Core.Network.Shared.Interfaces;
+using Games.BombermanGame.Shared.Contracts.Messages;
 
 namespace Bots.Bomberman.DumbBot;
 
@@ -37,6 +40,9 @@ public class Client : IDisposable
                         _bot.IsDebugMode, _bot.AiDevelopedForGame);
                 _networkClient.SendMessage(responseMessage);
                 baseResponseMessage = responseMessage;
+                break;
+            case TurnInfoMessage.MessageString:
+                var turnInfoMessage = JsonSerializer.Deserialize<TurnInfoMessage>(serializedMessage);
                 break;
             default:
                 throw new NotImplementedException();
