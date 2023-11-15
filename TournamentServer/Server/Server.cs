@@ -2,11 +2,11 @@ using System;
 using System.Data;
 using System.Threading.Tasks;
 using Core.Network;
+using Core.Network.InternalShared;
 using Core.Network.Shared;
 using Core.Network.Shared.Contracts;
 using Core.Network.Shared.Enums;
 using Core.Network.Shared.Interfaces;
-using Games.BombermanGame;
 using Games.BombermanGame.NetworkGame;
 using TournamentServer.Shared;
 using TournamentServer.Shared.Utilities;
@@ -26,6 +26,7 @@ public class Server :IServer
     public MonitoredVariable<string> ServerLogFile { get; } = "unknown";
 
     private INetworkServerObject? _networkServer = null;
+    private BombermanNetworkGame? _game = null;
 
     public void StartServer()
     {
@@ -34,6 +35,8 @@ public class Server :IServer
 
     private void StartServerInternal()
     {
+        _game?.Dispose();
+        _game = null;
         IsServerProcessingCommand.SetVariable(true);
         _networkServer = NetworkFactory.CreateNetworkObject<INetworkServerObject>(
             NetworkObjectType.Server, OnServerCreated, OnServerDestroyed);
@@ -47,7 +50,9 @@ public class Server :IServer
     {
         UpdateConnectedClients();
 
-        if (_networkServer?.ConnectedClients.Length < 4 && !(_networkServer?.IsLocatorServiceStarted ?? true))
+        if (_networkServer?.ConnectedClients.Length < 4 && 
+            !(_networkServer?.IsLocatorServiceStarted ?? true) &&
+            _game == null)
         {
             _networkServer.StartLocatorService();
         }
@@ -123,6 +128,9 @@ public class Server :IServer
         ClientsConnectedCount.SetVariable("unknown");
         ServerLogFile.SetVariable("unknown");
         _networkServer = null;
+        
+        _game?.Dispose();
+        _game = null;
     }
 
     private void OnServerCreated()
@@ -145,17 +153,48 @@ public class Server :IServer
         Task.Run(StopServerInternal);
     }
 
+    private void SuppressException(Action action)
+    {
+        try
+        {
+            action();
+        }
+        catch (Exception e)
+        {
+            Logger.AddVerboseMessage(
+                $"""
+                 Exception {e.GetType().Name} suppressed:
+                        Exception message: {e.Message}
+                        Exception stack trace: {e.StackTrace}
+                 """);
+        }
+    }
+
     private void StopServerInternal()
     {
-        ClientsConnectedInfoArray.SetVariable(Array.Empty<IConnectedClientInfo>());
-        IsServerProcessingCommand.SetVariable(true);
+        SuppressException(() =>
+        {
+            ClientsConnectedInfoArray.SetVariable(Array.Empty<IConnectedClientInfo>());    
+        });
+        SuppressException(() =>
+        {
+            IsServerProcessingCommand.SetVariable(true);
+        });
+        
         _networkServer?.DestroyServer();
-        IsServerStarted.SetVariable(false);
+        
+        SuppressException(() =>
+        {
+            IsServerStarted.SetVariable(false);
+        });
+        
+        _game?.Dispose();
+        _game = null;
     }
 
     private void StartTournamentInternal()
     {
-        BombermanNetworkGame game = new BombermanNetworkGame(
+        _game = new BombermanNetworkGame(
             ((ConnectedClientInfoArray)ClientsConnectedInfoArray).Clients);
     }
     

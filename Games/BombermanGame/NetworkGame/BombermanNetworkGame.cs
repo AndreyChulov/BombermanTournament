@@ -7,7 +7,7 @@ using TournamentServer.Shared;
 
 namespace Games.BombermanGame.NetworkGame;
 
-public class BombermanNetworkGame
+public class BombermanNetworkGame : IDisposable
 {
     private BombermanNetworkGameForm _form;
 
@@ -121,5 +121,12 @@ public class BombermanNetworkGame
 
             return (int?)null;
         });
+    }
+
+    public void Dispose()
+    {
+        _form.Close();
+        _form.Dispose();
+        PlayerCollectionMediator.Dispose();
     }
 }

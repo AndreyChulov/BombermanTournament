@@ -7,7 +7,7 @@ using TournamentServer.Shared;
 
 namespace Games.BombermanGame.NetworkGame;
 
-public class PlayerCollectionMediator
+public class PlayerCollectionMediator :IDisposable
 {
     private PlayerCollection? _players;
     private PlayerInfoCollection? _playersInfo;
@@ -146,5 +146,17 @@ public class PlayerCollectionMediator
         {
             playerBot.OnTurnTimeExceeded();
         }
+    }
+
+    public void Dispose()
+    {
+        var bombermanBots = 
+            Players.Players.Cast<BombermanNetworkBot>();
+        
+        foreach (var bombermanBot in bombermanBots)
+        {
+            bombermanBot?.Dispose();
+        }
+        
     }
 }

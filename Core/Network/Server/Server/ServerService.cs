@@ -15,6 +15,7 @@ namespace Core.Network.Server.Server
         public int ServerPort { get; }
         public string ServerIp { get; private set; }
         public List<ConnectedClientService> ConnectedClientServices { get; }
+        private object _connectedClientServicesLockObject = new object();
         
         public ServerService(Action onClientConnected, 
             Action<ConnectedClientId> onClientUpdated,
@@ -56,10 +57,14 @@ namespace Core.Network.Server.Server
             try
             {
                 var clientSocket = serviceSocket.Accept();
-                var connectedClientService = new ConnectedClientService(clientSocket, 
-                    OnConnectedClientUpdated, OnConnectedClientDisconnected);
-                connectedClientService.Start();
-                ConnectedClientServices.Add(connectedClientService);
+                
+                lock (_connectedClientServicesLockObject)
+                {
+                    var connectedClientService = new ConnectedClientService(clientSocket, 
+                        OnConnectedClientUpdated, OnConnectedClientDisconnected);
+                    connectedClientService.Start();
+                    ConnectedClientServices.Add(connectedClientService);
+                }
                 
                 Task.Run(() => _onClientConnected());
             }
@@ -74,11 +79,14 @@ namespace Core.Network.Server.Server
 
         private void OnConnectedClientDisconnected(ConnectedClientId connectedClientId)
         {
-            var disconnectedClientService = ConnectedClientServices
-                .First(x => x.ConnectedClient.ConnectedClientId.Equals(connectedClientId));
+            lock (_connectedClientServicesLockObject)
+            {
+                var disconnectedClientService = ConnectedClientServices
+                    .FirstOrDefault(x => x.ConnectedClient.ConnectedClientId.Equals(connectedClientId));
             
-            ConnectedClientServices.Remove(disconnectedClientService);
-            disconnectedClientService.Dispose();
+                ConnectedClientServices.Remove(disconnectedClientService);
+                disconnectedClientService?.Dispose();
+            }
             
             Task.Run(() => _onClientDisconnected(connectedClientId));
         }
@@ -91,12 +99,16 @@ namespace Core.Network.Server.Server
         public override void Dispose()
         {
             base.Dispose();
-            
-            foreach (var connectedClientService in ConnectedClientServices)
+
+            lock (_connectedClientServicesLockObject)
             {
-                connectedClientService.Dispose();
+                foreach (var connectedClientService in ConnectedClientServices)
+                {
+                    connectedClientService.Dispose();
+                }
+            
+                ConnectedClientServices.Clear();
             }
-            ConnectedClientServices.Clear();
         }
     }
 }

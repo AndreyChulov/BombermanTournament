@@ -1,3 +1,5 @@
+using System.Net.NetworkInformation;
+using System.Runtime.Serialization;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using Core.Network;
@@ -43,6 +45,18 @@ public class Client : IDisposable
                 break;
             case TurnInfoMessage.MessageString:
                 var turnInfoMessage = JsonSerializer.Deserialize<TurnInfoMessage>(serializedMessage);
+
+                if (turnInfoMessage == null)
+                {
+                    throw new SerializationException($"Can not deserialize [{nameof(TurnInfoMessage)}]");
+                }
+
+                Task.Run(() =>
+                {
+                    var botTurn = _bot.Turn(turnInfoMessage.GameInfo, turnInfoMessage.CurrentPlayerInfo);
+                    _networkClient.SendMessage(BotCommandMessage.Initialize(botTurn));
+                });
+                
                 break;
             default:
                 throw new NotImplementedException();

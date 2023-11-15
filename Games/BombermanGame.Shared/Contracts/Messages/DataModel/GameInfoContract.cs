@@ -6,12 +6,13 @@ namespace Games.BombermanGame.Shared.Contracts.Messages.DataModel;
 
 public class GameInfoContract : IGameInfo
 {
-    [JsonIgnore]
     public FieldItemEnum[][] Field { get; set; }
     public int FieldHeight { get; set; }
     public int FieldWidth { get; set; }
+    public PlayerInfoContract[] PlayersInfosContract { get; set; }
     [JsonIgnore]
-    public IPlayerInfo[] PlayersInfos { get; set; }
+    public IPlayerInfo[] PlayersInfos => PlayersInfosContract.Cast<IPlayerInfo>().ToArray();
+    
 
     public static GameInfoContract Initialize(IGameInfo gameInfo)
     {
@@ -20,7 +21,10 @@ public class GameInfoContract : IGameInfo
             FieldHeight = gameInfo.FieldHeight,
             Field = gameInfo.Field,
             FieldWidth = gameInfo.FieldWidth,
-            PlayersInfos = gameInfo.PlayersInfos
+            PlayersInfosContract = 
+                gameInfo.PlayersInfos
+                    .Select(PlayerInfoContract.Initialize)
+                    .ToArray()
         };
     }
 }
