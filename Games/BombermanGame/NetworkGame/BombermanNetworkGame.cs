@@ -4,6 +4,7 @@ using Games.BombermanGame.Shared.Extensions;
 using Games.BombermanGame.Shared.GameDataModel;
 using Games.BombermanGame.Shared.GameDataModel.Player;
 using TournamentServer.Shared;
+using Timer = System.Threading.Timer;
 
 namespace Games.BombermanGame.NetworkGame;
 
@@ -16,6 +17,8 @@ public class BombermanNetworkGame : IDisposable
 
     private ReadOnlyDictionary<PlayerTurnEnum, Func<PlayerInfo, FieldItemEnum?>> _getFieldNextCellDictionary;
     private ReadOnlyDictionary<PlayerTurnEnum, Action<PlayerInfo>> _movePlayerDictionary;
+
+    private Timer _turnTimer;
 
 
     public BombermanNetworkGame(IConnectedClientInfo[] clients)
@@ -35,8 +38,21 @@ public class BombermanNetworkGame : IDisposable
 
         Task.Run(() => Application.Run(_form));
 
+        _turnTimer = new Timer(TurnTimer_Callback);
+        _turnTimer.Change(
+            NetworkGameSettings.FirstTurnTimeoutForServer, 
+            Timeout.InfiniteTimeSpan
+            );
+    }
+
+    private void TurnTimer_Callback(object? state)
+    {
         PlayerCollectionMediator.Turn(Field);
-        //Parallel.ForEach(Players.Players, (player, state) => {state.});
+        
+        _turnTimer.Change(
+            NetworkGameSettings.TurnTimeoutForServer, 
+            Timeout.InfiniteTimeSpan
+            );
     }
 
     private static ReadOnlyDictionary<PlayerTurnEnum, Action<PlayerInfo>> PopulateMovePlayerDictionary()
@@ -85,9 +101,15 @@ public class BombermanNetworkGame : IDisposable
             return;
         }
 
-        Field.SetFieldCell(playerInfo, Field.GetCurrentFieldItem(playerInfo).RemovePlayerFromFieldItem());
+        Field.SetFieldCell(
+            playerInfo, 
+            Field.GetCurrentFieldItem(playerInfo).RemovePlayerFromFieldItem()
+            );
         _movePlayerDictionary[command](playerInfo);
-        Field.SetFieldCell(playerInfo, FieldItemEnum.EmptyField.GetPlayerFieldItem(index));
+        Field.SetFieldCell(
+            playerInfo, 
+            FieldItemEnum.EmptyField.GetPlayerFieldItem(index, true)
+            );
     }
 
 

@@ -34,7 +34,7 @@ public class ClientService : BaseThreadService
     public void SendMessage<T>(T messageObject)
         where T:BaseMessage
     {
-        var jsonMessage = JsonSerializer.Serialize(messageObject);
+        var jsonMessage = JsonSerializer.Serialize(messageObject, messageObject.GetType());
         _messagesToSend.Enqueue(jsonMessage);
     }
     

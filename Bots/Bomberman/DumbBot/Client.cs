@@ -51,11 +51,10 @@ public class Client : IDisposable
                     throw new SerializationException($"Can not deserialize [{nameof(TurnInfoMessage)}]");
                 }
 
-                Task.Run(() =>
-                {
-                    var botTurn = _bot.Turn(turnInfoMessage.GameInfo, turnInfoMessage.CurrentPlayerInfo);
-                    _networkClient.SendMessage(BotCommandMessage.Initialize(botTurn));
-                });
+                var botTurn = _bot.Turn(turnInfoMessage.GameInfo, turnInfoMessage.CurrentPlayerInfo);
+                var botCommandMessage = BotCommandMessage.Initialize(botTurn);
+                _networkClient.SendMessage(botCommandMessage);
+                baseResponseMessage = botCommandMessage;
                 
                 break;
             default:

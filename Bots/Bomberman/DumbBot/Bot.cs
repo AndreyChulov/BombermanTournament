@@ -10,13 +10,19 @@ public class Bot : IPlayer
     public bool IsDebugMode => true;
     public string AiDevelopedForGame => "Bomberman";
 
+    private PlayerTurnEnum _prevousTurn = PlayerTurnEnum.PutBomb;
+    
     public PlayerTurnEnum Turn(IGameInfo gameInfo, IPlayerInfo currentPlayerInfo)
     {
-        return PlayerTurnEnum.None;
+        
+        return 
+            _prevousTurn == PlayerTurnEnum.PutBomb ? 
+            PlayerTurnEnum.MoveUp : 
+            PlayerTurnEnum.PutBomb;
     }
 
     public void OnTurnTimeExceeded()
     {
-           
+           Console.WriteLine("Turn time exceeded.");
     }
 }

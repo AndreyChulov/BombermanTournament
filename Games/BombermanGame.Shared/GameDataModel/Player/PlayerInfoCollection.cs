@@ -21,8 +21,13 @@ namespace Games.BombermanGame.Shared.GameDataModel.Player
             PlayerInfos = new[] {player1Info, player2Info, player3Info, player4Info};
         }
 
-        public IPlayerInfo GetPlayerInfo(int playerIndex)
+        public IPlayerInfo GetPlayerInfo(int playerIndex, bool isZeroBasedIndex = true)
         {
+            if (!isZeroBasedIndex)
+            {
+                playerIndex--;
+            }
+            
             return playerIndex switch
             {
                 0 => Player1Info,

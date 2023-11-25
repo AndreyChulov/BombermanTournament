@@ -109,29 +109,51 @@ public class PlayerCollectionMediator :IDisposable
     private void TurnInternal(Field field)
     {
         _playersTurn.Clear();
-        
-        CancellationTokenSource cancellationTokenSource = 
-            Players.Players.Any(x=>x.IsDebugMode) ?
-                new CancellationTokenSource( ) :
-                new CancellationTokenSource(NetworkGameSettings.TurnTimeout);
-        
-        var parallelOptions = new ParallelOptions
-        {
-            CancellationToken = cancellationTokenSource.Token
-        };
+
+        var timeoutTask = CreateTurnTimeoutTask();
+        var parallelOptions = CreateTurnParallelOptions();
 
         Parallel.ForEach(Players.Players, parallelOptions,
             (playerBot, _, index) => BotTurn(playerBot, index, field));
 
+        if (Players.Players.Any(x=>x.IsDebugMode))
+        {
+            timeoutTask.Wait();
+        }
+        
+        SetTurnActions();
+    }
+
+    private void SetTurnActions()
+    {
         if (!_playersTurn.IsEmpty)
         {
             _turnAction?.Invoke(
                 _playersTurn
                     .ToArray()
                     .ToDictionary(
-                        x=>(int)(x.Key + 1), 
-                        x=>x.Value));
+                        x => (int)(x.Key),
+                        x => x.Value));
         }
+    }
+
+    private ParallelOptions CreateTurnParallelOptions()
+    {
+        var cancellationTokenSource =
+            Players.Players.Any(x => x.IsDebugMode)
+                ? new CancellationTokenSource()
+                : new CancellationTokenSource(NetworkGameSettings.TurnTimeoutForBot);
+
+        var parallelOptions = new ParallelOptions
+        {
+            CancellationToken = cancellationTokenSource.Token
+        };
+        return parallelOptions;
+    }
+
+    private static Task CreateTurnTimeoutTask()
+    {
+        return Task.Delay(NetworkGameSettings.TurnTimeoutForBot);
     }
 
     private void BotTurn(IPlayer playerBot, long index, Field field)

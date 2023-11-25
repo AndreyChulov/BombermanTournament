@@ -57,7 +57,6 @@ public class BombermanNetworkBot : IPlayer, IDisposable
                 
                 _playerTurn = botCommand.Command;
                 _turnResetEvent.Set();
-                throw new NotImplementedException();
                     break;
             default:
                 throw new NotImplementedException();
@@ -77,7 +76,8 @@ public class BombermanNetworkBot : IPlayer, IDisposable
                 break;
             }
         }
-        throw new NotImplementedException();
+
+        return _playerTurn ?? PlayerTurnEnum.None;
     }
 
     public void OnTurnTimeExceeded()
