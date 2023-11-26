@@ -1,80 +1,70 @@
-[2:00:43] -> [ServerLocatorService] ->Server locator service started
-[2:00:43] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11111"}] with target endpoint[255.255.255.255:21210] enqueued to send messages queue.
-[2:00:43] -> [ServerLocatorSenderService] ->All enqueue messages sent.
-[2:00:43] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11111"}] with target endpoint[255.255.255.255:21211] enqueued to send messages queue.
-[2:00:43] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11111"}] with target endpoint[255.255.255.255:21212] enqueued to send messages queue.
-[2:00:43] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11111"}] with target endpoint[255.255.255.255:21213] enqueued to send messages queue.
-[2:00:43] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11111"}] with target endpoint[255.255.255.255:21214] enqueued to send messages queue.
-[2:00:43] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11111"}] with target endpoint[255.255.255.255:21215] enqueued to send messages queue.
-[2:00:43] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11111"}] with target endpoint[255.255.255.255:21216] enqueued to send messages queue.
-[2:00:43] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11111"}] with target endpoint[255.255.255.255:21217] enqueued to send messages queue.
-[2:00:43] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11111"}] with target endpoint[255.255.255.255:21218] enqueued to send messages queue.
-[2:00:43] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11111"}] with target endpoint[255.255.255.255:21219] enqueued to send messages queue.
-[2:00:44] -> [ServerLocatorSenderService] ->All enqueue messages sent.
-[2:00:44] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11111"}] with target endpoint[255.255.255.255:21210] enqueued to send messages queue.
-[2:00:44] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11111"}] with target endpoint[255.255.255.255:21211] enqueued to send messages queue.
-[2:00:44] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11111"}] with target endpoint[255.255.255.255:21212] enqueued to send messages queue.
-[2:00:44] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11111"}] with target endpoint[255.255.255.255:21213] enqueued to send messages queue.
-[2:00:44] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11111"}] with target endpoint[255.255.255.255:21214] enqueued to send messages queue.
-[2:00:44] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11111"}] with target endpoint[255.255.255.255:21215] enqueued to send messages queue.
-[2:00:44] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11111"}] with target endpoint[255.255.255.255:21216] enqueued to send messages queue.
-[2:00:44] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11111"}] with target endpoint[255.255.255.255:21217] enqueued to send messages queue.
-[2:00:44] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11111"}] with target endpoint[255.255.255.255:21218] enqueued to send messages queue.
-[2:00:44] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11111"}] with target endpoint[255.255.255.255:21219] enqueued to send messages queue.
-[2:00:45] -> [ServerLocatorSenderService] ->All enqueue messages sent.
-[2:00:45] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11111"}] with target endpoint[255.255.255.255:21210] enqueued to send messages queue.
-[2:00:45] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11111"}] with target endpoint[255.255.255.255:21211] enqueued to send messages queue.
-[2:00:45] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11111"}] with target endpoint[255.255.255.255:21212] enqueued to send messages queue.
-[2:00:45] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11111"}] with target endpoint[255.255.255.255:21213] enqueued to send messages queue.
-[2:00:45] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11111"}] with target endpoint[255.255.255.255:21214] enqueued to send messages queue.
-[2:00:45] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11111"}] with target endpoint[255.255.255.255:21215] enqueued to send messages queue.
-[2:00:45] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11111"}] with target endpoint[255.255.255.255:21216] enqueued to send messages queue.
-[2:00:45] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11111"}] with target endpoint[255.255.255.255:21217] enqueued to send messages queue.
-[2:00:45] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11111"}] with target endpoint[255.255.255.255:21218] enqueued to send messages queue.
-[2:00:45] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11111"}] with target endpoint[255.255.255.255:21219] enqueued to send messages queue.
-[2:00:45] -> [ServerLocatorSenderService] ->All enqueue messages sent.
-[2:00:46] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11111"}] with target endpoint[255.255.255.255:21210] enqueued to send messages queue.
-[2:00:46] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11111"}] with target endpoint[255.255.255.255:21211] enqueued to send messages queue.
-[2:00:46] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11111"}] with target endpoint[255.255.255.255:21212] enqueued to send messages queue.
-[2:00:46] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11111"}] with target endpoint[255.255.255.255:21213] enqueued to send messages queue.
-[2:00:46] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11111"}] with target endpoint[255.255.255.255:21214] enqueued to send messages queue.
-[2:00:46] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11111"}] with target endpoint[255.255.255.255:21215] enqueued to send messages queue.
-[2:00:46] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11111"}] with target endpoint[255.255.255.255:21216] enqueued to send messages queue.
-[2:00:46] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11111"}] with target endpoint[255.255.255.255:21217] enqueued to send messages queue.
-[2:00:46] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11111"}] with target endpoint[255.255.255.255:21218] enqueued to send messages queue.
-[2:00:46] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11111"}] with target endpoint[255.255.255.255:21219] enqueued to send messages queue.
-[2:00:46] -> [ServerLocatorSenderService] ->All enqueue messages sent.
-[2:00:47] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11111"}] with target endpoint[255.255.255.255:21210] enqueued to send messages queue.
-[2:00:47] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11111"}] with target endpoint[255.255.255.255:21211] enqueued to send messages queue.
-[2:00:47] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11111"}] with target endpoint[255.255.255.255:21212] enqueued to send messages queue.
-[2:00:47] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11111"}] with target endpoint[255.255.255.255:21213] enqueued to send messages queue.
-[2:00:47] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11111"}] with target endpoint[255.255.255.255:21214] enqueued to send messages queue.
-[2:00:47] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11111"}] with target endpoint[255.255.255.255:21215] enqueued to send messages queue.
-[2:00:47] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11111"}] with target endpoint[255.255.255.255:21216] enqueued to send messages queue.
-[2:00:47] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11111"}] with target endpoint[255.255.255.255:21217] enqueued to send messages queue.
-[2:00:47] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11111"}] with target endpoint[255.255.255.255:21218] enqueued to send messages queue.
-[2:00:47] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11111"}] with target endpoint[255.255.255.255:21219] enqueued to send messages queue.
-[2:00:49] -> [ServerLocatorService] ->Server locator service stopped
-[2:01:34] -> [Server] ->Exception TaskCanceledException suppressed:
+[8:41:15] -> [ServerLocatorService] ->Server locator service started
+[8:41:16] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11119"}] with target endpoint[255.255.255.255:21210] enqueued to send messages queue.
+[8:41:16] -> [ServerLocatorSenderService] ->All enqueue messages sent.
+[8:41:16] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11119"}] with target endpoint[255.255.255.255:21211] enqueued to send messages queue.
+[8:41:16] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11119"}] with target endpoint[255.255.255.255:21212] enqueued to send messages queue.
+[8:41:16] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11119"}] with target endpoint[255.255.255.255:21213] enqueued to send messages queue.
+[8:41:16] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11119"}] with target endpoint[255.255.255.255:21214] enqueued to send messages queue.
+[8:41:16] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11119"}] with target endpoint[255.255.255.255:21215] enqueued to send messages queue.
+[8:41:16] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11119"}] with target endpoint[255.255.255.255:21216] enqueued to send messages queue.
+[8:41:16] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11119"}] with target endpoint[255.255.255.255:21217] enqueued to send messages queue.
+[8:41:16] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11119"}] with target endpoint[255.255.255.255:21218] enqueued to send messages queue.
+[8:41:16] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11119"}] with target endpoint[255.255.255.255:21219] enqueued to send messages queue.
+[8:41:16] -> [ServerLocatorSenderService] ->All enqueue messages sent.
+[8:41:17] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11119"}] with target endpoint[255.255.255.255:21210] enqueued to send messages queue.
+[8:41:17] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11119"}] with target endpoint[255.255.255.255:21211] enqueued to send messages queue.
+[8:41:17] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11119"}] with target endpoint[255.255.255.255:21212] enqueued to send messages queue.
+[8:41:17] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11119"}] with target endpoint[255.255.255.255:21213] enqueued to send messages queue.
+[8:41:17] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11119"}] with target endpoint[255.255.255.255:21214] enqueued to send messages queue.
+[8:41:17] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11119"}] with target endpoint[255.255.255.255:21215] enqueued to send messages queue.
+[8:41:17] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11119"}] with target endpoint[255.255.255.255:21216] enqueued to send messages queue.
+[8:41:17] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11119"}] with target endpoint[255.255.255.255:21217] enqueued to send messages queue.
+[8:41:17] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11119"}] with target endpoint[255.255.255.255:21218] enqueued to send messages queue.
+[8:41:17] -> [ServerLocatorSenderService] ->All enqueue messages sent.
+[8:41:17] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11119"}] with target endpoint[255.255.255.255:21219] enqueued to send messages queue.
+[8:41:17] -> [ServerLocatorSenderService] ->All enqueue messages sent.
+[8:41:18] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11119"}] with target endpoint[255.255.255.255:21210] enqueued to send messages queue.
+[8:41:18] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11119"}] with target endpoint[255.255.255.255:21211] enqueued to send messages queue.
+[8:41:18] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11119"}] with target endpoint[255.255.255.255:21212] enqueued to send messages queue.
+[8:41:18] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11119"}] with target endpoint[255.255.255.255:21213] enqueued to send messages queue.
+[8:41:18] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11119"}] with target endpoint[255.255.255.255:21214] enqueued to send messages queue.
+[8:41:18] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11119"}] with target endpoint[255.255.255.255:21215] enqueued to send messages queue.
+[8:41:18] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11119"}] with target endpoint[255.255.255.255:21216] enqueued to send messages queue.
+[8:41:18] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11119"}] with target endpoint[255.255.255.255:21217] enqueued to send messages queue.
+[8:41:18] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11119"}] with target endpoint[255.255.255.255:21218] enqueued to send messages queue.
+[8:41:18] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11119"}] with target endpoint[255.255.255.255:21219] enqueued to send messages queue.
+[8:41:18] -> [ServerLocatorSenderService] ->All enqueue messages sent.
+[8:41:19] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11119"}] with target endpoint[255.255.255.255:21210] enqueued to send messages queue.
+[8:41:19] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11119"}] with target endpoint[255.255.255.255:21211] enqueued to send messages queue.
+[8:41:19] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11119"}] with target endpoint[255.255.255.255:21212] enqueued to send messages queue.
+[8:41:19] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11119"}] with target endpoint[255.255.255.255:21213] enqueued to send messages queue.
+[8:41:19] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11119"}] with target endpoint[255.255.255.255:21214] enqueued to send messages queue.
+[8:41:19] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11119"}] with target endpoint[255.255.255.255:21215] enqueued to send messages queue.
+[8:41:19] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11119"}] with target endpoint[255.255.255.255:21216] enqueued to send messages queue.
+[8:41:19] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11119"}] with target endpoint[255.255.255.255:21217] enqueued to send messages queue.
+[8:41:19] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11119"}] with target endpoint[255.255.255.255:21218] enqueued to send messages queue.
+[8:41:19] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11119"}] with target endpoint[255.255.255.255:21219] enqueued to send messages queue.
+[8:41:19] -> [ServerLocatorSenderService] ->All enqueue messages sent.
+[8:41:20] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11119"}] with target endpoint[255.255.255.255:21210] enqueued to send messages queue.
+[8:41:20] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11119"}] with target endpoint[255.255.255.255:21211] enqueued to send messages queue.
+[8:41:20] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11119"}] with target endpoint[255.255.255.255:21212] enqueued to send messages queue.
+[8:41:20] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11119"}] with target endpoint[255.255.255.255:21213] enqueued to send messages queue.
+[8:41:20] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11119"}] with target endpoint[255.255.255.255:21214] enqueued to send messages queue.
+[8:41:20] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11119"}] with target endpoint[255.255.255.255:21215] enqueued to send messages queue.
+[8:41:20] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11119"}] with target endpoint[255.255.255.255:21216] enqueued to send messages queue.
+[8:41:20] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11119"}] with target endpoint[255.255.255.255:21217] enqueued to send messages queue.
+[8:41:20] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11119"}] with target endpoint[255.255.255.255:21218] enqueued to send messages queue.
+[8:41:20] -> [ServerLocatorSenderService] ->Message[{"Message":"Tournament server info","TcpServerIP":"192.168.91.9","TcpServerPort":"11119"}] with target endpoint[255.255.255.255:21219] enqueued to send messages queue.
+[8:41:21] -> [ServerLocatorService] ->Server locator service stopped
+[8:42:12] -> [Server] ->Exception TaskCanceledException suppressed:
        Exception message: A task was canceled.
        Exception stack trace:    at System.Windows.Threading.DispatcherOperation.Wait(TimeSpan timeout)
    at System.Windows.Threading.Dispatcher.InvokeImpl(DispatcherOperation operation, CancellationToken cancellationToken, TimeSpan timeout)
    at System.Windows.Threading.Dispatcher.Invoke(Action callback, DispatcherPriority priority, CancellationToken cancellationToken, TimeSpan timeout)
    at System.Windows.Threading.Dispatcher.Invoke(Action callback)
-   at TournamentServer.Utilites.ClientsInfoTableDataModelHelper.<>c__DisplayClass0_0.<CreateUpdateClientsInfoPropertyAction>b__0() in Z:\Мой диск\GitHub\BombermanTournament\TournamentServer\Utilites\ClientsInfoTableDataModelHelper.cs:line 14
-   at TournamentServer.Shared.Utilities.ServerAction.Invoke() in Z:\Мой диск\GitHub\BombermanTournament\TournamentServer.Shared\Utilities\ServerAction.cs:line 11
-   at TournamentServer.Shared.Utilities.MonitoredVariable`1.SetVariable(T value) in Z:\Мой диск\GitHub\BombermanTournament\TournamentServer.Shared\Utilities\MonitoredVariable.cs:line 22
-   at TournamentServer.Server.Server.<StopServerInternal>b__37_0() in Z:\Мой диск\GitHub\BombermanTournament\TournamentServer\Server\Server.cs:line 177
-   at TournamentServer.Server.Server.SuppressException(Action action) in Z:\Мой диск\GitHub\BombermanTournament\TournamentServer\Server\Server.cs:line 160
-[2:01:34] -> [Server] ->Exception TaskCanceledException suppressed:
-       Exception message: A task was canceled.
-       Exception stack trace:    at System.Windows.Threading.DispatcherOperation.Wait(TimeSpan timeout)
-   at System.Windows.Threading.Dispatcher.InvokeImpl(DispatcherOperation operation, CancellationToken cancellationToken, TimeSpan timeout)
-   at System.Windows.Threading.Dispatcher.Invoke(Action callback, DispatcherPriority priority, CancellationToken cancellationToken, TimeSpan timeout)
-   at System.Windows.Threading.Dispatcher.Invoke(Action callback)
-   at TournamentServer.Utilites.TournamentServerFormControlDataModelHelper.<>c__DisplayClass0_0.<CreateUpdateIsButtonStartTournamentEnabledPropertyAction>b__0() in Z:\Мой диск\GitHub\BombermanTournament\TournamentServer\Utilites\TournamentServerFormControlDataModelHelper.cs:line 14
+   at TournamentServer.Utilites.ServerInfoDataModelHelper.<>c__DisplayClass4_0.<CreateUpdateIsStartStopServerButtonEnabledPropertyAction>b__0() in Z:\Мой диск\GitHub\BombermanTournament\TournamentServer\Utilites\ServerInfoDataModelHelper.cs:line 44
    at TournamentServer.Shared.Utilities.ServerAction.Invoke() in Z:\Мой диск\GitHub\BombermanTournament\TournamentServer.Shared\Utilities\ServerAction.cs:line 11
    at TournamentServer.Shared.Utilities.MonitoredVariable`1.SetVariable(T value) in Z:\Мой диск\GitHub\BombermanTournament\TournamentServer.Shared\Utilities\MonitoredVariable.cs:line 22
    at TournamentServer.Server.Server.<StopServerInternal>b__37_1() in Z:\Мой диск\GitHub\BombermanTournament\TournamentServer\Server\Server.cs:line 181
    at TournamentServer.Server.Server.SuppressException(Action action) in Z:\Мой диск\GitHub\BombermanTournament\TournamentServer\Server\Server.cs:line 160
-[2:01:34] -> [ServerLocatorService] ->Server locator service stopped
+[8:42:12] -> [ServerLocatorService] ->Server locator service stopped

@@ -19,8 +19,6 @@ public class BombermanNetworkBot : IPlayer, IDisposable
     public string AiDevelopedForGame { get; }
 
     private PlayerTurnEnum? _playerTurn = null;
-    private ManualResetEvent _turnResetEvent = 
-        new ManualResetEvent(false);
 
     private bool _isDisposed = false;
 
@@ -56,7 +54,6 @@ public class BombermanNetworkBot : IPlayer, IDisposable
                 }
                 
                 _playerTurn = botCommand.Command;
-                _turnResetEvent.Set();
                     break;
             default:
                 throw new NotImplementedException();
@@ -65,12 +62,15 @@ public class BombermanNetworkBot : IPlayer, IDisposable
 
     public PlayerTurnEnum Turn(IGameInfo gameInfo, IPlayerInfo currentPlayerInfo)
     {
+        _playerTurn = null;
+        
         _connectedClientInfo.SendMessage(
             TurnInfoMessage.Initialize((GameInfo)gameInfo, (PlayerInfo)currentPlayerInfo));
-        _turnResetEvent.Reset();
 
-        while (!_turnResetEvent.WaitOne(TimeSpan.FromSeconds(0.1f)))
+        while (!_playerTurn.HasValue)
         {
+            Thread.CurrentThread.Join(TimeSpan.FromSeconds(0.1f));
+            
             if (_isDisposed)
             {
                 break;
@@ -88,7 +88,5 @@ public class BombermanNetworkBot : IPlayer, IDisposable
     public void Dispose()
     {
         _isDisposed = true;
-        //_turnResetEvent.Set();
-        _turnResetEvent.Dispose();
     }
 }

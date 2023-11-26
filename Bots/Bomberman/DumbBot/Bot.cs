@@ -14,11 +14,11 @@ public class Bot : IPlayer
     
     public PlayerTurnEnum Turn(IGameInfo gameInfo, IPlayerInfo currentPlayerInfo)
     {
-        
-        return 
-            _prevousTurn == PlayerTurnEnum.PutBomb ? 
-            PlayerTurnEnum.MoveUp : 
-            PlayerTurnEnum.PutBomb;
+        _prevousTurn = _prevousTurn == PlayerTurnEnum.PutBomb ? 
+                                   PlayerTurnEnum.MoveUp : 
+                                   PlayerTurnEnum.PutBomb;
+        return _prevousTurn;
+
     }
 
     public void OnTurnTimeExceeded()

@@ -103,7 +103,8 @@ public class PlayerCollectionMediator :IDisposable
     
     public void Turn(Field field)
     {
-        Task.Run(() => TurnInternal(field));
+        //Task.Run(() => TurnInternal(field));
+        TurnInternal(field);
     }
 
     private void TurnInternal(Field field)
@@ -153,7 +154,7 @@ public class PlayerCollectionMediator :IDisposable
 
     private static Task CreateTurnTimeoutTask()
     {
-        return Task.Delay(NetworkGameSettings.TurnTimeoutForBot);
+        return Task.Run(async () => await Task.Delay(NetworkGameSettings.TurnTimeoutForBot));
     }
 
     private void BotTurn(IPlayer playerBot, long index, Field field)
@@ -162,6 +163,7 @@ public class PlayerCollectionMediator :IDisposable
         {
             var playersInfo = PlayersInfo;
             var gameInfo = GameInfo.Create(field, playersInfo.PlayerInfos);
+            
             _playersTurn[index] = playerBot.Turn(gameInfo, playersInfo.PlayerInfos[index]);
         }
         catch (OperationCanceledException)
@@ -180,5 +182,21 @@ public class PlayerCollectionMediator :IDisposable
             bombermanBot?.Dispose();
         }
         
+    }
+
+    public IPlayerInfo GetPlayer(FieldItemEnum crossField)
+    {
+        return crossField switch
+        {
+            FieldItemEnum.Player1 => PlayersInfo.Player1Info,
+            FieldItemEnum.Player1WithBomb => PlayersInfo.Player1Info,
+            FieldItemEnum.Player2 => PlayersInfo.Player2Info,
+            FieldItemEnum.Player2WithBomb => PlayersInfo.Player2Info,
+            FieldItemEnum.Player3 => PlayersInfo.Player3Info,
+            FieldItemEnum.Player3WithBomb => PlayersInfo.Player3Info,
+            FieldItemEnum.Player4 => PlayersInfo.Player4Info,
+            FieldItemEnum.Player4WithBomb => PlayersInfo.Player4Info,
+            _ => throw new ArgumentException("Cell does not contains player.")
+        };
     }
 }

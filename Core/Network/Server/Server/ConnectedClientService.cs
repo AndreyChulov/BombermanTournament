@@ -77,11 +77,13 @@ public class ConnectedClientService : BaseThreadService
             var messageToSend = _messagesToSend.Dequeue();
             TcpSocketUtility.SendString(serviceSocket, messageToSend);
         }
-        
-        if (serviceSocket.Available > 0)
+
+        while (serviceSocket.Available > 0)
         {
             var message = TcpSocketUtility.ReceiveString(
                 serviceSocket, OnReceiveDataSizeCheckFail, OnReceiveDataCheckFail);
+            //Console.WriteLine(
+            //    $"{DateTime.Now.ToLongTimeString()} => Message recieved [{message}]");
             var messageObject = message.Deserialize<BaseMessage>();
             Task.Run(() => OnMessageReceived(messageObject, message));
         }

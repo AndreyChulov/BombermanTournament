@@ -7,22 +7,22 @@ namespace Core.Network.InternalShared.Utilities
         public static string ReceiveString(Socket socket, 
             Action onReceiveDataSizeCheckFail, Action onReceiveDataCheckFail)
         {
-            using (Stream dataStream = new MemoryStream())
-            using (BinaryReader dataStreamReader = new BinaryReader(dataStream))
-            {
-                var dataSize = ReceiveDataSize(socket, dataStream, dataStreamReader, onReceiveDataSizeCheckFail);
-                ReceiveDataToStream(socket, dataSize, dataStream, onReceiveDataCheckFail);
+            using Stream dataStream = new MemoryStream();
+            using BinaryReader dataStreamReader = new BinaryReader(dataStream);
+            
+            var dataSize = ReceiveDataSize(socket, dataStream, dataStreamReader, onReceiveDataSizeCheckFail);
+            
+            ReceiveDataToStream(socket, dataSize, dataStream, onReceiveDataCheckFail);
                 
-                dataStream.Seek(0, SeekOrigin.Begin);
-                return dataStreamReader.ReadString();
-            }
+            dataStream.Seek(0, SeekOrigin.Begin);
+            return dataStreamReader.ReadString();
         }
         
         private static void ReceiveDataToStream(
             Socket socket, long dataSize, 
             Stream dataStream, Action onReceiveDataCheckFail)
         {
-            var maxBufferSize = 1024;
+            var maxBufferSize = 1024 * 128;
             var remainingDataSize = dataSize;
 
             dataStream.Seek(0, SeekOrigin.Begin);

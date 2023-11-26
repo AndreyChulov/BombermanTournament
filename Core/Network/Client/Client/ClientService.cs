@@ -72,9 +72,10 @@ public class ClientService : BaseThreadService
             Logger.AddVerboseMessage($"Message sent:\n{messageToSend}");
         }
 
-        if (serviceSocket.Available > 0)
+        while (serviceSocket.Available > 0)
         {
             var message = TcpSocketUtility.ReceiveString(serviceSocket, OnReceiveDataSizeCheckFail, OnReceiveDataCheckFail);
+            Logger.AddVerboseMessage($"Message received:\n{message}");
             var messageObject = message.Deserialize<BaseMessage>();
             Task.Run(() => _onMessageReceived(messageObject, message));
         }

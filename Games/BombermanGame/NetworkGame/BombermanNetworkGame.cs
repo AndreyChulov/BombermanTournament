@@ -15,11 +15,11 @@ public class BombermanNetworkGame : IDisposable
     public Field Field { get; }
     public PlayerCollectionMediator PlayerCollectionMediator { get; }
 
-    private ReadOnlyDictionary<PlayerTurnEnum, Func<PlayerInfo, FieldItemEnum?>> _getFieldNextCellDictionary;
+    private ReadOnlyDictionary<PlayerTurnEnum, Func<PlayerInfo, int, FieldItemEnum?>> _getFieldNextCellDictionary;
     private ReadOnlyDictionary<PlayerTurnEnum, Action<PlayerInfo>> _movePlayerDictionary;
 
-    private Timer _turnTimer;
-
+    private readonly Timer _turnTimer;
+    private List<Bomb> _bombs = new List<Bomb>();
 
     public BombermanNetworkGame(IConnectedClientInfo[] clients)
     {
@@ -50,7 +50,7 @@ public class BombermanNetworkGame : IDisposable
         PlayerCollectionMediator.Turn(Field);
         
         _turnTimer.Change(
-            NetworkGameSettings.TurnTimeoutForServer, 
+            TimeSpan.Zero, 
             Timeout.InfiniteTimeSpan
             );
     }
@@ -68,15 +68,15 @@ public class BombermanNetworkGame : IDisposable
         });
     }
 
-    private ReadOnlyDictionary<PlayerTurnEnum, Func<PlayerInfo, FieldItemEnum?>> PopulateGetFieldNextCellDictionary()
+    private ReadOnlyDictionary<PlayerTurnEnum, Func<PlayerInfo, int, FieldItemEnum?>> PopulateGetFieldNextCellDictionary()
     {
-        return new(new Dictionary<PlayerTurnEnum, Func<PlayerInfo, FieldItemEnum?>>
+        return new(new Dictionary<PlayerTurnEnum, Func<PlayerInfo, int, FieldItemEnum?>>
         {
-            { PlayerTurnEnum.None, _ => null },
+            { PlayerTurnEnum.None, (_, _) => null },
             { PlayerTurnEnum.MoveRight, Field.GetRightFieldItem },
             { PlayerTurnEnum.MoveLeft, Field.GetLeftFieldItem },
             { PlayerTurnEnum.MoveDown, Field.GetDownFieldItem },
-            { PlayerTurnEnum.PutBomb, _ => null },
+            { PlayerTurnEnum.PutBomb, (_, _) => null },
             { PlayerTurnEnum.MoveUp, Field.GetUpFieldItem },
         });
     }
@@ -88,6 +88,13 @@ public class BombermanNetworkGame : IDisposable
             ApplyPlayerCommand(index, command);
         }
         
+        ExplodeBombs();
+        
+        foreach (var bomb in _bombs)
+        {
+            bomb.Tick();
+        }
+        
         Field.ForceFieldUpdated();
     }
 
@@ -96,20 +103,82 @@ public class BombermanNetworkGame : IDisposable
         var playerInfo =
             (PlayerInfo)PlayerCollectionMediator.PlayersInfo.GetPlayerInfo(index);
         
-        if (_getFieldNextCellDictionary[command](playerInfo) != FieldItemEnum.EmptyField)
+        ApplyMovingBotCommand(playerInfo, index, command);
+        ApplyPutBombBotCommand(command, playerInfo);
+    }
+
+    private void ExplodeBombs()
+    {
+        var bombsToExplode = _bombs.Where(x => x.TicksToBoom == 0);
+
+        foreach (var bomb in bombsToExplode)
+        {
+            var currentFieldItem = Field.GetCurrentFieldItem(bomb);
+            var fieldWithoutBomb = currentFieldItem.RemoveBombFromFieldItem();
+
+            Field.SetFieldCell(bomb, fieldWithoutBomb);
+
+            var breakFields = new[] { FieldItemEnum.IndestructibleField };
+            var crossFields = Field.GetCrossFields(
+                bomb, 1, breakFields);
+
+            foreach (var crossField in crossFields)
+            {
+                if (crossField.IsPlayerOnField())
+                {
+                    PlayerCollectionMediator.GetPlayer(crossField).BlowUpPlayer();
+                }
+                
+                if (crossField == FieldItemEnum.DestructibleField)
+                {
+                    bomb.Owner.PlayerBlowUpDestroyableCell();
+                }
+            }
+        }
+
+        _bombs = _bombs.Where(x => x.TicksToBoom != 0).ToList();
+    }
+
+    private void ApplyPutBombBotCommand(PlayerTurnEnum command, PlayerInfo playerInfo)
+    {
+        if (command != PlayerTurnEnum.PutBomb)
+        {
+            return;
+        }
+        
+        var currentFieldItem = Field.GetCurrentFieldItem(playerInfo);
+
+        if (currentFieldItem.IsBombOnField())
+        {
+            return;
+        }
+        
+        var fieldItemWithBomb = currentFieldItem.AddBombToFieldItem();
+                
+        Field.SetFieldCell(playerInfo, fieldItemWithBomb);
+                
+        _bombs.Add(new Bomb(playerInfo));
+    }
+
+    private void ApplyMovingBotCommand(
+        PlayerInfo playerInfo, int index, PlayerTurnEnum command)
+    {
+        if (_getFieldNextCellDictionary[command](playerInfo, 1) != FieldItemEnum.EmptyField)
         {
             return;
         }
 
         Field.SetFieldCell(
-            playerInfo, 
+            playerInfo,
             Field.GetCurrentFieldItem(playerInfo).RemovePlayerFromFieldItem()
-            );
+        );
+        
         _movePlayerDictionary[command](playerInfo);
+        
         Field.SetFieldCell(
-            playerInfo, 
+            playerInfo,
             FieldItemEnum.EmptyField.GetPlayerFieldItem(index, true)
-            );
+        );
     }
 
 

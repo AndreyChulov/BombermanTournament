@@ -41,44 +41,44 @@ namespace Games.BombermanGame.Shared.GameDataModel
             return field;
         }
 
-        public FieldItemEnum? GetDownFieldItem(IPositionItem currentPosition)
+        public FieldItemEnum? GetDownFieldItem(IPositionItem currentPosition, int length = 1)
         {
-            if (currentPosition.Y + 1 == FieldHeight)
+            if (currentPosition.Y + length >= FieldHeight)
             {
                 return null;
             }
 
-            return _field[currentPosition.Y + 1][currentPosition.X];
+            return _field[currentPosition.Y + length][currentPosition.X];
         }
 
-        public FieldItemEnum? GetUpFieldItem(IPositionItem currentPosition)
+        public FieldItemEnum? GetUpFieldItem(IPositionItem currentPosition, int length = 1)
         {
-            if (currentPosition.Y == 0)
+            if (currentPosition.Y - length < 0)
             {
                 return null;
             }
 
-            return _field[currentPosition.Y - 1][currentPosition.X];
-        }
-        
-        public FieldItemEnum? GetLeftFieldItem(IPositionItem currentPosition)
-        {
-            if (currentPosition.X == 0)
-            {
-                return null;
-            }
-
-            return _field[currentPosition.Y][currentPosition.X - 1];
+            return _field[currentPosition.Y - length][currentPosition.X];
         }
         
-        public FieldItemEnum? GetRightFieldItem(IPositionItem currentPosition)
+        public FieldItemEnum? GetLeftFieldItem(IPositionItem currentPosition, int length = 1)
         {
-            if (currentPosition.X + 1 == FieldWidth)
+            if (currentPosition.X - length < 0)
             {
                 return null;
             }
 
-            return _field[currentPosition.Y][currentPosition.X + 1];
+            return _field[currentPosition.Y][currentPosition.X - length];
+        }
+        
+        public FieldItemEnum? GetRightFieldItem(IPositionItem currentPosition, int length = 1)
+        {
+            if (currentPosition.X + length >= FieldWidth)
+            {
+                return null;
+            }
+
+            return _field[currentPosition.Y][currentPosition.X + length];
         }
         
         public FieldItemEnum GetCurrentFieldItem(IPositionItem currentPosition)
@@ -188,6 +188,48 @@ namespace Games.BombermanGame.Shared.GameDataModel
             }
 
             return null;
+        }
+
+        public IEnumerable<FieldItemEnum> GetCrossFields(
+            IPositionItem position, int crossLength, FieldItemEnum[] breakFields)
+        {
+            var crossFields = new List<FieldItemEnum>
+            {
+                GetCurrentFieldItem(position)
+            };
+
+            crossFields.AddRange(
+                GetDirectionFields(position, crossLength, GetLeftFieldItem, breakFields));
+            crossFields.AddRange(
+                GetDirectionFields(position, crossLength, GetRightFieldItem, breakFields));
+            crossFields.AddRange(
+                GetDirectionFields(position, crossLength, GetDownFieldItem, breakFields));
+            crossFields.AddRange(
+                GetDirectionFields(position, crossLength, GetUpFieldItem, breakFields));
+
+            return crossFields.ToArray();
+        }
+
+        private IEnumerable<FieldItemEnum> GetDirectionFields(IPositionItem position, int crossLength, 
+            Func<IPositionItem, int, FieldItemEnum?> getDirectionFieldFunc,
+            FieldItemEnum[] breakFields)
+        {
+            var directionFields = new List<FieldItemEnum>();
+
+            for (var counter = 1; counter <= crossLength; counter++)
+            {
+                var directionFieldItem = getDirectionFieldFunc(position, counter);
+
+                if (!directionFieldItem.HasValue || 
+                    breakFields.Any(x=>x == directionFieldItem))
+                {
+                    break;
+                }
+
+                directionFields.Add(directionFieldItem.Value);
+            }
+
+            return directionFields;
         }
     }
 }

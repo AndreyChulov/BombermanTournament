@@ -149,11 +149,19 @@ namespace Games.BombermanGame.NetworkGame.DrawDataModel;
                 {
                     FieldItemEnum.Player1 => 
                         new Player1(_fieldCellsGrid.GetCellRectangle(column, row), _playerCollection.Player1),
+                    FieldItemEnum.Player1WithBomb => 
+                        new Player1(_fieldCellsGrid.GetCellRectangle(column, row), _playerCollection.Player1),
                     FieldItemEnum.Player2 => 
+                        new Player2(_fieldCellsGrid.GetCellRectangle(column, row), _playerCollection.Player2),
+                    FieldItemEnum.Player2WithBomb => 
                         new Player2(_fieldCellsGrid.GetCellRectangle(column, row), _playerCollection.Player2),
                     FieldItemEnum.Player3 => 
                         new Player3(_fieldCellsGrid.GetCellRectangle(column, row), _playerCollection.Player3),
+                    FieldItemEnum.Player3WithBomb => 
+                        new Player3(_fieldCellsGrid.GetCellRectangle(column, row), _playerCollection.Player3),
                     FieldItemEnum.Player4 => 
+                        new Player4(_fieldCellsGrid.GetCellRectangle(column, row), _playerCollection.Player4),
+                    FieldItemEnum.Player4WithBomb => 
                         new Player4(_fieldCellsGrid.GetCellRectangle(column, row), _playerCollection.Player4),
                     _ => throw new InvalidOperationException(
                         $"Unexpected [{nameof(cell)}] value [{cell}]")
