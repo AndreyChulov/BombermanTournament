@@ -124,15 +124,15 @@ public class BombermanNetworkGame : IDisposable
 
             foreach (var crossField in crossFields)
             {
-                if (crossField.IsPlayerOnField())
+                if (crossField.Cell.IsPlayerOnField())
                 {
-                    PlayerCollectionMediator.GetPlayer(crossField).BlowUpPlayer();
+                    PlayerCollectionMediator.GetPlayer(crossField.Cell).BlowUpPlayer();
                 }
+
+                if (crossField.Cell != FieldItemEnum.DestructibleField) continue;
                 
-                if (crossField == FieldItemEnum.DestructibleField)
-                {
-                    bomb.Owner.PlayerBlowUpDestroyableCell();
-                }
+                Field.SetFieldCell(crossField, FieldItemEnum.EmptyField);
+                bomb.Owner.PlayerBlowUpDestroyableCell();
             }
         }
 
@@ -191,8 +191,6 @@ public class BombermanNetworkGame : IDisposable
         levelGenerator.FillPlayersStartPoints(field);
 
         SetPlayersOnField(field);
-        
-        field.SetFieldCell(5,5, FieldItemEnum.Bomb);
         
         field.ForceFieldUpdated();
         
