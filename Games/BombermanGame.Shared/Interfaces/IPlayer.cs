@@ -28,6 +28,7 @@ namespace Games.BombermanGame.Shared.Interfaces
         /// </summary>
         /// <param name="gameInfo">Whole game information that can be required</param>
         /// <param name="currentPlayerInfo">Info about current player</param>
+        /// <param name="parallelLoopState"></param>
         /// <returns>Enum that describe current player turn request</returns>
         PlayerTurnEnum Turn(IGameInfo gameInfo, IPlayerInfo currentPlayerInfo);
 

@@ -4,10 +4,11 @@ using Games.BombermanGame.Shared.GameDataModel;
 using Games.BombermanGame.Shared.GameDataModel.Player;
 using Games.BombermanGame.Shared.Interfaces;
 using TournamentServer.Shared;
+using Exception = System.Exception;
 
 namespace Games.BombermanGame.NetworkGame;
 
-public class PlayerCollectionMediator :IDisposable
+public class PlayerCollectionMediator : IDisposable
 {
     private PlayerCollection? _players;
     private PlayerInfoCollection? _playersInfo;
@@ -29,7 +30,7 @@ public class PlayerCollectionMediator :IDisposable
                     $"[{nameof(_players)}] should be initialised before getting [{nameof(Players)}].\n" +
                     $"Please check [{nameof(SetPlayers)}] call.");
             }
-    
+
             return _players;
         }
     }
@@ -45,7 +46,7 @@ public class PlayerCollectionMediator :IDisposable
                     $"Please check [{nameof(InitializePlayersInfo)}] call.");
             }
 
-            return _playersInfo;            
+            return _playersInfo;
         }
     }
 
@@ -57,7 +58,7 @@ public class PlayerCollectionMediator :IDisposable
                 .Cast<IPlayer>()
                 .ToArray());
     }
-    
+
     public void InitializePlayersInfo(Field field)
     {
         if (_players == null)
@@ -66,12 +67,12 @@ public class PlayerCollectionMediator :IDisposable
                 $"[{nameof(_players)}] should be initialised before [{nameof(InitializePlayersInfo)}].\n" +
                 $"Please check [{nameof(SetPlayers)}] call.");
         }
-        
+
         PlayerInfo? player1Info = null;
         PlayerInfo? player2Info = null;
         PlayerInfo? player3Info = null;
         PlayerInfo? player4Info = null;
-        
+
         field.EnumerateField<int>((rowIndex, columnIndex, cell) =>
         {
             switch (cell)
@@ -84,10 +85,10 @@ public class PlayerCollectionMediator :IDisposable
                     return null;
                 case FieldItemEnum.Player3:
                     player3Info = new PlayerInfo(_players.Player3, columnIndex, rowIndex);
-                    return null;                
+                    return null;
                 case FieldItemEnum.Player4:
                     player4Info = new PlayerInfo(_players.Player4, columnIndex, rowIndex);
-                    return null;        
+                    return null;
                 default:
                     return null;
             }
@@ -100,7 +101,7 @@ public class PlayerCollectionMediator :IDisposable
 
         _playersInfo = new PlayerInfoCollection(player1Info, player2Info, player3Info, player4Info);
     }
-    
+
     public void Turn(Field field)
     {
         //Task.Run(() => TurnInternal(field));
@@ -112,17 +113,31 @@ public class PlayerCollectionMediator :IDisposable
         _playersTurn.Clear();
 
         var timeoutTask = CreateTurnTimeoutTask();
-        var parallelOptions = CreateTurnParallelOptions();
+        var cancellationTokenSource = CreateTurnCancellationTokenSource();
 
-        Parallel.ForEach(Players.Players, parallelOptions,
-            (playerBot, _, index) => BotTurn(playerBot, index, field));
+        StartParallelBotTurns(field, cancellationTokenSource);
 
-        if (Players.Players.Any(x=>x.IsDebugMode))
+        if (Players.Players.Any(x => x.IsDebugMode))
         {
             timeoutTask.Wait();
         }
-        
+
         SetTurnActions();
+    }
+
+    private void StartParallelBotTurns(Field field, CancellationTokenSource cancellationTokenSource)
+    {
+        var parallelOptions = new ParallelOptions
+        {
+            CancellationToken = cancellationTokenSource.Token
+        };
+
+        try
+        {
+            Parallel.ForEach(Players.Players, parallelOptions,
+                (playerBot, loopState, index) => BotTurn(playerBot, index, field, loopState));
+        }
+        catch (OperationCanceledException){}
     }
 
     private void SetTurnActions()
@@ -138,18 +153,12 @@ public class PlayerCollectionMediator :IDisposable
         }
     }
 
-    private ParallelOptions CreateTurnParallelOptions()
+    private CancellationTokenSource CreateTurnCancellationTokenSource()
     {
-        var cancellationTokenSource =
-            Players.Players.Any(x => x.IsDebugMode)
-                ? new CancellationTokenSource()
-                : new CancellationTokenSource(NetworkGameSettings.TurnTimeoutForBot);
-
-        var parallelOptions = new ParallelOptions
-        {
-            CancellationToken = cancellationTokenSource.Token
-        };
-        return parallelOptions;
+        return Players.Players.Any(x => x.IsDebugMode)
+            ? new CancellationTokenSource()
+            : new CancellationTokenSource(
+                NetworkGameSettings.TurnTimeoutForBot);
     }
 
     private static Task CreateTurnTimeoutTask()
@@ -157,18 +166,22 @@ public class PlayerCollectionMediator :IDisposable
         return Task.Run(async () => await Task.Delay(NetworkGameSettings.TurnTimeoutForBot));
     }
 
-    private void BotTurn(IPlayer playerBot, long index, Field field)
+    private void BotTurn(IPlayer playerBot, long index, Field field, 
+        ParallelLoopState loopState)
     {
+        var playersInfo = PlayersInfo;
+        var gameInfo = GameInfo.Create(field, playersInfo.PlayerInfos);
+        
+        ((BombermanNetworkBot)playerBot).PlayerTurnParallelLoopState = loopState;
+
         try
         {
-            var playersInfo = PlayersInfo;
-            var gameInfo = GameInfo.Create(field, playersInfo.PlayerInfos);
-            
-            _playersTurn[index] = playerBot.Turn(gameInfo, playersInfo.PlayerInfos[index]);
+            _playersTurn[index] = playerBot.Turn(
+                gameInfo, playersInfo.PlayerInfos[index]);
         }
         catch (OperationCanceledException)
         {
-            playerBot.OnTurnTimeExceeded();
+             playerBot.OnTurnTimeExceeded();
         }
     }
 

@@ -19,6 +19,7 @@ public class BombermanNetworkBot : IPlayer, IDisposable
     public string AiDevelopedForGame { get; }
 
     private PlayerTurnEnum? _playerTurn = null;
+    public ParallelLoopState PlayerTurnParallelLoopState { private get; set; }
 
     private bool _isDisposed = false;
 
@@ -70,6 +71,11 @@ public class BombermanNetworkBot : IPlayer, IDisposable
         while (!_playerTurn.HasValue)
         {
             Thread.CurrentThread.Join(TimeSpan.FromSeconds(0.1f));
+
+            if (PlayerTurnParallelLoopState?.ShouldExitCurrentIteration == true)
+            {
+                throw new OperationCanceledException();
+            }
             
             if (_isDisposed)
             {
@@ -82,7 +88,7 @@ public class BombermanNetworkBot : IPlayer, IDisposable
 
     public void OnTurnTimeExceeded()
     {
-        throw new NotImplementedException();
+        _connectedClientInfo.SendMessage(TurnTimeoutExceededMessage.Initialize());
     }
 
     public void Dispose()
