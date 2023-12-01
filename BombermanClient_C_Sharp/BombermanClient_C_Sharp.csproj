@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net7.0-windows</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Core\Network.Shared\Network.Shared.csproj" />
+      <ProjectReference Include="..\Core\NetworkFactory\NetworkFactory.csproj" />
+      <ProjectReference Include="..\Games\BombermanGame.Shared\BombermanGame.Shared.csproj" />
+    </ItemGroup>
+
+</Project>

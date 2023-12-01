@@ -173,16 +173,6 @@
           }
         }
       },
-      "BombermanGame.Shared/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "compile": {
-          "bin/placeholder/BombermanGame.Shared.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/BombermanGame.Shared.dll": {}
-        }
-      },
       "Core.Engine.Shared/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -536,11 +526,6 @@
         "vortice.mathematics.nuspec"
       ]
     },
-    "BombermanGame.Shared/1.0.0": {
-      "type": "project",
-      "path": "../../../BombermanGame.Shared/BombermanGame.Shared.csproj",
-      "msbuildProject": "../../../BombermanGame.Shared/BombermanGame.Shared.csproj"
-    },
     "Core.Engine.Shared/1.0.0": {
       "type": "project",
       "path": "../../../Core/Engine.Shared/Engine.Shared.csproj",
@@ -579,7 +564,6 @@
   },
   "projectFileDependencyGroups": {
     "net7.0-windows7.0": [
-      "BombermanGame.Shared >= 1.0.0",
       "Core.Network.Shared >= 1.0.0",
       "Core.NetworkFactory >= 1.0.0",
       "Games.BombermanGame.Shared >= 1.0.0"
@@ -610,9 +594,6 @@
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
           "projectReferences": {
-            "Z:\\Мой диск\\GitHub\\BombermanTournament\\BombermanGame.Shared\\BombermanGame.Shared.csproj": {
-              "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\BombermanGame.Shared\\BombermanGame.Shared.csproj"
-            },
             "Z:\\Мой диск\\GitHub\\BombermanTournament\\Core\\Network.Shared\\Network.Shared.csproj": {
               "projectPath": "Z:\\Мой диск\\GitHub\\BombermanTournament\\Core\\Network.Shared\\Network.Shared.csproj"
             },

@@ -10,7 +10,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\..\BombermanGame.Shared\BombermanGame.Shared.csproj" />
       <ProjectReference Include="..\..\..\Core\Network.Shared\Network.Shared.csproj" />
       <ProjectReference Include="..\..\..\Core\NetworkFactory\NetworkFactory.csproj" />
       <ProjectReference Include="..\..\..\Games\BombermanGame.Shared\BombermanGame.Shared.csproj" />
