@@ -55,6 +55,9 @@ public class Client : IDisposable
                 baseResponseMessage = botCommandMessage;
                 
                 break;
+            case TurnTimeoutExceededMessage.MessageString:
+                _bot.OnTurnTimeExceeded();
+                break;
             default:
                 throw new NotImplementedException();
         }
