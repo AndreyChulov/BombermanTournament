@@ -1,0 +1,3 @@
+Z:/Мой диск/GitHub/BombermanTournament/BombermanClient_C_PlusPlus/cmake-build-debug/CMakeFiles/BombermanClient_C_PlusPlus.dir
+Z:/Мой диск/GitHub/BombermanTournament/BombermanClient_C_PlusPlus/cmake-build-debug/CMakeFiles/edit_cache.dir
+Z:/Мой диск/GitHub/BombermanTournament/BombermanClient_C_PlusPlus/cmake-build-debug/CMakeFiles/rebuild_cache.dir
