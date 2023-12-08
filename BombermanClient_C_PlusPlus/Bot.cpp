@@ -10,7 +10,7 @@ Bot::Bot() : IPlayer(
         IS_DEBUG_MODE,
         AI_DEVELOPED_FOR_GAME) {}
 
-PlayerTurnEnum Bot::Turn(IGameInfo gameInfo, IPlayerInfo currentPlayerInfo) {
+PlayerTurnEnum Bot::Turn(IGameInfo* gameInfo, IPlayerInfo* currentPlayerInfo) {
     return MoveRight;
 }
 

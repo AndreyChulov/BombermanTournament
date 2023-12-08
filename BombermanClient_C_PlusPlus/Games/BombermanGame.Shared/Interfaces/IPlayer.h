@@ -19,15 +19,15 @@ namespace Games_BombermanGame_Shared_Interfaces {
 
     class IPlayer {
     private:
-        string _nickname;
-        string _strategyDescription;
+        char* _nickname;
+        char* _strategyDescription;
         bool _isDebugMode;
-        string _aiDevelopedForGame;
+        char* _aiDevelopedForGame;
     public:
-        explicit IPlayer(string nickname,
-                         string strategyDescription,
+        explicit IPlayer(char* nickname,
+                         char* strategyDescription,
                          bool isDebugMode,
-                         string aiDevelopedForGame);
+                         char* aiDevelopedForGame);
 
         /// <summary>
         /// Short name for AI player
@@ -57,7 +57,7 @@ namespace Games_BombermanGame_Shared_Interfaces {
         /// <param name="currentPlayerInfo">Info about current player</param>
         /// <param name="parallelLoopState"></param>
         /// <returns>Enum that describe current player turn request</returns>
-        virtual PlayerTurnEnum Turn(IGameInfo gameInfo, IPlayerInfo currentPlayerInfo) = 0;
+        virtual PlayerTurnEnum Turn(IGameInfo* gameInfo, IPlayerInfo* currentPlayerInfo) = 0;
         virtual void OnTurnTimeExceeded() = 0;
     };
 

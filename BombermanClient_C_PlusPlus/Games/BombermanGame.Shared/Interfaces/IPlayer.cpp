@@ -21,10 +21,10 @@ namespace Games_BombermanGame_Shared_Interfaces {
         return _aiDevelopedForGame;
     }
 
-    IPlayer::IPlayer(string nickname,
-                     string strategyDescription,
+    IPlayer::IPlayer(char* nickname,
+                     char* strategyDescription,
                      bool isDebugMode,
-                     string aiDevelopedForGame) :
+                     char* aiDevelopedForGame) :
             _nickname(nickname),
             _strategyDescription(strategyDescription),
             _isDebugMode(isDebugMode),

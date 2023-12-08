@@ -13,14 +13,14 @@ using namespace Games_BombermanGame_Shared_Interfaces;
 
 class Bot : public IPlayer{
 private:
-    const string NICKNAME = "Player 1";
-    const string STRATEGY_DESCRIPTION = "No strategy";
-    const bool IS_DEBUG_MODE = true;
-    const string AI_DEVELOPED_FOR_GAME = "Bomberman";
+#define NICKNAME "Player 1"
+#define STRATEGY_DESCRIPTION "No strategy"
+#define IS_DEBUG_MODE true
+#define AI_DEVELOPED_FOR_GAME "Bomberman"
 
 public:
     Bot();
-    PlayerTurnEnum Turn(IGameInfo gameInfo, IPlayerInfo currentPlayerInfo) override;
+    PlayerTurnEnum Turn(IGameInfo* gameInfo, IPlayerInfo* currentPlayerInfo) override;
     void OnTurnTimeExceeded() override;
 };
 

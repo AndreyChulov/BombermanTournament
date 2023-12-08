@@ -36,7 +36,7 @@ namespace Games_BombermanGame_Shared_Enums {
         /// Player should put the bomb
         /// </summary>
         PutBomb
-    }
+    };
 
 } // Games_BombermanGame_Shared_Enums
 
