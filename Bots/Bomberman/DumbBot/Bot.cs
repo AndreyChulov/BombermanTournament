@@ -15,9 +15,9 @@ public class Bot : IPlayer
     public PlayerTurnEnum Turn(IGameInfo gameInfo, IPlayerInfo currentPlayerInfo)
     {
         _prevousTurn = _prevousTurn == PlayerTurnEnum.PutBomb ? 
-                                   PlayerTurnEnum.MoveRight : 
+                                   PlayerTurnEnum.MoveUp : 
                                    PlayerTurnEnum.PutBomb;
-        Thread.CurrentThread.Join();
+        //Thread.CurrentThread.Join();
         return _prevousTurn;
 
     }
